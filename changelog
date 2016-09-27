@@ -1,0 +1,217 @@
+netxms (2.0.6-1) unstable; urgency=medium
+
+  * Fixed incorrect interface network mask reported by agent on Windows XP and Windows Server 2003
+  * Added option to turn off quotes in AT+CMGS command in generic SMS driver
+  * Improved compatibility with different GSM modem types in generic SMS driver
+  * Fixed SQL errors when saving LDAP users to database
+  * Fixed excessive temporary files creation by web UI
+  * Fixed build errors on Solaris 11
+  * Fixed memory leak in Oracle DB driver
+  * Fixed bug in SNMP transport causing false timeout errors
+  * New agent metrics for self-monitoring: Agent.Proxy.ActiveSessions, Agent.Proxy.ConnectionRequests, Agent.Proxy.IsEnabled, Agent.SNMP.IsProxyEnabled, Agent.SNMP.IsTrapProxyEnabled, Agent.SNMP.Requests, Agent.SNMP.Responses, Agent.SNMP.ServerRequests
+  * Fixed issues: #753, #826, #851, #987, #1273, #1277, #1278, #1280
+
+ -- Alex Kirhenshtein <alk@radensolutions.com>  Fri, 09 Sep 2016 10:30:33 +0300
+
+netxms (2.0.5-1) unstable; urgency=medium
+
+  * Data collection script can return null to indicate data collection error
+  * Added option to set type of each varbind in nxsnmpset
+  * Fixed memory leak in PostgreSQL database driver
+  * New attributes "source" and "sourceId" in NXSL class "Event"
+  * New method toJson() in NXSL class "Event
+  * LVM monitoring parameters on AIX
+  * Added option to get normalized server thread pool load average
+  * Fixed bug in self-monitoring termplates
+  * Fixed issues: #1018, #1039, #1239, #1250, #1255
+
+ -- Alex Kirhenshtein <alk@radensolutions.com>  Tue, 26 Jul 2016 12:18:37 +0300
+
+netxms (2.0.4-1) unstable; urgency=medium
+
+  * New parameters in Linux platform subagent to get additional CPU information (frequency, model, etc.)
+  * Fixed bugs in LLDP based network topology discovery
+  * Correct notifications on threshold script errors
+  * Option to use last known value for cluster data aggregation in case of data collecion failure
+  * Added server configuration parameter to ignore syslog message timestamps and always use server time
+  * Added option to disconnect existing sessions of same user on login
+  * NXSL: implemented compound assignment operators and prefix increment/decrement for array elements
+  * NXSL: can access event parameters as event object attributes (like $event->$1 or $event->instance)
+  * Fixed issues: #405, #775, #859, #984, #1086, #1112, #1186, #1194, #1195, #1196, #1197, #1200, #1209, #1210, #1214, #1223, #1227, #1231
+
+ -- Alex Kirhenshtein <alk@debian8-64.radensolutions.com>  Mon, 06 Jun 2016 17:47:40 +0300
+
+netxms (2.0.3-1) unstable; urgency=medium
+
+  * Additional parameters in Oracle subagent for redo logs and ASM monitoring
+  * NXSL: variable $errormsg holding error description set in catch block
+  * New NXSL function SplitString
+  * NXSL: new methods setExpectedState and setExcludeFromTopology in Interface class
+  * Default interface expected state can be configured
+  * GPS subagent (provides location data from NMEA compatible GPS receivers)
+  * Server can update node location using GPS subagent
+  * Fixed error while event alarm linking multiple times
+  * Fixed server hang on shutdown
+  * NetXMS processes uses LC_CTYPE from environment for terminal I/O
+  * Fixed bug in saving service checks
+  * Fixed server crash caused by heap corruption in MS SQL and DB/2 database drivers
+  * Fixed server deadlock caused by simultaneous use of instance discovery and transformation scripts
+  * Agent parameters for monitoring System V message queues
+  * New action User.ChangePassword in WINNT subagent
+  * Text2reach SMS driver improved
+  * Port check subagent can be configured to return negative value as response time in case of error
+  * Fixed issues: #950, #962, #988, #1048, #1102, #1124, #1131, #1135, #1147, #1149, #1154, #1163, #1166, #1170, #1174
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Thu, 31 Mar 2016 20:27:57 +0300
+
+netxms (2.0.2-1) unstable; urgency=medium
+
+  * Optimized LDAP synchronization for large directories
+  * Added NXSL API for manipulating object geolocation
+  * Fixed bug that allows to crash server remotely by sending garbage to client connector port
+  * NXSL: new hash map attributes "keys" and "values"
+  * Object custom attributes can be accessed as hash map in NXSL
+  * New server debug console commands "log" and "logmark"
+  * Fixed issues: #1042, #1049, #1093, #1111, #1117, #1125, #1128, #1133, #1134, #1139
+
+ -- Alex Kirhenshtein <alk@debian8-64.radensolutions.com>  Sat, 06 Feb 2016 20:41:46 +0200
+
+netxms (2.0.1-1) unstable; urgency=medium
+
+  * Version updated to fix incorrect RC version names
+  * Fixed random server crash in ODBC database driver
+  * Fixed incorrect reading of long text fields by MS SQL database driver
+  * Fixed issues: #1063
+
+ -- Alex Kirhenshtein <alk@debian8-64.radensolutions.com>  Mon, 04 Jan 2016 17:50:54 +0200
+
+netxms (2.0-1) unstable; urgency=medium
+
+  * Template import correctly handles updates for existing templates
+  * Scripts can be used as instance source in instance discovery DCIs
+  * NXSL node object attribute snmpSysDescription renamed back to sysDescription
+  * Selectors in NXSL
+  * Array attributes in NXSL: size, minIndex, maxIndex
+  * Hash map attributes in NXSL: size
+  * New NXSL function: mapList
+  * Subnet mask for synthetic subnets can be set in server configuration
+  * Added cumulative counters for server DB writer requests
+  * Fixed data corruption issues in ODBC and Oracle DB drivers
+  * Additional internal server metrics for monitoring DB activity and performance
+  * Added interface creation hook
+  * Improved System.InstalledProducts table handling on Windows
+  * Fixed inefficient query in Oracle monitoring subagent
+  * Server shutdown speed improved
+  * Faster SNMP probing during configuration polls
+  * Fixed false negative in node down detection if expected state of some interfaces set to IGNORE
+  * Agent SNMP proxy improved
+  * Improved agent data cache reconciliation
+  * Fixed Oracle 12c compatibility issues
+  * Automatic configuration import from templates directory on server startup
+  * Fixed address list configuration bug
+  * Fixed issues: #205, #847, #849, #948, #963, #964, #966, #967, #971, #974, #978, #979, #980, #983, #991, #997, #1002, #1003, #1004, #1013, #1019, #1024, #1029, #1032, #1058, #1071, #1072, #1074, #1081, #1082, #1083, #1084, #1085
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Wed, 30 Dec 2015 14:13:33 +0200
+
+netxms (2.0-RC2-3) unstable; urgency=medium
+
+  * XMPP sender moved to separate thread
+  * Issue #967 fixed (agent cache mode ignored for DCIs with source node set)
+  * New list Net.InterfaceNames (issue #964)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Wed, 28 Oct 2015 15:10:26 +0200
+
+netxms (2.0-RC2-2) unstable; urgency=medium
+
+  * Fix for cached data collection for DCIs with default collection interval
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Mon, 19 Oct 2015 17:12:06 +0300
+
+netxms (2.0-RC2-1) unstable; urgency=low
+
+  * Maintenance mode for nodes, clusters, and mobile devices (manual and scheduled)
+  * Fixed broken instance discovery filters
+  * Fixed agent crash when collecting SNMP data in cached mode
+  * Agent returns correct OS version on Windows 10
+  * New NXSL "Node" class attribute: bridgeBaseAddress
+  * One LDAP attribute can be used in multiple mappings
+  * Fied deadlock on LDAP user deletion while LDAP synchronization
+  * Add option to use encrypted password in password fileds in configuration files and in the server configuration parameters.
+  * Added SMS driver for web service text2reach.com
+  * SNMP sysContact and sysLocation collected and stored
+  * Server can accept traps and syslog messages from nodes in all zones (controlled by TrapSourcesInAllZones configuration option)
+  * On instance discovery pool instance name is updated if it has changed
+  * New SMS driver - slack.com
+  * IPv6 support in built-in syslog server
+  * Fixed event processing policy export/import issues
+  * Global default retention time and polling interval for data collection
+  * Initial support for scheduled tasks within system
+  * Scheduled file upload
+  * Management console:
+  * Object context menu available on geo map
+  * Filter in event template configurator
+  * Web console use contextlient time zone to display time
+  * Added option to use server time zone to display time in console
+  * Access to event log, SNMP trap log, and   syslog from object context menu
+  * Dashboards can be associated with other objects (nodes, containers, etc.) and opened from object's context menu
+  * Forced DCI polls from summary tables
+  * Script hints
+  * Fixed issues: #786, #831,786 #841, #852, #864, #878, #883, #890, #891, #892, #896, #897, #898, #900, #902, #903, #905, #907, #910, #913, #917, #919, #921, #928, #933, #937, #943, #945, #947
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Mon, 19 Oct 2015 03:33:44 +0300
+
+netxms (2.0-RC1-1) unstable; urgency=low
+
+  * Fixed LDAP authentication issues with Active Directory
+  * Fixed character encoding issues in LDAP user data
+  * Java subagent improved
+  * Fixed multiple issues with agent side data caching
+  * Hash maps implemented in NXSL
+  * Improved array implementation in NXSL
+  * New NXSL function ArrayToString
+  * New OS parameters and tables: System.HandleCount, System.OpenFiles, Process.Handles
+  * Unified macros in all types of object tools
+  * Server can be switched to case-insensitive login names mode
+  * Implemented support of "command generates output" option for server commands
+  * Network device driver for TelcoBridges gateways
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Fri, 7 Aug 2015 10:38:00 +0300
+
+netxms (2.0-M5-1) unstable; urgency=low
+
+  * Fixed bug in handling floating point Windows performance counters
+  * Added "comments" attribute to NXSL "DCI" class
+  * New NXSL function sha256
+  * Fixed broken nxagent.sms SMS driver
+  * Added support for SNMP traps over IPv6
+  * Switched to SHA-256 for password hashing
+  * Timestamp can be provided in nxpush and nxapush
+  * New methods in NXSL class "Event": setMessage, setSeverity, setUserTag
+  * Command line options for nxagentd to change effective user and group after start
+  * Fixed occasional NXSL compiler crash on scripts with syntax errors
+  * Errors in auto bind/apply scripts interpreted as "ignore" instead of "false" result
+  * New core agent parameter File.FolderCount
+  * Fixed broken active discovery
+  * Improved system behaviour on large installations
+  * Fixed issues: #50, #630, #780, #781, #791, #794, #797, #798, #806, #815, #816, #817, #824, #832, #833, #837
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Sat, 20 Jun 2015 13:50:29 +0300
+
+netxms (2.0-M4-1) unstable; urgency=low
+
+  * MEGATEC protocol support in UPS subagent
+  * Template hierarchy preserved during export/import
+  * Script export/import
+  * Fixed broken WoL functionality
+  * Fixed broken PING subagent
+  * Fixed database upgrade issues on MS SQL
+  * IPv6 support in PING subagent
+  * Fixed issues: #655, #657, #804
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Wed, 29 Apr 2015 16:12:46 +0300
+
+netxms (2.0-M3-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Mon, 15 Apr 2015 02:43:51 +0300

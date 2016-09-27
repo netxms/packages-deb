@@ -2,7 +2,7 @@
 
 This repository contains scripts for creating deb packages (netxms-server/netxms-agent).
 
-Packages are build built by NetXMS team and pushed to http://packages.netxms.org/.
+Packages are built by NetXMS team and pushed to http://packages.netxms.org/.
 
 Supported releases:
  * Debian 7 (Wheezy)

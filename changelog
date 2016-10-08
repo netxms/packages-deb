@@ -1,3 +1,38 @@
+netxms (2.1-M1) unstable; urgency=medium
+
+  * New policy type: "Log Parser"
+  * New server configuration parameter "JobRetryCount"
+  * Chassis objects
+  * Hypervisor monitoring subagent
+  * In case of Policy deploy, Policy uninstall or File upload jobs fail they are scheduled for reinstallation(scheduled tasks) "JobRetryCount" times. First time job is rescheduled in 10 minutes. Each next wait time is twice more than the previous time.
+  * If policy is known as installed on the node by the server and agent reposts that it is not installed it is being reinstalled.
+  * Added configuration option to log parser to generate event only if regular expression have been matched exact count of the times in a predefined time period
+  * New internal parameters: Server.ReceivedSNMPTraps, Server.ReceivedSyslogMessages, ReceivedSNMPTraps, ReceivedSyslogMessages
+  * Max size of agent data collectiors pool can be configured
+  * Agent data reconciliation block size and timeout can be configured
+  * New agent parameters System.CPU.CurrentUsage and System.CPU.CurrentUsage(*)
+  * SSH subagent (for collecting data and executing actions via SSH)
+  * Zone ID can be set for agent in SNMP proxy mode
+  * Zones has common default proxy node for all protocols
+  * Zone's proxy node can be placed inside that zone
+  * Syslog proxy in agent
+  * Built-in superuser account renamed to "system"
+  * Default "admin" account now is ordinary member of "Admins" group without built-in privileges
+  * New method "enableDiscoveryPolling" in NXSL class "Node"
+  * New NXSL function AgentExecuteAction
+  * Agent effective user and group can be set in configuration file
+  * Agent environment variables can be set in configuration file
+  * Added method "getResourceOwner" and attribute "nodes" to NXSL "Cluster" class
+  * New object tool type "server script"
+  * Number of polls can be set for "diff" type thresholds
+  * Instance discovery scripts can return instances as map instance/instance name
+  * CPU usage parameters on Windows moved to winnt.nsm from winperf.nsm and no longer depends on PDH
+  * New agent metrics for self-monitoring: Agent.SyslogProxy.IsEnabled, Agent.SyslogProxy.ReceivedMessages, Agent.SyslogProxy.QueueSize
+  * Fixed issues: #69, #80, #92, #397, #521, #568, #723, #795, #906, #909, #942, #949, #959, #992, #999, #1006, #1015, #1044, #1051, #1096, #1100, #1159, #1187, #1191, #1230, #1237, #1245, #1246, #1249, #1254, #1257, #1261, #1263, #1275, #1282, #1284, #1288, #1302
+
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Sat, 08 Oct 2016 16:59:30 +0300
+
 netxms (2.0.6-1) unstable; urgency=medium
 
   * Fixed incorrect interface network mask reported by agent on Windows XP and Windows Server 2003

@@ -1,4 +1,4 @@
-netxms (2.1-M1) unstable; urgency=medium
+netxms (2.1-M1-1) unstable; urgency=medium
 
   * New policy type: "Log Parser"
   * New server configuration parameter "JobRetryCount"

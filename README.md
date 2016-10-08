@@ -4,7 +4,7 @@ This repository contains scripts for creating deb packages (netxms-server/netxms
 
 Packages are built by NetXMS team and pushed to http://packages.netxms.org/.
 
-Supported releases:
+Supported releases (i386/amd64):
  * Debian 7 (Wheezy)
  * Debian 8 (Jessie)
  * Ubuntu 12.04 LTS (Precise Pangolin)

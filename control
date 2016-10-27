@@ -21,7 +21,8 @@ Build-Depends:
  unixodbc-dev,
  default-jdk,
  libzmq3-dev | debhelper,
- libssh-dev
+ libssh-dev,
+ libvirt-dev
 Standards-Version: 4.9.3
 Section: admin
 Homepage: http://www.netxms.org/
@@ -64,6 +65,13 @@ Architecture: any
 Multi-Arch: same
 Depends: netxms-agent (= ${binary:Version}), default-jdk, ${shlibs:Depends}, ${misc:Depends}
 Description: Java subagent for NetXMS agent
+ <insert long description, indented with spaces>
+
+Package: netxms-agent-vmgr
+Architecture: any
+Multi-Arch: same
+Depends: netxms-agent (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: NetXMS subagent for monitoring hypervisors
  <insert long description, indented with spaces>
 
 Package: netxms-client

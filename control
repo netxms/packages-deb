@@ -20,7 +20,7 @@ Build-Depends:
  libaio1,
  unixodbc-dev,
  default-jdk,
- libzmq3-dev | debhelper,
+ libzmq3-dev,
  libssh-dev,
  libvirt-dev
 Standards-Version: 4.9.3

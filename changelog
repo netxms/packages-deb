@@ -1,3 +1,9 @@
+netxms (2.1-M1-2) unstable; urgency=medium
+
+  * Packaging fixed for vmgr subageant
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Sat, 28 Oct 2016 18:40:30 +0300
+
 netxms (2.1-M1-1) unstable; urgency=medium
 
   * New policy type: "Log Parser"
@@ -29,7 +35,6 @@ netxms (2.1-M1-1) unstable; urgency=medium
   * CPU usage parameters on Windows moved to winnt.nsm from winperf.nsm and no longer depends on PDH
   * New agent metrics for self-monitoring: Agent.SyslogProxy.IsEnabled, Agent.SyslogProxy.ReceivedMessages, Agent.SyslogProxy.QueueSize
   * Fixed issues: #69, #80, #92, #397, #521, #568, #723, #795, #906, #909, #942, #949, #959, #992, #999, #1006, #1015, #1044, #1051, #1096, #1100, #1159, #1187, #1191, #1230, #1237, #1245, #1246, #1249, #1254, #1257, #1261, #1263, #1275, #1282, #1284, #1288, #1302
-
 
  -- Alex Kirhenshtein <alk@netxms.org>  Sat, 08 Oct 2016 16:59:30 +0300
 

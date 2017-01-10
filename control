@@ -22,7 +22,8 @@ Build-Depends:
  default-jdk,
  libzmq3-dev,
  libssh-dev,
- libvirt-dev
+ libvirt-dev,
+ libssh-dev
 Standards-Version: 4.9.3
 Section: admin
 Homepage: http://www.netxms.org/

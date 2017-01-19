@@ -1,3 +1,9 @@
+netxms (2.1-M2-2) unstable; urgency=high
+
+  * Fixed crash in upgrade procedure
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Thu, 19 Jan 2017 16:48:04 +0200
+
 netxms (2.1-M2-1) unstable; urgency=medium
 
   * Added alarm category functionality to manage which alarms are seen by what users:

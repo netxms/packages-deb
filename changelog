@@ -1,3 +1,17 @@
+netxms (2.1-RC1-1) unstable; urgency=medium
+
+  * External tables in agent
+  * Script source for table DCIs
+  * Driver for IgniteNet devices
+  * Network device database (allows some device specific information to be provided without drivers)
+  * Server certificate's key can be stored in separate file
+  * Multiple CA certificates can be specified in server configuration file
+  * Number of samples can be configured for table thresholds
+  * Null value can be used as "no change" option in auto bind scripts
+  * Fixed issues: NX-386, NX-1127, NX-1128, NX-1210, NX-1211, NX-1222, NX-1231, NX-1239, NX-1240, NX-1242 
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Fri, 12 May 2017 15:03:35 +0300
+
 netxms (2.1-M3-1) unstable; urgency=medium
 
   * Improved event correlation based on network topology

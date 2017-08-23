@@ -1,2 +1,3 @@
+usr/lib/*/libnxjava.so.*
 usr/lib/*/netxms/java.nsm
 usr/lib/*/netxms/*.jar

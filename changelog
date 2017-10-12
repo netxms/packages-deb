@@ -1,3 +1,15 @@
+netxms (2.1.2-1) stable; urgency=medium
+
+  * Summary tables for table DCIs
+  * Multi-valued columns in summary tables
+  * Threshold violation events have current DCI value as parameter 8 (named as "dciValue")
+  * New agent configuration parameter TunnelKeepaliveInterval
+  * Optimizations in database access layer
+  * Improved database check procedure
+  * Fixed issues: NX-1147, NX-1265, NX-1270, NX-1276, NX-1282, NX-1290, NX-1296, NX-1300, NX-1309, NX-1313, NX-1314, NX-1315, NX-1324
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Thu, 12 Oct 2017 10:41:03 +0300
+
 netxms (2.1.1-1) stable; urgency=medium
 
   * XEN monitoring subagent

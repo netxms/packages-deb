@@ -9,6 +9,7 @@ usr/bin/nxscript
 usr/bin/nxsnmp*
 usr/bin/nxupload
 usr/lib/*/netxms/jira.hdlink
+usr/lib/*/netxms/redmine.hdlink
 usr/lib/*/libavaya-ers.so
 usr/lib/*/libcisco.so
 usr/lib/*/libnxcore.so*

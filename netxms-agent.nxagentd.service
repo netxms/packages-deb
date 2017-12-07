@@ -1,0 +1,10 @@
+[Unit]
+Description=NetXMS Agent
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/nxagentd -d
+PIDFile=/var/run/nxagentd.pid
+
+[Install]
+WantedBy=multi-user.target

@@ -1,3 +1,46 @@
+netxms (2.2.1-1) stable; urgency=medium
+
+  * Implemented separate access rights for each DCI object
+  * Option to read log files using VSS snapshots on Windows
+  * Per stage confirmation in database manager during database check
+  * Fixed file download cancelation
+  * HTTPS support in SMSEagle driver
+  * New network map element - text box
+  * New debug log format with tags
+  * Ability to set debug level per tag or tag mask
+  * Improved audit logging on object creation
+  * NXSL function "GeoLocation" replaced with "GeoLocation" class constructor
+  * Optimized object updates in database (to reduce load on database in large installations)
+  * Thread pool used for data collection instead of fixed number of poller threads
+  * Optimized data collection from agents
+  * Configurable number of records per transaction for writing DCI data
+  * Fixed issues:
+  *   NX-662 (New network map element - text box)
+  *   NX-703 (Export/Import actions)
+  *   NX-757 (Instance discovery - grace period for removed instances before deleting DCIs)
+  *   NX-801 (Deleted nodes not removed from trusted nodes lists of other objects)
+  *   NX-1045 (Add rack/chassis diagram as dashboard element)
+  *   NX-1142 (Back view for racks)
+  *   NX-1201 (Discovered node links on map should automatically be set to color based on the status of the interfaces shown in connector names)
+  *   NX-1252 (Fix automatically generated transformation scripts for 64 bit interface counters)
+  *   NX-1268 (Do DNS resolve for node names via zone proxy)
+  *   NX-1289 (Override PollCountForStatusChange at Node level)
+  *   NX-1292 (Option for line charts to not always use 0 as base)
+  *   NX-1336 (Cluster DCI Max/Min aggregation returns value from last node instead of expected max/min)
+  *   NX-1339 (JIRA restricts subject field to 254 chars, helpdesk integration should trim alarm text or move reset of the message to issue description)
+  *   NX-1341 (Scheduled tasks enabled/disabled indicator)
+  *   NX-1342 (Increase text length limit in SMS sender)
+  *   NX-1343 (Server crash on re-enabling temporary disabled user)
+  *   NX-1344 (Search Bar for Agent Tunnel Manager)
+  *   NX-1345 (Add rule number to EPP export)
+  *   NX-1347 (New agent parameter File.LineCount)
+  *   NX-1348 (Continuous warnings in server log: seed object 0 cannot be found)
+  *   NX-1357 (Line chart is now opened on double clicking a Performance Chart)
+  *   NX-1359 (Last location in World Map is now saved)
+  *   NX-1361 (Data type of transformation script's input value can be incorrect)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Thu, 7 Dec 2017 11:29:00 +0300
+
 netxms (2.1.2-1) stable; urgency=medium
 
   * Summary tables for table DCIs

@@ -1,3 +1,28 @@
+netxms (2.2.3-1) stable; urgency=medium
+
+
+  * Additional information about captured Windows Event Log event passed to the server
+  * Improved server startup time
+  * Automatic termination of related alarms when DCI is deleted
+  * Added attribute "isSTP" to NXSL class "Node"
+  * File I/O functions in NXSL (disabled by default)
+  * Sub-second interval between packets can be configured in PING subagent (down to 10 milliseconds)
+  * Fixed issues:
+  *   NX-1149 (Pass EventRecordID with matched Windows event log record)
+  *   NX-1258 (Option to pass event data from Windows event log to NetXMS event)
+  *   NX-1259 (Added NXSL function - FindAlarmByKeyRegex)
+  *   NX-1363 (Automatic deployment of agent policies)
+  *   NX-1364 (Automatically create nodes for unbound agent tunnels)
+  *   NX-1367 (Fix HP aCC compiler warnings)
+  *   NX-1383 (Minimal interval before generating data collection script error events)
+  *   NX-1389 (If library script saved with compilation errors it disappears from script list)
+  *   NX-1392 (Reload log parser without agent restart)
+  *   NX-1393 (PostgreSQL deadlock on updating raw_dci_data table)
+  *   NX-1398 (Windows Server 2016 not detected correctly)
+  *   NX-1399 (Some SQL queries fail when using MariaDB driver because of MariaDB bug CONC-281)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Mon, 05 Feb 2018 16:50:41 +0200
+
 netxms (2.2.2-1) stable; urgency=medium
 
   * Server command line tools working with agents (nxaction, nxap, nxget, nxupload) use encryption by default

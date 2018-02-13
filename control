@@ -23,7 +23,8 @@ Build-Depends:
  libzmq3-dev,
  libssh-dev,
  libvirt-dev,
- libssh-dev
+ libssh-dev,
+ libjemalloc-dev
 Standards-Version: 4.9.3
 Section: admin
 Homepage: http://www.netxms.org/

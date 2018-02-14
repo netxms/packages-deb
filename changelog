@@ -1,3 +1,9 @@
+netxms (2.2.3-3) stable; urgency=medium
+
+  * Memory leaks and stability issues issues fixed
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Wed, 14 Feb 2018 14:35:36 +0200
+
 netxms (2.2.3-2) stable; urgency=medium
 
   * jemalloc enabled on compatible systems

@@ -1,3 +1,7 @@
 usr/lib/*/libnxjava.so.*
 usr/lib/*/netxms/java.nsm
-usr/lib/*/netxms/*.jar
+usr/lib/*/netxms/bind9.jar
+usr/lib/*/netxms/jmx.jar
+usr/lib/*/netxms/netxms-agent.jar
+usr/lib/*/netxms/netxms-java-bridge.jar
+usr/lib/*/netxms/ubntlw.jar

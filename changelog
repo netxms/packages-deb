@@ -1,3 +1,9 @@
+netxms (2.2.4-2) stable; urgency=medium
+
+  * MySQL subagent packaged as netxms-agent-mysql
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Mon, 05 Mar 2018 15:35:58 +0200
+
 netxms (2.2.4-1) stable; urgency=medium
 
   * Portech SMS gateway works correctly with newer gateway versions

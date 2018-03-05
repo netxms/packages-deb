@@ -70,6 +70,13 @@ Depends: netxms-agent (= ${binary:Version}), default-jdk, ${shlibs:Depends}, ${m
 Description: Java subagent for NetXMS agent
  <insert long description, indented with spaces>
 
+Package: netxms-agent-mysql
+Architecture: any
+Multi-Arch: same
+Depends: netxms-agent (= ${binary:Version}), netxms-dbdrv-mysql (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: NetXMS subagent for monitoring MySQL
+ <insert long description, indented with spaces>
+
 Package: netxms-agent-vmgr
 Architecture: any
 Multi-Arch: same

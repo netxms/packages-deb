@@ -1,3 +1,36 @@
+netxms (2.2.5-2) stable; urgency=medium
+
+  * Agent tunnel falls back to unbound mode in case of agent certificate validation failure
+  * Zone information added to alarm log, event log, SNMP trap log, and syslog
+  * Agent returns correct free memory value on Windows
+  * Parameter System.Memory.Physical.Cached supported on Windows
+  * Fixed issues:
+  *   NX-333 (Add windows service descriptions for both server and agent)
+  *   NX-622 (Alerts will not be generated in certain conditions: events, that persist after maintenence and node down after unreachable)
+  *   NX-640 (File manager should show file owner and permissions)
+  *   NX-716 (Server configurator on Windows should be marked as require-administrator)
+  *   NX-922 (Service check template objects disappears after server restart)
+  *   NX-1097 (Configuration option to ignore alarm's helpdesk state when doing resolve or terminate)
+  *   NX-1157 (configure --with-dist fails if OpenSSL is not installed)
+  *   NX-1397 (Implement Windows Update information parameters for Windows 10 and Windows Server 2016)
+  *   NX-1415 (Windows 10 upgrades break agent tunnels)
+  *   NX-1417 (File.Size parameter not working for Windows pagefile.sys)
+  *   NX-1418 (Sort scripts in Execute Server Script dropdown)
+  *   NX-1419 (AgentTunnels.ProcessUnbound scheduled task should be hidden)
+  *   NX-1420 (Do not use unmanaged devices with SNMP for MAC resolving)
+  *   NX-1421 (Configuration poll for node without SNMP and agent always read ARP cache from all SNMP devices in subnet)
+  *   NX-1427 (Max manual Y values for graphs limited to 2147483647)
+  *   NX-1431 ("Don't Fragment" option for ping sub-agent)
+  *   NX-1433 (LDAP timeout blocks internal user database)
+  *   NX-1434 (Return from function from within foreach loop in NXSL can cause unexpected runtime error)
+  *   NX-1436 (Write hostname to agent log on startup)
+  *   NX-1442 (Generic device driver cannot read interface list if device does not support ifNumber MIB object)
+  *   NX-1446 ( Only one agent policy editor can be opened, if another policy is opened for editing, previous is closed without saving)
+  *   NX-1420 (Do not use unmanaged devices with SNMP for MAC resolving)
+  *   NX-1421 (Configuration poll for node without SNMP and agent always read ARP cache from all SNMP devices in subnet)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Fri, 11 May 2018 17:23:04 +0300
+
 netxms (2.2.5-1) stable; urgency=medium
 
   * Fixed issues:

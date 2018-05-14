@@ -1,3 +1,9 @@
+netxms (2.2.5-3) stable; urgency=medium
+
+  * Typo fixed: incorrect version in "netxmsd --version"
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Mon, 14 May 2018 15:05:22 +0300
+
 netxms (2.2.5-2) stable; urgency=medium
 
   * Agent tunnel falls back to unbound mode in case of agent certificate validation failure

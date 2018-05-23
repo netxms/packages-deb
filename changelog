@@ -1,3 +1,12 @@
+netxms (2.2.6-1) stable; urgency=medium
+
+  * NXSL based queries in object finder
+  * Fixed issues:
+  *   NX-1395 (Change Object Filter to only search if at least 3 characters have been entered)
+  *   NX-1451 (Additional configs not loaded on agent startup)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Wed, 23 May 2018 13:00:36 +0300
+
 netxms (2.2.5-3) stable; urgency=medium
 
   * Typo fixed: incorrect version in "netxmsd --version"

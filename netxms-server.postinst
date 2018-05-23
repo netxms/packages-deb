@@ -87,6 +87,7 @@ __END
         if [ ! -z $2 ]; then
           # previous version is set, it's upgrade
           /usr/bin/nxdbmgr upgrade
+          /usr/bin/nxdbmgr online-upgrade >/dev/null 2>/dev/null &
         fi
 
         # compile MIBs

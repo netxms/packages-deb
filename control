@@ -15,7 +15,7 @@ Build-Depends:
  libreadline-dev,
  libsqlite3-dev,
  libmysqlclient-dev | default-libmysqlclient-dev,
- libmariadb-dev,
+ libmariadb-dev | libmariadb-client-lgpl-dev,
  libcurl4-openssl-dev,
  libpq-dev,
  libldap2-dev,

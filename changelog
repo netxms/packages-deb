@@ -1,3 +1,9 @@
+netxms (2.2.6-2) stable; urgency=medium
+
+  * MariaDB driver package added
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Sat, 14 Jul 2018 22:22:58 +0300
+
 netxms (2.2.6-1) stable; urgency=medium
 
   * NXSL based queries in object finder

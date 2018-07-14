@@ -14,7 +14,6 @@ usr/lib/*/netxms/linux.nsm
 usr/lib/*/netxms/lmsensors.nsm
 usr/lib/*/netxms/logwatch.nsm
 usr/lib/*/netxms/netsvc.nsm
-usr/lib/*/netxms/oracle.nsm
 usr/lib/*/netxms/ping.nsm
 usr/lib/*/netxms/portcheck.nsm
 usr/lib/*/netxms/sms.nsm

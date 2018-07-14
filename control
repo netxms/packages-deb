@@ -15,6 +15,7 @@ Build-Depends:
  libreadline-dev,
  libsqlite3-dev,
  libmysqlclient-dev | default-libmysqlclient-dev,
+ libmariadb-dev,
  libcurl4-openssl-dev,
  libpq-dev,
  libldap2-dev,
@@ -107,9 +108,11 @@ Depends:
  netxms-base (= ${binary:Version}),
  netxms-dbdrv-sqlite3 (= ${binary:Version}) |
  netxms-dbdrv-pgsql (= ${binary:Version}) |
+ netxms-dbdrv-mariadb (= ${binary:Version}) |
+ netxms-dbdrv-oracle (= ${binary:Version}) |
  netxms-dbdrv-mysql (= ${binary:Version}),
  ${shlibs:Depends}, ${misc:Depends}
-Suggests: netxms-dbdrv-pgsql, netxms-dbdrv-mysql, netxms-dbdrv-oracle
+Suggests: netxms-dbdrv-pgsql, netxms-dbdrv-mariadb, netmxs-dbdrv-mysql, netxms-dbdrv-oracle
 Description: meta package
  <insert long description, indented with spaces>
 
@@ -174,6 +177,24 @@ Depends:
  netxms-dbdrv-mysql (= ${binary:Version}), netxms-base-dbg (= ${binary:Version})
 Description: debugging symbols for netxms-dbdrv-mysql
  This package contains the debugging symbols for netxms-dbdrv-mysql
+
+Package: netxms-dbdrv-mariadb
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: netxms-base (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Suggests: mariadb-server
+Description: MariaDB driver for netxms-server
+ <insert long description, indented with spaces>
+
+Package: netxms-dbdrv-mariadb-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends:
+ netxms-dbdrv-mariadb (= ${binary:Version}), netxms-base-dbg (= ${binary:Version})
+Description: debugging symbols for netxms-dbdrv-mariadb
+ This package contains the debugging symbols for netxms-dbdrv-mariadb
 
 Package: netxms-dbdrv-odbc
 Architecture: any

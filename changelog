@@ -1,3 +1,29 @@
+netxms (2.2.7-1) stable; urgency=medium
+
+  * "Convert to hexadecimal string" option for SNMP table columns
+  * Improved configuration wizard in Windows server installer
+  * New command line option /CONFIGENTRY in Windows agent installer
+  * New dashboard element "Object Details" (based on object queries)
+  * TCP proxy functionality
+  * Improved "Alarm Details" view in management console
+  * Added support for agent actions defined in external subagents
+  * TCP listener can be disabled in agent configuration file
+  * Push connector can be disabled in agent configuration file
+  * Virtual nodes detection via agent
+  * Basic BIOS and hardware platform information provided by Windows agent
+  * Fixed issues:
+  *   NX-993 (Windows installer should honor current state of services during upgrade)
+  *   NX-1438 (Increase debug level for thread pool messages)
+  *   NX-1453 (Windows installer option to disable database upgrade)
+  *   NX-1455 (Zone UIN in NXSL function CreateNode)
+  *   NX-1456 (DCI values aggregated on cluster may be incorrect on first few polls after server startup)
+  *   NX-1460 (Configure does not detect pthread_setname_np on macOS)
+  *   NX-1464 (Agent connection via proxy is not working for IPv6 destinations)
+  *   NX-1466 (Line length in agent's external table script limited to 255 characters)
+  *   NX-1467 (Agent cannot process requests for parameters longer than 255 characters)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Thu, 19 Jul 2018 19:02:07 +0300
+
 netxms (2.2.6-2) stable; urgency=medium
 
   * MariaDB driver package added

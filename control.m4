@@ -17,7 +17,7 @@ Build-Depends:
  libjansson-dev,
  libreadline-dev,
  libsqlite3-dev,
- libmysqlclient-dev | default-libmysqlclient-dev
+ libmysqlclient-dev | default-libmysqlclient-dev,
  libcurl4-openssl-dev,
  libpq-dev,
  libldap2-dev,

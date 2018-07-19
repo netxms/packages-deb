@@ -1,35 +1,33 @@
+include(`_all.m4')dnl
 Source: netxms
 Priority: extra
 Maintainer: Alex Kirhenshtein <alk@netxms.org>
+Standards-Version: 4.9.3
+Section: admin
+Homepage: http://www.netxms.org/
 Build-Depends:
  debhelper (>= 9),
- dh-systemd,
  dh-autoreconf,
  debconf,
  lsb-release,
- libssl1.0-dev | libssl-dev,
+ libssl-dev,
  zlib1g-dev,
  libexpat1-dev,
  libsensors4-dev,
  libjansson-dev,
  libreadline-dev,
  libsqlite3-dev,
- libmysqlclient-dev | default-libmysqlclient-dev,
- libmariadb-dev | libmariadb-client-lgpl-dev,
+ libmysqlclient-dev | default-libmysqlclient-dev
  libcurl4-openssl-dev,
  libpq-dev,
  libldap2-dev,
  libaio1,
  unixodbc-dev,
  default-jdk,
- libzmq3-dev,
  libssh-dev,
  libvirt-dev,
- libssh-dev,
- libjemalloc-dev
-Standards-Version: 4.9.3
-Section: admin
-Homepage: http://www.netxms.org/
+ libssh-dev
+ PKG_SYSTEMD PKG_MARIADB PKG_MOSQUITTO PKG_ZMQ
 
 Package: netxms-base
 Architecture: any

@@ -1,3 +1,4 @@
+include(`_all.m4')dnl
 #!/usr/bin/make -f
 
 #export DH_VERBOSE=1
@@ -15,9 +16,9 @@ override_dh_shlibdeps:
 
 override_dh_auto_configure:
 	dh_auto_configure -- --with-server --with-agent --with-client \
-		--with-sqlite --with-mysql --with-pgsql --with-odbc --with-oracle=/opt/instantclient_11_2 --with-mariadb \
-		--enable-unicode --with-jdk=/usr/lib/jvm/default-java --with-zeromq --with-vmgr --disable-mqtt \
-		--with-jemalloc
+		--with-sqlite --with-mysql --with-pgsql --with-odbc --with-oracle=/opt/instantclient_11_2 \
+		--enable-unicode --with-jdk=/usr/lib/jvm/default-java --with-vmgr \
+		--with-jemalloc=/opt/jemalloc CONFIGURE_MARIADB CONFIGURE_MOSQUITTO CONFIGURE_ZMQ
 
 override_dh_strip:
 	dh_strip -pnetxms-base --dbg-package=netxms-base-dbg
@@ -31,4 +32,4 @@ override_dh_strip:
 	dh_strip -pnetxms-dbdrv-odbc --dbg-package=netxms-dbdrv-odbc-dbg
 
 %:
-	LD_LIBRARY_PATH=$(LD_LIBRARY_PATH):/opt/instantclient_11_2 dh $@ --parallel --with=systemd
+	LD_LIBRARY_PATH=$(LD_LIBRARY_PATH):/opt/instantclient_11_2 dh $@ --parallel DH_ARG_SYSTEMD

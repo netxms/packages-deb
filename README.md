@@ -17,13 +17,15 @@ Supported releases (i386/amd64):
 
 (replace version with actual)
 
-* VERSION=2.2.7
-* wget https://netxms.org/download/releases/2.2/$VERSION/netxms-$VERSION.tar.gz https://netxms.org/download/releases/2.2/$VERSION/netxms-$VERSION.tar.gz.asc
-* gpg --verify netxms-$VERSION.tar.gz.asc netxms-$VERSION.tar.gz
-* tar zxf netxms-$VERSION.tar.gz
-* cd netxms-$VERSION
-* git clone https://github.com/netxms/packages-deb debian
-* cd debian
-* DIST=`lsb_release -sc` make
-* cd ..
-* dpkg-buildpackage --no-sign
+```shell
+VERSION=2.2.7
+wget https://netxms.org/download/releases/2.2/$VERSION/netxms-$VERSION.tar.gz https://netxms.org/download/releases/2.2/$VERSION/netxms-$VERSION.tar.gz.asc
+gpg --verify netxms-$VERSION.tar.gz.asc netxms-$VERSION.tar.gz
+tar zxf netxms-$VERSION.tar.gz
+cd netxms-$VERSION
+git clone https://github.com/netxms/packages-deb debian
+cd debian
+DIST=`lsb_release -sc` make
+cd ..
+dpkg-buildpackage --no-sign
+```

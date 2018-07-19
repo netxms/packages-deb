@@ -10,7 +10,6 @@ Build-Depends:
  dh-autoreconf,
  debconf,
  lsb-release,
- libssl-dev,
  zlib1g-dev,
  libexpat1-dev,
  libsensors4-dev,
@@ -24,10 +23,9 @@ Build-Depends:
  libaio1,
  unixodbc-dev,
  default-jdk,
- libssh-dev,
  libvirt-dev,
  libssh-dev
- PKG_SYSTEMD PKG_MARIADB PKG_MOSQUITTO PKG_ZMQ
+ PKG_MARIADB PKG_MOSQUITTO PKG_OPENSSL PKG_SYSTEMD PKG_ZMQ
 
 Package: netxms-base
 Architecture: any

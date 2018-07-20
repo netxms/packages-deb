@@ -16,7 +16,7 @@ override_dh_shlibdeps:
 
 override_dh_auto_configure:
 	dh_auto_configure -- --with-server --with-agent --with-client \
-		--with-sqlite --with-mysql --with-pgsql --with-odbc --with-oracle=/opt/instantclient_11_2 \
+		--with-sqlite --with-mysql --with-pgsql --with-odbc --with-oracle=/opt/instantclient_12_2 \
 		--enable-unicode --with-jdk=/usr/lib/jvm/default-java --with-vmgr \
 		--with-jemalloc=/opt/jemalloc CONFIGURE_MARIADB CONFIGURE_MOSQUITTO CONFIGURE_ZMQ
 
@@ -28,9 +28,9 @@ override_dh_strip:
 	dh_strip -pnetxms-dbdrv-sqlite3 --dbg-package=netxms-dbdrv-sqlite3-dbg
 	dh_strip -pnetxms-dbdrv-pgsql --dbg-package=netxms-dbdrv-pgsql-dbg
 	dh_strip -pnetxms-dbdrv-mysql --dbg-package=netxms-dbdrv-mysql-dbg
-	ifdef(`WITH_MARIADB', `dh_strip -pnetxms-dbdrv-mariadb --dbg-package=netxms-dbdrv-mariadb-dbg')dnl
+ifdef(`WITH_MARIADB', `	dh_strip -pnetxms-dbdrv-mariadb --dbg-package=netxms-dbdrv-mariadb-dbg')dnl
 	dh_strip -pnetxms-dbdrv-oracle --dbg-package=netxms-dbdrv-oracle-dbg
 	dh_strip -pnetxms-dbdrv-odbc --dbg-package=netxms-dbdrv-odbc-dbg
 
 %:
-	LD_LIBRARY_PATH=$(LD_LIBRARY_PATH):/opt/instantclient_11_2 dh $@ --parallel DH_ARG_SYSTEMD
+	LD_LIBRARY_PATH=$(LD_LIBRARY_PATH):/opt/instantclient_12_2 dh $@ --parallel DH_ARG_SYSTEMD

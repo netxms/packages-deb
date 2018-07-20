@@ -28,7 +28,7 @@ override_dh_strip:
 	dh_strip -pnetxms-dbdrv-sqlite3 --dbg-package=netxms-dbdrv-sqlite3-dbg
 	dh_strip -pnetxms-dbdrv-pgsql --dbg-package=netxms-dbdrv-pgsql-dbg
 	dh_strip -pnetxms-dbdrv-mysql --dbg-package=netxms-dbdrv-mysql-dbg
-ifdef(`WITH_MARIADB', `	dh_strip -pnetxms-dbdrv-mariadb --dbg-package=netxms-dbdrv-mariadb-dbg')dnl
+	ifdef(`WITH_MARIADB', `dh_strip -pnetxms-dbdrv-mariadb --dbg-package=netxms-dbdrv-mariadb-dbg')
 	dh_strip -pnetxms-dbdrv-oracle --dbg-package=netxms-dbdrv-oracle-dbg
 	dh_strip -pnetxms-dbdrv-odbc --dbg-package=netxms-dbdrv-odbc-dbg
 

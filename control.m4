@@ -104,11 +104,14 @@ Depends:
  netxms-base (= ${binary:Version}),
  netxms-dbdrv-sqlite3 (= ${binary:Version}) |
  netxms-dbdrv-pgsql (= ${binary:Version}) |
- netxms-dbdrv-mariadb (= ${binary:Version}) |
+ifdef(`WITH_MARIADB', ` netxms-dbdrv-mariadb (= ${binary:Version}) |')dnl
  netxms-dbdrv-oracle (= ${binary:Version}) |
  netxms-dbdrv-mysql (= ${binary:Version}),
  ${shlibs:Depends}, ${misc:Depends}
-Suggests: netxms-dbdrv-pgsql, netxms-dbdrv-mariadb, netmxs-dbdrv-mysql, netxms-dbdrv-oracle
+Suggests:
+ netxms-dbdrv-pgsql,
+ifdef(`WITH_MARIADB', ` netxms-dbdrv-mariadb, ')dnl
+ netmxs-dbdrv-mysql, netxms-dbdrv-oracle
 Description: meta package
  <insert long description, indented with spaces>
 
@@ -174,7 +177,8 @@ Depends:
 Description: debugging symbols for netxms-dbdrv-mysql
  This package contains the debugging symbols for netxms-dbdrv-mysql
 
-Package: netxms-dbdrv-mariadb
+ifdef(`WITH_MARIADB',
+`Package: netxms-dbdrv-mariadb
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
@@ -191,6 +195,7 @@ Depends:
  netxms-dbdrv-mariadb (= ${binary:Version}), netxms-base-dbg (= ${binary:Version})
 Description: debugging symbols for netxms-dbdrv-mariadb
  This package contains the debugging symbols for netxms-dbdrv-mariadb
+')dnl
 
 Package: netxms-dbdrv-odbc
 Architecture: any

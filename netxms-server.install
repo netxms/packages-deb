@@ -11,7 +11,6 @@ usr/bin/nxupload
 usr/lib/*/netxms/jira.hdlink
 usr/lib/*/netxms/redmine.hdlink
 usr/lib/*/libnxcore.so*
-usr/lib/*/libnxsd.so*
 usr/lib/*/libnxsl.so*
 usr/lib/*/libnxsms_*.so*
 usr/lib/*/libnxsrv.so*

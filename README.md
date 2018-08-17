@@ -18,7 +18,7 @@ Supported releases (i386/amd64):
 (replace version with actual)
 
 ```shell
-VERSION=2.2.7
+VERSION=2.2.8
 wget https://netxms.org/download/releases/2.2/$VERSION/netxms-$VERSION.tar.gz https://netxms.org/download/releases/2.2/$VERSION/netxms-$VERSION.tar.gz.asc
 gpg --verify netxms-$VERSION.tar.gz.asc netxms-$VERSION.tar.gz
 tar zxf netxms-$VERSION.tar.gz

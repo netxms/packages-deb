@@ -42,6 +42,6 @@ Distro-specific configuration is in config/$DIST (e.g. config/stretch)
 Profile-specific configuration is in config/$DIST-$PROFILE (e.g. config/stretch-raspbian)
 
 Load order is:
-# config/$DIST-$PROFILE/….m4 (if exist)
-# config/$DIST/….m4 (if exist)
-# config/default/….m4
+1. config/$DIST-$PROFILE/….m4 (if exist)
+1. config/$DIST/….m4 (if exist)
+1. config/default/….m4

@@ -41,7 +41,7 @@ Default configurtion is stored in config/default/ (_all.m4 is an entry point)
 Distro-specific configuration is in config/$DIST (e.g. config/stretch)
 Profile-specific configuration is in config/$DIST-$PROFILE (e.g. config/stretch-raspbian)
 
-Load order is:
-1. config/$DIST-$PROFILE/….m4 (if exist)
-1. config/$DIST/….m4 (if exist)
-1. config/default/….m4
+Load order is (each file is included from _all.m4):
+1. config/$DIST-$PROFILE/_file_.m4 (if exist)
+1. config/$DIST/_file_.m4 (if exist)
+1. config/default/_file_.m4

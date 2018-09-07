@@ -25,7 +25,23 @@ tar zxf netxms-$VERSION.tar.gz
 cd netxms-$VERSION
 git clone https://github.com/netxms/packages-deb debian
 cd debian
-DIST=`lsb_release -sc` make
+make DIST=`lsb_release -sc`
 cd ..
 dpkg-buildpackage --no-sign
 ```
+
+## Build options
+
+Two options can be set as parameters for make:
+
+* DIST - distro name
+* PROFILE - optional profile for selected distro
+
+Default configurtion is stored in config/default/ (_all.m4 is an entry point)
+Distro-specific configuration is in config/$DIST (e.g. config/stretch)
+Profile-specific configuration is in config/$DIST-$PROFILE (e.g. config/stretch-raspbian)
+
+Load order is:
+# config/$DIST-$PROFILE/….m4 (if exist)
+# config/$DIST/….m4 (if exist)
+# config/default/….m4

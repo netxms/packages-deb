@@ -1,3 +1,15 @@
+netxms (2.2.10-1) stable; urgency=medium
+
+  * Improved server startup time
+  * Added server startup event SYS_SERVER_STARTED
+  * New method readInternalParameter in NXSL classes Node, Cluster, MobileDevice
+  * Improved cached agent data reconciliation
+  * Fixed issues:
+  *   NX-1477 (Offline data collection does not cleanup old data if there are no connection with the server)
+  *   NX-1514 (Predefined graph tree displayed incorrectly)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Thu, 25 Oct 2018 12:30:04 +0300
+
 netxms (2.2.9-1) stable; urgency=medium
 
   * New NXSL functions: Base64Decode, Base64Encode, EventCodeFromName, EventNameFromCode

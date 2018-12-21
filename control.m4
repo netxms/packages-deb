@@ -25,7 +25,7 @@ Build-Depends:
  default-jdk,
  libvirt-dev,
  libssh-dev
- PKG_MARIADB PKG_MOSQUITTO PKG_OPENSSL PKG_SYSTEMD PKG_ZMQ
+ PKG_MARIADB PKG_MOSQUITTO PKG_OPENSSL PKG_SYSTEMD PKG_ZMQ PKG_ASTERISK
 
 Package: netxms-base
 Architecture: any
@@ -59,6 +59,13 @@ Depends:
  netxms-agent (= ${binary:Version}), netxms-base-dbg (= ${binary:Version})
 Description: debugging symbols for netxms-agent
  This package contains the debugging symbols for netxms-agent
+
+Package: netxms-agent-asterisk
+Architecture: any
+Multi-Arch: same
+Depends: netxms-agent (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: NetXMS subagent for monitoring Asterisk PBX
+ <insert long description, indented with spaces>
 
 Package: netxms-agent-java
 Architecture: any

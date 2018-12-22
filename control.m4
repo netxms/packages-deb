@@ -1,3 +1,4 @@
+# vim: syntax=debcontrol
 include(`_all.m4')dnl
 Source: netxms
 Priority: extra

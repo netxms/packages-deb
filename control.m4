@@ -25,7 +25,7 @@ Build-Depends:
  default-jdk,
  libvirt-dev,
  libssh-dev
- PKG_MARIADB PKG_MOSQUITTO PKG_OPENSSL PKG_SYSTEMD PKG_ZMQ PKG_ASTERISK
+ PKG_MARIADB PKG_MOSQUITTO PKG_OPENSSL PKG_SYSTEMD PKG_ZMQ PKG_ASTERISK PKG_XEN
 
 Package: netxms-base
 Architecture: any
@@ -98,6 +98,25 @@ Multi-Arch: same
 Depends: netxms-agent (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: NetXMS subagent for monitoring hypervisors
  <insert long description, indented with spaces>
+
+ifdef(`WITH_XEN',
+`Package: netxms-agent-xen
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: netxms-base (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: NetXMS subagent for monitoring XEN
+ <insert long description, indented with spaces>
+
+Package: netxms-agent-xen-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends:
+ netxms-agent-xen (= ${binary:Version}), netxms-base-dbg (= ${binary:Version})
+Description: debugging symbols for netxms-agent-mgtt
+ This package contains the debugging symbols for netxms-agent-xen
+')dnl
 
 Package: netxms-client
 Architecture: any

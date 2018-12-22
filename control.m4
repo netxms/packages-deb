@@ -60,12 +60,23 @@ Depends:
 Description: debugging symbols for netxms-agent
  This package contains the debugging symbols for netxms-agent
 
-Package: netxms-agent-asterisk
+ifdef(`WITH_ASTERISK',
+`Package: netxms-agent-asterisk
 Architecture: any
 Multi-Arch: same
 Depends: netxms-agent (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: NetXMS subagent for monitoring Asterisk PBX
  <insert long description, indented with spaces>
+
+Package: netxms-agent-asterisk-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends:
+ netxms-agent-asterisk (= ${binary:Version}), netxms-base-dbg (= ${binary:Version})
+Description: debugging symbols for netxms-agent-asterisk
+ This package contains the debugging symbols for netxms-agent-asterisk
+')dnl
 
 Package: netxms-agent-java
 Architecture: any

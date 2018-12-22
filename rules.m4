@@ -24,6 +24,7 @@ override_dh_strip:
 	dh_strip -pnetxms-base --dbg-package=netxms-base-dbg
 	dh_strip -pnetxms-agent --dbg-package=netxms-agent-dbg
 	ifdef(`WITH_ASTERISK', `dh_strip -pnetxms-agent-asterisk --dbg-package=netxms-agent-asterisk-dbg')
+	ifdef(`WITH_MOSQUITTO', `dh_strip -pnetxms-agent-mqtt --dbg-package=netxms-agent-mqtt-dbg')
 	dh_strip -pnetxms-client --dbg-package=netxms-client-dbg
 	dh_strip -pnetxms-server --dbg-package=netxms-server-dbg
 	dh_strip -pnetxms-dbdrv-sqlite3 --dbg-package=netxms-dbdrv-sqlite3-dbg

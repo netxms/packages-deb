@@ -92,6 +92,25 @@ Depends: netxms-agent (= ${binary:Version}), netxms-dbdrv-mysql (= ${binary:Vers
 Description: NetXMS subagent for monitoring MySQL
  <insert long description, indented with spaces>
 
+ifdef(`WITH_MOSQUITTO',
+`Package: netxms-agent-mqtt
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: netxms-base (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: NetXMS subagent for MQTT
+ <insert long description, indented with spaces>
+
+Package: netxms-agent-mqtt-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends:
+ netxms-agent-mqtt (= ${binary:Version}), netxms-base-dbg (= ${binary:Version})
+Description: debugging symbols for netxms-agent-mqtt
+ This package contains the debugging symbols for netxms-agent-mqtt
+')dnl
+
 Package: netxms-agent-vmgr
 Architecture: any
 Multi-Arch: same

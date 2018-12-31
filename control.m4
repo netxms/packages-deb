@@ -290,3 +290,4 @@ Depends:
 Description: debugging symbols for netxms-dbdrv-oracle
  This package contains the debugging symbols for netxms-dbdrv-oracle
 ')dnl
+# EOL, do not remove

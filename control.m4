@@ -1,4 +1,5 @@
 # vim: syntax=debcontrol
+# warning: PKG_* in Build-Depends shoult NOT be on the separate line
 include(`_all.m4')dnl
 Source: netxms
 Priority: extra
@@ -25,8 +26,7 @@ Build-Depends:
  unixodbc-dev,
  default-jdk,
  libvirt-dev,
- libssh-dev
- PKG_MARIADB PKG_MOSQUITTO PKG_OPENSSL PKG_SYSTEMD PKG_ZMQ PKG_ASTERISK PKG_XEN
+ libssh-dev PKG_MARIADB PKG_MOSQUITTO PKG_OPENSSL PKG_SYSTEMD PKG_ZMQ PKG_ASTERISK PKG_XEN
 
 Package: netxms-base
 Architecture: any

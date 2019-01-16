@@ -11,6 +11,8 @@
 #                    from native and SNMP agents.
 ### END INIT INFO
 
+ulimit -n 8192
+
 # Author: Alex Kirhenshtein <alk@netxms.org>
 
 PATH=/sbin:/usr/sbin:/bin:/usr/bin

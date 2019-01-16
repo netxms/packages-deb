@@ -1,3 +1,14 @@
+netxms (2.2.12-1) stable; urgency=medium
+
+  * Added support for active network discovery in remote zones
+  * Database manager options to skip various logs during database export also works for database migration
+  * Fixed issues:
+  *   NX-1206 (Full screen mode with only dashboard elements)
+  *   NX-1541 (Cannot open dashboard by name using command line option)
+  *   NX-1542 (Ampersand characters in template path not escaped in exported configuration XML file)
+
+ -- Alex Kirhenshtein <alk@debian9-64.local>  Wed, 16 Jan 2019 23:28:48 +0200
+
 netxms (2.2.11-1) stable; urgency=medium
 
   * New parameter Process.VMRegions in Linux sub-agent

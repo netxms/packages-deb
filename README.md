@@ -33,8 +33,9 @@ git checkout 115ce935 # last tested revision
 ./configure --prefix=/opt/jemalloc
 make
 sudo make install_bin install_include install_lib
-VERSION=2.2.12
 cd ..
+
+VERSION=2.2.12
 wget https://netxms.org/download/releases/2.2/$VERSION/netxms-$VERSION.tar.gz https://netxms.org/download/releases/2.2/$VERSION/netxms-$VERSION.tar.gz.asc
 ln -s netxms-2.2.12.tar.gz netxms_2.2.12.orig.tar.gz
 gpg --verify netxms-$VERSION.tar.gz.asc netxms-$VERSION.tar.gz

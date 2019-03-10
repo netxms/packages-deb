@@ -1,3 +1,28 @@
+netxms (2.2.13-1) stable; urgency=medium
+
+  * TimescaleDB supported as backend database
+  * Added option to show SELECT output in nxdbmgr batch
+  * New attribute "parameterNames" in NXSL class "Event"
+  * New attribute "instanceData" in NXSL class "DCI"
+  * Added option to play alarm notifiacation sound only for active dashboard
+  * Required object access is "read" for all forced polls except full configuration poll which requires "modify" access
+  * Improved server startup and shutdown time
+  * Added option to save network map as image file
+  * New nxmc command line options -take-map-snapshot and -exit-after-open
+  * Fixed issues:
+  *   NX-241 ("nxdbmgr batch" should support stdin)
+  *   NX-887 (Additional variables in threshold script)
+  *   NX-1388 (Event correlation route should start at proxy)
+  *   NX-1536 (No output from forced status poll without "modify" object access right)
+  *   NX-1552 (NXSL function to check for EPP timer existence)
+  *   NX-1558 (Add ability to change node's comment from script)
+  *   NX-1561 (Unexpected SYS_SNMP_DOWN events after SNMP proxy node restart)
+  *   NX-1567 (EPP selection gets stuck)
+  *   NX-1569 (Agent crash on 32 bit Windows 10)
+  *   NX-1571 (Option to automatically terminate resolved alarms after timeout)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Sun, 10 Mar 2019 19:24:17 -0400
+
 netxms (2.2.12-1) stable; urgency=medium
 
   * Added support for active network discovery in remote zones
@@ -7,7 +32,7 @@ netxms (2.2.12-1) stable; urgency=medium
   *   NX-1541 (Cannot open dashboard by name using command line option)
   *   NX-1542 (Ampersand characters in template path not escaped in exported configuration XML file)
 
- -- Alex Kirhenshtein <alk@debian9-64.local>  Wed, 16 Jan 2019 23:28:48 +0200
+ -- Alex Kirhenshtein <alk@netxms.org>  Wed, 16 Jan 2019 23:28:48 +0200
 
 netxms (2.2.11-1) stable; urgency=medium
 

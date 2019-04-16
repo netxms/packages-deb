@@ -18,7 +18,6 @@ override_dh_auto_configure:
 	dh_auto_configure -- --with-server --with-agent --with-client \
 		--with-sqlite --with-mysql --with-pgsql --with-odbc \
 		--enable-unicode --with-jdk=/usr/lib/jvm/default-java --with-vmgr \
-		--without-python \
 		--with-jemalloc=/opt/jemalloc CONFIGURE_MARIADB CONFIGURE_MOSQUITTO CONFIGURE_ZMQ CONFIGURE_ORACLE CONFIGURE_ASTERISK CONFIGURE_XEN
 
 override_dh_strip:

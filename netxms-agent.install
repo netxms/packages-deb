@@ -1,9 +1,9 @@
 usr/bin/nxagentd
 usr/bin/nxappget
 usr/bin/nxapush
-usr/lib/*/libappagent*.so.*
-usr/lib/*/libnxagent*.so.*
-usr/lib/*/libnxlp*.so.*
+usr/lib/*/libappagent-*.so
+usr/lib/*/libnxagent-*.so
+usr/lib/*/libnxlp-*.so
 usr/lib/*/netxms/dbquery.nsm
 usr/lib/*/netxms/devemu.nsm
 usr/lib/*/netxms/ds18x20.nsm

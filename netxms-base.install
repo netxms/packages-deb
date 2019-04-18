@@ -1,8 +1,8 @@
 usr/bin/nxcsum
 usr/bin/nxencpasswd
 usr/bin/nxgenguid
-usr/lib/*/libnetxms.so.*
-usr/lib/*/libnxclient.so.*
-usr/lib/*/libnxdb.so.*
-usr/lib/*/libnxsnmp.so.*
+usr/lib/*/libnetxms*.so.*
+usr/lib/*/libnxclient*.so.*
+usr/lib/*/libnxdb*.so.*
+usr/lib/*/libnxsnmp*.so.*
 usr/lib/*/libnxtre.so.*

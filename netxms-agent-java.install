@@ -1,4 +1,4 @@
-usr/lib/*/libnxjava.so.*
+usr/lib/*/libnxjava*.so.*
 usr/lib/*/netxms/java.nsm
 usr/lib/*/netxms/bind9.jar
 usr/lib/*/netxms/jmx.jar

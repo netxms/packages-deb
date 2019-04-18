@@ -1,4 +1,4 @@
-netxms (3.0.1660-1) unstable; urgency=medium
+netxms (3.0.1667-1) unstable; urgency=medium
 
   * Event groups
   * Raw DCI values saved in history along with corresponding transformed values

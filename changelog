@@ -1,3 +1,9 @@
+netxms (3.0.1729-1) unstable; urgency=medium
+
+  * New upstream version
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Wed, 08 May 2019 22:50:49 +0300
+
 netxms (3.0.1667-1) unstable; urgency=medium
 
   * Event groups

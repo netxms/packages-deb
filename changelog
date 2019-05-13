@@ -1,3 +1,36 @@
+netxms (2.2.14-1) stable; urgency=medium
+
+  * Local cache on agent side for data pushed with nxapush
+  * Support for statsite sink format in nxapush
+  * Updated default MIB collection
+  * nxget command line option to print table as delimited text
+  * Drill down dashboard or network map for "Gauge" dashboard element
+  * Added trigonometric functions (sin, cos, tan, asin, acos, atan, sinh, cosh, tanh) to NXSL
+  * Improved configuration import
+  * Implemented parameter Process.WkSet on AIX
+  * Additional system information parameters on Windows
+  * Added NXSL hook for subnet creation
+  * Interface object properties can be changed inside interface creation hook
+  * Improvements in web service API
+  * Support for migration to and from TimescaleDB in nxdbmgr
+  * Fixed issues:
+  *   NX-1537 ("Hidden" flag for DCI)
+  *   NX-1574 (Add hasActiveThreshold attribute/method to DCI object accessible in NXSL)
+  *   NX-1576 (Add $2 to instance DCI script hint)
+  *   NX-1577 (Rename server configuration parameter 'TopologyExpirationTime' to 'Topology.AdHocRequest.ExpirationTime')
+  *   NX-1580 (Updated FOUNDRY MIB // Updated CPQHOST MIB)
+  *   NX-1586 (Comments field when putting node into maintenance mode)
+  *   NX-1588 (Object load error can cause server crash)
+  *   NX-1590 (SecondsToUptime function: Incorrect display in some cases)
+  *   NX-1593 (Create separate access right for configuration import)
+  *   NX-1603 (Windows Server 2019 is being detected as Windows Server 2016)
+  *   NX-1604 (ICMP sub-agent automatic targets may be deleted immediately after creation)
+  *   NX-1605 (MariaDB driver - TLS connections don't work)
+  *   NX-1608 (Support for PtP subnets /31 and /127)
+  *   NX-1614 (Improvements to DNS monitoring / resolving)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Mon, 13 May 2019 14:23:08 +0300
+
 netxms (2.2.13-1) stable; urgency=medium
 
   * TimescaleDB supported as backend database

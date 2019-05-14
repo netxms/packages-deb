@@ -1,3 +1,9 @@
+netxms (2.2.14-2) stable; urgency=medium
+
+  * Fixed bug in zone object saving and loading
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Tue, 14 May 2019 16:20:52 +0300
+
 netxms (2.2.14-1) stable; urgency=medium
 
   * Local cache on agent side for data pushed with nxapush

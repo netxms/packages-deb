@@ -1,3 +1,17 @@
+netxms (2.2.15-1) stable; urgency=high
+
+  * Fixed bug in zone object saving and loading
+  * Improved driver for Cisco Small Business switches
+  * Fixed issues:
+  *   NX-1609 (Duplicate server configuration parameters)
+  *   NX-1627 (Proxy node should not ping through itself)
+  *   NX-1637 (Unrecognized Cisco SG Switch)
+  *   NX-1639 (NXSL persistent storage entries not saved in database)
+  *   NX-1644 (DB gets corrupted when adding container/nodes)
+  *   NX-1645 (Broken UI element layout in table DCI "General" property page)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Fri, 24 May 2019 17:46:16 +0300
+
 netxms (2.2.14-2) stable; urgency=medium
 
   * Fixed bug in zone object saving and loading

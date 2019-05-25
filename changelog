@@ -1,3 +1,9 @@
+netxms (2.2.15-2) stable; urgency=high
+
+  * Fixed bug in database manager
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Sat, 25 May 2019 16:31:16 +0300
+
 netxms (2.2.15-1) stable; urgency=high
 
   * Fixed bug in zone object saving and loading

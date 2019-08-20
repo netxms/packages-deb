@@ -16,7 +16,9 @@ usr/lib/*/libnxsms_*.so*
 usr/lib/*/libnxsrv-*.so
 usr/lib/*/libstrophe-*.so
 usr/lib/*/netxms/jira.hdlink
+usr/lib/*/netxms/ncd/*
 usr/lib/*/netxms/ndd/*
+usr/lib/*/netxms/pdsdrv/*
 usr/lib/*/netxms/redmine.hdlink
 usr/lib/*/netxms/smsdrv/*
 usr/share/netxms/*

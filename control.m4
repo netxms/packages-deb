@@ -26,6 +26,7 @@ Build-Depends:
  unixodbc-dev,
  default-jdk,
  libvirt-dev,
+ libpcre3-dev,
  libssh-dev PKG_MARIADB PKG_MOSQUITTO PKG_OPENSSL PKG_SYSTEMD PKG_ZMQ PKG_ASTERISK PKG_XEN
 
 Package: netxms-base

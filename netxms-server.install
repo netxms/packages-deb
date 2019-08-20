@@ -12,14 +12,12 @@ usr/bin/nxupload
 usr/lib/*/libnxcore-*.so
 usr/lib/*/libnxdbmgr-*.so
 usr/lib/*/libnxsl-*.so
-usr/lib/*/libnxsms_*.so*
 usr/lib/*/libnxsrv-*.so
 usr/lib/*/libstrophe-*.so
 usr/lib/*/netxms/jira.hdlink
-usr/lib/*/netxms/ncd/*
+usr/lib/*/netxms/ncdrv/*
 usr/lib/*/netxms/ndd/*
 usr/lib/*/netxms/pdsdrv/*
 usr/lib/*/netxms/redmine.hdlink
-usr/lib/*/netxms/smsdrv/*
 usr/share/netxms/*
 var/lib/netxms/*

@@ -1,3 +1,15 @@
+netxms (2.2.17-1) stable; urgency=medium
+
+  * Fixed multiple MQTT broker connection support
+  * Java 12 supported by reporting server
+  * Fixed bug in agent file download to UI
+  * Implemented per-device I/O counters on Windows
+  * Fixed bugs in TCP proxy
+  * Added object filtering by zone in REST API
+  * Fixed server crash when using "SSH" or "device driver" DCI source
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Tue, 27 Aug 2019 14:17:05 +0300
+
 netxms (2.2.16-1) stable; urgency=medium
 
   * Improved systemd integration

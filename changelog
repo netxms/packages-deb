@@ -1,3 +1,9 @@
+netxms (2.2.17-3) stable; urgency=medium
+
+  * Fixed crash in GSM modem driver (generic)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Thu, 05 Sep 2019 10:59:48 +0300
+
 netxms (2.2.17-2) stable; urgency=medium
 
   * Fixed bug in NXSL functions BindObject and UnbindObject

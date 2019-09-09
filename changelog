@@ -1,3 +1,9 @@
+netxms (2.2.17-5) stable; urgency=medium
+
+  * MySQL subagent improvements
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Mon, 09 Sep 2019 13:15:33 +0300
+
 netxms (2.2.17-4) stable; urgency=medium
 
   * Fixed packaging issue with 2.2.17-3

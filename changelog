@@ -1,3 +1,17 @@
+netxms (3.0.2284-1) stable; urgency=medium
+
+  * Fixed broken database migration to TimescaleDB
+  * Fixed broken "Find IP address" function
+  * Default tile server changed
+  * Improved regular expressin handling in NXSL
+  * Interface alias correctly set on interface object creation
+  * Fixed resource leak in server
+  * Fixed bug in agent parameter Agent.Version
+  * Minor fix in Oracle database driver
+  * Minor fixes in netsvc and portcheck subagents
+
+ -- Victor Kirhenshtein <victor@netxms.org>  Wed, 18 Sep 2019 16:52:37 +0300
+
 netxms (3.0.2258-1) stable; urgency=medium
 
   * Event tags

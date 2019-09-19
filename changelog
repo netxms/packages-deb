@@ -1,3 +1,10 @@
+netxms (3.0.2287-1) stable; urgency=medium
+
+  * Fixed bug in NXSL logical expressions evaluation
+  * Fixed server crash under high load
+
+ -- Victor Kirhenshtein <victor@netxms.org>  Thu, 19 Sep 2019 12:29:00 +0300
+
 netxms (3.0.2284-1) stable; urgency=medium
 
   * Fixed broken database migration to TimescaleDB

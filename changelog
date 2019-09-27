@@ -1,3 +1,11 @@
+netxms (3.0.2304-1) stable; urgency=medium
+
+  * Fixed bug in SNMP SET (both NXSL SNMPSet and nxsnmpset)
+  * Fixed bug in Oracle database driver
+  * Fixed bug in database upgrade procedure
+
+ -- Victor Kirhenshtein <victor@netxms.org>  Fri, 27 Sep 2019 17:48:00 +0300
+
 netxms (3.0.2292-1) stable; urgency=medium
 
   * Fixed broken NXSL function SNMPGet

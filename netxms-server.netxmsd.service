@@ -5,7 +5,7 @@ Description=NetXMS Server
 Type=forking
 ExecStart=/usr/bin/netxmsd -d
 PIDFile=/var/run/netxmsd.pid
-LimitNOFILE=8192
+LimitNOFILE=32768
 
 [Install]
 WantedBy=multi-user.target

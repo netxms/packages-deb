@@ -22,8 +22,6 @@ Branches follow branching layout in netxms/netxms.git.
 
 # How to use
 
-(replace version with actual)
-
 Custom jemalloc package should be built from netxms/jemalloc-deb.git and installed into the system or added to pbuilder chroot.
 
 ```shell

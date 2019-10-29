@@ -1,5 +1,6 @@
-netxms (3.0.2355-1) stable; urgency=medium
+netxms (3.0.2357-1) stable; urgency=medium
 
+  * HTTP(S) checks in portcheck.nsm fixed
   * Fixed server crash after debug console command "show objects"
   * Fixed server memory leak when exporting configuration
   * Fixed server memory leak when creating ad-hoc summary tables

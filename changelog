@@ -1,3 +1,16 @@
+netxms (3.0.2355-1) stable; urgency=medium
+
+  * Fixed server crash after debug console command "show objects"
+  * Fixed server memory leak when exporting configuration
+  * Fixed server memory leak when creating ad-hoc summary tables
+  * Fixed bug in log writer
+  * Agent policies correctly uninstalled when node is deleted
+  * Fixed bugs in zone change operation for node
+  * Fixed bug in duplicate node detection
+  * Improved server debug output
+
+ -- Victor Kirhenshtein <victor@netxms.org>  Tue, 29 Oct 2019 15:46:00 +0300
+
 netxms (3.0.2329-1) stable; urgency=medium
 
   * Fixed bug in SMS driver to notification channel conversion

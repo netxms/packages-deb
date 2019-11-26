@@ -9,11 +9,11 @@ usr/bin/nxminfo
 usr/bin/nxscript
 usr/bin/nxsnmp*
 usr/bin/nxupload
-usr/lib/*/libnxcore-*.so
-usr/lib/*/libnxdbmgr-*.so
-usr/lib/*/libnxsl-*.so
-usr/lib/*/libnxsrv-*.so
-usr/lib/*/libstrophe-*.so
+usr/lib/*/libnxcore.so.*
+usr/lib/*/libnxdbmgr.so.*
+usr/lib/*/libnxsl.so.*
+usr/lib/*/libnxsrv.so.*
+usr/lib/*/libstrophe.so.*
 usr/lib/*/netxms/jira.hdlink
 usr/lib/*/netxms/ncdrv/*
 usr/lib/*/netxms/ndd/*

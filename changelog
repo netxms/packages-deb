@@ -1,3 +1,28 @@
+netxms (3.0.2357-1) stable; urgency=medium
+
+  * HTTP(S) checks in portcheck.nsm fixed
+  * Fixed server crash after debug console command "show objects"
+  * Fixed server memory leak when exporting configuration
+  * Fixed server memory leak when creating ad-hoc summary tables
+  * Fixed bug in log writer
+  * Agent policies correctly uninstalled when node is deleted
+  * Fixed bugs in zone change operation for node
+  * Fixed bug in duplicate node detection
+  * Improved server debug output
+
+ -- Victor Kirhenshtein <victor@netxms.org>  Tue, 29 Oct 2019 15:46:00 +0300
+
+netxms (3.0.2329-1) stable; urgency=medium
+
+  * Fixed bug in SMS driver to notification channel conversion
+  * Fixed bug in GSM notification channel driver
+  * Fixed bug in server that can cause netxmsd crash
+  * Fixed bug in Megatec UPS driver
+  * Improved access to collected performance data on Timescale DB
+  * Minor UI bug fixes
+
+ -- Victor Kirhenshtein <victor@netxms.org>  Tue, 15 Oct 2019 19:19:00 +0300
+
 netxms (3.0.2305-1) stable; urgency=medium
 
   * Fixed bug in SNMP SET (both NXSL SNMPSet and nxsnmpset)

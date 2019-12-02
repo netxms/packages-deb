@@ -1,3 +1,18 @@
+netxms (3.1.242-1) stable; urgency=medium
+
+  * Inheritable custom attributes
+  * Notification channel driver for Telegram
+  * Notification channel driver for Microsoft Teams
+  * File delivery policies for agents
+  * Support for macro expansion in DCI retention time and polling interval
+  * Interface object names can be expanded from actual interface names using macros
+  * Physical links inventory for node interfaces and patch panels
+  * Overall server performance improvements
+  * NXSL functionality improvements
+  * Bugfixes
+
+ -- Victor Kirhenshtein <victor@netxms.org>  Mon, 2 Dec 2019 18:37:00 +0300
+
 netxms (3.0.2357-1) stable; urgency=medium
 
   * HTTP(S) checks in portcheck.nsm fixed

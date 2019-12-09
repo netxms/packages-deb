@@ -1,4 +1,4 @@
-netxms (3.1.260-1) stable; urgency=medium
+netxms (3.1.261-1) stable; urgency=medium
 
   * More diagnostic information in manual poll output
   * LDAP attribute names are case insensitive
@@ -8,6 +8,7 @@ netxms (3.1.260-1) stable; urgency=medium
   * Microsoft Teams driver allows use of message subject
   * Fixed memory leak in C++ client library
   * Fixed server crash
+  * Fixed bugs in database schema upgrade
 
  -- Victor Kirhenshtein <victor@netxms.org>  Mon, 9 Dec 2019 18:42:00 +0300
 

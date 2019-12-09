@@ -1,3 +1,16 @@
+netxms (3.1.260-1) stable; urgency=medium
+
+  * More diagnostic information in manual poll output
+  * LDAP attribute names are case insensitive
+  * Fixed command line parsing bug in remote action execution from EPP
+  * Fixed bug in saving custom attribute changes
+  * nxevent command line tool can generate events in a loop
+  * Microsoft Teams driver allows use of message subject
+  * Fixed memory leak in C++ client library
+  * Fixed server crash
+
+ -- Victor Kirhenshtein <victor@netxms.org>  Mon, 9 Dec 2019 18:42:00 +0300
+
 netxms (3.1.242-1) stable; urgency=medium
 
   * Inheritable custom attributes

@@ -11,14 +11,18 @@ override_dh_installinit:
 	dh_installinit -pnetxms-agent --name=nxagentd
 	dh_installinit -pnetxms-server --name=netxmsd
 
+override_dh_install:
+	dh_install
+	ifdef(`WITH_RPI', `install debian/tmp/usr/lib/*/netxms/rpi.nsm debian/netxms-agent/usr/lib/*/netxms/')
+
 override_dh_shlibdeps:
 	dh_shlibdeps --dpkg-shlibdeps-params=--ignore-missing-info
 
 override_dh_auto_configure:
 	dh_auto_configure -- --with-server --with-agent --with-client \
 		--with-sqlite --with-mysql --with-pgsql --with-odbc \
-		--enable-unicode --with-jdk=/usr/lib/jvm/default-java --with-vmgr \
-		--with-jemalloc CONFIGURE_MARIADB CONFIGURE_MOSQUITTO CONFIGURE_ZMQ CONFIGURE_ORACLE CONFIGURE_ASTERISK CONFIGURE_XEN
+		--enable-unicode --with-jdk=/usr/lib/jvm/default-java \
+		--with-vmgr CONFIGURE_JEMALLOC CONFIGURE_MARIADB CONFIGURE_MOSQUITTO CONFIGURE_ZMQ CONFIGURE_ORACLE CONFIGURE_ASTERISK CONFIGURE_XEN CONFIGURE_ADDITIONAL
 
 override_dh_strip:
 	dh_strip -pnetxms-base --dbg-package=netxms-base-dbg

@@ -8,3 +8,4 @@ PIDFile=/var/run/nxagentd.pid
 
 [Install]
 WantedBy=multi-user.target
+Alias=netxms-agent.service

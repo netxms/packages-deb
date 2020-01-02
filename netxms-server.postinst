@@ -18,25 +18,11 @@ Additional steps required:
 
 2. Load database schema (replace DBTYPE with proper name):
 
-   nxdbmgr init /usr/share/netxms/sql/dbinit_DBTYPE.sql
+   nxdbmgr init
 
-   Example:
+3. Start daemon with command:
 
-      SQLite:
-        nxdbmgr init /usr/share/netxms/sql/dbinit_sqlite.sql
-
-      PostgreSQL:
-        nxdbmgr init /usr/share/netxms/sql/dbinit_pgsql.sql
-
-      MySQL:
-        nxdbmgr init /usr/share/netxms/sql/dbinit_mysql.sql
-
-      Oracle:
-        nxdbmgr init /usr/share/netxms/sql/dbinit_oracle.sql
-
-then start daemon with command:
-
-   service netxmsd start
+   systemctl start netxms-server
 __END
         else
             TARGET=${CONFIG}.dist

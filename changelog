@@ -1,3 +1,25 @@
+netxms (3.1.300-1) stable; urgency=medium
+
+  * Web UI properties can be set via JNDI
+  * Fixed issues:
+  *   NX-1668 ("Execute server script" appears in context menu in object tools configurator)
+  *   NX-1675 (Context menu for containers and "Service Root" shows "Create sensor" twice)
+  *   NX-1719 (File monitoring with rescan is not matching text past 4KB of the monitored file)
+  *   NX-1725 (LDAP attribute names should be case insensitive)
+  *   NX-1726 ("Tools" and "Graphs" menu items missing in object context menu on world map)
+  *   NX-1728 (No error description in poller output when configuration or status poll for a node cannot connect to NetXMS agent)
+  *   NX-1731 (NXSL method Node::readAgentList causes NetXMS server crash)
+  *   NX-1735 (Agent.SessionAgentCount returning incorrect value)
+  *   NX-1740 (When macro is used in threshold, it's value does not get expanded in event)
+  *   NX-1746 (Auto start user agent/support app process after agent install/upgrade)
+  *   NX-1749 (User Agent menu stay on top)
+  *   NX-1750 (Configurable retention time for node hardware and software components)
+  *   NX-1751 (DS18X20 on RPi erroneously writes to log "Unable to add sensor from configuration file...")
+  *   NX-1755 (In object tool `command` in file name truncates last char of command output)
+  *   NX-1758 (Typo in management console)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Tue, 07 Jan 2020 15:10:11 +0200
+
 netxms (3.1.261-1) stable; urgency=medium
 
   * More diagnostic information in manual poll output

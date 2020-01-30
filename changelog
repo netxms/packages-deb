@@ -1,3 +1,23 @@
+netxms (3.1.343-1) stable; urgency=medium
+
+  * New attribute "downSince" in NXSL class "Node"
+  * New NXSL function "atan2"
+  * Improved LLDP based network topology discovery
+  * Fixed issues:
+  *   NX-366 (Generate event if duplicate IP address found)
+  *   NX-910 (System.IO.DiskQueue(*) doesnt support instances for Windows)
+  *   NX-1030 (Telegram bot integration)
+  *   NX-1462 (Add "File Policies" to push files/scripts out to agents)
+  *   NX-1653 (Global user access rights are not updated in sessions)
+  *   NX-1718 (Send user agent notification on container)
+  *   NX-1759 (Setting environment variable from [ENV] section in agent config does not work on Windows)
+  *   NX-1760 (Use folder specified by --sysconfdir instead of --prefix for configuration file search)
+  *   NX-1761 (Object script executor prints last output line after error message)
+  *   NX-1769 (Windows agent may crash if invalid strftime format character used in log parser file name specification)
+  *   NX-1784 (Software inventory - failed SQL queries)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Thu, 30 Jan 2020 17:48:35 +0200
+
 netxms (3.1.300-1) stable; urgency=medium
 
   * Web UI properties can be set via JNDI

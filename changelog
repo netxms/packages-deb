@@ -1,3 +1,13 @@
+netxms (3.1.361-1) stable; urgency=medium
+
+  * Fixed issues:
+  *   NX-848 (API for modules to register new console commands)
+  *   NX-1550 (Not all internal queue sizes exposed as internal server parameters)
+  *   NX-1634 (Possible for NDF_QUEUED_FOR_INSTANCE_POLL flag to get stuck)
+  *   NX-1649 (NXSL functions or object methods for SSH interactions)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Tue, 11 Feb 2020 20:10:36 +0200
+
 netxms (3.1.343-1) stable; urgency=medium
 
   * New attribute "downSince" in NXSL class "Node"

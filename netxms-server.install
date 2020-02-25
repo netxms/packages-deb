@@ -3,12 +3,14 @@ usr/bin/nxaction
 usr/bin/nxadm
 usr/bin/nxap
 usr/bin/nxdbmgr
+usr/bin/nxethernetip
 usr/bin/nxget
 usr/bin/nxmibc
 usr/bin/nxminfo
 usr/bin/nxscript
 usr/bin/nxsnmp*
 usr/bin/nxupload
+usr/lib/*/libethernetip.so.*
 usr/lib/*/libnxcore.so.*
 usr/lib/*/libnxdbmgr.so.*
 usr/lib/*/libnxsl.so.*

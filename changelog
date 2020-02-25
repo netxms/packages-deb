@@ -1,3 +1,34 @@
+netxms (3.2.350-1) stable; urgency=medium
+
+  * Data collection from web services
+  * Nodes within chassis and chassis view
+  * EtherNet/IP device discovery
+  * Image library configurator completely rewritten
+  * Maximum password length supported by nxencpasswd increased to 64 characters
+  * Removed support for ancient custom CheckPoint SNMP agent on port 260
+  * Added option to control case sensitive matching in log parser rules
+  * New internal parameters for server stats (object count, alarm count, etc.)
+  * Method "setMapImage" of NXSL class "NetObj" accepts null value as "reset to default" indicator
+  * Fixed issues:
+  *   NX-50 (Allow per-DCI SNMP version settings)
+  *   NX-58 (Refactor Image Library)
+  *   NX-896 (Display blade chassis and servers in rack)
+  *   NX-1476 (NetXMS Server crashes when sending alarm summary email)
+  *   NX-1523 (Store object creation time)
+  *   NX-1525 (Use HTTP response data as DCI value)
+  *   NX-1724 (Implement agent parameters for inode usage)
+  *   NX-1741 (Node placement within chassis)
+  *   NX-1748 (User agent should check on startup if it is already running in same session)
+  *   NX-1750 (Configurable retention time for node hardware and software components)
+  *   NX-1754 (HTTPS and SOCKS proxy options in Telegram channel configuration)
+  *   NX-1767 (File manager may be unable to access file with percent sign in name)
+  *   NX-1781 (Process launched by ExternalParametersProvider inherits file handles of agent process)
+  *   NX-1782 (Windows installer offers generic.sms SMS driver, while the server is now reworked to have notification channels)
+  *   NX-1792 (Unable to use script with parameters for instance discovery)
+  *   NX-1796 (WebUI and REST API not connected securely to the NetXMS server)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Wed, 26 Feb 2020 01:09:08 +0200
+
 netxms (3.1.361-1) stable; urgency=medium
 
   * Fixed issues:

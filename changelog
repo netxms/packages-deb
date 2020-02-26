@@ -1,3 +1,9 @@
+netxms (3.2.357-1) stable; urgency=medium
+
+  * 32bit compilation issues fixed
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Wed, 26 Feb 2020 21:18:18 +0200
+
 netxms (3.2.350-1) stable; urgency=medium
 
   * Data collection from web services

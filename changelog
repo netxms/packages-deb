@@ -1,3 +1,18 @@
+netxms (3.2.380-1) stable; urgency=medium
+
+  * New attribute "primaryHostName" in NXSL class "Node"
+  * Fixed memory leak in log parser subagent
+  * Fixed incorrect value reported by internal parameter Server.MemoryUsage.DataCollectionCache
+  * Fixed broken Windows Event Log monitoring in logwatch subagent
+  * Fixed issues:
+  *   NX-1794 (Problems with map decorations selection)
+  *   NX-1798 (Incorrect default EIP port number)
+  *   NX-1799 (Login name is limited to 13 characters if CAS is used)
+  *   NX-1800 (If CAS response contains proxy information ticket is always rejected)
+
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Mon, 02 Mar 2020 20:21:21 +0200
+
 netxms (3.2.357-1) stable; urgency=medium
 
   * 32bit compilation issues fixed

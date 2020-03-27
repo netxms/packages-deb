@@ -1,3 +1,26 @@
+netxms (3.2.451-1) stable; urgency=medium
+
+  * Internal parameters for monitoring syncer performance (Syncer.RunTime.*)
+  * Improved notification handling in user support application
+  * Allow usage of chat ID as recipient address for Telegram
+  * Support for standard SSH configuration file in SSH subagent
+  * Environment variables from agent configuration file also set for user agent processes
+  * Improved hypervisor type detection by agent
+  * Tunnel option can be turned on in Windows agent installer
+  * Fixed issues with hardened file system permissions in Windows installer
+  * Added SMBIOS parameters support on FreeBSD
+  * Fixed issues:
+  *   NX-1635 (Log parser can skip lines in a log file)
+  *   NX-1810 (Server can cash if scheduled task deleted while running)
+  *   NX-1812 (In the WebUI Filter in Alarm browser hiding column headers and first row when resized)
+  *   NX-1814 (Values of internal parameters Server.QueueSize.Average and Server.QueueSize.Current are inconsistent)
+  *   NX-1815 (FDB cannot be read on certain Cisco switches)
+  *   NX-1816 (Removing node from cluster crashes server)
+  *   NX-1817 (Log file can be read twice after rotation by log parser on Windows)
+  *   NX-1819 (NXSL methods NetObj::bindTo() and NetObj::unbindFrom() crash server when given null as parameter)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Fri, 27 Mar 2020 18:07:17 +0200
+
 netxms (3.2.400-1) stable; urgency=medium
 
   * Proxy nodes does not collect DCI data from SNMP nodes marked as down

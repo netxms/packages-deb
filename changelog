@@ -1,3 +1,10 @@
+netxms (3.2.462-1) stable; urgency=medium
+
+  * Fixed bug in thread pool manager that can cause start of excessive number of threads
+  * Additional SSL trace output in agent
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Thu, 02 Apr 2020 20:05:32 +0300
+
 netxms (3.2.451-1) stable; urgency=medium
 
   * Internal parameters for monitoring syncer performance (Syncer.RunTime.*)

@@ -1,9 +1,10 @@
-netxms (3.2.462-1) stable; urgency=medium
+netxms (3.2.472-1) stable; urgency=medium
 
-  * Fixed bug in thread pool manager that can cause start of excessive number of threads
-  * Additional SSL trace output in agent
+  * Improved alarm browser performance when displaying big number of alarms
+  * Fixed memory leak in server
+  * Fixed issue NX-1821 (Scheduled Task script not accepting parameters)
 
- -- Alex Kirhenshtein <alk@netxms.org>  Thu, 02 Apr 2020 20:05:32 +0300
+ -- Alex Kirhenshtein <alk@netxms.org>  Sun, 05 Apr 2020 23:02:06 +0300
 
 netxms (3.2.451-1) stable; urgency=medium
 

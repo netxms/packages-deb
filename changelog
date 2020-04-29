@@ -1,3 +1,51 @@
+netxms (3.3.277-1) stable; urgency=medium
+
+  * Option for blacklisting network device drivers
+  * Option for switching SNMP probing during configuration poll into single OID per request mode
+  * Automatic agent certificate renewal
+  * Value ranges in NXSL switch/case statement
+  * Explicit call of library functions in NXSL without "use" statement
+  * New attributes "instanceColumns" and "instanceColumnIndexes" in NXSL class "Table"
+  * New methods "readWebServiceList" and "readWebServiceParameter" in NXSL class "Node"
+  * New methods "applyTemplate" and "removeTemplate" in NXSL class "DataCollectionTarget"
+  * New NXSL functions: GetThreadPoolNames, sqrt
+  * New NXSL class "Template" that represents template object
+  * NXSL arrays can be implicitly converted to strings
+  * Implemented instance discovery method "Agent Table"
+  * Implemented instance discovery method "Windows Performance Counters"
+  * Added option for discarding collected performance data when database writer queue grows beyond limit
+  * Fixed issues:
+  *   NX-392 (Use object names from Windows performance counters for instance discovery)
+  *   NX-713 (Scheduled DCI will not work with offline DCI functionality)
+  *   NX-806 (NXSL: add method to lookup table row by instance)
+  *   NX-807 (NXSL: add method to lookup instance column ID without iterating over Table::columns)
+  *   NX-814 (NXSL: add new node attribute – isRemotelyManaged)
+  *   NX-1362 (Pattern matching for command output in SSH.Command parameter)
+  *   NX-1511 (Save and display user ID of maintenance mode initiator)
+  *   NX-1699 (Allow user turn on "Prevent automatic SNMP configuration changes" when creating node)
+  *   NX-1729 (L2 maps get broken after server restart - all icons get coordinates (0, 0))
+  *   NX-1732 (Option for discarding collected performance data when database writer queue grows beyond limit)
+  *   NX-1765 (HTML codes visible in cell when viewing Table DCI last values in web management console)
+  *   NX-1771 (Add NXSL constants)
+  *   NX-1788 (NXSL: add support for ranges in switch/case)
+  *   NX-1793 (Out of range error)
+  *   NX-1806 (Change order in which ping3.ndd is used during discovery or allow unloading/blacklist)
+  *   NX-1807 (TimescaleDB continuous aggregates, retention policies, etc.)
+  *   NX-1671 (Title from Object Tool's properties is not used anywhere)
+  *   NX-1808 (Template may not appear in object tree on import)
+  *   NX-1820 (Object deletion and negative reference count)
+  *   NX-1824 (Physical links - access denied)
+  *   NX-1827 (Maintenance mode filter in dashboard element "Status Map")
+  *   NX-1828 (Windows agent returns error for parameters System.FirewallProduct.* if built-in Windows Firewall is used)
+  *   NX-1830 (Some events sent by agent may be lost if multiple events sent almost simultaneously)
+  *   NX-1831 (Template path in node data collection configuration is incorrect)
+  *   NX-1834 (Add NXSL function "sqrt")
+  *   NX-1836 (Access attributes of template in auto-bind script)
+  *   NX-1840 (Ability to set communication option "this is address of remote management node" during node creation)
+  *   NX-1842 (Generate event when housekeeper process has started and finished)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Wed, 29 Apr 2020 23:19:40 +0300
+
 netxms (3.2.472-1) stable; urgency=medium
 
   * Improved alarm browser performance when displaying big number of alarms

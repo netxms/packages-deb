@@ -1,3 +1,13 @@
+netxms (3.3.285-1) stable; urgency=high
+
+  * Added driver for Moxa industrial routers
+  * Fixed server crash when receiving ill-formed SNMP response
+  * Fixed server crash when accessing zone object attributes from NXSL
+  * Fixed issues:
+  *   NX-1849 (Agent policy schema sqlite error in 3.3.285)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Thu, 07 May 2020 13:48:16 +0300
+
 netxms (3.3.285-1) stable; urgency=medium
 
   * Fixed server crash after scheduled task delete

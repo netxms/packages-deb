@@ -5,6 +5,7 @@ Description=NetXMS Agent
 Type=forking
 ExecStart=/usr/bin/nxagentd -d
 PIDFile=/var/run/nxagentd.pid
+LimitCORE=infinity
 
 [Install]
 WantedBy=multi-user.target

@@ -87,12 +87,30 @@ Depends: netxms-agent (= ${binary:Version}), default-jdk, ${shlibs:Depends}, ${m
 Description: Java subagent for NetXMS agent
  <insert long description, indented with spaces>
 
+Package: netxms-agent-java-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends:
+ netxms-agent-java (= ${binary:Version}), netxms-base-dbg (= ${binary:Version})
+Description: debugging symbols for netxms-agent-java
+ This package contains the debugging symbols for netxms-agent-java
+
 Package: netxms-agent-mysql
 Architecture: any
 Multi-Arch: same
 Depends: netxms-agent (= ${binary:Version}), netxms-dbdrv-mysql (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: NetXMS subagent for monitoring MySQL
  <insert long description, indented with spaces>
+
+Package: netxms-agent-mysql-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends:
+ netxms-agent-mysql (= ${binary:Version}), netxms-base-dbg (= ${binary:Version})
+Description: debugging symbols for netxms-agent-mysql
+ This package contains the debugging symbols for netxms-agent-mysql
 
 ifdef(`WITH_MOSQUITTO',
 `Package: netxms-agent-mqtt
@@ -119,6 +137,15 @@ Multi-Arch: same
 Depends: netxms-agent (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: NetXMS subagent for monitoring hypervisors
  <insert long description, indented with spaces>
+
+Package: netxms-agent-vmgr-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends:
+ netxms-agent-vmgr (= ${binary:Version}), netxms-base-dbg (= ${binary:Version})
+Description: debugging symbols for netxms-agent-vmgr
+ This package contains the debugging symbols for netxms-agent-vmgr
 
 ifdef(`WITH_XEN',
 `Package: netxms-agent-xen

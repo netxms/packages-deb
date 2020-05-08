@@ -6,6 +6,7 @@ Type=forking
 ExecStart=/usr/bin/netxmsd -d
 PIDFile=/var/run/netxmsd.pid
 LimitNOFILE=32768
+LimitCORE=infinity
 
 [Install]
 WantedBy=multi-user.target

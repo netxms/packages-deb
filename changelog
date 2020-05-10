@@ -1,3 +1,9 @@
+netxms (3.3.315-1) stable; urgency=medium
+
+  * Fixed server crash on agent certificate renew if built with OpenSSL 1.1.0
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Mon, 11 May 2020 00:36:07 +0300
+
 netxms (3.3.314-1) stable; urgency=high
 
   * Fixed server crash when proxied SNMP device responds with "UDP port unreachable"

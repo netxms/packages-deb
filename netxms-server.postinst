@@ -16,7 +16,7 @@ Additional steps required:
 
 1. Edit default configuration file ($CONFIG)
 
-2. Load database schema (replace DBTYPE with proper name):
+2. Load database schema
 
    nxdbmgr init
 

@@ -1,3 +1,9 @@
+netxms (3.3.323-1) stable; urgency=medium
+
+  * Fixed bug in template import on server startup
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Mon, 18 May 2020 12:25:36 +0300
+
 netxms (3.3.315-1) stable; urgency=medium
 
   * Fixed server crash on agent certificate renew if built with OpenSSL 1.1.0

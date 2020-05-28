@@ -1,3 +1,11 @@
+netxms (3.3.340-1) stable; urgency=medium
+
+  * Fixed bugs in SIP registration testing in Asterisk subagent
+  * Fixed memory leak in Asterisk subagent
+  * Fixed issue NX-1855 (NETXMS_FILE_STORE environment variable not using FileStore agent setting)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Fri, 29 May 2020 00:08:48 +0300
+
 netxms (3.3.323-1) stable; urgency=medium
 
   * Fixed bug in template import on server startup

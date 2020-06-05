@@ -1,3 +1,16 @@
+netxms (3.3.350-1) stable; urgency=medium
+
+  * Replace backslash and comma as part of host and DCI names normalizing in InfluxDB driver
+  * Fixed bug in socket error reporting for agent tunnels
+  * Fixed VMGR subagent crash
+  * Fixed bug in agent policy deployment in 2.x compatibility mode
+  * Fixed bug in database export
+  * Fixed issues:
+  *   NX-1868 (Zone SNMP Configuration SNMP v3 "Modify" button spelt incorrectly)
+  *   NX-1869 (Environment variables in file delivery policy expanded on save)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Fri, 05 Jun 2020 12:03:03 +0300
+
 netxms (3.3.340-1) stable; urgency=medium
 
   * Fixed bugs in SIP registration testing in Asterisk subagent

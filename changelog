@@ -1,3 +1,45 @@
+netxms (3.4.178-1) stable; urgency=medium
+
+  * Improved topology based event correlation
+  * New methods in NXSL class "Node": getInterfaceByIndex, getInterfaceByMACAddress, getInterfaceByName
+  * Method getInterface in NXSL class "Node" automatically detects if parameter is interface index, name, or MAC address
+  * Added built-in NXSL constant NXSL::SystemIsBigEndian
+  * Added NXSL hook for alarm state change (Hook::AlarmStateChange)
+  * Can pass arguments to NXSL script executed as EPP action
+  * Implemented agent metrics for available and cache memory on AIX
+  * New agent parameter WindowsFirewall.State on Windows
+  * Implemented disk latency parameters in Linux agent (System.IO.WaitTime, System.IO.ReadWaitTime, System.IO.WriteWaitTime)
+  * User agent tooltip message can be set via policy
+  * Fixed issues:
+  *   NX-470 (Hooks or events for alarm state change)
+  *   NX-763 (File Tail/Show should not access database directly)
+  *   NX-811 (System.IO.WaitTime unsupported on Linux)
+  *   NX-1043 (Windows installer cannot initialize Oracle database)
+  *   NX-1078 (Event correlation not working)
+  *   NX-1152 (Attempt to upload .npi pointing to non-existing installer lock up package manager on Windows)
+  *   NX-1176 (Handle routing loops during event correlation)
+  *   NX-1524 (Server configuration wizard is not visible on task bar)
+  *   NX-1556 (Add HMAC to every record in audit log table)
+  *   NX-1566 (NXSL Script Action to allow for parameters)
+  *   NX-1739 (When a node goes down and it's upstream port on a switch goes down, do not correlate those events)
+  *   NX-1753 (File downloads from agent and file upload to server should be logged to Audit Log)
+  *   NX-1801 (Strange if condition)
+  *   NX-1832 (Export configuration does not detect referenced NXSL scripts within NXSL scripts)
+  *   NX-1837 (Store out of the box object tools as .xml files, not in database initialization script)
+  *   NX-1846 (Server crash when querying Audit Log)
+  *   NX-1848 (Add getGuid method to org.netxms.client.events.EventTemplate class in Java API)
+  *   NX-1853 (User Agent Notifications view in management console has no means to hide old notifications)
+  *   NX-1854 (When double-clicking a stacked graph in performance tab, it opens in a new view as non-stacked)
+  *   NX-1856 (Text in tooltip for user support application should be configurable)
+  *   NX-1860 (Parameters to get state of each Windows Firewall profile separately)
+  *   NX-1861 (Unable to add USM Credentials when zoning is ON)
+  *   NX-1862 (Lazy object synchronization breaks object-based link status display on maps)
+  *   NX-1865 (Remote Node using TLS Tunnel Added incorrectly if same name is resolvable on local NetXMS network)
+  *   NX-1866 (NXSL GetAvgDCIValue may not work with MySQL database)
+  *   NX-1867 (NXSL GetMaxDCIValue may return incorrect value)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Tue, 16 Jun 2020 19:46:03 +0300
+
 netxms (3.3.350-1) stable; urgency=medium
 
   * Replace backslash and comma as part of host and DCI names normalizing in InfluxDB driver

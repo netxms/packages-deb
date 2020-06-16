@@ -80,10 +80,26 @@ Description: debugging symbols for netxms-agent-asterisk
  This package contains the debugging symbols for netxms-agent-asterisk
 ')dnl
 
+Package: netxms-java-base
+Architecture: any
+Multi-Arch: same
+Depends: default-jdk, ${shlibs:Depends}, ${misc:Depends}
+Description: Common Java libraries used by both agent and client
+ <insert long description, indented with spaces>
+
+Package: netxms-java-base-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends:
+ netxms-java-base (= ${binary:Version})
+Description: debugging symbols for netxms-java-base
+ This package contains the debugging symbols for netxms-agent-java
+
 Package: netxms-agent-java
 Architecture: any
 Multi-Arch: same
-Depends: netxms-agent (= ${binary:Version}), default-jdk, ${shlibs:Depends}, ${misc:Depends}
+Depends: netxms-agent (= ${binary:Version}), netxms-java-base (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: Java subagent for NetXMS agent
  <insert long description, indented with spaces>
 
@@ -169,7 +185,7 @@ Description: debugging symbols for netxms-agent-mgtt
 Package: netxms-client
 Architecture: any
 Multi-Arch: same
-Depends: netxms-base (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: netxms-base (= ${binary:Version}), netxms-java-base (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: NetXMS command line client tools
  <insert long description, indented with spaces>
 

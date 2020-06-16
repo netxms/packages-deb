@@ -1,5 +1,9 @@
 usr/bin/nxalarm
 usr/bin/nxevent
+usr/bin/nxnotify
 usr/bin/nxpush
 usr/bin/nxshell
-usr/bin/nxnotify
+usr/lib/*/netxms/commons-codec-1.11.jar
+usr/lib/*/netxms/netxms-client.jar
+usr/lib/*/netxms/nxshell.jar
+usr/lib/*/netxms/simple-xml-2.6.4.jar

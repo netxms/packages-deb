@@ -1,3 +1,24 @@
+netxms (3.4.232-1) stable; urgency=medium
+
+  * Improved topology based event correlation
+  * Improved logic for node capability expiration
+  * "Reset identity" command line option in agent
+  * EtherNet/IP has priority over SNMP when reading hardware information
+  * Implemented Web API calls for DCI creation and modification
+  * Implemented Web API calls for reading last value of specific DCI
+  * NXSL function CreateDCI accepts numeric codes for data type and data origin
+  * Improved node matching for agent tunnel automatic binding
+  * Fixed bug that prevents PushDCIData NXSL function to work on chassis object
+  * Fixed bug in template import
+  * Fixed issues:
+  *   NX-1422 (SMTP HELO should be configurable)
+  *   NX-1886 (DCI Table using Script Origin ignores Column definition)
+  *   NX-1888 (Delete completed non-recurring scheduled tasks after configurable retention period)
+  *   NX-1890 (Object Name field in Create Node Object requires cleaning)
+  *   NX-1892 (Wrong format string on a map makes the map uneditable)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Mon, 06 Jul 2020 19:15:44 +0300
+
 netxms (3.4.178-1) stable; urgency=medium
 
   * Improved topology based event correlation

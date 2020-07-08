@@ -18,7 +18,6 @@ Build-Depends:
  libjansson-dev,
  libreadline-dev,
  libsqlite3-dev,
- libmysqlclient-dev | default-libmysqlclient-dev,
  libcurl4-openssl-dev,
  libpq-dev,
  libldap2-dev,
@@ -27,7 +26,7 @@ Build-Depends:
  default-jdk,
  libvirt-dev,
  libpcre3-dev,
- libssh-dev PKG_JEMALLOC PKG_MARIADB PKG_MOSQUITTO PKG_OPENSSL PKG_SYSTEMD PKG_ZMQ PKG_ASTERISK PKG_XEN
+ libssh-dev PKG_JEMALLOC PKG_MARIADB PKG_MOSQUITTO PKG_MYSQL PKG_OPENSSL PKG_SYSTEMD PKG_ZMQ PKG_ASTERISK PKG_XEN
 
 Package: netxms-base
 Architecture: any
@@ -112,7 +111,8 @@ Depends:
 Description: debugging symbols for netxms-agent-java
  This package contains the debugging symbols for netxms-agent-java
 
-Package: netxms-agent-mysql
+ifdef(`WITH_MYSQL',
+`Package: netxms-agent-mysql
 Architecture: any
 Multi-Arch: same
 Depends: netxms-agent (= ${binary:Version}), netxms-dbdrv-mysql (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
@@ -127,6 +127,7 @@ Depends:
  netxms-agent-mysql (= ${binary:Version}), netxms-base-dbg (= ${binary:Version})
 Description: debugging symbols for netxms-agent-mysql
  This package contains the debugging symbols for netxms-agent-mysql
+')dnl
 
 ifdef(`WITH_MOSQUITTO',
 `Package: netxms-agent-mqtt
@@ -203,17 +204,17 @@ Architecture: any
 Multi-Arch: same
 Depends:
  netxms-base (= ${binary:Version}),
- netxms-dbdrv-sqlite3 (= ${binary:Version}) |
- netxms-dbdrv-pgsql (= ${binary:Version}) |
 ifdef(`WITH_MARIADB', ` netxms-dbdrv-mariadb (= ${binary:Version}) |')dnl
 ifdef(`WITH_ORACLE', ` netxms-dbdrv-oracle (= ${binary:Version}) |')dnl
- netxms-dbdrv-mysql (= ${binary:Version}),
+ifdef(`WITH_MYSQL', ` netxms-dbdrv-mysql (= ${binary:Version}) |')dnl
+ netxms-dbdrv-sqlite3 (= ${binary:Version}) |
+ netxms-dbdrv-pgsql (= ${binary:Version})
  ${shlibs:Depends}, ${misc:Depends}
 Suggests:
- netxms-dbdrv-pgsql,
 ifdef(`WITH_MARIADB', ` netxms-dbdrv-mariadb, ')dnl
+ifdef(`WITH_MYSQL', ` netxms-dbdrv-mysql, ')dnl
 ifdef(`WITH_ORACLE', ` netxms-dbdrv-oracle, ')dnl
- netmxs-dbdrv-mysql
+ netxms-dbdrv-pgsql
 Description: meta package
  <insert long description, indented with spaces>
 
@@ -261,7 +262,8 @@ Depends:
 Description: debugging symbols for netxms-dbdrv-pgsql
  This package contains the debugging symbols for netxms-dbdrv-pgsql
 
-Package: netxms-dbdrv-mysql
+ifdef(`WITH_MYSQL',
+`Package: netxms-dbdrv-mysql
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
@@ -278,6 +280,7 @@ Depends:
  netxms-dbdrv-mysql (= ${binary:Version}), netxms-base-dbg (= ${binary:Version})
 Description: debugging symbols for netxms-dbdrv-mysql
  This package contains the debugging symbols for netxms-dbdrv-mysql
+')dnl
 
 ifdef(`WITH_MARIADB',
 `Package: netxms-dbdrv-mariadb
@@ -316,7 +319,7 @@ Depends:
 Description: debugging symbols for netxms-dbdrv-odbc
  This package contains the debugging symbols for netxms-dbdrv-odbc
 
- ifdef(`WITH_ORACLE',
+ifdef(`WITH_ORACLE',
 `Package: netxms-dbdrv-oracle
 Architecture: any
 Multi-Arch: same

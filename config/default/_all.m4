@@ -3,6 +3,7 @@ include(`asterisk.m4')dnl
 include(`jemalloc.m4')dnl
 include(`mariadb.m4')dnl
 include(`mosquitto.m4')dnl
+include(`mysql.m4')dnl
 include(`openssl.m4')dnl
 include(`oracle.m4')dnl
 include(`systemd.m4')dnl

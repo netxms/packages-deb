@@ -129,6 +129,40 @@ Description: debugging symbols for netxms-agent-mysql
  This package contains the debugging symbols for netxms-agent-mysql
 ')dnl
 
+ifdef(`WITH_ORACLE',
+`Package: netxms-agent-oracle
+Architecture: any
+Multi-Arch: same
+Depends: netxms-agent (= ${binary:Version}), netxms-dbdrv-oracle (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: NetXMS subagent for monitoring Oracle
+ <insert long description, indented with spaces>
+
+Package: netxms-agent-oracle-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends:
+ netxms-agent-oracle (= ${binary:Version}), netxms-base-dbg (= ${binary:Version})
+Description: debugging symbols for netxms-agent-oracle
+ This package contains the debugging symbols for netxms-agent-oracle
+')dnl
+
+Package: netxms-agent-pgsql
+Architecture: any
+Multi-Arch: same
+Depends: netxms-agent (= ${binary:Version}), netxms-dbdrv-pgsql (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: NetXMS subagent for monitoring PostgreSQL
+ <insert long description, indented with spaces>
+
+Package: netxms-agent-pgsql-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends:
+ netxms-agent-pgsql (= ${binary:Version}), netxms-base-dbg (= ${binary:Version})
+Description: debugging symbols for netxms-agent-pgsql
+ This package contains the debugging symbols for netxms-agent-pgsql
+
 ifdef(`WITH_MOSQUITTO',
 `Package: netxms-agent-mqtt
 Architecture: any

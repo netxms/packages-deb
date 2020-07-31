@@ -1,3 +1,25 @@
+netxms (3.4.284-1) stable; urgency=medium
+
+  * PostgreSQL monitoring subagent
+  * Improved driver for Cisco Nexus
+  * Improved LLDP based network topology discovery
+  * Correctly detect LLDP capability on Mikrotik devices
+  * New NXSL functions GetServerNode and GetServerNodeId
+  * New NXSL function SendMail
+  * Fixed UI bug with accessing collected performance data from data collection editor
+  * Configurable size of SNMP proxy thread pool on agent
+  * Housekeeper optimization
+  * Added drivers for Cambium Networks devices (ePMP and cnPilot)
+  * Fixed issues:
+  *   NX-1863 (Logwatch fails on parsing large Windows Event Log events)
+  *   NX-1880 (Duplicate links on automatic maps with multiple seed nodes)
+  *   NX-1895 (After server restart GUI is not showing from where a custom attribute is inherited)
+  *   NX-1897 (ReadPersistentStorage returns incorrect value for non-existing key)
+  *   NX-1901 (Get node of active NetXMS server in NXSL)
+  *   NX-1910 (Spelling mistakes in Java API)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Fri, 31 Jul 2020 17:45:57 +0300
+
 netxms (3.4.232-1) stable; urgency=medium
 
   * Improved topology based event correlation

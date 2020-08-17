@@ -1,3 +1,10 @@
+netxms (3.4.313-1) stable; urgency=high
+
+  * Fixed issues:
+  *   NX-1938 (Changes in user groups are not saved to database)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Mon, 17 Aug 2020 22:11:33 +0300
+
 netxms (3.4.310-1) stable; urgency=medium
 
   * Added driver for SAF Tehnika Integra devices

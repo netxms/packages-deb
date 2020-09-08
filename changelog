@@ -1,3 +1,42 @@
+netxms (3.5.90-1) stable; urgency=high
+
+  * Added support for parallel event processing
+  * Improved SNMP proxy performance
+  * Support for SHA-2 based authentication in SNMP (SHA224, SHA256, SHA384, SHA512)
+  * Roaming mode for server
+  * Access to NXSL object's class metadata via __class attribute
+  * Access to NXSL object's attributes via __get method
+  * Invoke NXSL object's methods via __invoke method
+  * Added Hook::UnboundTunnelOpened and Hook::BoundTunnelOpened NXSL hooks
+  * Added per node trap flood detection
+  * New event processing macros %z (zone UIN) and %Z (zone name)
+  * Added Topology.WirelessStations and Topology.SwitchForwardingDatabase internal table metrics
+  * Option to disable reading of Windows performance counters metadata on configuration poll
+  * Alias (secondary name) for all network objects
+  * Wildcards in nxdbmgr "get" command
+  * Fixed modification flag for "Break" and "Action" fields in log praser policy
+  * Added cipVendorCode attribute and readInternalParameter, readInternalTable methods to NXSL node class
+  * Added cluster object itself to event log filter opened on the cluster
+  * Removed the limitation of one object for "Move to another container" action
+  * Implemented '/alarms/{alarm-id}' path for REST API
+  * Templates exported without GUID are assigned new GUID on import
+  * Support for non-ASCII database and login names in PostgreSQL driver
+  * Fixed issues:
+  *   NX-1594 (Alias (secondary name) for all network objects)
+  *   NX-1841 (Option to enumerate all attributes and methods of an object in NXSL)
+  *   NX-1879 (Unmanaged automatic network map is no more auto updated)
+  *   NX-1884 (Do not show error while node is added to the cluster if the node is already there)
+  *   NX-1893 (Internal parameter to count total number of bound agent tunnels)
+  *   NX-1908 (Expose FDB to NXSL)
+  *   NX-1914 (Removed deprecate AllowDirectNotifications server configuration setting)
+  *   NX-1919 (Internal parameters to count number of tunnels with agent, snmp, snmp trap, syslog proxies or with installed user agents)
+  *   NX-1924 (When importing event that has different GUID but matching name with already existing event, treat it as new event and give it a new name)
+  *   NX-1932 (DCI status in Template is not carried over in Export Configuration)
+  *   NX-1942 (Add property to actions in EPP "Do not run if timer is active")
+  *   NX-1945 (Memory leak in user support application when taking screenshots)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Tue, 08 Sep 2020 11:24:18 +0300
+
 netxms (3.4.313-1) stable; urgency=high
 
   * Fixed issues:

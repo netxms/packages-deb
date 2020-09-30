@@ -1,3 +1,15 @@
+netxms (3.5.125-1) stable; urgency=high
+
+  * Fixed network map filter script read form database 
+  * Fixed server crash
+  * Fixed issues:
+  *   NX-1928 (nxdbmgr export/import does not work properly with TimescaleDB)
+  *   NX-1930 (NodeJS POST requests to NetXMS WebAPI fail with http error 500 internal error / error 46)
+  *   NX-1953 (Migration from MySQL to TimescaleDB fails)
+  *   NX-1960 (Instance discovered tables not removed after template removed)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Wed, 30 Sep 2020 19:00:02 +0300
+
 netxms (3.5.90-1) stable; urgency=high
 
   * Added support for parallel event processing

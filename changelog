@@ -1,3 +1,13 @@
+netxms (3.5.133-1) stable; urgency=medium
+
+  * Fixed server deadlock when unreachable node is deleted
+  * Fixed SNMPv3 performance issue
+  * Fixed issues:
+  *   NX-1966 (MySQL / MariaDB database access performance issues)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Sat, 10 Oct 2020 13:18:56 +0300
+
+
 netxms (3.5.125-1) stable; urgency=high
 
   * Fixed network map filter script read form database 

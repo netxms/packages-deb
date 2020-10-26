@@ -20,3 +20,4 @@ usr/lib/*/netxms/portcheck.nsm
 usr/lib/*/netxms/sms.nsm
 usr/lib/*/netxms/ssh.nsm
 usr/lib/*/netxms/ups.nsm
+usr/lib/*/netxms/wineventgen.nsm

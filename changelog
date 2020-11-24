@@ -1,3 +1,13 @@
+netxms (3.6.252-1) stable; urgency=high
+
+  * Fixed bug causing random client and agent timeouts
+  * Fixed bug in database upgrade procedure
+  * Fixed bug in nxdbmgr reset-system-account
+  * Fixed issues:
+  *   NX-1977 (NXSL GetDCIValues() does not work on TimeScaleDB)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Tue, 23 Nov 2020 20:11:16 +0200
+
 netxms (3.6.252-1) stable; urgency=medium
 
   * Object categories

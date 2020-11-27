@@ -1,3 +1,11 @@
+netxms (3.6.273-1) stable; urgency=high
+
+  * New NXSL function PostEventEx
+  * Origin timestamp can be set when event is being sent via Java API
+  * Fixed server memory leak and high CPU usage when using "server command" type object tools
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Fri, 27 Nov 2020 22:26:14 +0200
+
 netxms (3.6.269-1) stable; urgency=high
 
   * Fixed server memory leak (tunnel connections)

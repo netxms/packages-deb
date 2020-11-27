@@ -1,3 +1,9 @@
+netxms (3.6.269-1) stable; urgency=high
+
+  * Fixed server memory leak (tunnel connections)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Fri, 27 Nov 2020 13:26:44 +0200
+
 netxms (3.6.264-1) stable; urgency=high
 
   * Fixed bug in agent connection setup via proxy

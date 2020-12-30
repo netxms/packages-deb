@@ -8,6 +8,7 @@ netxms (3.7.92-1) stable; urgency=medium
   * Added command line tool nxaevent for sending events to server via local agent
   * New agent parameter Agent.IsRestartPending
   * Default DCI instance retention time changed to 7 days
+  * Container auto bind and template auto apply for sensors, mobile devices, and access points is configurable and off by default
   * Explicit boolean data type in NXSL
   * NXSL regular expression matching operator returns boolean "false" instead of null value if there is no match
   * New method setIfXTableUsageMode in NXSL class "Node"
@@ -30,7 +31,7 @@ netxms (3.7.92-1) stable; urgency=medium
   *   NX-1984 (File delivery policy incorrectly handles Russian letters)
   *   NX-1985 (File name is cleaned on save in GUI log parser policy editor)
 
- -- Alex Kirhenshtein <alk@netxms.org>  Wed, 30 Dec 2020 18:36:10 +0200
+ -- Alex Kirhenshtein <alk@netxms.org>  Thu, 31 Dec 2020 00:29:40 +0200
 
 netxms (3.6.300-1) stable; urgency=medium
 

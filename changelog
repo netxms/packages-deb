@@ -1,3 +1,37 @@
+netxms (3.7.92-1) stable; urgency=medium
+
+  * UI framework updated to Eclipse 4.17 / RAP 3.14
+  * Improved clipboard support in web UI
+  * Improved access control logic for enter/leave/schedule maintenance
+  * Improved generic Cisco driver
+  * Improved support for Cisco Nexus switches
+  * Added command line tool nxaevent for sending events to server via local agent
+  * New agent parameter Agent.IsRestartPending
+  * Default DCI instance retention time changed to 7 days
+  * Explicit boolean data type in NXSL
+  * NXSL regular expression matching operator returns boolean "false" instead of null value if there is no match
+  * New method setIfXTableUsageMode in NXSL class "Node"
+  * New methods enableAgentStatusPolling, enableICMPStatusPolling, and enableSNMPStatusPolling in NXSL class "Interface"
+  * SQL query trace in server can be enabled independently from global debug level and changed at runtime
+  * Fixed unrecoverable "objects out of sync" state on client
+  * Fixed issues with file following
+  * Fixed issues:
+  *   NX-770 (Instance discovery poll a node when an instance DCI is added)
+  *   NX-790 (Ability to disable 802.1x checking)
+  *   NX-1058 (Repeat event in DCI threshold may not be generated if repeat interval is the same as polling interval)
+  *   NX-1173 (Add bulk DCI update functionality)
+  *   NX-1469 (Show warning to user on attempt to force poll node in unmanaged state)
+  *   NX-1602 (Option to disable ICMP poll for individual child Interface objects)
+  *   NX-1623 (DCI > "Clear collected data" should refresh Last Values)
+  *   NX-1948 (Create nxaevent utility similar to nxapush)
+  *   NX-1956 (Allow applying templates to Access Points)
+  *   NX-1975 (Per DCI multiplier settings)
+  *   NX-1983 (Add automatic bind rules for clusters)
+  *   NX-1984 (File delivery policy incorrectly handles Russian letters)
+  *   NX-1985 (File name is cleaned on save in GUI log parser policy editor)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Wed, 30 Dec 2020 18:36:10 +0200
+
 netxms (3.6.300-1) stable; urgency=medium
 
   * Fixed bug in object tool filter configuration

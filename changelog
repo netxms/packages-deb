@@ -1,3 +1,16 @@
+netxms (3.7.116-1) stable; urgency=medium
+
+  * Container auto bind and template auto apply for sensors, mobile devices, and access points is configurable and off by default
+  * New methods "appendAll" and "insertAll" in NXSL arrays
+  * DCI transformation test can be run from template data collection configuration
+  * Fixed bug in remote agent configuration update
+  * Fixed bug in object selection dialog in UI
+  * Fixed server hang on shutdown if initiated from remote GUI session
+  * Fixed issues:
+  *   NX-1875 (Error message is not cleared in list of notification channels)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Fri, 08 Jan 2021 16:19:59 +0200
+
 netxms (3.7.92-1) stable; urgency=medium
 
   * UI framework updated to Eclipse 4.17 / RAP 3.14

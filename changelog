@@ -1,3 +1,15 @@
+netxms (3.7.130-1) stable; urgency=medium
+
+  * Per node SSH port configuration
+  * New user properties "email" and "phone number"
+  * Fixed broken reporting server connector
+  * Fixed issues:
+  *   NX-1081 (Some devices are not detected correctly by CATALYST-GENERIC driver)
+  *   NX-1663 (NXSL function GetDCIValue should read value from database if cache is not populated yet)
+  *   NX-1965 (Inconsistencies in address range add/edit dialog)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Fri, 08 Jan 2021 16:19:59 +0200
+
 netxms (3.7.116-1) stable; urgency=medium
 
   * Container auto bind and template auto apply for sensors, mobile devices, and access points is configurable and off by default

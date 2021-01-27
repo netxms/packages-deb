@@ -1,3 +1,14 @@
+netxms (3.7.144-1) stable; urgency=medium
+
+  * Target for event processing policy remote action can be given as node object ID
+  * Added agent parameters Agent.TCPProxy.IsEnabled and Agent.TCPProxy.ConnectionRequests
+  * Fixed bug in agent action execution from event processing policy
+  * Fixed incorrect boolean values handling in NXSL
+  * Fixed bug in "Find switch port" tool
+  * Fixed server crash when connection to agent is slow or unstable
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Wed, 27 Jan 2021 18:34:57 +0200
+
 netxms (3.7.130-1) stable; urgency=medium
 
   * Per node SSH port configuration

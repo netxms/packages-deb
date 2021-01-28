@@ -1,3 +1,9 @@
+netxms (3.7.145-1) stable; urgency=medium
+
+  * Fixed bug in interface and subnet creation hook scripts handling
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Thu, 28 Jan 2021 11:42:13 +0200
+
 netxms (3.7.144-1) stable; urgency=medium
 
   * Target for event processing policy remote action can be given as node object ID

@@ -2,6 +2,7 @@ usr/bin/nxaevent
 usr/bin/nxagentd
 usr/bin/nxappget
 usr/bin/nxapush
+usr/bin/nxhwid
 usr/bin/nxlptest
 usr/lib/*/libappagent.so.*
 usr/lib/*/libnxagent.so.*

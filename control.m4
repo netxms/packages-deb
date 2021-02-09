@@ -12,6 +12,7 @@ Build-Depends:
  dh-autoreconf,
  debconf,
  lsb-release,
+ maven,
  zlib1g-dev,
  libexpat1-dev,
  libsensors4-dev,

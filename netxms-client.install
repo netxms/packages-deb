@@ -3,7 +3,13 @@ usr/bin/nxevent
 usr/bin/nxnotify
 usr/bin/nxpush
 usr/bin/nxshell
-usr/lib/*/netxms/commons-codec-1.11.jar
-usr/lib/*/netxms/netxms-client.jar
-usr/lib/*/netxms/nxshell.jar
-usr/lib/*/netxms/simple-xml-2.6.4.jar
+usr/lib/*/netxms/java/commons-codec-1.11.jar
+usr/lib/*/netxms/java/jython-standalone-2.7.2.jar
+usr/lib/*/netxms/java/netxms-client-*.jar
+usr/lib/*/netxms/java/nxshell-*.jar
+usr/lib/*/netxms/java/simple-xml-2.6.4.jar
+usr/lib/*/netxms/java/slf4j-api-1.7.30.jar
+usr/lib/*/netxms/java/slf4j-simple-1.7.30.jar
+usr/lib/*/netxms/java/stax-1.2.0.jar
+usr/lib/*/netxms/java/stax-api-1.0.1.jar
+usr/lib/*/netxms/java/xpp3-1.1.3.3.jar

@@ -2,4 +2,4 @@ usr/lib/*/netxms/java.nsm
 usr/lib/*/netxms/java/bind9.jar
 usr/lib/*/netxms/java/jmx.jar
 usr/lib/*/netxms/java/netxms-agent-*.jar
-usr/lib/*/netxms/ubntlw.jar
+usr/lib/*/netxms/java/ubntlw.jar

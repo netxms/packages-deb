@@ -1,3 +1,26 @@
+netxms (3.8.166-1) stable; urgency=medium
+
+  * Improved driver for H3C (now HPE) switches
+  * Fixed intermittent problems with SNMP communications via proxy agents
+  * Fixed multiple file download in file manager in web UI
+  * Fixed excessive server memory consumption when transferring file from client to agent over slow link
+  * Fixed occasional high CPU usage by server process
+  * Deleted unused job_history table
+  * Fixed graph refresh
+  * Fixed object synchronization issue in web UI
+  * Fixed memory leak in server
+  * Fixed incorrect sorting by "Source" column in user management view
+  * Fixed intermittent client disconnects
+  * Fixed interface synchronization for network map element on dasbhboad
+  * Fixed issues:
+  *   NX-1989 (Compile NXSL in dci instance discovery filter and container autobind filter)
+  *   NX-1990 (Add filter in Script Library)
+  *   NX-1996 (Retriggered event when node comes out of maintenance is missing value for currentValue (%4) parameter)
+  *   NX-2005 (Add ability to have formatting in Telegram notifications)
+  *   NX-2011 (NXSL inList function returns int32 instead of boolean)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Tue, 23 Feb 2021 19:31:54 +0200
+
 netxms (3.8.120-1) stable; urgency=medium
 
   * Improved reporting server (separate package netxms-reporting)

@@ -1,3 +1,18 @@
+netxms (3.8.193-1) stable; urgency=medium
+
+  * Fixed Timescale DB 2.x compatibility issues
+  * New methods isDirectChild, isDirectParent, isChild, isParent in NXSL class "NetObj"
+  * New NXSL function GetCurrentTimeMs
+  * Fixed possible server crash when agent tunnel is closing
+  * Always use UTF-8 instead of current system character encoding for exported CSV files
+  * Fixed process handle leak in Windows agent when external parameter providers are used
+  * Westerstrand SNMP device driver can read device geolocation
+  * NXSL function PollerTrace works in autobind filter scripts and instance discovery filter scripts
+  * Improved diagnostic output for manually started polls
+  * Improved network map tooltip data update
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Thu, 04 Mar 2021 19:06:46 +0200
+
 netxms (3.8.166-1) stable; urgency=medium
 
   * Improved driver for H3C (now HPE) switches

@@ -1,3 +1,16 @@
+netxms (3.8.262-1) stable; urgency=medium
+
+  * Fixed server crash when accessing NXSL class metadata
+  * Fixed agent crash when parsing log files
+  * Fixed file handle leak in log parser subagent
+  * DCI Editor filter now search by description, parameter, and DCI ID
+  * Long polling can be disabled in Telegram driver
+  * Fixed Log Parser Policy save with empty agent action field
+  * Fixed issues:
+  *   NX-2033 (Incorrect interface name displayed in MAC address table for Mikrotik routers)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Fri, 09 Apr 2021 00:52:04 +0300
+
 netxms (3.8.250-1) stable; urgency=medium
 
   * Added notification channel driver for SNMP traps

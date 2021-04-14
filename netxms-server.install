@@ -3,6 +3,7 @@ usr/bin/nxaction
 usr/bin/nxadm
 usr/bin/nxap
 usr/bin/nxdbmgr
+usr/bin/nxdownload
 usr/bin/nxethernetip
 usr/bin/nxget
 usr/bin/nxmibc

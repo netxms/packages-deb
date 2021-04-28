@@ -375,8 +375,7 @@ Description: debugging symbols for netxms-dbdrv-oracle
 
 Package: netxms-reporting
 Architecture: any
-Multi-Arch: same
-Depends: netxms-base (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: netxms-java-base (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: NetXMS Reporting server
  JasperReports integration for the NetXMS
 

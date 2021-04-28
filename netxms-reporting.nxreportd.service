@@ -1,0 +1,10 @@
+[Unit]
+Description=NetXMS Reporting Server
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/nxreportd
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

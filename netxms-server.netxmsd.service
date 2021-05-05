@@ -7,6 +7,7 @@ ExecStart=/usr/bin/netxmsd -d
 PIDFile=/var/run/netxmsd.pid
 LimitNOFILE=32768
 LimitCORE=infinity
+Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target

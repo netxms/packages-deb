@@ -1,3 +1,27 @@
+netxms (3.8.314-1) stable; urgency=high
+
+  * Database manager can detect and delete orphaned data tables
+  * Event processing macro %A (alarm message) also works in rules following one that triggered alarm as well as when alarm is resolved or terminated by the rule
+  * Fixed agent crash on log parser rule with inverted match
+  * MIB compiler accepts object identifiers that starts with uppercase letter
+  * Implemented hash map to string conversion in NXSL
+  * Fixed save of node state
+  * Web API included into Web UI installer on Windows
+  * Fixed deployment issues with Web UI installer on Windows
+  * Fixed issues:
+  *   NX-227 (Create "nxdownload" utility)
+  *   NX-553 (CPU and Memory DCI support in Darwin)
+  *   NX-1006 (Node with all status poll sources disabled creates a down alarm)
+  *   NX-1057 (Ability to execute set of SQL commands on server start) 
+  *   NX-1473 (System Description for Agents that are also running SNMP should be Agent's description, not SNMP's)
+  *   NX-1851 (nxdbmgr not checking for situation when DCI present in items, but not in object_properties)
+  *   NX-1882 (Add option for negative mask in File.Count, File.FolderCount, and File.Size)
+  *   NX-1947 (Server repeats SYS_IF_DOWN after SYS_NODE_UP even if interface was already down before SYS_NODE_DOWN)
+  *   NX-1976 (Add interface names to automatically generated IP topology maps)
+  *   NX-2043 (Delete "last agent contact" timestamp when isAgent capability switches off)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Thu, 06 May 2021 01:58:55 +0300
+
 netxms (3.8.267-1) stable; urgency=high
 
   * Fixed server crash during scheduled task processing

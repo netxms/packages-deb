@@ -10,6 +10,7 @@ DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 override_dh_installinit:
 	dh_installinit -pnetxms-agent --name=nxagentd
 	dh_installinit -pnetxms-server --name=netxmsd
+	dh_installinit -pnetxms-reporting --name=nxreportd
 
 override_dh_install:
 	dh_install

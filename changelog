@@ -1,3 +1,31 @@
+netxms (3.8.366-1) stable; urgency=high
+
+  * Improved handling of partial or incorrect information in LLDP MIB (fixes topology building issues with Mikrotik devices)
+  * Fixed bug in discovering agent only nodes in remote zones
+  * Fixed interface object synchronization for physical links widget
+  * Fixed log name save for "Windows event log parser"
+  * Removed repeat count options from "Windows event log parser" and "Syslog parser"
+  * Added severity filter in Windows Event Log synchronization subagent
+  * Added event and alaorm on agent tunnel connection problems
+  * Fixed issues:
+  *   NX-658 (Write poller statistics to debug log)
+  *   NX-673 (Perfomance Tab - missing "Stacked" and "Translucent")
+  *   NX-1510 (Special handling for user initiated agent restart to avoid node down or agent unreachable events)
+  *   NX-1589 (Error in database initialization on MS SQL 2017)
+  *   NX-1682 (SYS_SCRIPT_ERROR event is not happening when instance discovery filter script or transformation script has no closing bracket)
+  *   NX-1705 (DNS Lookup on Status Poll Change)
+  *   NX-1783 (When upgrading, agent installer asks for server IP, but does not update it in nxagentd.conf)
+  *   NX-1952 (Update IP address on interface to address resolved by DNS for nodes without agent)
+  *   NX-2040 (Periodically check if files used in file delivery policies are available on the server)
+  *   NX-2041 (Filter by Object ID (in Object Browser's filter) should match exact ID, not substring)
+  *   NX-2042 (Display EPP rule that created alarm in alarm log and alarm browser)
+  *   NX-2051 (Allow storing SYS_DB_QUERY_FAILED events to event log)
+  *   NX-2052 (nxdbmgr cannot drop orphaned TDATA tables created by older server versions)
+  *   NX-2055 (Execution of some commands as agent actions may fail on Windows)
+  *   NX-2057 (Add filtering by alarm status (acknowledged, resolved) in Alarm Viewer dashboard element)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Wed, 19 May 2021 23:12:08 +0300
+
 netxms (3.8.314-1) stable; urgency=high
 
   * Database manager can detect and delete orphaned data tables

@@ -1,3 +1,15 @@
+netxms (3.8.382-1) stable; urgency=medium
+
+  * New method "enable8021xStatusPolling" in NXSL class "Node"
+  * Linux agent reports correct MTU for interfaces
+  * Data view created for report execution only if explicitly requested in report properties
+  * Fixed database upgrade issue on Microsoft SQL Server
+  * Fixed issues:
+  *   NX-2048 (More information in System.Services table)
+  *   NX-2052 (nxdbmgr cannot drop orphaned TDATA tables created by older server versions)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Tue, 25 May 2021 15:36:29 +0300
+
 netxms (3.8.366-1) stable; urgency=high
 
   * Improved handling of partial or incorrect information in LLDP MIB (fixes topology building issues with Mikrotik devices)

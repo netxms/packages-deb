@@ -21,6 +21,7 @@ usr/lib/*/libstrophe.so.*
 usr/lib/*/netxms/jira.hdlink
 usr/lib/*/netxms/ncdrv/*
 usr/lib/*/netxms/ndd/*
+usr/lib/*/netxms/ntcb.nxm
 usr/lib/*/netxms/pdsdrv/*
 usr/lib/*/netxms/redmine.hdlink
 usr/share/netxms/*

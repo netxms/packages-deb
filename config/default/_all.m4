@@ -1,6 +1,7 @@
 include(`_local.m4')dnl
 include(`asterisk.m4')dnl
 include(`jemalloc.m4')dnl
+include(`libjq.m4')dnl
 include(`mariadb.m4')dnl
 include(`mosquitto.m4')dnl
 include(`mysql.m4')dnl

@@ -23,7 +23,7 @@ override_dh_auto_configure:
 	dh_auto_configure -- --with-server --with-agent --with-client \
 		--with-sqlite --with-pgsql --with-odbc \
 		--enable-unicode --with-jdk=/usr/lib/jvm/default-java \
-		--with-vmgr CONFIGURE_JEMALLOC CONFIGURE_MARIADB CONFIGURE_MOSQUITTO CONFIGURE_MYSQL CONFIGURE_ZMQ CONFIGURE_ORACLE CONFIGURE_ASTERISK CONFIGURE_XEN CONFIGURE_ADDITIONAL
+		--with-vmgr CONFIGURE_JEMALLOC CONFIGURE_JQ CONFIGURE_MARIADB CONFIGURE_MOSQUITTO CONFIGURE_MYSQL CONFIGURE_ZMQ CONFIGURE_ORACLE CONFIGURE_ASTERISK CONFIGURE_XEN CONFIGURE_ADDITIONAL
 
 override_dh_strip:
 	dh_strip -pnetxms-base --dbg-package=netxms-base-dbg

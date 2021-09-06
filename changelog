@@ -1,3 +1,24 @@
+netxms (3.9.229-1) stable; urgency=medium
+
+  * Dashboards can be saved as images in desktop UI
+  * Database manager checks for access point objects without valid parent node
+  * Server does not report duplicate MAC addresses if interfaces are from same node
+  * New agent actions: Process.Terminate, Service.Start, Service.Stop
+  * Web API session inactivity timeout can be configured
+  * Fixed server deadlock related to multi-zone configuration
+  * Fixed bugs in external command execution
+  * Fixed small issues in influxdb driver
+  * Fixed deleted form network map object list load from database on startup
+  * Fixed rack placement object property page save
+  * Fixed bug in SQLite driver (incorrect reading of fields with null value)
+  * Fixed issues:
+  *   NX-1625 ("Icmp.MovingAvgPingTime(*)" need a way to specify sample size)
+  *   NX-2092 (Keep last known topology information when node goes down)
+  *   NX-2093 (Add new parameter to ping subagent that will calculate jitter as moving average on response time deltas)
+  *   NX-2101 ("Compile script" button should not be present in script preview in EPP rule list)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Mon, 06 Sep 2021 12:29:49 +0300
+
 netxms (3.9.176-1) stable; urgency=medium
 
   * Added option to push DCI data using Web API

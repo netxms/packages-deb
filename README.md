@@ -7,22 +7,30 @@ Packages are built by NetXMS team and published on http://packages.netxms.org/.
 Supported releases (i386/amd64):
  * Debian 9 "Stretch"
  * Debian 10 "Buster"
+ * Debian 11 "Bullseye"
  * Ubuntu 16.04 LTS "Xenial Xerus"
  * Ubuntu 18.04 LTS "Bionic Beaver"
  * Ubuntu 20.04 LTS "Focal Fossa" (amd64 only)
- * Ubuntu 20.10 "Groovy Gorilla" (amd64 only)
+ * Ubuntu 21.04 "Hirsute Hippo" (amd64 only)
  * Devuan 2.0 "ASCII"
+ * Devuan 3.1 "Beowulf"
+ * Raspbian 9 "Stretch"
+ * Raspbian 10 "Buster"
+ * Raspbian 11 "Bullseye"
 
 # Branches
 
 Branches follow branching layout in netxms/netxms.git:
 
 * master - development
-* stable-3.4 - 3.4 release
-* stable-2.2 - 2.2 release
+* stable-3.9 - 3.9.x release
+* stable-3.8 - 3.8.x release
+* stable-3.7 - 3.7.x release
 * …
 
 # How to use
+
+Note: commit message for official releases contains both version (e.g. "Version 3.9.235") and git commit hash of the specific release in netxms/netxms.git ("TAG: 106072975a").
 
 ## Prerequisites
 

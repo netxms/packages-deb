@@ -30,7 +30,7 @@ Branches follow branching layout in netxms/netxms.git:
 
 # How to use
 
-Note: commit message for official releases contains both version (e.g. "Version 3.9.235") and git commit hash of the specific release in netxms/netxms.git ("TAG: 106072975a").
+Note: commit message for official releases contains both version (e.g. "Version 3.9.235") and git commit hash of the specific release in [netxms/netxms](https://github.com/netxms/netxms) ("TAG: 106072975a").
 
 ## Prerequisites
 

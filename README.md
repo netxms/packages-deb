@@ -36,7 +36,7 @@ Note: commit message for official releases contains both version (e.g. "Version 
 
 * Custom jemalloc package should be built from [netxms/jemalloc-deb](https://github.com/netxms/jemalloc-deb) and installed into the system or added to pbuilder chroot.
 * For Ubuntu 20, libexosip2-dev deb should be built and installed into the system or added to pbuilder chroot.
-* Oracle instant client 18.3 should be unpacked to /opt/instantclient_18_3 (both instantclient-basic-linux.x64-18.3.0.0.0dbru.zip and instantclient-sdk-linux.x64-18.3.0.0.0dbru.zip)
+* Oracle instant client 18.3 should be unpacked to /opt/instantclient_12_2 (both instantclient-basiclite-linux.x64-12.2.0.1.0.zip and instantclient-sdk-linux.x64-12.2.0.1.0.zip)
 
 ## Build
 

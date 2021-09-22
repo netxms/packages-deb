@@ -1,1 +1,1 @@
-define(`CONFIGURE_ORACLE', `--with-oracle=/opt/instantclient_18_3')dnl
+define(`CONFIGURE_ORACLE', `--with-oracle=/opt/instantclient_12_2')dnl

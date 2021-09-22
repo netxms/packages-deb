@@ -40,4 +40,4 @@ override_dh_strip:
 	dh_strip -pnetxms-dbdrv-odbc --dbg-package=netxms-dbdrv-odbc-dbg
 
 %:
-	LD_LIBRARY_PATH=$(LD_LIBRARY_PATH):/opt/instantclient_18_3 dh $@ --parallel DH_ARG_SYSTEMD
+	LD_LIBRARY_PATH=$(LD_LIBRARY_PATH):/opt/instantclient_12_2 dh $@ --parallel DH_ARG_SYSTEMD

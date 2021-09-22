@@ -12,6 +12,8 @@ Build-Depends:
  dh-autoreconf,
  debconf,
  lsb-release,
+ flex,
+ bison,
  maven,
  zlib1g-dev,
  libexpat1-dev,

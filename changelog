@@ -1,3 +1,29 @@
+netxms (3.9.280-1) stable; urgency=medium
+
+  * Service manager view for nodes
+  * External audit logging via LEEF protocol
+  * Improved process table in Windows agent
+  * Windows service manager in GUI
+  * Process manager in GUI
+  * Optimized working with ICMP
+  * Object alias shown in geo map tooltips
+  * Geo map tooltips work in web UI
+  * Added option to hide other objects in object geolocation view
+  * Object names can be shown on geo maps
+  * Fixed issues with Chassis/Rack placement properties page save
+  * Fixed bug in standard deviation calculation in ping subagent
+  * Fixed incorrect limit on dashboard element span in UI property page
+  * Fixed file transfer issue when upgrading agents from Package Manager
+  * Fixed issues:
+  *   NX-2115 (Allow adding image in chassis properties without selecting a rack)
+  *   NX-2118 (Changes in ICMP statistic collection period are not applied until server restart)
+  *   NX-2119 (Agent table "ICMP.Targets" should have "Standard deviation" column)
+  *   NX-2121 (Status map view should show node aliases)
+  *   NX-2124 (Log parser hangs on lines longer than 4095 characters)
+  *   NX-2125 (Server incorrectly reads IP network mask from VMWare ESXi and vCenter)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Fri, 24 Sep 2021 22:59:15 +0300
+
 netxms (3.9.235-1) stable; urgency=medium
 
   * ExternalParameter/ExternalList/ExternalTable reverted to previous

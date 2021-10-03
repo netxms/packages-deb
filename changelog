@@ -1,3 +1,18 @@
+netxms (3.9.298-1) stable; urgency=medium
+
+  * Improved file delivery policy editor
+  * Fixed bug in centralized agent upgrade on Windows
+  * New endpoint /events in web API for sending events
+  * Filtering by primary host name in web API endpoint /objects
+  * Fixed session agent crash on 32 bit Windows systems
+  * Fixed issues:
+  *   NX-2129 (File delivery policy on Windows Agent causing .part0 to be added to the filename)
+  *   NX-2130 (If file in file delivery policy is updated new version is appended to the old one instead of replacing it)
+  *   NX-2133 (Set subagent column as instance on table Agent.SubAgents)
+  *   NX-2134 (Agent crashes if invalid owner or group set in file delivery policy)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Sun, 03 Oct 2021 22:18:36 +0300
+
 netxms (3.9.280-1) stable; urgency=medium
 
   * Service manager view for nodes

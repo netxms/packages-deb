@@ -1,3 +1,28 @@
+netxms (3.9.334-1) stable; urgency=medium
+
+  * Fixed bar gauge color selection by active DCI threshold
+  * Bundled SQLite updated to version 3.36.0
+  * Windows crash dump handler writes compressed dump files
+  * Improved Juniper driver
+  * NXSL methods enableConfigurationPolling and enableStatusPolling moved from class "Node" to class "DataCollectionTarget"
+  * New method enableDataCollection in NXSL class "DataCollectionTarget"
+  * New agent parameters System.CurrentDate and System.TimeZone
+  * Fixed bug in cluster resource selection for table DCI
+  * Fixed possible server deadlock when zone proxies are in use
+  * Fixed issues:
+  *   NX-2107 (SQL error on server startup)
+  *   NX-2128 (Disabled DCIs with instance discovery generate instance DCIs)
+  *   NX-2131 (Migration from psql-timescale to psql is broken)
+  *   NX-2132 (nxdbmgr check should not delete orphaned idata/tdata records on Timescale database)
+  *   NX-2143 (MIB Explorer "Create Data Collection item..." reports error on Retention time 0 or blank, but is added as "default")
+  *   NX-2144 (Graph Title in Web GUI is truncated, seemingly due to an ampersand)
+  *   NX-2145 (Update HP iLO Template to include support for HP iLOs on G10 servers)
+  *   NX-2148 (MIB compiler throws syntax error if statements in TEXTUAL-CONVENTION definition are in non-standard order)
+  *   NX-2149 (Custom Attribute Inheritance - detached inherited custom attribute not deletable)
+  *   NX-2150 (nxshell session.modifyObject produces Variable not found exception with setSnmpAuthName)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Thu, 28 Oct 2021 20:55:34 +0300
+
 netxms (3.9.298-1) stable; urgency=medium
 
   * Improved file delivery policy editor

@@ -1,3 +1,22 @@
+netxms (3.9.361-1) stable; urgency=medium
+
+  * Custom port number can be specified in MySQL and MariaDB database drivers
+  * MySQL subagent can be switched to use MariaDB driver
+  * Fixed bug in housekeeper (expired DCI data may not be deleted)
+  * Object filtering in object tree by exact IP address
+  * State filter in /objects endpoint in web API
+  * Fixed issues:
+  *   NX-30 (Show thresholds on graph is broken)
+  *   NX-127 (Implement System.CPU.Usage.IoWait in Solaris subagent)
+  *   NX-1448 (It is not possible to specify semicolon as external table separator)
+  *   NX-1450 (External parameters that returns process exit code)
+  *   NX-2157 (Macros are not expanded when uploading file via file delivery policy)
+  *   NX-2166 ("Hide value on last values" does not work)
+  *   NX-2168 (Divide by zero on core start)
+  *   NX-2170 (Macros in shell notification channel are not resolved)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Tue, 16 Nov 2021 22:26:07 +0200
+
 netxms (3.9.334-1) stable; urgency=medium
 
   * Fixed bar gauge color selection by active DCI threshold

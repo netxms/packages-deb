@@ -2,19 +2,23 @@
 
 # vf new changelog
 # pip3 install python-debian==0.1.39
+# pip3 install requests==2.24.0
 
 import re
 import sys
 from typing import Dict, List
 
 import debian.changelog
+import requests
 from debian.changelog import Changelog
 
 
-def read_netxms_changelog(input_lines: str) -> Dict[str, List[str]]:
+def read_netxms_changelog(input_lines: List[str]) -> Dict[str, List[str]]:
     changelog: Dict[str, List[str]] = {}
     version = "UNKNOWN"
     for line in input_lines:
+        if line == "":
+            continue
         if line.strip() == "*":
             continue
         m = re.match(r"^\* ([0-9.]+(-CURRENT)?)", line)
@@ -30,27 +34,28 @@ def read_netxms_changelog(input_lines: str) -> Dict[str, List[str]]:
     return changelog
 
 
-with open('../changelog/ChangeLog', 'r') as f:
-    version = sys.argv[1]
-    new_changes = read_netxms_changelog(f.readlines())[version]
+version = sys.argv[1]
 
-    with open('changelog', 'r') as f:
-        changelog = Changelog(f)
+text = requests.get('https://raw.githubusercontent.com/netxms/changelog/master/ChangeLog').text.splitlines()
+new_changes = read_netxms_changelog(text)[version]
 
-        changelog.new_block(
-            package='netxms',
-            version=f'{version}-1',
-            distributions='stable',
-            urgency='medium',
-            author="Alex Kirhenshtein <alk@netxms.org>",
-            date=debian.changelog.format_date()
-        )
+with open('changelog', 'r') as f:
+    changelog = Changelog(f)
 
-        changelog.add_change('')
-        for change in new_changes:
-            changelog.add_change(change)
-        changelog.add_change('')
+    changelog.new_block(
+        package='netxms',
+        version=f'{version}-1',
+        distributions='stable',
+        urgency='medium',
+        author="Alex Kirhenshtein <alk@netxms.org>",
+        date=debian.changelog.format_date()
+    )
 
-        # print(changelog)
-    with open('changelog', 'w') as f:
-        changelog.write_to_open_file(f)
+    changelog.add_change('')
+    for change in new_changes:
+        changelog.add_change(change)
+    changelog.add_change('')
+
+    # print(changelog)
+with open('changelog', 'w') as f:
+    changelog.write_to_open_file(f)

@@ -1,3 +1,24 @@
+netxms (3.9.420-1) stable; urgency=medium
+
+  * New agent command line option -Q (query values of configuration entry)
+  * Windows service start mode can be changed from UI
+  * Improved web API for accessing collected DCI data
+  * Improved file transfer on slow links
+  * Fixed bug in network topology discovery
+  * Fixed issues:
+  *   NX-290 (SSL Certificate expiration check)
+  *   NX-781 (Convert to template item work incorrectly on cluster nodes)
+  *   NX-1032 (Threshold violations are not shown for table DCIs)
+  *   NX-1551 (Multiple execution completion dialogs after executing object tool on container)
+  *   NX-1587 (Fix MySQL error: The 'INFORMATION_SCHEMA.GLOBAL_STATUS' feature is disabled; see the documentation for 'show_compatibility_56')
+  *   NX-2122 (Table DCI last values are not loaded on server start)
+  *   NX-2152 (Map should zoom in relation to mouse cursor, not center of map view)
+  *   NX-2175 (Add hint to SNMP Trap Transformation Script editor)
+  *   NX-2182 (Changing Objects.Nodes.ResolveNames actually requires server restart, but should work without server restart)
+  *   NX-2183 (Daily Email Summary doesn't seem to resolve users properly in "Ack/Resolved by" column)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Fri, 17 Dec 2021 15:47:20 +0200
+
 netxms (3.9.361-1) stable; urgency=medium
 
   * Custom port number can be specified in MySQL and MariaDB database drivers

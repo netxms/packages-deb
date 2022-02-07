@@ -1,5 +1,6 @@
 usr/lib/*/libnxjava.so.*
 usr/lib/*/netxms/java/commons-codec-*.jar
+usr/lib/*/netxms/java/commons-lang3-*.jar
 usr/lib/*/netxms/java/netxms-base-*.jar
 usr/lib/*/netxms/java/netxms-client-*.jar
 usr/lib/*/netxms/java/netxms-java-bridge-*.jar
@@ -8,3 +9,5 @@ usr/lib/*/netxms/java/slf4j-api-*.jar
 usr/lib/*/netxms/java/stax-*.jar
 usr/lib/*/netxms/java/stax-api-*.jar
 usr/lib/*/netxms/java/xpp3-*.jar
+usr/lib/*/netxms/java/logback-classic-*.jar
+usr/lib/*/netxms/java/logback-core-*.jar

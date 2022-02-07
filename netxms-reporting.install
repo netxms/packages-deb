@@ -10,7 +10,6 @@ usr/lib/*/netxms/java/commons-collections4-*.jar
 usr/lib/*/netxms/java/commons-compiler-*.jar
 usr/lib/*/netxms/java/commons-daemon-*.jar
 usr/lib/*/netxms/java/commons-digester-*.jar
-usr/lib/*/netxms/java/commons-lang3-*.jar
 usr/lib/*/netxms/java/commons-logging-*.jar
 usr/lib/*/netxms/java/commons-math3-*.jar
 usr/lib/*/netxms/java/ecj-*.jar
@@ -27,8 +26,6 @@ usr/lib/*/netxms/java/jcommon-*.jar
 usr/lib/*/netxms/java/jfreechart-*.jar
 usr/lib/*/netxms/java/joda-time-*.jar
 usr/lib/*/netxms/java/jpathwatch-*.jar
-usr/lib/*/netxms/java/logback-classic-*.jar
-usr/lib/*/netxms/java/logback-core-*.jar
 usr/lib/*/netxms/java/mail-*.jar
 usr/lib/*/netxms/java/mariadb-java-client-*.jar
 usr/lib/*/netxms/java/mssql-jdbc-*.jre8.jar

@@ -26,10 +26,9 @@ Build-Depends:
  libldap2-dev,
  libaio1,
  unixodbc-dev,
- default-jdk,
  libvirt-dev,
  libpcre3-dev,
- libssh-dev PKG_JEMALLOC PKG_JQ PKG_MARIADB PKG_MOSQUITTO PKG_MYSQL PKG_OPENSSL PKG_SYSTEMD PKG_ZMQ PKG_ASTERISK PKG_XEN
+ libssh-dev PKG_JDK PKG_JEMALLOC PKG_JQ PKG_MARIADB PKG_MOSQUITTO PKG_MYSQL PKG_OPENSSL PKG_SYSTEMD PKG_ZMQ PKG_ASTERISK PKG_XEN
 
 Package: netxms-base
 Architecture: any

@@ -1,3 +1,95 @@
+netxms (4.0.2088-1) stable; urgency=low
+
+  * Two-factor authentication for users
+  * SMTP implemented as a notification channel and e-mail actions replaced by notification actions
+  * Added 'DefaultNotificationChannel.SMTP.Html' and 'DefaultNotificationChannel.SMTP.Text' server configuration parametes for default SMTP channel names used by internal functions
+  * Removed lock for user management view
+  * Strings "true" and "false" interpreted as boolean values when accessing custom attributes from NXSL
+  * Database manager can create database and database user before database schema initialization
+  * OPC UA subagent moved to core product
+  * Added option to manually create subnet
+  * Separately configurable timeouts for agent's external parameters and external command execution
+  * Zoning is enabled by default
+  * Value of any type can be used as boolean in NXSL
+  * NXSL operator "in" works for strings and hash maps
+  * Single-quoted strings in NXSL (without escape characters)
+  * Multiline string constants in NXSL
+  * Operators "print" and "println" in NXSL converted to functions
+  * New methods "contains" and "remove" for NXSL hash maps
+  * Improved string manipulation functions in NXSL
+  * Integer division operator in NXSL
+  * Multi-OID SNMP requests in NXSL
+  * Macros can be used in object comments
+  * New threshold type "absolute deviation"
+  * Added option for L2 network maps to create links using physical links
+  * Configurable HTTP request method and request data in web service definitions
+  * Polling intervals can be overridden on object level via custom attributes
+  * Implemented DCI search on container
+  * Improved Web API
+  * Improved SSH subagent
+  * Inherited object access rights visible in object properties in UI
+  * Correlated events can be processed in event processing policy
+  * Escalation level for responsible users
+  * Structured alarm filter in UI
+  * Log parser debug output only controlled by debug level for tag logwatch.parser (parser option "trace" is deprectated)
+  * Added support for multi-select fields in report execution forms
+  * Improved package deployment via agents
+  * New event template option "hide from event monitor"
+  * Reporting server uses XLSX format instead of XLS
+  * Fixed small isues in object custom attribute inheritance
+  * Fixed issues:
+  *   NX-1 (New threshold type: absolute deviation)
+  *   NX-251 (Service check for pop3s and smtps)
+  *   NX-436 (Add an option to secure syslog server)
+  *   NX-1354 (Object ACL editor should not allow empty list of users without "inherit access rights" checkbox)
+  *   NX-1382 (NXSL '$dci->instance' has 'instance-name' value)
+  *   NX-1452 (User filter for Process.Count parameter)
+  *   NX-1468 (Status from network map objects is not propagated to map groups)
+  *   NX-1487 (Grace period for automatic template removal)
+  *   NX-1611 (Macro expansion in object comments)
+  *   NX-1660 (Generate event on ICMP status poll failure)
+  *   NX-1673 (DCI Performance tab - {instance-name} doesn't work)
+  *   NX-1698 (SNMP query for printer status string is unreadable)
+  *   NX-1766 (File transfer implementation issues)
+  *   NX-1776 (Forbid deletion of events that are used in thresholds or policies)
+  *   NX-1822 (DCI should stay disabled, if it stops getting discovered by instance discovery and gets discovered again)
+  *   NX-1829 (Misleading error message, when trying to rename protected image in image library)
+  *   NX-1838 (Files in file delivery policy should be exported as part of configuration export)
+  *   NX-1859 (Implement two-factor authentication in NetXMS server)
+  *   NX-1923 (Enforce unique event names)
+  *   NX-1972 (Add extended version of System.Processes table having info on CPU and memory consumption per process)
+  *   NX-2013 (Add ability to send audit log to syslog in UTF-8)
+  *   NX-2025 (Add macro expansion in timer delay and snooze time fields in EPP action properties)
+  *   NX-2062 (Add option to specify community string in CreateSNMPTransport)
+  *   NX-2066 (Add more parameters to events created on server within Windows Event Log synchronization)
+  *   NX-2068 (Rename column "check_responce" in table network_services to "check_response")
+  *   NX-2069 (Collect hardware information about HDD/SSD and network cards on Linux)
+  *   NX-2095 (Add option to access node hardware inventory information from NXSL)
+  *   NX-2098 (New action type "Execute command on remote node via ssh")
+  *   NX-2100 (Add "support level" or "escalation" value to Responsible persons)
+  *   NX-2111 (Add ability to configure web service proxy in node properties)
+  *   NX-2167 (Add context to SYS_SCRIPT_ERROR event)
+  *   NX-2173 (File integrity monitoring)
+  *   NX-2174 (Periodically check telegram API if it's operable)
+  *   NX-2178 (Configurable encoding for SNMP)
+  *   NX-2179 (Configurable encoding for syslog)
+  *   NX-2184 (Notification channels SMTPS support)
+  *   NX-2185 (Certificate pinning for agent tunnels)
+  *   NX-2189 (Typo when interfaces are removed during polling)
+  *   NX-2190 (Add NXSL function that will convert numeric value to human-readable form with multipliers)
+  *   NX-2191 (Ignore node unreachable state when performing manual configuration poll)
+  *   NX-2194 (Add option to access node software inventory information from NXSL)
+  *   NX-2195 (DB Checker inefficiencies with IsDciExists)
+  *   NX-2198 (Alternative data source for agent parameters Hardware.System.* on Linux)
+  *   NX-2199 (Agent parameters to get certificate information from file)
+  *   NX-2200 (Remove length limit on command in NXSL method Node::executeSSHCommand)
+  *   NX-2204 (Agent not recognizing Windows 11)
+  *   NX-2205 (Generate event if LDAP sync failed)
+  *   NX-2207 (Implement System.OS metrics for Linux, AIX, FreeBSD and Solaris)
+  *   NX-2208 (Zone UIN being reused)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Mon, 07 Feb 2022 19:24:57 +0200
+
 netxms (3.9.420-1) stable; urgency=medium
 
   * New agent command line option -Q (query values of configuration entry)

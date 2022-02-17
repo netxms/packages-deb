@@ -1,3 +1,19 @@
+netxms (4.0.2148-1) stable; urgency=medium
+
+  * New attribute "lastCollectionTime" in NXSL class "DCI"
+  * Notification channel driver for Twilio
+  * Fixed server crash on receiving SNMP trap if configuration parameter SNMP.Traps.LogAll is set to true
+  * Fixed bug in automatic object binding
+  * Fixed bug in NXSL function FormatMetricPrefix
+  * Fixed bug in business service state calculation
+  * Fixed incorrect handling of manually set Y axis range on bar charts
+  * Fixed issues:
+  *   NX-2153 (Add REST API endpoint for persistent storage)
+  *   NX-2198 (Alternative data source for agent parameters Hardware.System.* on Linux)
+  *   NX-2209 (cpuid.h is not supported on ARM macOS)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Thu, 17 Feb 2022 22:35:35 +0300
+
 netxms (4.0.2088-1) stable; urgency=low
 
   * Two-factor authentication for users

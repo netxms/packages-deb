@@ -1,3 +1,11 @@
+netxms (4.0.2151-1) stable; urgency=medium
+
+  * Fixed issues:
+  *   NX-2210 (Network Service HTTP polling ports above 32767 generates incorrect Host header in HTTP request)
+  *   NX-2211 (Agent crash while processing request for System.ThreadCount)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Fri, 18 Feb 2022 18:12:58 +0300
+
 netxms (4.0.2148-1) stable; urgency=medium
 
   * New attribute "lastCollectionTime" in NXSL class "DCI"

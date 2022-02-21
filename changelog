@@ -1,3 +1,12 @@
+netxms (4.0.2157-1) stable; urgency=medium
+
+  * New parameter Oracle.Cursors.MaxPerSession in Oracle subagent
+  * Fixed issues:
+  *   NX-2212 (Agent segmentation fault when accessing table Hardware.NetworkAdapters)
+  *   NX-2213 ( Set event parameter from NXSL by index)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Mon, 21 Feb 2022 18:58:04 +0200
+
 netxms (4.0.2151-1) stable; urgency=medium
 
   * Fixed issues:

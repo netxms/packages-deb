@@ -46,5 +46,8 @@ override_dh_strip:
 	ifdef(`WITH_ORACLE', `dh_strip -pnetxms-dbdrv-oracle --dbg-package=netxms-dbdrv-oracle-dbg')
 	dh_strip -pnetxms-dbdrv-odbc --dbg-package=netxms-dbdrv-odbc-dbg
 
+override_dh_builddeb:
+	dh_builddeb -- -Zxz
+
 %:
 	LD_LIBRARY_PATH=$(LD_LIBRARY_PATH):/opt/instantclient_12_2 dh $@ --parallel DH_ARG_SYSTEMD

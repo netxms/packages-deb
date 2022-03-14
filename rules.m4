@@ -21,6 +21,7 @@ override_dh_shlibdeps:
 
 override_dh_auto_configure:
 	dh_auto_configure -- \
+		--enable-release-build \
 		--with-server \
 		--with-agent \
 		--with-client \

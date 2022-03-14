@@ -1,3 +1,14 @@
+netxms (4.0.2200-1) stable; urgency=medium
+
+  * Fixed bugs in IP topology map builder
+  * Added action to open object detalis form Business Service checks
+  * Alarms for unknown nodes are not included in summary e-mails
+  * Fixed bug with threshold recreation on any DCI change
+  * Fixed issues:
+  *   NX-2214 (Agent does not report network interface speed)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Mon, 14 Mar 2022 11:06:03 +0200
+
 netxms (4.0.2157-1) stable; urgency=medium
 
   * New parameter Oracle.Cursors.MaxPerSession in Oracle subagent

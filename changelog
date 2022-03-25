@@ -1,3 +1,14 @@
+netxms (4.0.2227-1) stable; urgency=medium
+
+  * NXSL hook script for user login
+  * SSH subagent metric SSH.Command returns collection error instead of "unsupported metric" if host name cannot be resolved
+  * Fixed issues:
+  *   NX-2227 (Typo in message for event SYS_DUPLICATE_MAC_ADDRESS)
+  *   NX-2235 (Object Query CSV export does not prompt to overwrite .csv file)
+  *   NX-2236 (Option of copying of data from an Object Query in Dashboard view)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Fri, 25 Mar 2022 19:13:03 +0200
+
 netxms (4.0.2200-1) stable; urgency=medium
 
   * Fixed bugs in IP topology map builder

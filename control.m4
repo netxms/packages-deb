@@ -50,7 +50,7 @@ Description: debugging symbols for netxms-base
 Package: netxms-agent
 Architecture: any
 Multi-Arch: same
-Depends: netxms-base (= ${binary:Version}), netxms-dbdrv-sqlite3 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: netxms-base (= ${binary:Version}), netxms-dbdrv-sqlite3 (= ${binary:Version}), unzip, ${shlibs:Depends}, ${misc:Depends}
 Description: NetXMS agent
  <insert long description, indented with spaces>
 

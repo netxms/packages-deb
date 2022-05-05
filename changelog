@@ -1,3 +1,51 @@
+netxms (4.1.283-1) stable; urgency=medium
+
+  * Maintenance journals for objects
+  * SSH connecivity checked as part of status and configuration polls
+  * Runtime errors in filtering scripts interpreted as "ignore" if applicable and otherwise as "block"
+  * Authentication option (on by default) for local server console (accessible via nxadm)
+  * Added driver for Ubiquiti EdgeSwitch switches
+  * Octal numeric constants removed from NXSL
+  * New string method "equals" in NXSL
+  * Jira connector supports Jira Cloud
+  * Internal metrics for monitoring notification channels
+  * Improved titles in dashboard elements
+  * Ignore IP addresses found during network discovery on interfaces marked as excluded from topology
+  * Added AgentTunnels.Certificates.ReissueInterval and AgentTunnels.Certificates.ValidityPeriod server configuration variables
+  * Fixed DCI creation from NXSL
+  * Added $dci variable to DCI script
+  * Added option to configure column data type for external table
+  * Fixed issues:
+  *   NX-1183 (Add option to choose automatic colors for instances in performance tabs)
+  *   NX-1734 (Add column "Peer Interface" to interface list view)
+  *   NX-1785 (Automatic color assignment for items on performance tab graph)
+  *   NX-1802 (Binary data support in NXSL SNMP functions)
+  *   NX-2021 (Title is not displayed for some Dashboard elements)
+  *   NX-2154 (Node search by partial MAC address)
+  *   NX-2163 (Show user name on process tab)
+  *   NX-2165 ("Show file" in file manager displays incorrect progress bar message)
+  *   NX-2196 (Keep SNMP alias separately in interface object)
+  *   NX-2215 (Remake XMPP into a notification channel)
+  *   NX-2216 (Telegram notification channel should throttle message sending and retry sending after timeout)
+  *   NX-2220 (Add timer key column to Scheduled Tasks)
+  *   NX-2223 (Notification log view should have multi-line preview panel)
+  *   NX-2225 (Maintenance journal)
+  *   NX-2226 (Agent policy move to TemplateGroup)
+  *   NX-2229 (Add scrollbar and ability to resize to script editor in Object Query)
+  *   NX-2230 (Business service enhancements)
+  *   NX-2231 (Use TCP/UDP for active network discovery)
+  *   NX-2233 (Add new agent metric similar to Service.Check() that would follow redirects)
+  *   NX-2239 (Node SSH polling)
+  *   NX-2240 (Changes to DCI comments in template are not synchronized with DCIs created from that template)
+  *   NX-2242 (On Windows, if agent action calls .cmd file and that file produces output, execution fails)
+  *   NX-2252 (TLS.Certificate.* 500 internal error to some domains when nginx enabled ssl_reject_handshake on)
+  *   NX-2254 (LDAP synchronization error events generated for any LDAP user login error)
+  *   NX-2255 (SQL issues with server_action_execution_log)
+  *   NX-2256 (Have two separate certificates on server - for TLS connection and to issue agent certificates)
+  *   NX-2257 (PostgreSQL.Version returns 0.0 if database is not connected)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Thu, 05 May 2022 13:55:07 +0300
+
 netxms (4.0.2227-1) stable; urgency=medium
 
   * NXSL hook script for user login

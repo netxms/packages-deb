@@ -1,3 +1,18 @@
+netxms (4.1.333-1) stable; urgency=medium
+
+  * Added support for package type "zip"
+  * Fixed incorrect label colors on dashboards after migration from 4.0
+  * Minimum number of bytes required for MAC address search reduced to two
+  * Reading of ipAddrTable and/or ipAddressTable during configuration poll can be disabled via custom attributes
+  * Fixed server crash caused by incorrect value of configuration parameter ICMP.PingSize
+  * Multiple fixes and improvements in new UI
+  * Fixed issues:
+  *   NX-2089 (Bundle prunmgr.exe with web-ui installer)
+  *   NX-2250 (Show VLAN information on interface overview page)
+  *   NX-2258 (No context menu on area of interactive dashboard graphs)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Fri, 20 May 2022 12:19:07 +0300
+
 netxms (4.1.283-1) stable; urgency=medium
 
   * Maintenance journals for objects

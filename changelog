@@ -1,3 +1,18 @@
+netxms (4.1.404-1) stable; urgency=medium
+
+  * Fixed full screen dashboard display on startup in desktop client
+  * Improved database consistency checks for business services
+  * Added Oracle driver option to disable OCI statement caching
+  * Fixed slow appearance of discovered nodes
+  * Fixed bugs in database schema upgrade from pre-4.0 versions
+  * Fixed bug in map options property page
+  * Fixed incorrect string encoding during SNMP SET operation
+  * Fixed sqlite upgrade issues
+  * Fixed issues:
+  *   NX-755 (Network discovery may not stop immediately)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Tue, 12 Jul 2022 19:25:01 +0300
+
 netxms (4.1.377-1) stable; urgency=medium
 
   * Agent configuration option to disable local database

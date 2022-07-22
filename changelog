@@ -1,3 +1,16 @@
+netxms (4.1.420-1) stable; urgency=medium
+
+  * Optimized alarm resolve/terminate using regular expressions
+  * Improved topology detection on Juniper switches
+  * Fixed communication protocol compatibility issues in C++ client library and command line client tools
+  * Fixed issues:
+  *   NX-627 (Gauge rendered incorrectly)
+  *   NX-846 (the ability to copy from Routing table)
+  *   NX-1077 ('Copy MAC address to clipboard' option added on Topology - FDB view)
+  *   NX-2283 (Added 'Show version' command in debug console)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Fri, 22 Jul 2022 17:31:27 +0300
+
 netxms (4.1.404-1) stable; urgency=medium
 
   * Fixed full screen dashboard display on startup in desktop client

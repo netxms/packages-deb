@@ -23,6 +23,9 @@ override_dh_install:
 	dh_install
 	ifdef(`WITH_RPI', `install debian/tmp/usr/lib/*/netxms/rpi.nsm debian/netxms-agent/usr/lib/*/netxms/')
 
+override_dh_strip_nondeterminism:
+	dh_strip_nondeterminism -X .jar
+
 override_dh_shlibdeps:
 	dh_shlibdeps --dpkg-shlibdeps-params=--ignore-missing-info
 

@@ -58,4 +58,4 @@ override_dh_builddeb:
 	dh_builddeb -- -Zxz
 
 %:
-	LD_LIBRARY_PATH=$(LD_LIBRARY_PATH):/opt/instantclient_12_2 dh $@ --parallel DH_ARG_SYSTEMD
+	LD_LIBRARY_PATH=$(LD_LIBRARY_PATH):/opt/instantclient_12_2 dh $@ --parallel

@@ -1,9 +1,9 @@
 [Unit]
-Description=NetXMS Server
+Description=NetXMS core server
 
 [Service]
-Type=forking
-ExecStart=/usr/bin/netxmsd -d
+Type=simple
+ExecStart=/usr/bin/netxmsd -S
 PIDFile=/var/run/netxmsd.pid
 LimitNOFILE=32768
 LimitCORE=infinity
@@ -11,4 +11,4 @@ Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
-Alias=netxms-server.service
+Alias=netxmsd.service

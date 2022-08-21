@@ -40,18 +40,24 @@ override_dh_auto_build:
 	mvn -f src/pom.xml install -Dmaven.test.skip=true -Dmaven.javadoc.skip=true
 
 override_dh_strip:
-	dh_strip -pnetxms-base --dbg-package=netxms-base-dbg
-	dh_strip -pnetxms-agent --dbg-package=netxms-agent-dbg
-	ifdef(`WITH_ASTERISK', `dh_strip -pnetxms-agent-asterisk --dbg-package=netxms-agent-asterisk-dbg')
-	ifdef(`WITH_MOSQUITTO', `dh_strip -pnetxms-agent-mqtt --dbg-package=netxms-agent-mqtt-dbg')
-	dh_strip -pnetxms-client --dbg-package=netxms-client-dbg
-	dh_strip -pnetxms-server --dbg-package=netxms-server-dbg
-	dh_strip -pnetxms-dbdrv-sqlite3 --dbg-package=netxms-dbdrv-sqlite3-dbg
-	dh_strip -pnetxms-dbdrv-pgsql --dbg-package=netxms-dbdrv-pgsql-dbg
-	ifdef(`WITH_MYSQL', `dh_strip -pnetxms-dbdrv-mysql --dbg-package=netxms-dbdrv-mysql-dbg')
-	ifdef(`WITH_MARIADB', `dh_strip -pnetxms-dbdrv-mariadb --dbg-package=netxms-dbdrv-mariadb-dbg')
-	ifdef(`WITH_ORACLE', `dh_strip -pnetxms-dbdrv-oracle --dbg-package=netxms-dbdrv-oracle-dbg')
-	dh_strip -pnetxms-dbdrv-odbc --dbg-package=netxms-dbdrv-odbc-dbg
+	dh_strip -pnetxms-agent --dbg-package=netxms-dbg
+	ifdef(`WITH_ASTERISK', `dh_strip -pnetxms-agent-asterisk --dbg-package=netxms-dbg')
+	dh_strip -pnetxms-agent-java --dbg-package=netxms-dbg
+	ifdef(`WITH_MOSQUITTO', `dh_strip -pnetxms-agent-mqtt --dbg-package=netxms-dbg')
+	ifdef(`WITH_MYSQL', `dh_strip -pnetxms-dbdrv-mysql --dbg-package=netxms-dbg')
+	ifdef(`WITH_ORACLE', `dh_strip -pnetxms-dbdrv-oracle --dbg-package=netxms-dbg')
+	dh_strip -pnetxms-agent-pgsql --dbg-package=netxms-dbg
+	dh_strip -pnetxms-agent-vmgr --dbg-package=netxms-dbg
+	dh_strip -pnetxms-agent-xen --dbg-package=netxms-dbg
+	dh_strip -pnetxms-base --dbg-package=netxms-dbg
+	dh_strip -pnetxms-client --dbg-package=netxms-dbg
+	ifdef(`WITH_MARIADB', `dh_strip -pnetxms-dbdrv-mariadb --dbg-package=netxms-dbg')
+	dh_strip -pnetxms-dbdrv-odbc --dbg-package=netxms-dbg
+	dh_strip -pnetxms-dbdrv-pgsql --dbg-package=netxms-dbg
+	dh_strip -pnetxms-dbdrv-sqlite3 --dbg-package=netxms-dbg
+	dh_strip -pnetxms-java-base --dbg-package=netxms-dbg
+	dh_strip -pnetxms-reporting --dbg-package=netxms-dbg
+	dh_strip -pnetxms-server --dbg-package=netxms-dbg
 
 override_dh_builddeb:
 	dh_builddeb -- -Zxz

@@ -6,7 +6,7 @@ include(`_all.m4')dnl
 
 DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 
-.PHONY: override_dh_install override_dh_shlibdeps override_dh_auto_configure override_dh_auto_build override_dh_strip override_dh_builddeb
+.PHONY: override_dh_installinit override_dh_systemd_enable override_dh_shlibdeps override_dh_auto_configure override_dh_strip
 
 override_dh_install:
 	dh_install

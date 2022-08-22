@@ -16,14 +16,13 @@ Additional steps required:
 
 1. Edit default configuration file ($CONFIG)
 
-2. Create database schema:
+2. Load database schema
 
    nxdbmgr init
 
-3. Start daemon and enable autostart:
+3. Start daemon with command:
 
    systemctl start netxms-server
-   systemctl enable netxms-server
 __END
         else
             TARGET=${CONFIG}.dist

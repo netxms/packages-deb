@@ -1,23 +1,16 @@
 include(`_all.m4')dnl
 #!/usr/bin/make -f
-# vim: noexpandtab ts=3 sw=3
 
 #export DH_VERBOSE=1
 
 DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 
-.PHONY: override_dh_installinit override_dh_systemd_enable override_dh_shlibdeps override_dh_auto_configure override_dh_strip
+.PHONY: override_dh_installinit override_dh_shlibdeps override_dh_auto_configure override_dh_strip
 
 override_dh_installinit:
 	dh_installinit -pnetxms-agent --name=nxagentd
 	dh_installinit -pnetxms-server --name=netxmsd
 	dh_installinit -pnetxms-reporting --name=nxreportd
-
-override_dh_systemd_enable:
-	# with compat>=11 should be replaced by dh_installsystemd; override is not required anymore
-	dh_systemd_enable -pnetxms-agent --name=nxagentd
-	#dh_systemd_enable -pnetxms-server --name=netxmsd # do not enable netxmsd automatically - there are no config on clean install
-	dh_systemd_enable -pnetxms-reporting --name=nxreportd
 
 override_dh_install:
 	dh_install

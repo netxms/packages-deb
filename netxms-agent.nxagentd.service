@@ -1,13 +1,13 @@
 [Unit]
-Description=NetXMS agent
+Description=NetXMS Agent
 
 [Service]
-Type=simple
-ExecStart=/usr/bin/nxagentd -S
+Type=forking
+ExecStart=/usr/bin/nxagentd -d
 PIDFile=/var/run/nxagentd.pid
 LimitCORE=infinity
 Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
-Alias=nxagentd.service
+Alias=netxms-agent.service

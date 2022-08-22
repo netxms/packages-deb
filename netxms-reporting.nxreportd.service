@@ -1,5 +1,5 @@
 [Unit]
-Description=NetXMS reporting server
+Description=NetXMS Reporting Server
 
 [Service]
 Type=simple
@@ -8,4 +8,3 @@ Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
-Alias=nxreportd.service

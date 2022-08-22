@@ -33,49 +33,49 @@ Build-Depends:
 Package: netxms-dbg
 Architecture: any
 Section: debug
-Priority: optional
+Priority: extra
 Depends:
  netxms-base (= ${binary:Version})
 Replaces:
- netxms-agent-asterisk-dbg (<< 4.2),
- netxms-agent-dbg (<< 4.2),
- netxms-agent-java-dbg (<< 4.2),
- netxms-agent-mqtt-dbg (<< 4.2),
- netxms-agent-mysql-dbg (<< 4.2),
- netxms-agent-oracle-dbg (<< 4.2),
- netxms-agent-pgsql-dbg (<< 4.2),
- netxms-agent-vmgr-dbg (<< 4.2),
- netxms-agent-xen-dbg (<< 4.2),
- netxms-base-dbg (<< 4.2),
- netxms-client-dbg (<< 4.2),
- netxms-dbdrv-mariadb-dbg (<< 4.2),
- netxms-dbdrv-mysql-dbg (<< 4.2),
- netxms-dbdrv-odbc-dbg (<< 4.2),
- netxms-dbdrv-oracle-dbg (<< 4.2),
- netxms-dbdrv-pgsql-dbg (<< 4.2),
- netxms-dbdrv-sqlite3-dbg (<< 4.2),
- netxms-java-base-dbg (<< 4.2),
- netxms-server-dbg (<< 4.2)
-Breaks:
- netxms-agent-asterisk-dbg (<< 4.2),
- netxms-agent-dbg (<< 4.2),
- netxms-agent-java-dbg (<< 4.2),
- netxms-agent-mqtt-dbg (<< 4.2),
- netxms-agent-mysql-dbg (<< 4.2),
- netxms-agent-oracle-dbg (<< 4.2),
- netxms-agent-pgsql-dbg (<< 4.2),
- netxms-agent-vmgr-dbg (<< 4.2),
- netxms-agent-xen-dbg (<< 4.2),
- netxms-base-dbg (<< 4.2),
- netxms-client-dbg (<< 4.2),
- netxms-dbdrv-mariadb-dbg (<< 4.2),
- netxms-dbdrv-mysql-dbg (<< 4.2),
- netxms-dbdrv-odbc-dbg (<< 4.2),
- netxms-dbdrv-oracle-dbg (<< 4.2),
- netxms-dbdrv-pgsql-dbg (<< 4.2),
- netxms-dbdrv-sqlite3-dbg (<< 4.2),
- netxms-java-base-dbg (<< 4.2),
- netxms-server-dbg (<< 4.2)
+ netxms-agent-asterisk-dbg,
+ netxms-agent-dbg,
+ netxms-agent-java-dbg,
+ netxms-agent-mqtt-dbg,
+ netxms-agent-mysql-dbg,
+ netxms-agent-oracle-dbg,
+ netxms-agent-pgsql-dbg,
+ netxms-agent-vmgr-dbg,
+ netxms-agent-xen-dbg,
+ netxms-base-dbg,
+ netxms-client-dbg,
+ netxms-dbdrv-mariadb-dbg,
+ netxms-dbdrv-mysql-dbg,
+ netxms-dbdrv-odbc-dbg,
+ netxms-dbdrv-oracle-dbg,
+ netxms-dbdrv-pgsql-dbg,
+ netxms-dbdrv-sqlite3-dbg,
+ netxms-java-base-dbg,
+ netxms-server-dbg
+Conflicts:
+ netxms-agent-asterisk-dbg,
+ netxms-agent-dbg,
+ netxms-agent-java-dbg,
+ netxms-agent-mqtt-dbg,
+ netxms-agent-mysql-dbg,
+ netxms-agent-oracle-dbg,
+ netxms-agent-pgsql-dbg,
+ netxms-agent-vmgr-dbg,
+ netxms-agent-xen-dbg,
+ netxms-base-dbg,
+ netxms-client-dbg,
+ netxms-dbdrv-mariadb-dbg,
+ netxms-dbdrv-mysql-dbg,
+ netxms-dbdrv-odbc-dbg,
+ netxms-dbdrv-oracle-dbg,
+ netxms-dbdrv-pgsql-dbg,
+ netxms-dbdrv-sqlite3-dbg,
+ netxms-java-base-dbg,
+ netxms-server-dbg
 Description: debug symbols for all NetXMS packages
  This package combines and replaces all netxms-*-dbg packages.
 
@@ -262,7 +262,7 @@ Description: NetXMS Reporting server
 # old debug packages #
 ######################
 Package: netxms-agent-asterisk-dbg
-Depends: netxms-dbg (= ${binary:Version})
+Depends: netxms-dbg, ${misc:Depends}
 Architecture: all
 Priority: optional
 Section: oldlibs
@@ -270,7 +270,7 @@ Description: transitional package
  This is a transitional package. It can safely be removed.
 
 Package: netxms-agent-dbg
-Depends: netxms-dbg (= ${binary:Version})
+Depends: netxms-dbg, ${misc:Depends}
 Architecture: all
 Priority: optional
 Section: oldlibs
@@ -278,7 +278,7 @@ Description: transitional package
  This is a transitional package. It can safely be removed.
 
 Package: netxms-agent-java-dbg
-Depends: netxms-dbg (= ${binary:Version})
+Depends: netxms-dbg, ${misc:Depends}
 Architecture: all
 Priority: optional
 Section: oldlibs
@@ -286,7 +286,7 @@ Description: transitional package
  This is a transitional package. It can safely be removed.
 
 Package: netxms-agent-mqtt-dbg
-Depends: netxms-dbg (= ${binary:Version})
+Depends: netxms-dbg, ${misc:Depends}
 Architecture: all
 Priority: optional
 Section: oldlibs
@@ -294,7 +294,7 @@ Description: transitional package
  This is a transitional package. It can safely be removed.
 
 Package: netxms-agent-mysql-dbg
-Depends: netxms-dbg (= ${binary:Version})
+Depends: netxms-dbg, ${misc:Depends}
 Architecture: all
 Priority: optional
 Section: oldlibs
@@ -302,7 +302,7 @@ Description: transitional package
  This is a transitional package. It can safely be removed.
 
 Package: netxms-agent-oracle-dbg
-Depends: netxms-dbg (= ${binary:Version})
+Depends: netxms-dbg, ${misc:Depends}
 Architecture: all
 Priority: optional
 Section: oldlibs
@@ -310,7 +310,7 @@ Description: transitional package
  This is a transitional package. It can safely be removed.
 
 Package: netxms-agent-pgsql-dbg
-Depends: netxms-dbg (= ${binary:Version})
+Depends: netxms-dbg, ${misc:Depends}
 Architecture: all
 Priority: optional
 Section: oldlibs
@@ -318,7 +318,7 @@ Description: transitional package
  This is a transitional package. It can safely be removed.
 
 Package: netxms-agent-vmgr-dbg
-Depends: netxms-dbg (= ${binary:Version})
+Depends: netxms-dbg, ${misc:Depends}
 Architecture: all
 Priority: optional
 Section: oldlibs
@@ -326,7 +326,7 @@ Description: transitional package
  This is a transitional package. It can safely be removed.
 
 Package: netxms-agent-xen-dbg
-Depends: netxms-dbg (= ${binary:Version})
+Depends: netxms-dbg, ${misc:Depends}
 Architecture: all
 Priority: optional
 Section: oldlibs
@@ -334,7 +334,7 @@ Description: transitional package
  This is a transitional package. It can safely be removed.
 
 Package: netxms-base-dbg
-Depends: netxms-dbg (= ${binary:Version})
+Depends: netxms-dbg, ${misc:Depends}
 Architecture: all
 Priority: optional
 Section: oldlibs
@@ -342,7 +342,7 @@ Description: transitional package
  This is a transitional package. It can safely be removed.
 
 Package: netxms-client-dbg
-Depends: netxms-dbg (= ${binary:Version})
+Depends: netxms-dbg, ${misc:Depends}
 Architecture: all
 Priority: optional
 Section: oldlibs
@@ -350,7 +350,7 @@ Description: transitional package
  This is a transitional package. It can safely be removed.
 
 Package: netxms-dbdrv-mariadb-dbg
-Depends: netxms-dbg (= ${binary:Version})
+Depends: netxms-dbg, ${misc:Depends}
 Architecture: all
 Priority: optional
 Section: oldlibs
@@ -358,7 +358,7 @@ Description: transitional package
  This is a transitional package. It can safely be removed.
 
 Package: netxms-dbdrv-mysql-dbg
-Depends: netxms-dbg (= ${binary:Version})
+Depends: netxms-dbg, ${misc:Depends}
 Architecture: all
 Priority: optional
 Section: oldlibs
@@ -366,7 +366,7 @@ Description: transitional package
  This is a transitional package. It can safely be removed.
 
 Package: netxms-dbdrv-odbc-dbg
-Depends: netxms-dbg (= ${binary:Version})
+Depends: netxms-dbg, ${misc:Depends}
 Architecture: all
 Priority: optional
 Section: oldlibs
@@ -374,7 +374,7 @@ Description: transitional package
  This is a transitional package. It can safely be removed.
 
 Package: netxms-dbdrv-oracle-dbg
-Depends: netxms-dbg (= ${binary:Version})
+Depends: netxms-dbg, ${misc:Depends}
 Architecture: all
 Priority: optional
 Section: oldlibs
@@ -382,7 +382,7 @@ Description: transitional package
  This is a transitional package. It can safely be removed.
 
 Package: netxms-dbdrv-pgsql-dbg
-Depends: netxms-dbg (= ${binary:Version})
+Depends: netxms-dbg, ${misc:Depends}
 Architecture: all
 Priority: optional
 Section: oldlibs
@@ -390,7 +390,7 @@ Description: transitional package
  This is a transitional package. It can safely be removed.
 
 Package: netxms-dbdrv-sqlite3-dbg
-Depends: netxms-dbg (= ${binary:Version})
+Depends: netxms-dbg, ${misc:Depends}
 Architecture: all
 Priority: optional
 Section: oldlibs
@@ -398,7 +398,7 @@ Description: transitional package
  This is a transitional package. It can safely be removed.
 
 Package: netxms-java-base-dbg
-Depends: netxms-dbg (= ${binary:Version})
+Depends: netxms-dbg, ${misc:Depends}
 Architecture: all
 Priority: optional
 Section: oldlibs
@@ -406,7 +406,7 @@ Description: transitional package
  This is a transitional package. It can safely be removed.
 
 Package: netxms-server-dbg
-Depends: netxms-dbg (= ${binary:Version})
+Depends: netxms-dbg, ${misc:Depends}
 Architecture: all
 Priority: optional
 Section: oldlibs

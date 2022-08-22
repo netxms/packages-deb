@@ -30,55 +30,6 @@ Build-Depends:
  libpcre3-dev,
  libssh-dev PKG_JDK PKG_JEMALLOC PKG_JQ PKG_MARIADB PKG_MOSQUITTO PKG_MYSQL PKG_OPENSSL PKG_SYSTEMD PKG_ZMQ PKG_ASTERISK PKG_XEN
 
-Package: netxms-dbg
-Architecture: any
-Section: debug
-Priority: extra
-Depends:
- netxms-base (= ${binary:Version})
-Replaces:
- netxms-agent-asterisk-dbg,
- netxms-agent-dbg,
- netxms-agent-java-dbg,
- netxms-agent-mqtt-dbg,
- netxms-agent-mysql-dbg,
- netxms-agent-oracle-dbg,
- netxms-agent-pgsql-dbg,
- netxms-agent-vmgr-dbg,
- netxms-agent-xen-dbg,
- netxms-base-dbg,
- netxms-client-dbg,
- netxms-dbdrv-mariadb-dbg,
- netxms-dbdrv-mysql-dbg,
- netxms-dbdrv-odbc-dbg,
- netxms-dbdrv-oracle-dbg,
- netxms-dbdrv-pgsql-dbg,
- netxms-dbdrv-sqlite3-dbg,
- netxms-java-base-dbg,
- netxms-server-dbg
-Conflicts:
- netxms-agent-asterisk-dbg,
- netxms-agent-dbg,
- netxms-agent-java-dbg,
- netxms-agent-mqtt-dbg,
- netxms-agent-mysql-dbg,
- netxms-agent-oracle-dbg,
- netxms-agent-pgsql-dbg,
- netxms-agent-vmgr-dbg,
- netxms-agent-xen-dbg,
- netxms-base-dbg,
- netxms-client-dbg,
- netxms-dbdrv-mariadb-dbg,
- netxms-dbdrv-mysql-dbg,
- netxms-dbdrv-odbc-dbg,
- netxms-dbdrv-oracle-dbg,
- netxms-dbdrv-pgsql-dbg,
- netxms-dbdrv-sqlite3-dbg,
- netxms-java-base-dbg,
- netxms-server-dbg
-Description: debug symbols for all NetXMS packages
- This package combines and replaces all netxms-*-dbg packages.
-
 Package: netxms-base
 Architecture: any
 Multi-Arch: same
@@ -87,12 +38,30 @@ Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: NetXMS core libraries
  <insert long description, indented with spaces>
 
+Package: netxms-base-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends:
+ netxms-base (= ${binary:Version})
+Description: debugging symbols for netxms-base
+ This package contains the debugging symbols for netxms-base
+
 Package: netxms-agent
 Architecture: any
 Multi-Arch: same
 Depends: netxms-base (= ${binary:Version}), netxms-dbdrv-sqlite3 (= ${binary:Version}), unzip, ${shlibs:Depends}, ${misc:Depends}
 Description: NetXMS agent
  <insert long description, indented with spaces>
+
+Package: netxms-agent-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends:
+ netxms-agent (= ${binary:Version}), netxms-base-dbg (= ${binary:Version})
+Description: debugging symbols for netxms-agent
+ This package contains the debugging symbols for netxms-agent
 
 ifdef(`WITH_ASTERISK',
 `Package: netxms-agent-asterisk
@@ -101,6 +70,15 @@ Multi-Arch: same
 Depends: netxms-agent (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: NetXMS subagent for monitoring Asterisk PBX
  <insert long description, indented with spaces>
+
+Package: netxms-agent-asterisk-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends:
+ netxms-agent-asterisk (= ${binary:Version}), netxms-base-dbg (= ${binary:Version})
+Description: debugging symbols for netxms-agent-asterisk
+ This package contains the debugging symbols for netxms-agent-asterisk
 ')dnl
 
 Package: netxms-java-base
@@ -110,12 +88,30 @@ Depends: default-jdk, ${shlibs:Depends}, ${misc:Depends}
 Description: Common Java libraries used by both agent and client
  <insert long description, indented with spaces>
 
+Package: netxms-java-base-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends:
+ netxms-java-base (= ${binary:Version})
+Description: debugging symbols for netxms-java-base
+ This package contains the debugging symbols for netxms-agent-java
+
 Package: netxms-agent-java
 Architecture: any
 Multi-Arch: same
 Depends: netxms-agent (= ${binary:Version}), netxms-java-base (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: Java subagent for NetXMS agent
  <insert long description, indented with spaces>
+
+Package: netxms-agent-java-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends:
+ netxms-agent-java (= ${binary:Version}), netxms-base-dbg (= ${binary:Version})
+Description: debugging symbols for netxms-agent-java
+ This package contains the debugging symbols for netxms-agent-java
 
 ifdef(`WITH_MYSQL',
 `Package: netxms-agent-mysql
@@ -124,6 +120,15 @@ Multi-Arch: same
 Depends: netxms-agent (= ${binary:Version}), netxms-dbdrv-mysql (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: NetXMS subagent for monitoring MySQL
  <insert long description, indented with spaces>
+
+Package: netxms-agent-mysql-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends:
+ netxms-agent-mysql (= ${binary:Version}), netxms-base-dbg (= ${binary:Version})
+Description: debugging symbols for netxms-agent-mysql
+ This package contains the debugging symbols for netxms-agent-mysql
 ')dnl
 
 ifdef(`WITH_ORACLE',
@@ -133,6 +138,15 @@ Multi-Arch: same
 Depends: netxms-agent (= ${binary:Version}), netxms-dbdrv-oracle (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: NetXMS subagent for monitoring Oracle
  <insert long description, indented with spaces>
+
+Package: netxms-agent-oracle-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends:
+ netxms-agent-oracle (= ${binary:Version}), netxms-base-dbg (= ${binary:Version})
+Description: debugging symbols for netxms-agent-oracle
+ This package contains the debugging symbols for netxms-agent-oracle
 ')dnl
 
 Package: netxms-agent-pgsql
@@ -142,6 +156,15 @@ Depends: netxms-agent (= ${binary:Version}), netxms-dbdrv-pgsql (= ${binary:Vers
 Description: NetXMS subagent for monitoring PostgreSQL
  <insert long description, indented with spaces>
 
+Package: netxms-agent-pgsql-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends:
+ netxms-agent-pgsql (= ${binary:Version}), netxms-base-dbg (= ${binary:Version})
+Description: debugging symbols for netxms-agent-pgsql
+ This package contains the debugging symbols for netxms-agent-pgsql
+
 ifdef(`WITH_MOSQUITTO',
 `Package: netxms-agent-mqtt
 Architecture: any
@@ -150,6 +173,15 @@ Pre-Depends: ${misc:Pre-Depends}
 Depends: netxms-base (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: NetXMS subagent for MQTT
  <insert long description, indented with spaces>
+
+Package: netxms-agent-mqtt-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends:
+ netxms-agent-mqtt (= ${binary:Version}), netxms-base-dbg (= ${binary:Version})
+Description: debugging symbols for netxms-agent-mqtt
+ This package contains the debugging symbols for netxms-agent-mqtt
 ')dnl
 
 Package: netxms-agent-vmgr
@@ -159,6 +191,15 @@ Depends: netxms-agent (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: NetXMS subagent for monitoring hypervisors
  <insert long description, indented with spaces>
 
+Package: netxms-agent-vmgr-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends:
+ netxms-agent-vmgr (= ${binary:Version}), netxms-base-dbg (= ${binary:Version})
+Description: debugging symbols for netxms-agent-vmgr
+ This package contains the debugging symbols for netxms-agent-vmgr
+
 ifdef(`WITH_XEN',
 `Package: netxms-agent-xen
 Architecture: any
@@ -167,6 +208,15 @@ Pre-Depends: ${misc:Pre-Depends}
 Depends: netxms-base (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: NetXMS subagent for monitoring XEN
  <insert long description, indented with spaces>
+
+Package: netxms-agent-xen-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends:
+ netxms-agent-xen (= ${binary:Version}), netxms-base-dbg (= ${binary:Version})
+Description: debugging symbols for netxms-agent-mgtt
+ This package contains the debugging symbols for netxms-agent-xen
 ')dnl
 
 Package: netxms-client
@@ -175,6 +225,15 @@ Multi-Arch: same
 Depends: netxms-base (= ${binary:Version}), netxms-java-base (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: NetXMS command line client tools
  <insert long description, indented with spaces>
+
+Package: netxms-client-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends:
+ netxms-base (= ${binary:Version}), netxms-base-dbg (= ${binary:Version})
+Description: debugging symbols for netxms-client
+ This package contains the debugging symbols for netxms-client
 
 Package: netxms-server
 Architecture: any
@@ -195,6 +254,15 @@ ifdef(`WITH_ORACLE', ` netxms-dbdrv-oracle, ')dnl
 Description: meta package
  <insert long description, indented with spaces>
 
+Package: netxms-server-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends:
+ netxms-server (= ${binary:Version}), netxms-base-dbg (= ${binary:Version})
+Description: debugging symbols for netxms-server
+ This package contains the debugging symbols for netxms-server
+
 Package: netxms-dbdrv-sqlite3
 Architecture: any
 Multi-Arch: same
@@ -202,6 +270,15 @@ Pre-Depends: ${misc:Pre-Depends}
 Depends: netxms-base (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: SQLite3 driver for netxms-server
  <insert long description, indented with spaces>
+
+Package: netxms-dbdrv-sqlite3-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends:
+ netxms-dbdrv-sqlite3 (= ${binary:Version}), netxms-base-dbg (= ${binary:Version})
+Description: debugging symbols for netxms-dbdrv-sqlite3
+ This package contains the debugging symbols for netxms-dbdrv-sqlite3
 
 Package: netxms-dbdrv-pgsql
 Architecture: any
@@ -212,6 +289,15 @@ Suggests: postgresql
 Description: PostgreSQL driver for netxms-server
  <insert long description, indented with spaces>
 
+Package: netxms-dbdrv-pgsql-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends:
+ netxms-dbdrv-pgsql (= ${binary:Version}), netxms-base-dbg (= ${binary:Version})
+Description: debugging symbols for netxms-dbdrv-pgsql
+ This package contains the debugging symbols for netxms-dbdrv-pgsql
+
 ifdef(`WITH_MYSQL',
 `Package: netxms-dbdrv-mysql
 Architecture: any
@@ -221,6 +307,15 @@ Depends: netxms-base (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Suggests: mysql-server
 Description: MySQL driver for netxms-server
  <insert long description, indented with spaces>
+
+Package: netxms-dbdrv-mysql-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends:
+ netxms-dbdrv-mysql (= ${binary:Version}), netxms-base-dbg (= ${binary:Version})
+Description: debugging symbols for netxms-dbdrv-mysql
+ This package contains the debugging symbols for netxms-dbdrv-mysql
 ')dnl
 
 ifdef(`WITH_MARIADB',
@@ -232,6 +327,15 @@ Depends: netxms-base (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Suggests: mariadb-server
 Description: MariaDB driver for netxms-server
  <insert long description, indented with spaces>
+
+Package: netxms-dbdrv-mariadb-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends:
+ netxms-dbdrv-mariadb (= ${binary:Version}), netxms-base-dbg (= ${binary:Version})
+Description: debugging symbols for netxms-dbdrv-mariadb
+ This package contains the debugging symbols for netxms-dbdrv-mariadb
 ')dnl
 
 Package: netxms-dbdrv-odbc
@@ -242,6 +346,15 @@ Depends: netxms-base (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: unixODBC driver for netxms-server
  <insert long description, indented with spaces>
 
+Package: netxms-dbdrv-odbc-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends:
+ netxms-dbdrv-odbc (= ${binary:Version}), netxms-base-dbg (= ${binary:Version})
+Description: debugging symbols for netxms-dbdrv-odbc
+ This package contains the debugging symbols for netxms-dbdrv-odbc
+
 ifdef(`WITH_ORACLE',
 `Package: netxms-dbdrv-oracle
 Architecture: any
@@ -250,6 +363,15 @@ Pre-Depends: ${misc:Pre-Depends}
 Depends: netxms-base (= ${binary:Version}), libaio1, ${shlibs:Depends}, ${misc:Depends}
 Description: Oracle driver for netxms-server
  <insert long description, indented with spaces>
+
+Package: netxms-dbdrv-oracle-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends:
+ netxms-dbdrv-oracle (= ${binary:Version}), netxms-base-dbg (= ${binary:Version})
+Description: debugging symbols for netxms-dbdrv-oracle
+ This package contains the debugging symbols for netxms-dbdrv-oracle
 ')dnl
 
 Package: netxms-reporting
@@ -257,160 +379,5 @@ Architecture: any
 Depends: netxms-java-base (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: NetXMS Reporting server
  JasperReports integration for the NetXMS
-
-######################
-# old debug packages #
-######################
-Package: netxms-agent-asterisk-dbg
-Depends: netxms-dbg, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
-Package: netxms-agent-dbg
-Depends: netxms-dbg, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
-Package: netxms-agent-java-dbg
-Depends: netxms-dbg, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
-Package: netxms-agent-mqtt-dbg
-Depends: netxms-dbg, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
-Package: netxms-agent-mysql-dbg
-Depends: netxms-dbg, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
-Package: netxms-agent-oracle-dbg
-Depends: netxms-dbg, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
-Package: netxms-agent-pgsql-dbg
-Depends: netxms-dbg, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
-Package: netxms-agent-vmgr-dbg
-Depends: netxms-dbg, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
-Package: netxms-agent-xen-dbg
-Depends: netxms-dbg, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
-Package: netxms-base-dbg
-Depends: netxms-dbg, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
-Package: netxms-client-dbg
-Depends: netxms-dbg, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
-Package: netxms-dbdrv-mariadb-dbg
-Depends: netxms-dbg, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
-Package: netxms-dbdrv-mysql-dbg
-Depends: netxms-dbg, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
-Package: netxms-dbdrv-odbc-dbg
-Depends: netxms-dbg, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
-Package: netxms-dbdrv-oracle-dbg
-Depends: netxms-dbg, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
-Package: netxms-dbdrv-pgsql-dbg
-Depends: netxms-dbg, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
-Package: netxms-dbdrv-sqlite3-dbg
-Depends: netxms-dbg, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
-Package: netxms-java-base-dbg
-Depends: netxms-dbg, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
-Package: netxms-server-dbg
-Depends: netxms-dbg, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
 
 # EOL, do not remove

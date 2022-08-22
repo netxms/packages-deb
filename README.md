@@ -2,24 +2,30 @@
 
 This repository contains scripts for creating deb packages (netxms-server/netxms-agent).
 
-These scripts are used to build official packages which are available on http://packages.netxms.org/.
+Packages are built by NetXMS team and published on http://packages.netxms.org/.
 
-Publicly available packages are built for following distributions:
-
- * Debian 10 "Buster" (i386 / amd64)
- * Debian 11 "Bullseye" (i386 / amd64 / aarch64)
- * Ubuntu 18.04 LTS "Bionic Beaver" (i386 / amd64)
- * Ubuntu 20.04 LTS "Focal Fossa" (i386 / amd64)
- * Ubuntu 22.04 LTS "Jammy Jellyfish" (i386 / amd64)
- * Raspbian 10 "Buster" (armv7l)
+Supported releases (i386/amd64):
+ * Debian 9 "Stretch"
+ * Debian 10 "Buster"
+ * Debian 11 "Bullseye"
+ * Ubuntu 16.04 LTS "Xenial Xerus"
+ * Ubuntu 18.04 LTS "Bionic Beaver"
+ * Ubuntu 20.04 LTS "Focal Fossa" (amd64 only)
+ * Ubuntu 21.04 "Hirsute Hippo" (amd64 only)
+ * Devuan 2.0 "ASCII"
+ * Devuan 3.1 "Beowulf"
+ * Raspbian 9 "Stretch"
+ * Raspbian 10 "Buster"
+ * Raspbian 11 "Bullseye"
 
 # Branches
 
 Branches follow branching layout in netxms/netxms.git:
 
 * master - development
-* stable-4.1 - 4.1.x release
-* stable-4.0 - 4.0.x release
+* stable-3.9 - 3.9.x release
+* stable-3.8 - 3.8.x release
+* stable-3.7 - 3.7.x release
 * …
 
 # How to use
@@ -29,8 +35,8 @@ Note: commit message for official releases contains both version (e.g. "Version 
 ## Prerequisites
 
 * Custom jemalloc package should be built from [netxms/jemalloc-deb](https://github.com/netxms/jemalloc-deb) and installed into the system or added to pbuilder chroot.
-* For Ubuntu 20+, libexosip2-dev deb should be built and installed into the system or added to pbuilder chroot.
-* Latest Oracle instant client should be unpacked to /opt/instantclient_12_2 (both instantclient-basiclite-linux.x64-*.zip and instantclient-sdk-linux.x64-*.zip). Correct symlinks for libclntsh.so should be created there, if missing ([details in Oracle KB](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2519112_1.html)).
+* For Ubuntu 20, libexosip2-dev deb should be built and installed into the system or added to pbuilder chroot.
+* Oracle instant client 18.3 should be unpacked to /opt/instantclient_12_2 (both instantclient-basiclite-linux.x64-12.2.0.1.0.zip and instantclient-sdk-linux.x64-12.2.0.1.0.zip)
 
 ## Build
 

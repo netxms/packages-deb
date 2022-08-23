@@ -1,13 +1,17 @@
 [Unit]
 Description=NetXMS core server
+# StartLimitIntervalSec=0 # since systemd v230
 
 [Service]
 Type=simple
 ExecStart=/usr/bin/netxmsd -S
 PIDFile=/var/run/netxmsd.pid
-LimitNOFILE=32768
+LimitNOFILE=65535
 LimitCORE=infinity
 Restart=on-failure
+RestartSec=30
+TimeoutSec=900
+StartLimitInterval=0 # depricated in v230
 
 [Install]
 WantedBy=multi-user.target

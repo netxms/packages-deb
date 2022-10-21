@@ -1,3 +1,64 @@
+netxms (4.2.395-1) stable; urgency=medium
+
+  * Context dashboards
+  * Out of the box access to OSPF information on routers
+  * Automatic OSPF topology maps
+  * TCP port forwarding for object tools of type "local command" and "URL"
+  * "Spread" operation for arrays in NXSL
+  * New methods executeAgentCommand and executeAgentCommandWithOutput in NXSL class "Node"
+  * Simplified data collection configuration for MQTT sources
+  * Notification channel driver for MQTT
+  * Automatic binding on configuration poll works again (but can be switched off in configuration)
+  * Added driver for Teltonika modems
+  * Improved database write performance on TimescaleDB and PostgreSQL
+  * Reduced memory consumption by server's background database writer
+  * Improved UI for two-factor authentication
+  * Impoved D-Link driver
+  * Agent saves backup copy of it's ID on file system
+  * Reworked general data collection object property page
+  * Added internal monitoring metrics for server certificate expiration date
+  * Built-in TFTP support
+  * Fixed network map issues with link duplicates on auto populated maps
+  * Fixed network map clone
+  * NXSL function JsonParse correctly handles JSON documents with array as top level element
+  * Custom error message can be provided in NXSL statement \"abort\"
+  * Operator "new" in NXSL can be omitted
+  * NXSL VM preloads module named \"stdlib\" if available
+  * Improved DCI format strings (usage of unit names and multipliers can be controlled)
+  * Agent manager view updates automatically on tunnel open or close
+  * Added Organizationally Unique Identifier lookup
+  * Fixed issues:
+  *   NX-648 (DCI units and binary prefix)
+  *   NX-702 (DCI option - "Store only if value changes")
+  *   NX-708 (Add map option to make all labels non-transparent)
+  *   NX-1279 (WebUI does not support ServerName/ServerColor options)
+  *   NX-1474 (Execute server script - replace error message box with alternative way)
+  *   NX-1527 (Option to hide DCIs from templates or created by instance discovery)
+  *   NX-1560 (List of custom agent ports to be used during network discovery and configuration polls)
+  *   NX-1632 (NetXMS agent service is disabled after installing netxms-agent deb package on Debian 9)
+  *   NX-1809 (Center Map Background Image)
+  *   NX-2044 (Object Tool to run against container)
+  *   NX-2078 (Add the ability to specify an alias when creating an object)
+  *   NX-2103 (Add ability to push values to Push DCIs from log file parser)
+  *   NX-2140 (Export result of the package deployment to CSV)
+  *   NX-2234 (With a drop-down menu with a choice of DCI metrics, swap the display of Description and Name (Parameter))
+  *   NX-2237 (Add the ability to set height for passive elements in rack and use custom picture)
+  *   NX-2251 (Add 'conflict' marker to inherited custom attributes)
+  *   NX-2259 (Configurable server's SNMPv3 engine ID)
+  *   NX-2261 (Access to Mikrotik metrics via network driver metrics)
+  *   NX-2266 (Add agent metric similar to System.IO.Devices but including sub-devices)
+  *   NX-2273 (2FA method can't be removed in user editor)
+  *   NX-2274 (2FA - unable to add failed method in user editor - it's silently ignored)
+  *   NX-2281 (Action message should be multiline field)
+  *   NX-2288 (External parameter redirect issue on Ubuntu 22.04 LTS)
+  *   NX-2302 (NXSL function PollerTrace is not working in template auto-apply poll)
+  *   NX-2304 (Improved script execution options for nxadm)
+  *   NX-2306 (Node configuration poll don't update information about interfaces type)
+  *   NX-2308 (LDAP user sync login error should be logged at lower level)
+  *   NX-2309 (No scrolling or resize for ports part in VLAN view)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Fri, 21 Oct 2022 17:36:55 +0300
+
 netxms (4.1.420-1) stable; urgency=medium
 
   * Optimized alarm resolve/terminate using regular expressions

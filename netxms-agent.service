@@ -1,12 +1,13 @@
 [Unit]
 Description=NetXMS agent
+After=network.target
 
 [Service]
 Type=simple
 ExecStart=/usr/bin/nxagentd -S
 PIDFile=/var/run/nxagentd.pid
 LimitCORE=infinity
-Restart=on-failure
+Restart=always
 
 [Install]
 WantedBy=multi-user.target

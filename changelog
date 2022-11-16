@@ -1,3 +1,21 @@
+netxms (4.2.432-1) stable; urgency=medium
+
+  * Driver for Juniper Networks devices retrieves product information from vendor MIB
+  * Empty source/tag is processed as match any source/tag for Windows Event Log and syslog parser
+  * Configurable maximum message size for client connections
+  * "Follow location" option for web services
+  * Fixed server crash after DB connection loss
+  * Fixed server deadlock within topology poll
+  * Fixed web application property reading from JNDI and properties file
+  * Fixed issues:
+  *   NX-2278 (Support for hexadecimal encoding of OCTET STRING in nxsnmpset)
+  *   NX-2298 (Alphabetize Source Objects in Event Processing Policy)
+  *   NX-2315 (Chained import in NXSL is not working)
+  *   NX-2321 (History for a Table DCI value shown as empty)
+  *   NX-2333 (Data collection error thresholds show up as "error(1) < 0")
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Wed, 16 Nov 2022 17:29:42 +0200
+
 netxms (4.2.395-1) stable; urgency=medium
 
   * Context dashboards

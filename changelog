@@ -1,3 +1,15 @@
+netxms (4.2.458-1) stable; urgency=medium
+
+  * Improved dashboard element "status indicator"
+  * Improved SMSEagle notification channel driver
+  * Fixed random zero values returned by Linux agent for file system space metrics
+  * Fixed copy MAC in FDB table
+  * Fixed server certificate monitoring template
+  * Fixed issues:
+  *   NX-2346 (Unexpected SNMPv3 authentication failures)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Fri, 02 Dec 2022 16:03:25 +0200
+
 netxms (4.2.433-1) stable; urgency=high
 
   * NXSL scripts loading fixed

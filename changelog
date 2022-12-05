@@ -1,3 +1,17 @@
+netxms (4.2.461-1) stable; urgency=medium
+
+  * Improved dashboard element "status indicator"
+  * Improved SMSEagle notification channel driver
+  * Fixed random zero values returned by Linux agent for file system space metrics
+  * Fixed copy MAC in FDB table
+  * Fixed server certificate monitoring template
+  * Fixed issues:
+  *   NX-2326 (Add parameter in log parser events that contains file name)
+  *   NX-2346 (Unexpected SNMPv3 authentication failures)
+  *   NX-2349 (NXSL executeAgentCommand crashing server)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Mon, 05 Dec 2022 22:08:55 +0200
+
 netxms (4.2.458-1) stable; urgency=medium
 
   * Improved dashboard element "status indicator"

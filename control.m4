@@ -121,7 +121,7 @@ ifdef(`WITH_MYSQL',
 `Package: netxms-agent-mysql
 Architecture: any
 Multi-Arch: same
-Depends: netxms-agent (= ${binary:Version}), netxms-dbdrv-mysql (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: netxms-agent (= ${binary:Version}), netxms-dbdrv-mysql (= ${binary:Version}) | netxms-dbdrv-mariadb (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: NetXMS subagent for monitoring MySQL
  <insert long description, indented with spaces>
 ')dnl

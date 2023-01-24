@@ -35,8 +35,8 @@ override_dh_auto_configure:
 override_dh_auto_build:
 	dh_auto_build
 	cp build/netxms-build-tag.properties src/java-common/netxms-base/src/main/resources/
-	mvn -f src/pom.xml versions:set -DnewVersion=$(shell grep NETXMS_VERSION build/netxms-build-tag.properties | cut -d = -f 2) -DprocessAllModules=true
-	mvn -f src/client/nxmc/java/pom.xml versions:set -DnewVersion=$(shell grep NETXMS_VERSION build/netxms-build-tag.properties | cut -d = -f 2)
+	mvn -f src/pom.xml versions:set -DnewVersion=$(shell grep NETXMS_VERSION= build/netxms-build-tag.properties | cut -d = -f 2) -DprocessAllModules=true
+	mvn -f src/client/nxmc/java/pom.xml versions:set -DnewVersion=$(shell grep NETXMS_VERSION= build/netxms-build-tag.properties | cut -d = -f 2)
 	mvn -f src/pom.xml install -Dmaven.test.skip=true -Dmaven.javadoc.skip=true
 
 override_dh_strip:

@@ -91,7 +91,6 @@ Package: netxms-agent
 Architecture: any
 Multi-Arch: same
 Depends: netxms-base (= ${binary:Version}), netxms-dbdrv-sqlite3 (= ${binary:Version}), unzip, ${shlibs:Depends}, ${misc:Depends}
-Suggests: smartmontools
 Description: NetXMS agent
  <insert long description, indented with spaces>
 
@@ -118,12 +117,14 @@ Depends: netxms-agent (= ${binary:Version}), netxms-java-base (= ${binary:Versio
 Description: Java subagent for NetXMS agent
  <insert long description, indented with spaces>
 
-Package: netxms-agent-mysql
+ifdef(`WITH_MYSQL',
+`Package: netxms-agent-mysql
 Architecture: any
 Multi-Arch: same
-Depends: netxms-agent (= ${binary:Version}), netxms-dbdrv-mysql (= ${binary:Version}) | netxms-dbdrv-mariadb (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
-Description: NetXMS subagent for monitoring MySQL/MariaDB
+Depends: netxms-agent (= ${binary:Version}), netxms-dbdrv-mysql (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: NetXMS subagent for monitoring MySQL
  <insert long description, indented with spaces>
+')dnl
 
 ifdef(`WITH_ORACLE',
 `Package: netxms-agent-oracle

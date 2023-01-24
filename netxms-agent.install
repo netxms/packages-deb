@@ -5,7 +5,6 @@ usr/bin/nxappget
 usr/bin/nxapush
 usr/bin/nxhwid
 usr/bin/nxlptest
-usr/bin/nxtftp
 usr/lib/*/libappagent.so.*
 usr/lib/*/libnxagent.so.*
 usr/lib/*/libnxlp.so.*
@@ -13,6 +12,7 @@ usr/lib/*/netxms/bind9.nsm
 usr/lib/*/netxms/dbquery.nsm
 usr/lib/*/netxms/devemu.nsm
 usr/lib/*/netxms/ds18x20.nsm
+usr/lib/*/netxms/ecs.nsm
 usr/lib/*/netxms/filemgr.nsm
 usr/lib/*/netxms/gps.nsm
 usr/lib/*/netxms/linux.nsm
@@ -20,6 +20,7 @@ usr/lib/*/netxms/lmsensors.nsm
 usr/lib/*/netxms/logwatch.nsm
 usr/lib/*/netxms/netsvc.nsm
 usr/lib/*/netxms/ping.nsm
+usr/lib/*/netxms/portcheck.nsm
 usr/lib/*/netxms/sms.nsm
 usr/lib/*/netxms/ssh.nsm
 usr/lib/*/netxms/ups.nsm

@@ -118,14 +118,12 @@ Depends: netxms-agent (= ${binary:Version}), netxms-java-base (= ${binary:Versio
 Description: Java subagent for NetXMS agent
  <insert long description, indented with spaces>
 
-ifdef(`WITH_MYSQL',
-`Package: netxms-agent-mysql
+Package: netxms-agent-mysql
 Architecture: any
 Multi-Arch: same
 Depends: netxms-agent (= ${binary:Version}), netxms-dbdrv-mysql (= ${binary:Version}) | netxms-dbdrv-mariadb (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
-Description: NetXMS subagent for monitoring MySQL
+Description: NetXMS subagent for monitoring MySQL/MariaDB
  <insert long description, indented with spaces>
-')dnl
 
 ifdef(`WITH_ORACLE',
 `Package: netxms-agent-oracle

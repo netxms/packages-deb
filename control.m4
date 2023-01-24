@@ -91,6 +91,7 @@ Package: netxms-agent
 Architecture: any
 Multi-Arch: same
 Depends: netxms-base (= ${binary:Version}), netxms-dbdrv-sqlite3 (= ${binary:Version}), unzip, ${shlibs:Depends}, ${misc:Depends}
+Suggests: smartmontools
 Description: NetXMS agent
  <insert long description, indented with spaces>
 

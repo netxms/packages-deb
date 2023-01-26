@@ -1,3 +1,52 @@
+netxms (4.3.0-1) stable; urgency=medium
+
+  * New format strings in NXSL (Python f-string style)
+  * Inline action scripts in EPP
+  * Set and delete custom attributes in EPP rule
+  * Column display names in object queries can be set using column metadata
+  * New agent metrics File.Type and File.Content
+  * New dashboard element "File Monitor"
+  * Functionality of PortCheck and ECS subagents merged into NETSVC subagent
+  * In dbquery subagent configuration database connections can be configured as separate sections
+  * Database driver options can be configured in dbquery subagent
+  * SMTP driver supports authentication
+  * Correctly read LLDP information from devices that support only LLDP-V2 MIB
+  * Fixed object query result sorting on hidden columns
+  * Server configuration parameter DBDrvParam is deprecated and replaced with DBDriverOptions
+  * Fixed issues:
+  *   NX-538 (ESXi not detected as LLDP)
+  *   NX-1291 (Different font size on different dashboard gauge entries)
+  *   NX-1915 (Ability to copy shared secret from Network Configuration)
+  *   NX-2075 (EPP rule to have both IF and IF NOT conditions for objects)
+  *   NX-2180 (Clusters cannot change zones)
+  *   NX-2192 (Merge PortCheck and ECS subagents functionality into NETSVC subagent)
+  *   NX-2270 (After adding device overview to pinboard it is not displayed properly on the pinboard)
+  *   NX-2289 (Filtering on Container object Thresholds tab)
+  *   NX-2301 (Show interfaces in object tree when searching for node)
+  *   NX-2303 (Add OAuth 2.0 Bearer Access Token in libcurl build on Windows)
+  *   NX-2305 (Add wrapper to get information from smartctl)
+  *   NX-2311 (Add macros to display DCI values with multipliers and measurement units)
+  *   NX-2312 (Named capture groups in log parser)
+  *   NX-2320 (Configuration import ends with timeout for large configuration files)
+  *   NX-2324 (Telegram notifications should stay in queue if there is no connection to the Internet)
+  *   NX-2327 (SMTP driver with authentication support)
+  *   NX-2328 (Improved algorithm for managing thread pool size)
+  *   NX-2329 (Time based filter in EPP rules)
+  *   NX-2330 (Add option to set/delete custom attributes from EPP rule)
+  *   NX-2331 (Display DCI and policy count for templates in object details)
+  *   NX-2332 (Add new EPP action that allows to specify NXSL script inline)
+  *   MX-2335 (MQTT DCIs on objects of Sensor class)
+  *   NX-2336 (F-strings in NXSL)
+  *   NX-2337 (Side areas in new UI)
+  *   NX-2339 (New syntax for calling external processes)
+  *   NX-2350 (Use Container for Seed Node)
+  *   NX-2352 (File manager's chmod does not work with environment variables)
+  *   NX-2360 (Network equipment may get discovered by a broadcast address)
+  *   NX-2367 (netxms-dbdrv-mariadb uses character set utf8mb3 instead of utf8mb4 as connection encoding)
+  *   NX-2368 (NetXMS Agent Windows Service recovery to restart on failure)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Wed, 25 Jan 2023 13:45:53 +0200
+
 netxms (4.2.461-1) stable; urgency=medium
 
   * Improved dashboard element "status indicator"

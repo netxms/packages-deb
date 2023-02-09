@@ -1,3 +1,21 @@
+netxms (4.3.1-1) stable; urgency=medium
+
+  * Fixed database schema upgrade on Microsoft SQL Server
+  * Fixed issues with network service checks using netsvc subagent as a replacement for portcheck subagent
+  * Fixed bug in external table provider command execution
+  * Dashboard element "Availability Chart" is working again
+  * Mikrotik driver correctly handles server settings for using ifXTable and interface aliases
+  * Fixed VLAN configuration reading bug in Juniper driver
+  * Multiple fixes and improvements in new management client application
+  * Cosmetic fixes in Windows agent installer
+  * Fixed issues:
+  *   NX-808 (NXSL error message should include module name)
+  *   NX-2222 (Interface alias duplicated in UI if Objects.Interfaces.UseAliases set to "concatenate name with alias")
+  *   NX-2345 (Copy to Clipboard and Save as image... buttons no longer exist in WebUI in line chart window)
+  *   NX-2374 (Template auto unbind grace period handled incorrectly)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Thu, 09 Feb 2023 23:09:10 +0200
+
 netxms (4.3.0-1) stable; urgency=medium
 
   * New format strings in NXSL (Python f-string style)

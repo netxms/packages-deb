@@ -1,3 +1,9 @@
+netxms (4.3.1-2) stable; urgency=medium
+
+  * "Execute server command" object tool crash fixed
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Fri, 10 Feb 2023 15:34:39 +0200
+
 netxms (4.3.1-1) stable; urgency=medium
 
   * Fixed database schema upgrade on Microsoft SQL Server

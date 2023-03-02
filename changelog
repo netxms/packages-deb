@@ -1,3 +1,19 @@
+netxms (4.3.2-1) stable; urgency=medium
+
+  * Fixed stacked line charts in new UI
+  * Fixed timeout inconsistencies in netsvc subagent
+  * Added web API calls for managing alarm comments
+  * More functionality migrated to new management client
+  * Fixed issues:
+  *   NX-677 (Dashboard editor: accelerators are duplicated in Line chart -> Data sources)
+  *   NX-2377 (Copy-paste of rules not working in EPP editor)
+  *   NX-2348 (Show active threshold event name in Last Values)
+  *   NX-2376 (Agent restart is not working correctly on RedHat based Linux OS)
+  *   NX-2379 (REST API to force poll DCI)
+  *   NX-2383 (Ignore systemd synthetic records when resolving node IP address to hostname)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Thu, 02 Mar 2023 12:51:58 +0200
+
 netxms (4.3.1-2) stable; urgency=medium
 
   * "Execute server command" object tool crash fixed

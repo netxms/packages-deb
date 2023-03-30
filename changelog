@@ -1,22 +1,16 @@
 netxms (4.3.3-1) stable; urgency=medium
 
-  * New format strings in NXSL (Python f-string style)
-  * Inline action scripts in EPP
-  * Set and delete custom attributes in EPP rule
-  * Added agent's metric `File.Type`
-  * Column display names in object queries can be set using column metadata
-  * Fixed object query result sorting on hidden columns
+  * Improved database migration procedure when TimescaleDB is target (GitHub issue 83)
+  * Fixed bug in handling "verify-peer" option for network service metrics
+  * Fixed server crash when doing RADIUS authentication using MS-CHAP
+  * Fixed columns for 'Find switch port' search result
+  * Added additional information to debug message about event with incorrect source id
+  * Added ZoneUIN for Cluster's overview page
+  * Small fixes and adjustments to new management client
+  * Close DCI config view message not shown on DCI copy
+  * Dashboard element "Table Value" works in context dashboards
   * Fixed issues:
-  *   NX-2075 (EPP rule to have both IF and IF NOT conditions for objects)
-  *   NX-2180 (Clusters cannot change zones)
-  *   NX-2311 (Add macros to display DCI values with multipliers and measurement units)
-  *   NX-2312 (Named capture groups in log parser)
-  *   NX-2320 (Configuration import ends with timeout for large configuration files)
-  *   NX-2324 (Telegram notifications should stay in queue if there is no connection to the Internet)
-  *   NX-2330 (Add option to set/delete custom attributes from EPP rule)
-  *   NX-2331 (Display DCI and policy count for templates in object details)
-  *   NX-2332 (Add new EPP action that allows to specify NXSL script inline)
-  *   NX-2336 (F-strings in NXSL)
+  *   NX-2387 (SQL errors when saving OSPF neighbor list)
 
  -- Alex Kirhenshtein <alk@netxms.org>  Wed, 29 Mar 2023 18:02:40 +0300
 

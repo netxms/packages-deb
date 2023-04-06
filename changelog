@@ -1,3 +1,12 @@
+netxms (4.3.4-1) stable; urgency=medium
+
+  * Fixed bug in ICMP ping implementation introduced in 4.3.3
+  * Added agent configuration option for setting file mode creation mask (umask)
+  * Bundled SQLite updated to version 3.41.2
+  * Multiple fixes and improvements in new management client application
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Thu, 06 Apr 2023 15:46:46 +0300
+
 netxms (4.3.3-1) stable; urgency=medium
 
   * Improved database migration procedure when TimescaleDB is target (GitHub issue 83)

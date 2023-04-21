@@ -1,3 +1,19 @@
+netxms (4.3.5-1) stable; urgency=medium
+
+  * Fixed bug in X.509 certificate subject and issuer decoding
+  * Agent tunnel listener will not start if server certificate is not loaded
+  * Fixed WEB service configuration import with multiple headers
+  * Fixed login issues in new web UI
+  * Small fixes and improvements in new management client application
+  * Fixed issues:
+  *   NX-2272 (Session is not closed if user cancel 2FA auth initialization)
+  *   NX-2276 (Warn user when adding too wide mask to active discovery)
+  *   NX-2388 (Modify default templates - filesystem with type "ahafs" should be excluded from discovery)
+  *   NX-2404 (Integer division by zero in NXSL crashes server)
+  *   NX-2406 (Entering maintenance mode on cluster does not trigger maintenance mode on nodes within cluster)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Fri, 21 Apr 2023 16:44:38 +0300
+
 netxms (4.3.4-1) stable; urgency=medium
 
   * Fixed bug in ICMP ping implementation introduced in 4.3.3

@@ -1,3 +1,16 @@
+netxms (4.3.6-1) stable; urgency=medium
+
+  * Correctly handle FDB record type "secure"
+  * Improved driver for Cambium devices
+  * Fixed bug in handling /32 addresses during network discovery
+  * Fixed bug in flood notification processing in Telegram driver
+  * Fixed server crash caused by timeout during file transfer to agent
+  * Fixed bug in SNMP codepage handling
+  * Fixed bar gauge dashboard element drawing issue
+  * Small fixes and improvements in new management client application
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Mon, 08 May 2023 14:13:32 +0300
+
 netxms (4.3.5-1) stable; urgency=medium
 
   * Fixed bug in X.509 certificate subject and issuer decoding

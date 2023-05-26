@@ -1,3 +1,14 @@
+netxms (4.3.7-1) stable; urgency=medium
+
+  * Fixed bug in reading topology information from LLDPv2 MIB
+  * Small fixes and improvements in new management client application
+  * Fixed issues:
+  *   NX-2253 (Actual repeat count should be passed to event in log file monitoring when reset repeat count is true)
+  *   NX-2418 (Log file monitoring does not work properly with symlinks)
+  *   NX-2421 (Invalid time format in log parser configuration can cause agent crash)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Fri, 26 May 2023 17:09:49 +0300
+
 netxms (4.3.6-1) stable; urgency=medium
 
   * Correctly handle FDB record type "secure"

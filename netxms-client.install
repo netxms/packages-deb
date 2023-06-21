@@ -3,5 +3,5 @@ usr/bin/nxevent
 usr/bin/nxnotify
 usr/bin/nxpush
 usr/bin/nxshell
-usr/lib/*/netxms/java/jython-standalone-2.7.2.jar
+usr/lib/*/netxms/java/jython-standalone-2.7.3.jar
 usr/lib/*/netxms/java/nxshell-*.jar

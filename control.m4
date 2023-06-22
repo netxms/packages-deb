@@ -28,6 +28,7 @@ Build-Depends:
  unixodbc-dev,
  libvirt-dev,
  libpcre3-dev,
+ libedit-dev,
  libssh-dev PKG_JDK PKG_JEMALLOC PKG_JQ PKG_MARIADB PKG_MOSQUITTO PKG_MYSQL PKG_OPENSSL PKG_SYSTEMD PKG_ZMQ PKG_ASTERISK PKG_XEN
 
 Package: netxms-dbg

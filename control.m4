@@ -8,7 +8,7 @@ Standards-Version: 4.9.3
 Section: admin
 Homepage: http://www.netxms.org/
 Build-Depends:
- debhelper (>= 9),
+ debhelper (>= 10),
  dh-autoreconf,
  debconf,
  lsb-release,

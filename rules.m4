@@ -30,6 +30,7 @@ override_dh_auto_configure:
 		--enable-unicode \
 		--with-jdk=/usr/lib/jvm/default-java \
 		--without-gui-client \
+		--enable-modbus \
 		--with-vmgr CONFIGURE_JEMALLOC CONFIGURE_JQ CONFIGURE_MARIADB CONFIGURE_MOSQUITTO CONFIGURE_MYSQL CONFIGURE_ZMQ CONFIGURE_ORACLE CONFIGURE_ASTERISK CONFIGURE_XEN CONFIGURE_ADDITIONAL
 
 override_dh_auto_build:

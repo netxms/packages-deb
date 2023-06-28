@@ -1,3 +1,46 @@
+netxms (4.4.0-1) stable; urgency=medium
+
+  * "Trusted devices" in two-factor authentication
+  * Scrollable dashboards
+  * Native Modbus TCP support
+  * Arguments can be passed to script called via script macro
+  * Indirect function calls in NXSL
+  * Interface table in agents
+  * Linux agent can report interface aliases
+  * Improved dashboard elements "Pie Chart" and "Gauge"
+  * New macro {node-name} in DCI performance view configuration
+  * Added Query table columns for SNMP Table DCI
+  * Spanning Tree port state for interfaces collected at status poll
+  * System event for STP port state change
+  * Improved configuration import
+  * Fixed issues:
+  *   NX-457 (Support for multiple tile providers)
+  *   NX-696 (Condition status reset to UNKNOWN on change)
+  *   NX-875 (More info on per-node basis on polls for that node)
+  *   NX-935 (Scrollbar in Dashboards)
+  *   NX-1014 (Correct names of "Remove" menu items to "Remove from node" or "Remove from template")
+  *   NX-1232 (Tool for simplified SNMP tables configuration)
+  *   NX-1598 (Rename column "submap_id" in table "object_properties")
+  *   NX-1613 (Object state icon not shown in Template -> Remove)
+  *   NX-2067 (Add a hotkey to save policies. Ctrl+S)
+  *   NX-2244 (Have ability in the UI to jump to specific DCI from check)
+  *   NX-2294 (Add server setting to prefer IPv4 address when resolving node hostname)
+  *   NX-2295 (Use System.ActiveUserSessions agent list to display "User sessions" in management client)
+  *   NX-2317 (Add parameters to threshold activation events with additional information on triggered threshold)
+  *   NX-2357 (Create events for invalid object identifiers in EPP rules)
+  *   NX-2364 (Add option to request 2FA authorization less frequently)
+  *   NX-2370 (Use libedit for shell-style tools)
+  *   NX-2372 (Show DCI comments in Data Collection / Last Values view)
+  *   NX-2373 (Make DCI comments available in alarms generated from threshold violation events)
+  *   NX-2384 (Store and display event message in active threshold)
+  *   NX-2391 (Not possible to set correct zone for cluster)
+  *   NX-2392 (ARP table view for nodes)
+  *   NX-2397 (Cluster that is in another zone still belongs to the zone with Zone UIN=0)
+  *   NX-2420 (Add explicit option for log parser to follow symlinks)
+  *   NX-2424 (Add information about user login failure (2FA issue, etc) to audit log)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Wed, 28 Jun 2023 11:12:14 -0400
+
 netxms (4.3.7-1) stable; urgency=medium
 
   * Fixed bug in reading topology information from LLDPv2 MIB

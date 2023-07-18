@@ -1,3 +1,29 @@
+netxms (4.4.1-1) stable; urgency=medium
+
+  * Improved support for LLDP-V2-MIB
+  * Server can use both LLDP-MIB and LLDP-V2-MIB if supported by device
+  * Server saves SNMPv3 context engine ID alongside authoritative engine ID to avoid unnecessary engine ID discovery
+  * NXSL function GetDCIValues can be used to retrieve raw DCI values
+  * Added method "enableWinPerfCountersCache" to NXSL class "Node"
+  * Custom timeouts for external metric providers in agent
+  * Fixed incorrect display of line chart series with "Invert values" option
+  * Fixed database upgrade procedure (zone UIN update)
+  * Fixed memory leak in subagent "netsvc"
+  * Fixed bug in NXSL function FormatMetricPrefix
+  * Added workaround for "unexpected eof" OpenSSL error reported by web service calls to some servers
+  * Minor fixes in asset management
+  * Minor fixes and improvements in new management client application
+  * Fixed issues:
+  *   NX-2407 (Add the ability to duplicate server action in action manager)
+  *   NX-2414 (nxdbmgr should ignore data for deleted DCIs if there's record in dci_delete_list for that DCI)
+  *   NX-2415 (Legend text color is ignored in the nxmc console)
+  *   NX-2419 (When log file monitoring with wildcards is used, data right after file creation might be skipped)
+  *   NX-2428 (Cannot import configuration if threshold activation or deactivation event tags are missing or empty)
+  *   NX-2434 (Add option to set user, password as a parameters for IMAP and SMTP)
+  *   NX-2435 (0 is not shown on Y scale in graphs)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Tue, 18 Jul 2023 15:45:18 +0300
+
 netxms (4.4.0-1) stable; urgency=medium
 
   * "Trusted devices" in two-factor authentication

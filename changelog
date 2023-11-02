@@ -1,3 +1,32 @@
+netxms (4.4.3-1) stable; urgency=medium
+
+  * Package deployment can be scheduled
+  * Server-side macro expansion in package deployment command
+  * Use compact JSON format when saving events to database
+  * Improved event processing performance
+  * Improved NXSL function "random"
+  * New event processing macros %d (DCI description), %D (DCI comments), %L (object alias), and %C (object comments)
+  * Added driver for FortiGate devices
+  * Fixed server crash during execution of delayed EPP action
+  * Fixed server crash when processing interfaces with 8 byte MAC address
+  * Fixed session disconnect handling in new management client application
+  * Fixed bug in physical disk information reading on Windows
+  * Fixed bug in SSH key store
+  * Improved debug logging
+  * Minor fixes and improvements in new management client application
+  * Fixed issues:
+  *   NX-1063 (Interface icon is incorrect)
+  *   NX-2224 (Command history in nxadm)
+  *   NX-2446 (Increase timeout for agent tunnel binding)
+  *   NX-2463 (Add metric to measure execution time of background queries in dbquery subagent)
+  *   NX-2467 (Allow to execute same action multiple times in one EPP rule)
+  *   NX-2468 (NetworkService.Status SMTP call to curl_easy_perform failed (56: Command failed: 502))
+  *   NX-2469 (Empty "Parameters" line should be interpreted as no arguments in Execute Script)
+  *   NX-2471 (Add agent list and table to list physical disks)
+  *   NX-2475 (netsvc: ServiceCheck.SMTP() uses VRFY command, which is disabled on most servers)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Thu, 02 Nov 2023 09:52:55 +0200
+
 netxms (4.4.2-1) stable; urgency=medium
 
   * Server checks interface speed during status poll and generates event if it changes

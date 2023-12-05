@@ -1,6 +1,5 @@
 usr/lib/*/libnxjava.so.*
 usr/lib/*/netxms/java/commons-codec-*.jar
-usr/lib/*/netxms/java/commons-lang3-*.jar
 usr/lib/*/netxms/java/netxms-base-*.jar
 usr/lib/*/netxms/java/netxms-client-*.jar
 usr/lib/*/netxms/java/netxms-java-bridge-*.jar

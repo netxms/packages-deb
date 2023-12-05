@@ -10,6 +10,7 @@ control: control.m4
 
 rules: rules.m4
 	$(M4_WITH_ARGS) rules.m4 > rules
+	chmod 755 rules
 
 clean:
 	rm -f control rules

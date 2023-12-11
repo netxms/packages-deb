@@ -1,3 +1,9 @@
+netxms (4.4.5-2) stable; urgency=medium
+
+  * WebAPI module added to netxms-server
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Mon, 11 Dec 2023 15:39:55 +0100
+
 netxms (4.4.5-1) stable; urgency=medium
 
   * Improved SNMP proxy performance under heavy load
@@ -12,7 +18,6 @@ netxms (4.4.5-1) stable; urgency=medium
   * Fixed issues:
   *   NX-2465 (List of saved queries in Tools->Find Object is not updated when query list is altered in Configuration)
   *   NX-2479 (Misleading error messages when loading properties for root objects)
-
 
  -- Alex Kirhenshtein <alk@netxms.org>  Thu, 07 Dec 2023 17:54:22 +0200
 

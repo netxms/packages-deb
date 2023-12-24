@@ -1,3 +1,23 @@
+netxms (4.5.0-1) stable; urgency=medium
+
+  * XPath can be used for querying XML-based web services
+  * New NXSL operation "?." (safe dereference)
+  * New method "join" in NXSL arrays
+  * Server-side custom attributes (not visible by clients)
+  * Additional argument in NXSL method createSNMPTransport to control if it should fail when node is marked as unreachable via SNMP
+  * Updated drivers for Eltex and TP-Link switches
+  * Added agent metric Agent.LocalDatabase.FileSize
+  * Fixed internal metrics PollTime.*
+  * Fixed issues:
+  *   NX-1409 (Implement separate access right for editing object comments)
+  *   NX-2412 (Separate access right for editing agent configuration file)
+  *   NX-2440 (Wildcard imports in NXSL)
+  *   NX-2275 (Option for ignoring interfaces in NOT PRESENT state)
+  *   NX-2485 (XPath support in web service queries)
+  *   NX-2487 (Any changes to object from UI or via Java API wipe out responsible users list)
+
+ -- Victor Kirhenshtein <victor@netxms.org>  Sun, 24 Dec 2023 11:15:21 +0200
+
 netxms (4.4.5-2) stable; urgency=medium
 
   * WebAPI module added to netxms-server

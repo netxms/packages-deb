@@ -16,7 +16,7 @@ netxms (4.5.0-1) stable; urgency=medium
   *   NX-2485 (XPath support in web service queries)
   *   NX-2487 (Any changes to object from UI or via Java API wipe out responsible users list)
 
- -- Victor Kirhenshtein <victor@netxms.org>  Sun, 24 Dec 2023 11:15:21 +0200
+ -- Victor Kirhenshtein <victor@netxms.org>  Sun, 24 Dec 2023 11:28:24 +0200
 
 netxms (4.4.5-2) stable; urgency=medium
 

@@ -20,7 +20,6 @@ usr/lib/*/netxms/java/jcommon-*.jar
 usr/lib/*/netxms/java/jfreechart-*.jar
 usr/lib/*/netxms/java/jna-*.jar
 usr/lib/*/netxms/java/jna-platform-*.jar
-usr/lib/*/netxms/java/jpathwatch-*.jar
 usr/lib/*/netxms/java/mail-*.jar
 usr/lib/*/netxms/java/mariadb-java-client-*.jar
 usr/lib/*/netxms/java/mssql-jdbc-*.jre8.jar

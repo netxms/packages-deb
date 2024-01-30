@@ -16,27 +16,30 @@ from debian.changelog import Changelog
 def read_netxms_changelog(input_lines: List[str]) -> Dict[str, List[str]]:
     changelog: Dict[str, List[str]] = {}
     version = "UNKNOWN"
+    padding = ""
     for line in input_lines:
         if line == "":
             continue
         if line.strip() == "*":
             continue
-        m = re.match(r"^\* ([0-9.]+(-CURRENT)?)", line)
+        m = re.match(r"^\# ([0-9.]+(-SNAPSHOT)?)", line)
         if m:
+            padding = ""
             version = m.group(1)
             if version not in changelog:
                 v: List[str] = []
                 changelog[version] = v
+        if line.startswith("## Fixed issues"):
+            changelog[version].append("  * Fixed issues:")
+            padding = "  "
         if line[0] == "-":
-            changelog[version].append("  * " + line[2:].strip())
-        if line[0] == "\t":
-            changelog[version].append("  *   " + line[1:].strip())
+            changelog[version].append("  * " + padding + line[2:].strip())
     return changelog
 
 
 version = sys.argv[1]
 
-text = requests.get('https://raw.githubusercontent.com/netxms/changelog/master/ChangeLog').text.splitlines()
+text = requests.get('https://raw.githubusercontent.com/netxms/changelog/master/ChangeLog.md').text.splitlines()
 new_changes = read_netxms_changelog(text)[version]
 
 with open('changelog', 'r') as f:

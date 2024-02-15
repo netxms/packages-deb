@@ -1,3 +1,13 @@
+netxms (4.5.3-1) stable; urgency=medium
+
+  * Fixed server crash during passive network discovery
+  * Fixed bug in dashboard chart data source editor
+  * Fixed bug in TCP proxy session setup
+  * Fixed issues:
+  *   NX-2509 (productVersion does not display value correctly with Ethernet-IP)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Thu, 15 Feb 2024 17:04:19 +0200
+
 netxms (4.5.2-1) stable; urgency=medium
 
   * Fixed server crash on client session disconnect

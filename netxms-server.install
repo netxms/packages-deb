@@ -25,5 +25,6 @@ usr/lib/*/netxms/ntcb.nxm
 usr/lib/*/netxms/pdsdrv/*
 usr/lib/*/netxms/redmine.hdlink
 usr/lib/*/netxms/webapi.nxm
+usr/lib/*/netxms/wlcbridge.nxm
 usr/share/netxms/*
 var/lib/netxms/*

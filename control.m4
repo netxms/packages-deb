@@ -110,7 +110,7 @@ Description: NetXMS subagent for monitoring Asterisk PBX
 Package: netxms-java-base
 Architecture: any
 Multi-Arch: same
-Depends: default-jdk, ${shlibs:Depends}, ${misc:Depends}
+Depends: PKG_JRE, ${shlibs:Depends}, ${misc:Depends}
 Description: Common Java libraries used by both agent and client
  <insert long description, indented with spaces>
 

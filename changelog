@@ -1,3 +1,16 @@
+netxms (4.5.4-1) stable; urgency=medium
+
+  * Improved Juniper driver
+  * Improved integration with ticketing system Redmine
+  * Fixed build errors on Solaris 11.4 with Solaris Studio 12.6
+  * Fixed memory leak in web UI (server side)
+  * Fixed some server performance issues
+  * Fixed issues:
+  *   NX-2492 (Custom attribute inheritance conflict not detected)
+  *   NX-2515 (Inherited object custom attributes not deleted from children)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Thu, 07 Mar 2024 12:24:18 +0200
+
 netxms (4.5.3-1) stable; urgency=medium
 
   * Fixed server crash during passive network discovery

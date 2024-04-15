@@ -1,3 +1,18 @@
+netxms (4.5.6-1) stable; urgency=medium
+
+  * Fixed bug in background task scheduler
+  * Fixed bug in reporting access control
+  * Fixed minor memory leak in server
+  * Fixed event storm detection event generation
+  * Fixed incorrect notification popup size calculation in user agent
+  * Fixed bug in NXSL function CreateUserAgentNotification
+  * Improved housekeeper throttling logic
+  * User-defined scripts for housekeeper
+  * Object context menu available in alarm view
+  * Call for DCI status change added to web API
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Mon, 15 Apr 2024 15:42:07 +0300
+
 netxms (4.5.5-1) stable; urgency=medium
 
   * Fixed scheduled file upload

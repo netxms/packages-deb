@@ -10,6 +10,7 @@ case "$1" in
             TARGET=$CONFIG
 
         cat <<__END
+
 NetXMS server is installed but currently stopped.
 
 Additional steps required:
@@ -24,6 +25,7 @@ Additional steps required:
 
    systemctl start netxms-server
    systemctl enable netxms-server
+
 __END
         else
             TARGET=${CONFIG}.dist

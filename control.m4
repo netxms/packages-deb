@@ -31,6 +31,7 @@ Build-Depends:
  libedit-dev,
  libmicrohttpd-dev,
  libnxmodbus-dev (>= 3.1.10-4),
+ libisotree-dev (>= 0.6.1-1),
  libssh-dev PKG_JDK PKG_JEMALLOC PKG_JQ PKG_MARIADB PKG_MOSQUITTO PKG_MYSQL PKG_OPENSSL PKG_SYSTEMD PKG_ZMQ PKG_ASTERISK PKG_XEN
 
 Package: netxms-dbg

@@ -1,3 +1,54 @@
+netxms (5.0.0-1) stable; urgency=medium
+
+  * Improved network maps
+  * Added network map link styling script
+  * Delegate access option that allows read access to network maps without full read access to objects on a map
+  * Reworked monitoring of wireless access points and controllers
+  * Major overhaul of sensor objects
+  * Many NXSL function deprecated in favor of object methods
+  * Improved NXSL classes and functions for date/time handling
+  * Add option to check alarm details from alarm log view
+  * Log parser rules can define metrics that are populated from match data
+  * Special NXSL return codes for data collection and transformation scripts (DataCollection::ERROR, DataCollection::NOT_SUPPORTED, DataCollection::NO_SUCH_INSTANCE)
+  * New NXSL function FindAccessPointByMACAddress
+  * New NXSL function GetMappingTableKeys
+  * "Stop" function in script executor view
+  * Desktop client can reconnect automatically after short connectivity loss
+  * New agent metric File.Hash.SHA256
+  * New agent list and table Net.IP.Neighbors
+  * Index property displayed in MIB browser
+  * Root object can be set for object query
+  * Improved SNMP trap processing performance
+  * New log parser file option "removeEscapeSequences"
+  * Added peer certififcate verification issue tracker integration
+  * Housekeeper scripts (NXSL and SQL)
+  * Improved REST API
+  * Introduces new object class "Collector"
+  * Downtime log controlled by EPP
+  * Fixed issues:
+  *   NX-797 (Automatic reconnect of management console)
+  *   NX-1790 (Drag-n-dropped object are positioned to wrong place when map is scrolled down or right)
+  *   NX-1870 (Representation of float DCI that gets string data as input)
+  *   NX-1935 (Introduce hook script on map regeneration with ability to set link names)
+  *   NX-2006 (Remove example event templates (code 4000-4011) from database)
+  *   NX-2076 (Raw value should be always displayed as string)
+  *   NX-2292 (Automatic maps should not include nodes that are connected through a node that was excluded by filter script)
+  *   NX-2323 (Make parameters in all events named)
+  *   NX-2343 (Several changes in NXSL syntax in v 5.0)
+  *   NX-2375 (Use "varchar(max)" instead of "text" on Microsoft SQL Server)
+  *   NX-2403 (Add support for AES-192 and AES-256 in SNMPv3)
+  *   NX-2444 (On demand background external metrics)
+  *   NX-2455 (Ability to check TLS.Certificate.\* for protocols with STARTTLS command)
+  *   NX-2481 (Add ability to manually poll network map generation)
+  *   NX-2507 (Add ability to cancel timers from NXSL)
+  *   NX-2520 (Remove "Channel name" selector from "Send notification" dialog)
+  *   NX-2523 (New agent metric Process.MemoryUsage (percentage of memory used by process))
+  *   NX-2524 (Option to disable threshold without deleting it)
+  *   NX-2525 (Add the ability to specify multiplier values in threshold)
+  *   NX-2526 (When editing a template with a DCI without instance to use instance - DCI becomes unsupported)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Wed, 01 May 2024 22:27:35 +0300
+
 netxms (4.5.3-1) stable; urgency=medium
 
   * Fixed server crash during passive network discovery

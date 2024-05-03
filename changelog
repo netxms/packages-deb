@@ -1,3 +1,10 @@
+netxms (5.0.1-1) stable; urgency=medium
+
+  * Fixed bug in database upgrade procedure
+  * Added CSV export in alarm viewer and agent tunnel manager
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Fri, 03 May 2024 09:25:43 +0300
+
 netxms (5.0.0-1) stable; urgency=medium
 
   * Improved network maps

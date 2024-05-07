@@ -1,4 +1,11 @@
-netxms (5.0.1-1) stable; urgency=medium
+netxms (5.0.2-1) stable; urgency=high
+
+  * Fixed bug in database upgrade procedure
+  * Fixed "pin to pinboard" in UI
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Tue, 07 May 2024 18:41:00 +0300
+
+netxms (5.0.1-1) stable; urgency=high
 
   * Fixed bug in database upgrade procedure
   * Added CSV export in alarm viewer and agent tunnel manager

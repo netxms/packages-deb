@@ -23,7 +23,7 @@ Build-Depends:
  libcurl4-openssl-dev,
  libpq-dev,
  libldap2-dev,
- libaio1,
+ libaio-dev,
  unixodbc-dev,
  libvirt-dev,
  libpcre3-dev,

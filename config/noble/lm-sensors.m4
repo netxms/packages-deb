@@ -1,1 +1,1 @@
-define(`PKG_LM_SENSORS', `,libsensors5-dev')dnl
+define(`PKG_LM_SENSORS', `,libsensors-dev')dnl

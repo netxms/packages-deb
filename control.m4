@@ -17,7 +17,6 @@ Build-Depends:
  maven,
  zlib1g-dev,
  libexpat1-dev,
- libsensors4-dev,
  libjansson-dev,
  libreadline-dev,
  libsqlite3-dev,
@@ -31,7 +30,7 @@ Build-Depends:
  libedit-dev,
  libmicrohttpd-dev,
  libnxmodbus-dev (>= 3.1.10-4),
- libssh-dev PKG_JDK PKG_JEMALLOC PKG_JQ PKG_MARIADB PKG_MOSQUITTO PKG_MYSQL PKG_OPENSSL PKG_SYSTEMD PKG_ZMQ PKG_ASTERISK PKG_XEN PKG_ISOTREE
+ libssh-dev PKG_LM_SENSORS PKG_JDK PKG_JEMALLOC PKG_JQ PKG_MARIADB PKG_MOSQUITTO PKG_MYSQL PKG_OPENSSL PKG_SYSTEMD PKG_ZMQ PKG_ASTERISK PKG_XEN PKG_ISOTREE
 
 Package: netxms-dbg
 Architecture: any

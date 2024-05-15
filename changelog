@@ -1,3 +1,17 @@
+netxms (5.0.3-1) stable; urgency=medium
+
+  * Notification channel driver "Shell" escapes single quote character during exec-type command line expansion
+  * Priority inclusion rules in UI element filter
+  * Macro expansion in API call executeLibraryScript works for all object classes
+  * Improved handling of large number of simultaneous ICMP ping requests
+  * Fixed bug in database upgrade procedure
+  * Fixed deadlock in web UI
+  * Fixed issues:
+  *   NX-2521 (ICMP.PacketLoss internal DCI collects 0 after server restart)
+  *   NX-2529 (Option to enable/disable Version Number on Web interface)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Wed, 15 May 2024 18:29:34 +0300
+
 netxms (5.0.2-1) stable; urgency=high
 
   * Fixed bug in database upgrade procedure

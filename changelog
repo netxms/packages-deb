@@ -1,3 +1,32 @@
+netxms (5.0.4-1) stable; urgency=medium
+
+  * New SNMP DCI option "Interpret raw value as IPv6 address"
+  * Added driver for GE MDS Orbit devices
+  * Added driver for EtherWan switches
+  * Added driver for Siemens RuggedCom switches
+  * Mikrotik driver reports RSSI for wireless clients
+  * RSSI is displayed in "Wireless Stations" view
+  * Added "move object" item to object context menu
+  * Optional context selector for dashboards in dashboard perspective
+  * Seed node propery page removed for custom network maps
+  * Fixed server crash when accessing alarm category list from NXSL
+  * Fixed drawing issues of line charts with logarithmic scale
+  * Fixed incorrect line numbers in NXSL error messages
+  * Fixed bug in "Go to object" action in UI
+  * Fixed bug in D-Link driver
+  * Fixed interface utilization information sychronization
+  * Fixed network map color source selection
+  * Fixed historical line chart pop-out on web
+  * Fixed save of network map object position
+  * Fixed tables display glitch on Windows
+  * Fixed data type of configuration variable "Objects.NetworkMaps.UpdateInterval"
+  * Fixed issues:
+  *   NX-2489 (Read list of performance counters only when needed)
+  *   NX-2536 (SNMP DCI "interpret raw value as MAC address" does not support EUI-64)
+  *   NX-2537 (Double links on maps)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Tue, 11 Jun 2024 00:22:07 +0300
+
 netxms (5.0.3-1) stable; urgency=medium
 
   * Notification channel driver "Shell" escapes single quote character during exec-type command line expansion
@@ -1036,7 +1065,7 @@ netxms (3.8.314-1) stable; urgency=high
   *   NX-227 (Create "nxdownload" utility)
   *   NX-553 (CPU and Memory DCI support in Darwin)
   *   NX-1006 (Node with all status poll sources disabled creates a down alarm)
-  *   NX-1057 (Ability to execute set of SQL commands on server start) 
+  *   NX-1057 (Ability to execute set of SQL commands on server start)
   *   NX-1473 (System Description for Agents that are also running SNMP should be Agent's description, not SNMP's)
   *   NX-1851 (nxdbmgr not checking for situation when DCI present in items, but not in object_properties)
   *   NX-1882 (Add option for negative mask in File.Count, File.FolderCount, and File.Size)
@@ -1353,7 +1382,7 @@ netxms (3.5.133-1) stable; urgency=medium
 
 netxms (3.5.125-1) stable; urgency=high
 
-  * Fixed network map filter script read form database 
+  * Fixed network map filter script read form database
   * Fixed server crash
   * Fixed issues:
   *   NX-1928 (nxdbmgr export/import does not work properly with TimescaleDB)
@@ -2262,7 +2291,7 @@ netxms (2.2.2-1) stable; urgency=medium
 
   * Server command line tools working with agents (nxaction, nxap, nxget, nxupload) use encryption by default
   * "Floor plan" display mode for objects on network map
-  * Access to zone data in network discovery filters 
+  * Access to zone data in network discovery filters
   * Automatic target configuration in PING subagent
   * Implemented option to display object status map in radial form
   * Implemented separate access rights for each DCI object
@@ -2408,7 +2437,7 @@ netxms (2.1-RC1-1) unstable; urgency=medium
   * Multiple CA certificates can be specified in server configuration file
   * Number of samples can be configured for table thresholds
   * Null value can be used as "no change" option in auto bind scripts
-  * Fixed issues: NX-386, NX-1127, NX-1128, NX-1210, NX-1211, NX-1222, NX-1231, NX-1239, NX-1240, NX-1242 
+  * Fixed issues: NX-386, NX-1127, NX-1128, NX-1210, NX-1211, NX-1222, NX-1231, NX-1239, NX-1240, NX-1242
 
  -- Alex Kirhenshtein <alk@netxms.org>  Fri, 12 May 2017 15:03:35 +0300
 

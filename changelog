@@ -1,3 +1,14 @@
+netxms (5.0.5-1) stable; urgency=medium
+
+  * L2 network map seeds with no SNMP or L2 data will not prevent network map from update
+  * Server performance improvements
+  * Server actions of types "agent command" and "SSH command" executed asynchronously (partial fix for NX-2541)
+  * Fixed server crash during LDAP synchronization
+  * Subnets bound to containers correctly displayed in infrastructure perspective
+  * Predefined maps with default size and background image resized automatically to be no less than image size
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Fri, 28 Jun 2024 19:06:16 +0300
+
 netxms (5.0.4-1) stable; urgency=medium
 
   * New SNMP DCI option "Interpret raw value as IPv6 address"

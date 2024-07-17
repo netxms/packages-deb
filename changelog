@@ -1,3 +1,15 @@
+netxms (5.0.6-1) stable; urgency=medium
+
+  * Added notification channel driver for Mattermost
+  * Topic support in notification channel driver for Telegram
+  * Fixed incorrect client IP address reported iby Windows agent in table System.ActiveUserSessions
+  * Fixed bug in output of nxget -U
+  * Fixed web UI crash when opening dashboard in kiosk mode
+  * Fixed issues:
+  *   NX-2550 (Errors in desktop client log (Widget is disposed))
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Wed, 17 Jul 2024 16:15:51 +0300
+
 netxms (5.0.5-1) stable; urgency=medium
 
   * L2 network map seeds with no SNMP or L2 data will not prevent network map from update

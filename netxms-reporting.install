@@ -23,10 +23,10 @@ usr/lib/*/netxms/java/jna-*.jar
 usr/lib/*/netxms/java/jna-platform-*.jar
 usr/lib/*/netxms/java/mail-*.jar
 usr/lib/*/netxms/java/mariadb-java-client-*.jar
-usr/lib/*/netxms/java/mssql-jdbc-*.jre8.jar
+usr/lib/*/netxms/java/mssql-jdbc-*.jar
 usr/lib/*/netxms/java/mysql-connector-j-*.jar
 usr/lib/*/netxms/java/nxreportd-*.jar
-usr/lib/*/netxms/java/ojdbc10-*.jar
+usr/lib/*/netxms/java/ojdbc*-*.jar
 usr/lib/*/netxms/java/openpdf-*.jar
 usr/lib/*/netxms/java/postgresql-*.jar
 usr/lib/*/netxms/java/protobuf-java-*.jar

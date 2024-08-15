@@ -6,6 +6,7 @@ usr/lib/*/netxms/java/commons-beanutils-*.jar
 usr/lib/*/netxms/java/commons-collections-*.jar
 usr/lib/*/netxms/java/commons-daemon-*.jar
 usr/lib/*/netxms/java/commons-digester-*.jar
+usr/lib/*/netxms/java/commons-lang3-*.jar
 usr/lib/*/netxms/java/commons-logging-*.jar
 usr/lib/*/netxms/java/ecj-*.jar
 usr/lib/*/netxms/java/error_prone_annotations-*.jar
@@ -23,6 +24,7 @@ usr/lib/*/netxms/java/jna-*.jar
 usr/lib/*/netxms/java/jna-platform-*.jar
 usr/lib/*/netxms/java/mail-*.jar
 usr/lib/*/netxms/java/mariadb-java-client-*.jar
+usr/lib/*/netxms/java/mjson-*.jar
 usr/lib/*/netxms/java/mssql-jdbc-*.jar
 usr/lib/*/netxms/java/mysql-connector-j-*.jar
 usr/lib/*/netxms/java/nxreportd-*.jar

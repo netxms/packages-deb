@@ -1,3 +1,85 @@
+netxms (5.1.0-1) stable; urgency=medium
+
+  * New automatic map type "hybrid topology"
+  * New object class "Circuit"
+  * Only read access is needed for dashboard context object for scripting dashboard elements
+  * Reading of FDB moved to network device drivers to allow better handling of devices not following standards
+  * Peer information on interfaces can be set and cleared manually
+  * Added down since nxsl parameter to access point
+  * Vlans view merged in to the Ports view
+  * Added option to show physical links on L2 ad-hoc map
+  * L2 predefined map will not cache results, only ad-hock map results are cached
+  * More accurate ad-hoc IP topology maps
+  * Unreachable node will be tested for all protocols in each configuration poll
+  * Use inetCidrRouteTable, ipCidrRouteTable, and ipForwardTable in addition to ipRouteTable to get routing information via SNMP
+  * EtherNet/IP added as DCI data source
+  * Improved web UI login pages
+  * Separate "Comments" view for objects
+  * Templates perspective can be configured to show nodes under assigned templates
+  * New attributes in NXSL class "InetAddress" ("isSubnetBase", "isSubnetBroadcast", "subnet")
+  * New NXSL function "CalculateDowntime"
+  * New method "calculateDowntime" in NXSL class "NetObj"
+  * Other UI usability improvements
+  * Fixed session agent compatibility issues on Windows 11
+  * Optional DCI event "all thresholds deactivated"
+  * DCI data type after transformation can be configured separately from input data type
+  * New scheduled task handler Agent.ExecuteCommand
+  * Improved network map multi link spacing
+  * New action System.TerminateUserSession in Windows agent
+  * Fixed network map object lable sacling zoom in/zoom out
+  * Fixed issues:
+  *   NX-253 (Configurable label for Y axis on line charts)
+  *   NX-834 (DCI Table scroll position in dashboard is reset during refresh)
+  *   NX-968 (Remove Peer from unmanaged interface)
+  *   NX-1118 (Add "hide link labels" option for network map dashboard elements)
+  *   NX-1200 (New object group - Circuits)
+  *   NX-1288 (Fix selection colors in syslog monitor)
+  *   NX-1414 (Support for ipCidrRouteTable)
+  *   NX-1465 (When MIB browser opened, unfold tree and select longest match of device's SNMP object ID)
+  *   NX-1617 (Show comments window only if comment present)
+  *   NX-1958 (Support custom font for Label in Dashboard)
+  *   NX-1973 (Add ability to manually specify a peer for an interface)
+  *   NX-2034 (Use RENAME COLUMN on SQLite newer than 3.25.0)
+  *   NX-2353 (Add hotkey to start search in "Search IP address" view)
+  *   NX-2371 (Separate data types for raw and transformed DCI values)
+  *   NX-2439 (Implement agent table System.InstalledProducts for ArchLinux)
+  *   NX-2458 (Add option to nest context dashboard in dashboard)
+  *   NX-2461 (Smart algorithm for processing counter32/64 roll-over)
+  *   NX-2488 (Use caching when using web service requests in NXSL)
+  *   NX-2512 (Not able to import columns for table DCI with origin=script)
+  *   NX-2517 (Linux agent can crash if some CPUs are disabled)
+  *   NX-2528 (Markdown Support in Object Comment Sections)
+  *   NX-2531 (Ability to disable server actions in EPP)
+  *   NX-2533 (NXSL global variable that contains object tool input field values)
+  *   NX-2535 (Replace drop down with radio buttons in EPP rule Downtime Control)
+  *   NX-2538 (Add ability to use IPv4 style netmask in network discovery target properties)
+  *   NX-2540 (Add $map object for use in map filter script)
+  *   NX-2541 (All EPP actions should be executed asynchronously)
+  *   NX-2542 (Add syslog metadata to generated events)
+  *   NX-2544 (New agent metrics for counting online and offline CPUs)
+  *   NX-2545 (Exporting a template with big file in a policy causes nxmc to close)
+  *   NX-2552 (Exception in desktop UI)
+  *   NX-2562 (Add pollingScheduleType attribute to DCI object)
+  *   NX-2566 (List of packages is not read correctly on linux systems where alien is installed)
+  *   NX-2574 (nxevent and nxaevent utilities do not support named event parameters)
+  *   NX-2580 (Configurable default time range for ad-hoc line charts)
+  *   NX-2584 (Change network map edit mode to network map lock mode)
+  *   NX-2586 (Export all to CSV not working in data collection configuration view)
+  *   NX-2593 (Add option to use properties file for NXShell)
+  *   NX-2596 (Unable to create zone via Web API)
+  *   NX-2597 (Log PATH and LD_LIBRARY_PATH values on agent startup)
+  *   NX-2598 (Generate event when all thresholds of a DCI are rearmed)
+  *   NX-2602 (Audit log not available in context menu for some objects)
+  *   NX-2606 (no id ranges possible in Configuration->Windows event log parser)
+  *   NX-2613 (Show gray "Any" in "source objects" list, if it's empty)
+  *   NX-2617 (Show info in EPP rule that "Accept correlated events" is checked)
+  *   NX-2618 (Server crash when file upload task configuration is invalid)
+  *   NX-2619 (SQL insert into nodes failed)
+  *   NX-2620 (System.ProcessList truncates the full process name or path)
+  *   NX-2621 (Add "Line chart" item in context menu of map link)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Sat, 02 Nov 2024 12:26:00 +0200
+
 netxms (5.0.8-1) stable; urgency=medium
 
   * Fixed error in web console on package deployment

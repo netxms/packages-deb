@@ -17,7 +17,6 @@ usr/lib/*/libnxcore.so.*
 usr/lib/*/libnxdbmgr.so.*
 usr/lib/*/libnxsl.so.*
 usr/lib/*/libnxsrv.so.*
-usr/lib/*/libstrophe.so.*
 usr/lib/*/netxms/*.hdlink
 usr/lib/*/netxms/*.nxm
 usr/lib/*/netxms/ncdrv/*

@@ -1,3 +1,9 @@
+netxms (5.1.0-2) stable; urgency=medium
+
+  * Fixed agent crash in webservices handler
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Tue, 05 Nov 2024 11:56:42 +0200
+
 netxms (5.1.0-1) stable; urgency=medium
 
   * New automatic map type "hybrid topology"

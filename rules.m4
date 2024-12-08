@@ -41,6 +41,9 @@ override_dh_auto_build:
 	mvn -f src/pom.xml install -Dmaven.test.skip=true -Dmaven.javadoc.skip=true
 
 override_dh_strip:
+ifneq (,$(filter nostrip,$(DEB_BUILD_OPTIONS)))
+   @echo "DEB_BUILD_OPTIONS contains 'nostrip', skipping dh_strip."
+else
 	dh_strip -pnetxms-agent --dbg-package=netxms-dbg
 	ifdef(`WITH_ASTERISK', `dh_strip -pnetxms-agent-asterisk --dbg-package=netxms-dbg')
 	dh_strip -pnetxms-agent-java --dbg-package=netxms-dbg
@@ -59,6 +62,7 @@ override_dh_strip:
 	dh_strip -pnetxms-java-base --dbg-package=netxms-dbg
 	dh_strip -pnetxms-reporting --dbg-package=netxms-dbg
 	dh_strip -pnetxms-server --dbg-package=netxms-dbg
+endif
 
 override_dh_builddeb:
 	dh_builddeb -- -Zxz

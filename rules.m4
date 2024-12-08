@@ -42,7 +42,7 @@ override_dh_auto_build:
 
 override_dh_strip:
 ifneq (,$(filter nostrip,$(DEB_BUILD_OPTIONS)))
-   @echo "DEB_BUILD_OPTIONS contains 'nostrip', skipping dh_strip."
+	@echo "DEB_BUILD_OPTIONS contains 'nostrip', skipping dh_strip."
 else
 	dh_strip -pnetxms-agent --dbg-package=netxms-dbg
 	ifdef(`WITH_ASTERISK', `dh_strip -pnetxms-agent-asterisk --dbg-package=netxms-dbg')

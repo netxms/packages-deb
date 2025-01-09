@@ -1,2 +1,0 @@
-python-debian==0.1.49
-requests==2.32.3

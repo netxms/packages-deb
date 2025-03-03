@@ -1,3 +1,9 @@
+netxms (5.1.4-2) stable; urgency=medium
+
+  * Fixed agent crash when executing external command
+
+ -- Victor Kirhenshtein <victor@netxms.org>  Mon, 03 Mar 2025 09:12:07 +0200
+
 netxms (5.1.4-1) stable; urgency=medium
 
   * Agent uses Windows Installer API instead of launching msiexec.exe for installing .msi and .msp packages

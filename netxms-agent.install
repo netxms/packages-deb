@@ -9,6 +9,7 @@ usr/bin/nxtftp
 usr/lib/*/libappagent.so.*
 usr/lib/*/libnxagent.so.*
 usr/lib/*/libnxlp.so.*
+usr/lib/*/libnxsde.so.*
 usr/lib/*/netxms/bind9.nsm
 usr/lib/*/netxms/dbquery.nsm
 usr/lib/*/netxms/devemu.nsm

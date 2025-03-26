@@ -1,3 +1,17 @@
+netxms (5.1.5-1) stable; urgency=medium
+
+  * VNC detection during configuration poll can be disabled
+  * System access rights included into user ACL report
+  * Fixed bugs in NXSL script conversion to V5 format
+  * Fixed file handle leak in SSH subagent
+  * Fixed bug in configuration export
+  * Fixed issues:
+  *   NX-2712 (Scripted thresholds triggers activation event repeatedly)
+  *   NX-2714 (Status of interface not propagated to circuit)
+  *   NX-2726 (Web API call causes server crash)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Wed, 26 Mar 2025 14:18:49 +0200
+
 netxms (5.1.4-2) stable; urgency=medium
 
   * Fixed agent crash when executing external command

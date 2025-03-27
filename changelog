@@ -38,6 +38,7 @@ netxms (5.2.0-1) stable; urgency=medium
   *   NX-2721 (Add $ipAddress variable of class InetAddress in Hook::AcceptNewNode script)
   *   NX-2725 (NetXMS does not fallback to secondary proxy nodes)
   *   NX-2728 (Update interface configuration when a node with an agent is rebooted)
+  *   NX-2732 (Server attempts TCP ping for nodes behind proxy)
 
  -- Alex Kirhenshtein <alk@netxms.org>  Thu, 27 Mar 2025 11:53:30 +0200
 

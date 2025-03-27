@@ -1,3 +1,46 @@
+netxms (5.2.0-1) stable; urgency=medium
+
+  * User-defined tags on data collection items
+  * Network maps can be shown in object's context in a same way as dashboards
+  * Improved package deployment
+  * NXSL math functions Min, Max, Average, MeanAbsoluteDeviation, and StandardDeviation accepts variadic arguments
+  * New NXSL function Math::Sum
+  * New NXSL array method indexOf
+  * Simplified loops over numeric ranges in NXSL using class \"Range\"
+  * Unicode escape sequences in NXSL string literals
+  * Script entry point can be given for script DCI
+  * Dot can be used as script entry point separator instead of slash
+  * Fan-out diver for ClickHouse
+  * Fixed direction and arrow size for Network Map links
+  * Reworked Network Map link label location calculation for multi link connection
+  * Configurable values for RADIUS authentication request attributes Service-Type and NAS-Identifier
+  * SM-CLP protocol support reworked and switched to SSH as a transport
+  * Fixed incorrect data and occasional server crashes in network discovery filter script
+  * Fixed issues:
+  *   NX-74 (New node options - "expected capabilities")
+  *   NX-1301 (Automatic traffic DCI linking to interface)
+  *   NX-2654 (Add agent running config object tool via db migration script)
+  *   NX-1302 ("Traffic" overlay for maps)
+  *   NX-2568 (Add case-insensitive versions of threshold operations "like" and "not like")
+  *   NX-2624 (Review SMCLP data source and switch it to SSH)
+  *   NX-2662 (Show map in tab on object)
+  *   NX-2667 (Context dashboard should be able to pick DCIs from child objects by specific DCI tag)
+  *   NX-2668 (Change all server configuration variables related to polling intervals to be modifiable without server restart)
+  *   NX-2680 (Add NXSL function Math::Sum)
+  *   NX-2681 (Add array method "indexOf")
+  *   NX-2686 (Put DCI to ERROR state if it's transformation script has compilation error)
+  *   NX-2689 (Add event ID (if available) to notification log)
+  *   NX-2694 (Add "front side only" property to rack objects)
+  *   NX-2695 (Fit rack image into the view both vertically and horizontally)
+  *   NX-2703 (Support Unicode escape sequences in NXSL string literals)
+  *   NX-2707 (Add method "createSensor" to container object classes in NXSL)
+  *   NX-2716 (Agent metric that reports server's access level to that agent)
+  *   NX-2721 (Add $ipAddress variable of class InetAddress in Hook::AcceptNewNode script)
+  *   NX-2725 (NetXMS does not fallback to secondary proxy nodes)
+  *   NX-2728 (Update interface configuration when a node with an agent is rebooted)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Thu, 27 Mar 2025 11:53:30 +0200
+
 netxms (5.1.5-1) stable; urgency=medium
 
   * VNC detection during configuration poll can be disabled

@@ -1,3 +1,20 @@
+netxms (5.2.1-1) stable; urgency=medium
+
+  * NXSL function PostEvent accepts any event source object
+  * Added option to set in maintenance all objects under Wireless Domain
+  * InfluxDB and Clickhouse drivers can be configured to use custom attributes of DCI's template
+  * Fixed bug in driver for Cambium CnPilot devices
+  * Fixed database connection leak during package deployment
+  * Fixed issues:
+  *   NX-2600 (Threshold for missing table instances never deactivated)
+  *   NX-2723 (Add Web API endpoint for object maintenance)
+  *   NX-2729 (Display hints for hook scripts in script library)
+  *   NX-2734 (When exporting event processing policy rule, automatically add referenced actions)
+  *   NX-2735 (Cannot delete user from object access control list)
+  *   NX-2740 (Modbus DCI becomes unsupported when proxy is unreachable)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Tue, 08 Apr 2025 20:33:07 +0300
+
 netxms (5.2.0-1) stable; urgency=medium
 
   * User-defined tags on data collection items

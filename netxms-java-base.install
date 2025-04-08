@@ -5,6 +5,7 @@ usr/lib/*/netxms/java/commons-collections4-*.jar
 usr/lib/*/netxms/java/commons-compiler-*.jar
 usr/lib/*/netxms/java/commons-io-*.jar
 usr/lib/*/netxms/java/commons-math3-*.jar
+usr/lib/*/netxms/java/gson-*.jar
 usr/lib/*/netxms/java/janino-*.jar
 usr/lib/*/netxms/java/log4j-api-*.jar
 usr/lib/*/netxms/java/logback-classic-*.jar

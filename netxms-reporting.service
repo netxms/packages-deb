@@ -6,6 +6,7 @@ After=network.target
 Type=simple
 ExecStart=/usr/bin/nxreportd
 Restart=always
+UMask=0077
 
 [Install]
 WantedBy=multi-user.target

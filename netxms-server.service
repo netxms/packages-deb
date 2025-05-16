@@ -13,6 +13,7 @@ Restart=always
 RestartSec=30
 TimeoutSec=900
 StartLimitInterval=0 # depricated in v230
+UMask=0077
 
 [Install]
 WantedBy=multi-user.target

@@ -1,3 +1,21 @@
+netxms (5.2.2-1) stable; urgency=medium
+
+  * Fixed insert into table "notification\_log" for TimescaleDB
+  * Improved client performance, by disabling alarm refresh if tab is not active
+  * Fixed missing DCI on network map links when new DCI's are added on alreay opened map
+  * Added job progress indication within views
+  * Fixed issues:
+  *   NX-2733 (Do not show zone column in discovery targets if zoning is off)
+  *   NX-2742 (Add NXSL node object method for enabling/disabling SM-CLP polling)
+  *   NX-2751 (Delete scheduled tasks on node deletion)
+  *   NX-2752 (Add ICMP response time jitter internal DCI for ICMP response statistic collection)
+  *   NX-2754 (Separate error code for situation when TCP proxy is not enabled in agent config)
+  *   NX-2755 (NXSL Interface utilization values returned as int, without decimal point)
+  *   NX-2764 (Add PostgreSQL 17 support in monitoring subagent (pgi\_stat\_checkpointer))
+  *   NX-2765 (Increase command length in package manager)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Mon, 19 May 2025 14:49:45 +0300
+
 netxms (5.2.1-1) stable; urgency=medium
 
   * NXSL function PostEvent accepts any event source object

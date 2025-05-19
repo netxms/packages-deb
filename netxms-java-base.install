@@ -1,9 +1,9 @@
 usr/lib/*/libnxjava.so.*
-usr/lib/*/netxms/java/SparseBitSet-*.jar
 usr/lib/*/netxms/java/commons-codec-*.jar
 usr/lib/*/netxms/java/commons-collections4-*.jar
 usr/lib/*/netxms/java/commons-compiler-*.jar
 usr/lib/*/netxms/java/commons-io-*.jar
+usr/lib/*/netxms/java/commons-lang3-*.jar
 usr/lib/*/netxms/java/commons-math3-*.jar
 usr/lib/*/netxms/java/gson-*.jar
 usr/lib/*/netxms/java/janino-*.jar
@@ -16,3 +16,4 @@ usr/lib/*/netxms/java/netxms-java-bridge-*.jar
 usr/lib/*/netxms/java/poi-*.jar
 usr/lib/*/netxms/java/simple-xml-safe-*.jar
 usr/lib/*/netxms/java/slf4j-api-*.jar
+usr/lib/*/netxms/java/SparseBitSet-*.jar

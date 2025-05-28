@@ -1,0 +1,23 @@
+commit 54a6fde8d1cbfe5dc0f5f529918d462b62fc312c
+Author: Victor Kirhenshtein <victor@netxms.org>
+Date:   Thu Mar 21 20:24:17 2019 +0200
+
+    fixed server crash when accessing missing device component data via NXSL
+
+diff --git a/src/server/core/nxsl_classes.cpp b/src/server/core/nxsl_classes.cpp
+index 8136bb318c..01a5d8ca7b 100644
+--- a/src/server/core/nxsl_classes.cpp
++++ b/src/server/core/nxsl_classes.cpp
+@@ -494,7 +494,11 @@ NXSL_Value *NXSL_NodeClass::getAttr(NXSL_Object *object, const TCHAR *attr)
+    }
+    else if (!_tcscmp(attr, _T("components")))
+    {
+-      value = new NXSL_Value(new NXSL_Object(&g_nxslComponentClass, node->getComponents()->getRoot()));
++      ComponentTree *components = node->getComponents();
++      if (components != NULL)
++         value = new NXSL_Value(new NXSL_Object(&g_nxslComponentClass, components->getRoot()));
++      else
++         value = new NXSL_Value();
+    }
+    else if (!_tcscmp(attr, _T("dependentNodes")))
+    {

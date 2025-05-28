@@ -1,3 +1,10 @@
+netxms (2.2.13-2) stable; urgency=medium
+
+  * patch 54a6fde8d1cbfe5dc0f5f529918d462b62fc312c applied (crash if there are
+    no node components)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Wed, 28 May 2025 21:42:34 +0300
+
 netxms (2.2.13-1) stable; urgency=medium
 
   * TimescaleDB supported as backend database

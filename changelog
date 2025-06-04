@@ -1,3 +1,9 @@
+netxms (2.2.13-3) stable; urgency=medium
+
+  * compiled MIB is now in the correct location
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Wed, 04 Jun 2025 15:45:10 +0300
+
 netxms (2.2.13-2) stable; urgency=medium
 
   * patch 54a6fde8d1cbfe5dc0f5f529918d462b62fc312c applied (crash if there are

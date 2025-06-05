@@ -1,3 +1,18 @@
+netxms (5.2.3-1) stable; urgency=medium
+
+  * Default timeout for service checks via netsvc subagent set to 1 second
+  * Fixed alarm severity text for Grafana API
+  * Forced plain text web service requests are cached separately
+  * Fixed issues:
+  *   NX-2766 (Template macros are not expanded in instance data filed in DCIs Instance discovery)
+  *   NX-2768 (Changes to VNC properties not logged to audit log)
+  *   NX-2770 (Object query result view pinning does not work)
+  *   NX-2777 (No favicon in new Web UI)
+  *   NX-2781 (Send all parameters of default email notification channel to reporting server)
+  *   \#140 (SQL errors after converting database to TimescaleDB)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Thu, 05 Jun 2025 17:29:44 +0300
+
 netxms (5.2.2-1) stable; urgency=medium
 
   * Fixed insert into table "notification\_log" for TimescaleDB

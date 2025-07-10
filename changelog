@@ -1,3 +1,26 @@
+netxms (5.2.4-1) stable; urgency=medium
+
+  * System event is generated when responsible user for object added or removed
+  * Support for custom OUI database entries
+  * Fixed bug in loading NXSL "stdlib" script
+  * Add BOM sequence skip for structured data extractors (including web service extractor)
+  * Network map fixes: refresh while drag, jumping labels on links and not saved object location after 'align to grid' action
+  * NXSL function JsonParse sets global variables $jsonErrorMessage, $jsonErrorLine, and $jsonErrorColumn after parsing error
+  * NXSL function JsonParse accepts optional second argument to control interpretation of integers as floating point numbers
+  * Configurable data collection scheduling mode that requires connectivity before scheduling DCI for collection
+  * Fixed issues:
+  *   NX-2737 (Switch from obsolete SQLite shared cache mode to WAL mode)
+  *   NX-2783 (Network discovery view shows "Invalid thread access" error on web)
+  *   NX-2788 (Changing Objects.Nodes.SyncNamesWithDNS requires server restart, while it should not)
+  *   NX-2790 (Interface Overview view should have node name when interface is under a circuit)
+  *   NX-2795 (Selection on map is frequently lost)
+  *   NX-2797 (Hide passwords in server configuration variables view)
+  *   NX-2802 (Show units for server configuration variables)
+  *   NX-2806 (Data collection scheduling mode that requires connectivity before scheduling DCI for collection)
+  *   NX-2807 (EPP export does not escape < and > in XML attributes)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Thu, 10 Jul 2025 17:57:39 +0300
+
 netxms (5.2.3-1) stable; urgency=medium
 
   * Default timeout for service checks via netsvc subagent set to 1 second

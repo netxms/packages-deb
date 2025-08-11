@@ -26,7 +26,7 @@ Build-Depends:
  libaio-dev,
  unixodbc-dev,
  libvirt-dev,
- libpcre3-dev,
+ libpcre3-dev | libpcre2-dev,
  libedit-dev,
  libmicrohttpd-dev,
  libstrophe-dev,

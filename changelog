@@ -1,3 +1,19 @@
+netxms (5.2.8-1) stable; urgency=medium
+
+  * Structure of idata and tdata tables on PostgreSQL reverted to previous schema
+  * nxadm command line option to check if server process is running and has completed initialization
+  * Fixed bug in reading physical disk information on Windows
+  * Fixed command injection vulnerability in PhysicalDisk.* metrics
+  * Fixed issues:
+  *   NX-2656 (Improve UX of the notification popup - X should close message, not the whole dialog)
+  *   NX-2801 (New version of JQ library on Windows)
+  *   NX-2827 (Allow editing of tools added to Object Tools dashboard element)
+  *   NX-2872 (%d format string incorrectly handled in chart legend)
+  *   NX-2875 (PhysicalDisk.SmartAttr() metric not working)
+  *   NX-2876 (Incorrect value for System.CPU.Count on Windows machines with more than 64 logical processors)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Thu, 04 Dec 2025 12:03:02 +0200
+
 netxms (5.2.7-1) stable; urgency=medium
 
   * Subagent for monitoring Redis database

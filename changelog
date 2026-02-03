@@ -1,3 +1,144 @@
+netxms (6.0.0-1) stable; urgency=medium
+
+  * Integrated AI assistant and AI agent
+  * AI-powered anomaly detection
+  * Built-in basic incident management
+  * Improved SSH support
+  * Event processing rules with empty filters are skipped (instead of "match all" behavior)
+  * Instance discovery for push DCIs
+  * Any NXSL object can be converted to JSON
+  * Optional function calls in NXSL
+  * New NXSL operator "has" for simplified bit field tests
+  * Changed NXSL variable lookup priority (local variables now have higher priority)
+  * New NXSL keyword "local" for explicit creation of local variable
+  * NXSL functions and string methods for fuzzy matching
+  * New methods in NXSL classes JsonObject and JsonArray to set value with explicit data type
+  * Improved web service call interface in NXSL
+  * Removed unused 'Objects.Security.ReadAccessViaMap' server configuration variable
+  * Node decommissioning
+  * Fixed unique constraint failure for network_map_deleted_nodes table
+  * Added SNMP Walk button to MIB Explorer with the option to walk OIDs not present in NetXMS MIB database
+  * Integration with HashiCorp Vault for secure credential management
+  * Server database password can be provided via external command
+  * Added lock for database inline upgrade
+  * DCI option to interpret unsupported state as data collection error
+  * New internal table Server.Queues
+  * Objects can be marked as "hidden"
+  * Drill-down option for dashboard element "Status indicator"
+  * Drivers for Planet LAN switches
+  * Drivers for Planet industrial switches
+  * Fixed "Go to DCI" action
+  * Dropped support of AIX 6.1
+  * Reworked configuration export/import to use JSON instead of XML; XML import is retained for backward compatibility
+  * Fixed deadlock in session termination caused by DCI force poll reference leak
+  * Fixed interface IP address access by adding lock to prevent use-after-free
+  * Fixed issues:
+  *   NX-119 (Add support for drops counters on interfaces)
+  *   NX-352 (Use display hint from MIB files in server and command line tools)
+  *   NX-484 (Open Event Log from Event monitor)
+  *   NX-507 (Show effective ACL for object)
+  *   NX-531 (Use ENTITY MIB for physical port mapping)
+  *   NX-600 (MikroTik authentication failure alarms from syslog)
+  *   NX-616 (nxdbmgr should detect missing proxy node for item)
+  *   NX-660 (Scroll network map by dragging on empty space)
+  *   NX-753 (Interface speed mismatch or under-utilization detection)
+  *   NX-879 (Agent explorer (like MIB explorer))
+  *   NX-983 (Event details accessible from event monitor)
+  *   NX-1072 (SNMP context support in data collection)
+  *   NX-1293 (Insert data with timestamp from NXSL)
+  *   NX-1439 (Dashboard widget "Table" should notify user DCI is in error state instead of showing empty table)
+  *   NX-1443 (Merge threshold/table threshold rules in default EPP)
+  *   NX-1795 (On TimescaleDB when DCI storage class changes historical data should get copied to new storage class)
+  *   NX-1826 (Graph option to not join lines if time between is over a specific value)
+  *   NX-1872 (DCI Table column ordering)
+  *   NX-1917 (Add "Copy SQL" button to Log viewers)
+  *   NX-1979 (Ability to set DCI into maintenance mode)
+  *   NX-2160 (Option to not show default columns in Find Object -> Query results)
+  *   NX-2188 (Add search/filter in network maps)
+  *   NX-2202 (Add access to alarm's related event list from NXSL)
+  *   NX-2246 (Add report retention and housekeeper in reporting server)
+  *   NX-2344 (Decommissioning for nodes)
+  *   NX-2398 (Add method for node and interface setPollCountForStatusChange)
+  *   NX-2437 (Ability to change MAC address on an interface)
+  *   NX-2447 (Add ability to instance-discover notification channels and server queues)
+  *   NX-2462 (Add "value with multipliers and units" column in DCI history view)
+  *   NX-2496 (Add methods to Tunnel class for binding new tunnels)
+  *   NX-2497 (Add option "go to DCI" for alarms that are related to a DCI)
+  *   NX-2558 (Add separate access right to manage agent policies within templates)
+  *   NX-2573 (Event template editor window is not resizable)
+  *   NX-2579 (User is not able to create node without having access on whole zone if zonning is enabled)
+  *   NX-2588 (Show unsupported DCIs by default)
+  *   NX-2612 (EPP rule import does not warn that a rule is referring missing event)
+  *   NX-2638 (After disabling a DCI in template there's no message with apply button is displayed)
+  *   NX-2643 (Add function to read list of available packages (and versions) in package manager from NXSL)
+  *   NX-2655 (Add an option to select sort column and ASC\\DES for Table DCI on Dashboard)
+  *   NX-2677 (Remove support of \ in macro processing)
+  *   NX-2697 (Improve management of authentication tokens)
+  *   NX-2709 (Automatically add scripts mentioned in macros in configuration export view)
+  *   NX-2710 (Traffic graphs for interface on overview)
+  *   NX-2722 (Add attributes of class User to Alarm and AlarmComment class)
+  *   NX-2736 (NXSL function to return DCI values as (timestamp, value) tuples)
+  *   NX-2743 (Do not execute EPP rule if it has no filters)
+  *   NX-2747 (Add threshold id to event parameters)
+  *   NX-2756 (Events are not correlated across server restarts)
+  *   NX-2757 (Add view deactivation on perspective change)
+  *   NX-2758 (NXSL function to find all DCIs of a node that have specific related object)
+  *   NX-2763 (Dashboard charts ignore multiplier setting in DCI)
+  *   NX-2771 (Display current grace period for automatic template removal in template property page)
+  *   NX-2773 (Rework threshold event repetition to exact interval)
+  *   NX-2774 (Allow to specify column for instance-name for instance discovery from a table)
+  *   NX-2778 (Logwatch should save file position in agent DB)
+  *   NX-2779 (Add instance value as event parameter)
+  *   NX-2789 (Add separate boolean attributes to represent state bits in NXSL network object classes)
+  *   NX-2791 (Keep timestamp of when interface peer information was last updated)
+  *   NX-2792 (New way to create links on custom map that would set link interfaces from topology)
+  *   NX-2803 (Repeat interface and network service events when node goes out of maintenance)
+  *   NX-2810 (Log parser metrics work correctly if only one file is given to the parser)
+  *   NX-2811 (Data collection edit mode displayed incorrectly when going from a template to a node)
+  *   NX-2814 (Auto link objects should allow object linking even if non object elements are selected)
+  *   NX-2815 (Leave disabled "Link objects" option in menu when multiple objects are selected)
+  *   NX-2817 (Rename MapLinkStyle:: constants)
+  *   NX-2818 (Investigate and update MySQL monitoring subagent)
+  *   NX-2823 (Drill-down dashboard not opening)
+  *   NX-2824 (Use float for delta per second or minute calculation)
+  *   NX-2826 (Automatic dashboard creation from template)
+  *   NX-2830 (Add option to export-import syslog and windows event processing rules)
+  *   NX-2839 (DCI "Query" button fails silently on error)
+  *   NX-2840 (Add parameterized metrics for structured metric provider)
+  *   NX-2841 (Add ability to monitor and control systemd services on Linux)
+  *   NX-2842 (Pinned line chart changes time period also for original chart)
+  *   NX-2844 (Header with DCI name, [DCI metric] and units in DCI history view)
+  *   NX-2854 (Ability to specify default column type for agent external table)
+  *   NX-2857 (Limit notification channel message queue and create event when limit is hit)
+  *   NX-2858 (Add debug console command to clear notification channel queue)
+  *   NX-2863 (Stop list for ports)
+  *   NX-2869 (Local variable should have priority over object attributes in object query)
+  *   NX-2870 (NXSL keyword to explicitly declare variable as local)
+  *   NX-2871 (Add SYS_IF_UNMANAGED event)
+  *   NX-2873 (Rename "Full configuration poll")
+  *   NX-2877 (Show "What's new" only to specific users and only once)
+  *   NX-2879 (Add GUID support in EPP editor filter)
+  *   Nx-2882 (Ask whether to delete or detach DCIs on template deletion)
+  *   NX-2884 (Use character limit for varchar fields on Oracle)
+  *   NX-2887 (Use DCI multiplier configuration to format DCI value in DCI summary tables in Grafana Infinity API)
+  *   NX-2889 (New DCI option: save only every n-th sample)
+  *   NX-2891 (Add lastAlarmId attribute to Event class)
+  *   NX-2892 (callWebService() does not set errorMessage if EnableWebServiceProxy is not enabled)
+  *   NX-2894 (DCI description not appearing in Data Source table in Saved Graph)
+  *   NX-2895 (Action with event and without alarm using DCI macro crashes server)
+  *   NX-2896 (Unified DCI template matching for context dashboard elements)
+  *   NX-2902 (In the notification channel, when using telegram and Proxy and DisableIPv6 = true, the server queries DNS IPv6 AAAA)
+  *   NX-2903 (Add support for # character in cron format)
+  *   NX-2904 (System.IO.DiskTime calculated incorrectly on Windows)
+  *   NX-2905 (Report Windows Store Installed Applications in Software Inventory)
+  *   NX-2906 (Values sent by nxapush should be cached in agent DB if connection to server is not available)
+  *   NX-2908 (Object/Tag should be displayed as <context> for DCI template elements of dashboard status indicator)
+  *   NX-2912 (Last known table value is shown instead of error when table DCI is in error due to connectivity loss to agent)
+  *   NX-2914 (DCIs from cluster are not reapplied to nodes under cluster on housekeeper run)
+  *   NX-2915 (DCIs with template <unknown> left on nodes when a cluster is deleted)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Tue, 03 Feb 2026 23:10:36 +0200
+
 netxms (5.2.8-1) stable; urgency=medium
 
   * Structure of idata and tdata tables on PostgreSQL reverted to previous schema
@@ -25,7 +166,7 @@ netxms (5.2.7-1) stable; urgency=medium
   * Fixed issues:
   *   NX-2594 (Possible server deadlock in network discovery)
   *   NX-2652 (Improve overview page for interfaces)
-  *   NX-2813 (duplicate key value violates unique constraint "interface\_vlan\_list\_pkey")
+  *   NX-2813 (duplicate key value violates unique constraint "interface_vlan_list_pkey")
   *   NX-2836 (Unbind not working from Agent Tunnels view)
   *   NX-2837 (Cannot read threshold summary: incompatible operation in Thresholds view on rack)
   *   NX-2850 (Tab keyboard button not working in script editor in WEB UI)
@@ -60,7 +201,7 @@ netxms (5.2.5-1) stable; urgency=medium
   * Fixed incorrect object status calculation after restarting server with resolved alarms
   * Fixed bug in network map display in dashboard widget
   * Fixed bug in calculation of physical CPU usage on AIX
-  * Fixed missing agent database table file\_integrity
+  * Fixed missing agent database table file_integrity
   * Fixed issues:
   *   NX-2794 (Add more info to log message: Potential node x.x.x.x in zone x rejected (IP address is known as cluster resource address))
   *   NX-2819 (DCI data recalculation not working for TimescaleDB)
@@ -109,7 +250,7 @@ netxms (5.2.3-1) stable; urgency=medium
 
 netxms (5.2.2-1) stable; urgency=medium
 
-  * Fixed insert into table "notification\_log" for TimescaleDB
+  * Fixed insert into table "notification_log" for TimescaleDB
   * Improved client performance, by disabling alarm refresh if tab is not active
   * Fixed missing DCI on network map links when new DCI's are added on alreay opened map
   * Added job progress indication within views
@@ -120,7 +261,7 @@ netxms (5.2.2-1) stable; urgency=medium
   *   NX-2752 (Add ICMP response time jitter internal DCI for ICMP response statistic collection)
   *   NX-2754 (Separate error code for situation when TCP proxy is not enabled in agent config)
   *   NX-2755 (NXSL Interface utilization values returned as int, without decimal point)
-  *   NX-2764 (Add PostgreSQL 17 support in monitoring subagent (pgi\_stat\_checkpointer))
+  *   NX-2764 (Add PostgreSQL 17 support in monitoring subagent (pgi_stat_checkpointer))
   *   NX-2765 (Increase command length in package manager)
 
  -- Alex Kirhenshtein <alk@netxms.org>  Mon, 19 May 2025 14:49:45 +0300
@@ -223,7 +364,7 @@ netxms (5.1.4-1) stable; urgency=medium
   * Fixed issues:
   *   NX-2645 (Remember perspective splitter position)
   *   NX-2684 (Remove hardcoded license id from the nxlicmgr)
-  *   NX-2690 (Migration from Timescale to regular Postgres fails on win\_event\_log table)
+  *   NX-2690 (Migration from Timescale to regular Postgres fails on win_event_log table)
   *   NX-2696 (View options in Data Collection does not show actual state of Use Multipliers checkbox)
   *   NX-2699 (Show value of os.name in nxmc's About dialog)
   *   NX-2701 (Automatic DB unlock fails because GetLocalIpAddr() may return different address)

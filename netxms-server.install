@@ -7,6 +7,7 @@ usr/bin/nxdownload
 usr/bin/nxethernetip
 usr/bin/nxget
 usr/bin/nxmibc
+usr/bin/nxmibdump
 usr/bin/nxminfo
 usr/bin/nxscript
 usr/bin/nxsnmp*

@@ -1,3 +1,17 @@
+netxms (6.0.1-1) stable; urgency=medium
+
+  * Improved database upgrade procedure (no long data conversion during upgrade)
+  * Agent environment can be set from server using custom attributes
+  * Fixed object names not resolved on "Dashboards and Maps" property page (showing object IDs instead of names)
+  * Fixed missing action list loading in Event Processing Policy editor
+  * Fixed business service uptime calculation for business services containing other business services
+  * Fixed database upgrade procedure failure on Microsoft SQL Server
+  * Added support for Anthropic API for AI agent
+  * Implemented changes proposed in PR #155 (IP address wipe on DNS resolution failure and DNS resolution conflict detection)
+  * Fixed NumberFormatException in legacy REST API when setting object flags with high bit (values >= 0x80000000)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Mon, 09 Feb 2026 18:48:53 +0200
+
 netxms (6.0.0-1) stable; urgency=medium
 
   * Integrated AI assistant and AI agent

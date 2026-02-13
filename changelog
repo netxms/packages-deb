@@ -1,3 +1,21 @@
+netxms (6.0.2-1) stable; urgency=medium
+
+  * Added wireless controller bridge for UniFi controllers (PR #255)
+  * Small fixes in background conversion of collected data
+  * Improved AI assistant guardrails
+  * Added internal metrics for monitoring AI providers usage
+  * Added TLS support in web API using monitored reproxy process
+  * Fixed issues:
+  *   NX-1658 (Drag and Drop confirmation prompt)
+  *   NX-2495 (Do not treat disk I/O error as file rotation in log file monitoring)
+  *   NX-2900 (Business Service check script editor should have hint)
+  *   NX-2907 (ssh.nsm can not be loaded on Windows)
+  *   NX-2913 (Cluster DCI is not populated to nodes under cluster)
+  *   NX-2919 (Push DCI from agent log parsing may come in wrong order)
+  *   NX-2925 (Proxy selector should show only relevant objects)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Fri, 13 Feb 2026 18:40:46 +0200
+
 netxms (6.0.1-1) stable; urgency=medium
 
   * Improved database upgrade procedure (no long data conversion during upgrade)

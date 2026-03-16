@@ -1,3 +1,19 @@
+netxms (6.0.5-1) stable; urgency=medium
+
+  * Fixed error in log view after console reconnect
+  * Fixed incorrect gap detection on line charts
+  * Fixed bug in handling permanent authentication token expiration time
+  * Fixed server crash during dashboard template processing
+  * Added -Z/-L mappings for AI, deployment, downtime, and incident log tables in nxdbmgr
+  * Fixed issues:
+  *   #1052 / NX-842 (Ability to switch bar chart from lef-to-right rendering to right-to-left)
+  *   #2561 / NX-2355 (An IP address from a Cluster object does not appear on a map in the address map)
+  *   #3033 / NX-2831 (Custom attribute value lost on child object)
+  *   #3050 / NX-2848 (Issues pinning views on WEB UI)
+  *   #3139 (serial\_number field on nodes table too small)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Mon, 16 Mar 2026 15:44:14 +0200
+
 netxms (6.0.4-1) stable; urgency=medium
 
   * File delivery policy deployment uses separate agent connection to avoid interference with data collection

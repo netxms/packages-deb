@@ -6,7 +6,6 @@ StartLimitIntervalSec=0
 [Service]
 Type=simple
 ExecStart=/usr/bin/netxmsd -S
-PIDFile=/var/run/netxmsd.pid
 LimitNOFILE=65535
 LimitCORE=infinity
 Restart=always

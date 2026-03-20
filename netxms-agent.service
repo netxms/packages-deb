@@ -5,7 +5,6 @@ After=network.target
 [Service]
 Type=simple
 ExecStart=/usr/bin/nxagentd -S
-PIDFile=/var/run/nxagentd.pid
 LimitCORE=infinity
 Restart=always
 UMask=0077

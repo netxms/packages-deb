@@ -7,6 +7,7 @@ include(`libjq.m4')dnl
 include(`libstrophe.m4')dnl
 include(`lm-sensors.m4')dnl
 include(`mariadb.m4')dnl
+include(`mongodb.m4')dnl
 include(`mosquitto.m4')dnl
 include(`mysql.m4')dnl
 include(`openssl.m4')dnl

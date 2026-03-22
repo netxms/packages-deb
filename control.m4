@@ -31,7 +31,7 @@ Build-Depends:
  libmicrohttpd-dev,
  libstrophe-dev,
  libnxmodbus-dev (>= 3.1.10-4),
- libssh-dev PKG_LM_SENSORS PKG_JDK PKG_JEMALLOC PKG_JQ PKG_MARIADB PKG_MOSQUITTO PKG_MYSQL PKG_OPENSSL PKG_SYSTEMD PKG_ZMQ PKG_ASTERISK PKG_XEN PKG_ISOTREE PKG_LIBSTROPHE
+ libssh-dev PKG_LM_SENSORS PKG_JDK PKG_JEMALLOC PKG_JQ PKG_MARIADB PKG_MONGODB PKG_MOSQUITTO PKG_MYSQL PKG_OPENSSL PKG_SYSTEMD PKG_ZMQ PKG_ASTERISK PKG_XEN PKG_ISOTREE PKG_LIBSTROPHE
 
 Package: netxms-dbg
 Architecture: any
@@ -143,6 +143,16 @@ Multi-Arch: same
 Depends: netxms-agent (= ${binary:Version}), netxms-dbdrv-pgsql (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: NetXMS subagent for monitoring PostgreSQL
  <insert long description, indented with spaces>
+
+ifdef(`WITH_MONGODB',
+`Package: netxms-agent-mongodb
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: netxms-agent (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: NetXMS subagent for monitoring MongoDB
+ <insert long description, indented with spaces>
+')dnl
 
 ifdef(`WITH_MOSQUITTO',
 `Package: netxms-agent-mqtt

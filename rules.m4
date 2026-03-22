@@ -31,7 +31,7 @@ override_dh_auto_configure:
 		--with-jdk=/usr/lib/jvm/default-java \
 		--without-gui-client \
 		--enable-modbus \
-		--with-vmgr CONFIGURE_JEMALLOC CONFIGURE_JQ CONFIGURE_MARIADB CONFIGURE_MOSQUITTO CONFIGURE_MYSQL CONFIGURE_ZMQ CONFIGURE_ORACLE CONFIGURE_ASTERISK CONFIGURE_XEN CONFIGURE_LIBSTROPHE CONFIGURE_ADDITIONAL
+		--with-vmgr CONFIGURE_JEMALLOC CONFIGURE_JQ CONFIGURE_MARIADB CONFIGURE_MONGODB CONFIGURE_MOSQUITTO CONFIGURE_MYSQL CONFIGURE_ZMQ CONFIGURE_ORACLE CONFIGURE_ASTERISK CONFIGURE_XEN CONFIGURE_LIBSTROPHE CONFIGURE_ADDITIONAL
 
 override_dh_auto_build:
 	dh_auto_build
@@ -47,6 +47,7 @@ else
 	dh_strip -pnetxms-agent --dbg-package=netxms-dbg
 	ifdef(`WITH_ASTERISK', `dh_strip -pnetxms-agent-asterisk --dbg-package=netxms-dbg')
 	dh_strip -pnetxms-agent-java --dbg-package=netxms-dbg
+	ifdef(`WITH_MONGODB', `dh_strip -pnetxms-agent-mongodb --dbg-package=netxms-dbg')
 	ifdef(`WITH_MOSQUITTO', `dh_strip -pnetxms-agent-mqtt --dbg-package=netxms-dbg')
 	ifdef(`WITH_MYSQL', `dh_strip -pnetxms-dbdrv-mysql --dbg-package=netxms-dbg')
 	ifdef(`WITH_ORACLE', `dh_strip -pnetxms-dbdrv-oracle --dbg-package=netxms-dbg')

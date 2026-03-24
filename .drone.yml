@@ -1,0 +1,410 @@
+---
+kind: pipeline
+type: docker
+name: build-amd64
+
+platform:
+  arch: amd64
+
+volumes:
+  - name: m2-repo-bullseye
+    host:
+      path: /cache/m2-repo/bullseye
+  - name: m2-repo-bookworm
+    host:
+      path: /cache/m2-repo/bookworm
+  - name: m2-repo-trixie
+    host:
+      path: /cache/m2-repo/trixie
+  - name: m2-repo-focal
+    host:
+      path: /cache/m2-repo/focal
+  - name: m2-repo-jammy
+    host:
+      path: /cache/m2-repo/jammy
+  - name: m2-repo-noble
+    host:
+      path: /cache/m2-repo/noble
+
+steps:
+  - name: make-dist
+    image: ghcr.io/alkk/netxms-make-dist:latest
+    commands:
+      - V=$(head -1 changelog | sed 's/.*(\(.*\)-.*/\1/')
+      - "[ -z $V ] && echo Cannot detect version, check changelog && exit 1"
+      - /build.sh release-$V
+      - mv netxms/netxms-$V.tar.gz netxms_$V.orig.tar.gz
+      - rm -rf netxms
+  - name: build-bullseye
+    image: ghcr.io/netxms/builder-deb:bullseye
+    volumes:
+      - name: m2-repo-bullseye
+        path: /m2-repo
+    commands:
+      - V=$(head -1 changelog | sed 's/.*(\(.*\)-.*/\1/')
+      - tar xzf netxms_$V.orig.tar.gz
+      - cp -a netxms_$V.orig.tar.gz BUILD-bullseye/
+      - cd BUILD-bullseye/netxms-$V
+      - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
+      - cp -a ../../config ../../source ../../patches debian/
+      - cd debian && make DIST=bullseye && cd ..
+      - mk-build-deps -i -t 'apt-get -y --no-install-recommends'
+      - rm -f *-build-deps_*.deb *-build-deps_*.buildinfo *-build-deps_*.changes
+      - dpkg-buildpackage --no-sign
+      - cd ../..
+      - mkdir -p DEBS/bullseye
+      - mv BUILD-bullseye/*.deb DEBS/bullseye/
+      - rm -rf BUILD-bullseye
+    depends_on:
+      - make-dist
+  - name: build-bookworm
+    image: ghcr.io/netxms/builder-deb:bookworm
+    volumes:
+      - name: m2-repo-bookworm
+        path: /m2-repo
+    commands:
+      - V=$(head -1 changelog | sed 's/.*(\(.*\)-.*/\1/')
+      - tar xzf netxms_$V.orig.tar.gz
+      - cp -a netxms_$V.orig.tar.gz BUILD-bookworm/
+      - cd BUILD-bookworm/netxms-$V
+      - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
+      - cp -a ../../config ../../source ../../patches debian/
+      - cd debian && make DIST=bookworm && cd ..
+      - mk-build-deps -i -t 'apt-get -y --no-install-recommends'
+      - rm -f *-build-deps_*.deb *-build-deps_*.buildinfo *-build-deps_*.changes
+      - dpkg-buildpackage --no-sign
+      - cd ../..
+      - mkdir -p DEBS/bookworm
+      - mv BUILD-bookworm/*.deb DEBS/bookworm/
+      - rm -rf BUILD-bookworm
+    depends_on:
+      - make-dist
+  - name: build-trixie
+    image: ghcr.io/netxms/builder-deb:trixie
+    volumes:
+      - name: m2-repo-trixie
+        path: /m2-repo
+    commands:
+      - V=$(head -1 changelog | sed 's/.*(\(.*\)-.*/\1/')
+      - tar xzf netxms_$V.orig.tar.gz
+      - cp -a netxms_$V.orig.tar.gz BUILD-trixie/
+      - cd BUILD-trixie/netxms-$V
+      - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
+      - cp -a ../../config ../../source ../../patches debian/
+      - cd debian && make DIST=trixie && cd ..
+      - mk-build-deps -i -t 'apt-get -y --no-install-recommends'
+      - rm -f *-build-deps_*.deb *-build-deps_*.buildinfo *-build-deps_*.changes
+      - dpkg-buildpackage --no-sign
+      - cd ../..
+      - mkdir -p DEBS/trixie
+      - mv BUILD-trixie/*.deb DEBS/trixie/
+      - rm -rf BUILD-trixie
+    depends_on:
+      - make-dist
+  - name: build-focal
+    image: ghcr.io/netxms/builder-deb:focal
+    volumes:
+      - name: m2-repo-focal
+        path: /m2-repo
+    commands:
+      - V=$(head -1 changelog | sed 's/.*(\(.*\)-.*/\1/')
+      - tar xzf netxms_$V.orig.tar.gz
+      - cp -a netxms_$V.orig.tar.gz BUILD-focal/
+      - cd BUILD-focal/netxms-$V
+      - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
+      - cp -a ../../config ../../source ../../patches debian/
+      - cd debian && make DIST=focal && cd ..
+      - mk-build-deps -i -t 'apt-get -y --no-install-recommends'
+      - rm -f *-build-deps_*.deb *-build-deps_*.buildinfo *-build-deps_*.changes
+      - dpkg-buildpackage --no-sign
+      - cd ../..
+      - mkdir -p DEBS/focal
+      - mv BUILD-focal/*.deb DEBS/focal/
+      - rm -rf BUILD-focal
+    depends_on:
+      - make-dist
+  - name: build-jammy
+    image: ghcr.io/netxms/builder-deb:jammy
+    volumes:
+      - name: m2-repo-jammy
+        path: /m2-repo
+    commands:
+      - V=$(head -1 changelog | sed 's/.*(\(.*\)-.*/\1/')
+      - tar xzf netxms_$V.orig.tar.gz
+      - cp -a netxms_$V.orig.tar.gz BUILD-jammy/
+      - cd BUILD-jammy/netxms-$V
+      - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
+      - cp -a ../../config ../../source ../../patches debian/
+      - cd debian && make DIST=jammy && cd ..
+      - mk-build-deps -i -t 'apt-get -y --no-install-recommends'
+      - rm -f *-build-deps_*.deb *-build-deps_*.buildinfo *-build-deps_*.changes
+      - dpkg-buildpackage --no-sign
+      - cd ../..
+      - mkdir -p DEBS/jammy
+      - mv BUILD-jammy/*.deb DEBS/jammy/
+      - rm -rf BUILD-jammy
+    depends_on:
+      - make-dist
+  - name: build-noble
+    image: ghcr.io/netxms/builder-deb:noble
+    volumes:
+      - name: m2-repo-noble
+        path: /m2-repo
+    commands:
+      - V=$(head -1 changelog | sed 's/.*(\(.*\)-.*/\1/')
+      - tar xzf netxms_$V.orig.tar.gz
+      - cp -a netxms_$V.orig.tar.gz BUILD-noble/
+      - cd BUILD-noble/netxms-$V
+      - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
+      - cp -a ../../config ../../source ../../patches debian/
+      - cd debian && make DIST=noble && cd ..
+      - mk-build-deps -i -t 'apt-get -y --no-install-recommends'
+      - rm -f *-build-deps_*.deb *-build-deps_*.buildinfo *-build-deps_*.changes
+      - dpkg-buildpackage --no-sign
+      - cd ../..
+      - mkdir -p DEBS/noble
+      - mv BUILD-noble/*.deb DEBS/noble/
+      - rm -rf BUILD-noble
+    depends_on:
+      - make-dist
+  - name: upload
+    image: ghcr.io/alkk/drone-rsync:latest
+    settings:
+      host:
+        from_secret: deploy_target
+      host_fingerprint:
+        from_secret: deploy_host_fingerprint
+      port:
+        from_secret: deploy_port
+      user:
+        from_secret: deploy_user
+      key:
+        from_secret: deploy_key
+      source: DEBS/
+      destination: /staging/deb
+      delete: true
+      extra: --verbose --chmod=Dg+w,Fg+w
+    depends_on:
+      - build-bullseye
+      - build-bookworm
+      - build-trixie
+      - build-focal
+      - build-jammy
+      - build-noble
+
+---
+kind: pipeline
+type: docker
+name: build-arm64
+
+platform:
+  arch: arm64
+
+volumes:
+  - name: m2-repo-bullseye
+    host:
+      path: /cache/m2-repo/bullseye
+  - name: m2-repo-bookworm
+    host:
+      path: /cache/m2-repo/bookworm
+  - name: m2-repo-trixie
+    host:
+      path: /cache/m2-repo/trixie
+  - name: m2-repo-focal
+    host:
+      path: /cache/m2-repo/focal
+  - name: m2-repo-jammy
+    host:
+      path: /cache/m2-repo/jammy
+  - name: m2-repo-noble
+    host:
+      path: /cache/m2-repo/noble
+
+steps:
+  - name: make-dist
+    image: ghcr.io/alkk/netxms-make-dist:latest
+    commands:
+      - V=$(head -1 changelog | sed 's/.*(\(.*\)-.*/\1/')
+      - "[ -z $V ] && echo Cannot detect version, check changelog && exit 1"
+      - /build.sh release-$V
+      - mv netxms/netxms-$V.tar.gz netxms_$V.orig.tar.gz
+      - rm -rf netxms
+  - name: build-bullseye
+    image: ghcr.io/netxms/builder-deb:bullseye
+    volumes:
+      - name: m2-repo-bullseye
+        path: /m2-repo
+    commands:
+      - V=$(head -1 changelog | sed 's/.*(\(.*\)-.*/\1/')
+      - tar xzf netxms_$V.orig.tar.gz
+      - cp -a netxms_$V.orig.tar.gz BUILD-bullseye/
+      - cd BUILD-bullseye/netxms-$V
+      - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
+      - cp -a ../../config ../../source ../../patches debian/
+      - cd debian && make DIST=bullseye && cd ..
+      - mk-build-deps -i -t 'apt-get -y --no-install-recommends'
+      - rm -f *-build-deps_*.deb *-build-deps_*.buildinfo *-build-deps_*.changes
+      - dpkg-buildpackage --no-sign
+      - cd ../..
+      - mkdir -p DEBS/bullseye
+      - mv BUILD-bullseye/*.deb DEBS/bullseye/
+      - rm -rf BUILD-bullseye
+    depends_on:
+      - make-dist
+  - name: build-bookworm
+    image: ghcr.io/netxms/builder-deb:bookworm
+    volumes:
+      - name: m2-repo-bookworm
+        path: /m2-repo
+    commands:
+      - V=$(head -1 changelog | sed 's/.*(\(.*\)-.*/\1/')
+      - tar xzf netxms_$V.orig.tar.gz
+      - cp -a netxms_$V.orig.tar.gz BUILD-bookworm/
+      - cd BUILD-bookworm/netxms-$V
+      - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
+      - cp -a ../../config ../../source ../../patches debian/
+      - cd debian && make DIST=bookworm && cd ..
+      - mk-build-deps -i -t 'apt-get -y --no-install-recommends'
+      - rm -f *-build-deps_*.deb *-build-deps_*.buildinfo *-build-deps_*.changes
+      - dpkg-buildpackage --no-sign
+      - cd ../..
+      - mkdir -p DEBS/bookworm
+      - mv BUILD-bookworm/*.deb DEBS/bookworm/
+      - rm -rf BUILD-bookworm
+    depends_on:
+      - make-dist
+  - name: build-trixie
+    image: ghcr.io/netxms/builder-deb:trixie
+    volumes:
+      - name: m2-repo-trixie
+        path: /m2-repo
+    commands:
+      - V=$(head -1 changelog | sed 's/.*(\(.*\)-.*/\1/')
+      - tar xzf netxms_$V.orig.tar.gz
+      - cp -a netxms_$V.orig.tar.gz BUILD-trixie/
+      - cd BUILD-trixie/netxms-$V
+      - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
+      - cp -a ../../config ../../source ../../patches debian/
+      - cd debian && make DIST=trixie && cd ..
+      - mk-build-deps -i -t 'apt-get -y --no-install-recommends'
+      - rm -f *-build-deps_*.deb *-build-deps_*.buildinfo *-build-deps_*.changes
+      - dpkg-buildpackage --no-sign
+      - cd ../..
+      - mkdir -p DEBS/trixie
+      - mv BUILD-trixie/*.deb DEBS/trixie/
+      - rm -rf BUILD-trixie
+    depends_on:
+      - make-dist
+  - name: build-focal
+    image: ghcr.io/netxms/builder-deb:focal
+    volumes:
+      - name: m2-repo-focal
+        path: /m2-repo
+    commands:
+      - V=$(head -1 changelog | sed 's/.*(\(.*\)-.*/\1/')
+      - tar xzf netxms_$V.orig.tar.gz
+      - cp -a netxms_$V.orig.tar.gz BUILD-focal/
+      - cd BUILD-focal/netxms-$V
+      - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
+      - cp -a ../../config ../../source ../../patches debian/
+      - cd debian && make DIST=focal && cd ..
+      - mk-build-deps -i -t 'apt-get -y --no-install-recommends'
+      - rm -f *-build-deps_*.deb *-build-deps_*.buildinfo *-build-deps_*.changes
+      - dpkg-buildpackage --no-sign
+      - cd ../..
+      - mkdir -p DEBS/focal
+      - mv BUILD-focal/*.deb DEBS/focal/
+      - rm -rf BUILD-focal
+    depends_on:
+      - make-dist
+  - name: build-jammy
+    image: ghcr.io/netxms/builder-deb:jammy
+    volumes:
+      - name: m2-repo-jammy
+        path: /m2-repo
+    commands:
+      - V=$(head -1 changelog | sed 's/.*(\(.*\)-.*/\1/')
+      - tar xzf netxms_$V.orig.tar.gz
+      - cp -a netxms_$V.orig.tar.gz BUILD-jammy/
+      - cd BUILD-jammy/netxms-$V
+      - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
+      - cp -a ../../config ../../source ../../patches debian/
+      - cd debian && make DIST=jammy && cd ..
+      - mk-build-deps -i -t 'apt-get -y --no-install-recommends'
+      - rm -f *-build-deps_*.deb *-build-deps_*.buildinfo *-build-deps_*.changes
+      - dpkg-buildpackage --no-sign
+      - cd ../..
+      - mkdir -p DEBS/jammy
+      - mv BUILD-jammy/*.deb DEBS/jammy/
+      - rm -rf BUILD-jammy
+    depends_on:
+      - make-dist
+  - name: build-noble
+    image: ghcr.io/netxms/builder-deb:noble
+    volumes:
+      - name: m2-repo-noble
+        path: /m2-repo
+    commands:
+      - V=$(head -1 changelog | sed 's/.*(\(.*\)-.*/\1/')
+      - tar xzf netxms_$V.orig.tar.gz
+      - cp -a netxms_$V.orig.tar.gz BUILD-noble/
+      - cd BUILD-noble/netxms-$V
+      - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
+      - cp -a ../../config ../../source ../../patches debian/
+      - cd debian && make DIST=noble && cd ..
+      - mk-build-deps -i -t 'apt-get -y --no-install-recommends'
+      - rm -f *-build-deps_*.deb *-build-deps_*.buildinfo *-build-deps_*.changes
+      - dpkg-buildpackage --no-sign
+      - cd ../..
+      - mkdir -p DEBS/noble
+      - mv BUILD-noble/*.deb DEBS/noble/
+      - rm -rf BUILD-noble
+    depends_on:
+      - make-dist
+  - name: upload
+    image: ghcr.io/alkk/drone-rsync:latest
+    settings:
+      host:
+        from_secret: deploy_target
+      host_fingerprint:
+        from_secret: deploy_host_fingerprint
+      port:
+        from_secret: deploy_port
+      user:
+        from_secret: deploy_user
+      key:
+        from_secret: deploy_key
+      source: DEBS/
+      destination: /staging/deb
+      delete: true
+      extra: --verbose --chmod=Dg+w,Fg+w
+    depends_on:
+      - build-bullseye
+      - build-bookworm
+      - build-trixie
+      - build-focal
+      - build-jammy
+      - build-noble
+
+---
+kind: pipeline
+name: notify
+type: docker
+steps:
+  - name: notify
+    image: appleboy/drone-telegram
+    settings:
+      token:
+        from_secret: telegram_bot_token
+      to:
+        from_secret: telegram_channel_id
+      disable_web_page_preview: true
+
+trigger:
+  status:
+    - success
+    - failure
+
+depends_on:
+  - build-amd64
+  - build-arm64

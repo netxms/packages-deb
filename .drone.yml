@@ -46,6 +46,7 @@ steps:
       - tar xzf netxms_$V.orig.tar.gz -C BUILD-bullseye
       - cp -a netxms_$V.orig.tar.gz BUILD-bullseye/
       - cd BUILD-bullseye/netxms-$V
+      - mkdir -p debian
       - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
       - cp -a ../../config ../../source ../../patches debian/
       - cd debian && make DIST=bullseye && cd ..
@@ -69,6 +70,7 @@ steps:
       - tar xzf netxms_$V.orig.tar.gz -C BUILD-bookworm
       - cp -a netxms_$V.orig.tar.gz BUILD-bookworm/
       - cd BUILD-bookworm/netxms-$V
+      - mkdir -p debian
       - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
       - cp -a ../../config ../../source ../../patches debian/
       - cd debian && make DIST=bookworm && cd ..
@@ -92,6 +94,7 @@ steps:
       - tar xzf netxms_$V.orig.tar.gz -C BUILD-trixie
       - cp -a netxms_$V.orig.tar.gz BUILD-trixie/
       - cd BUILD-trixie/netxms-$V
+      - mkdir -p debian
       - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
       - cp -a ../../config ../../source ../../patches debian/
       - cd debian && make DIST=trixie && cd ..
@@ -115,6 +118,7 @@ steps:
       - tar xzf netxms_$V.orig.tar.gz -C BUILD-focal
       - cp -a netxms_$V.orig.tar.gz BUILD-focal/
       - cd BUILD-focal/netxms-$V
+      - mkdir -p debian
       - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
       - cp -a ../../config ../../source ../../patches debian/
       - cd debian && make DIST=focal && cd ..
@@ -138,6 +142,7 @@ steps:
       - tar xzf netxms_$V.orig.tar.gz -C BUILD-jammy
       - cp -a netxms_$V.orig.tar.gz BUILD-jammy/
       - cd BUILD-jammy/netxms-$V
+      - mkdir -p debian
       - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
       - cp -a ../../config ../../source ../../patches debian/
       - cd debian && make DIST=jammy && cd ..
@@ -161,6 +166,7 @@ steps:
       - tar xzf netxms_$V.orig.tar.gz -C BUILD-noble
       - cp -a netxms_$V.orig.tar.gz BUILD-noble/
       - cd BUILD-noble/netxms-$V
+      - mkdir -p debian
       - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
       - cp -a ../../config ../../source ../../patches debian/
       - cd debian && make DIST=noble && cd ..
@@ -246,6 +252,7 @@ steps:
       - tar xzf netxms_$V.orig.tar.gz -C BUILD-bullseye
       - cp -a netxms_$V.orig.tar.gz BUILD-bullseye/
       - cd BUILD-bullseye/netxms-$V
+      - mkdir -p debian
       - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
       - cp -a ../../config ../../source ../../patches debian/
       - cd debian && make DIST=bullseye && cd ..
@@ -269,6 +276,7 @@ steps:
       - tar xzf netxms_$V.orig.tar.gz -C BUILD-bookworm
       - cp -a netxms_$V.orig.tar.gz BUILD-bookworm/
       - cd BUILD-bookworm/netxms-$V
+      - mkdir -p debian
       - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
       - cp -a ../../config ../../source ../../patches debian/
       - cd debian && make DIST=bookworm && cd ..
@@ -292,6 +300,7 @@ steps:
       - tar xzf netxms_$V.orig.tar.gz -C BUILD-trixie
       - cp -a netxms_$V.orig.tar.gz BUILD-trixie/
       - cd BUILD-trixie/netxms-$V
+      - mkdir -p debian
       - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
       - cp -a ../../config ../../source ../../patches debian/
       - cd debian && make DIST=trixie && cd ..
@@ -315,6 +324,7 @@ steps:
       - tar xzf netxms_$V.orig.tar.gz -C BUILD-focal
       - cp -a netxms_$V.orig.tar.gz BUILD-focal/
       - cd BUILD-focal/netxms-$V
+      - mkdir -p debian
       - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
       - cp -a ../../config ../../source ../../patches debian/
       - cd debian && make DIST=focal && cd ..
@@ -338,6 +348,7 @@ steps:
       - tar xzf netxms_$V.orig.tar.gz -C BUILD-jammy
       - cp -a netxms_$V.orig.tar.gz BUILD-jammy/
       - cd BUILD-jammy/netxms-$V
+      - mkdir -p debian
       - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
       - cp -a ../../config ../../source ../../patches debian/
       - cd debian && make DIST=jammy && cd ..
@@ -361,6 +372,7 @@ steps:
       - tar xzf netxms_$V.orig.tar.gz -C BUILD-noble
       - cp -a netxms_$V.orig.tar.gz BUILD-noble/
       - cd BUILD-noble/netxms-$V
+      - mkdir -p debian
       - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
       - cp -a ../../config ../../source ../../patches debian/
       - cd debian && make DIST=noble && cd ..
@@ -422,6 +434,6 @@ depends_on:
   - build-arm64
 ---
 kind: signature
-hmac: ff8cd6f1aea9a2aaa17a03f13df3733e0009dc09f8b264188aaf9a4dfcc6ff47
+hmac: ca3a9fb68efdb821534b699789a964359c87aa0a202a13e70db41ccb2f84a832
 
 ...

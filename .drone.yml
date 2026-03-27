@@ -30,7 +30,7 @@ steps:
   - name: make-dist
     image: ghcr.io/alkk/netxms-make-dist:latest
     commands:
-      - V=$(head -1 changelog | sed 's/.*(\(.*\)-.*/\1/')
+      - V=$(head -1 changelog | cut -d'(' -f2 | cut -d'-' -f1)
       - "[ -z $V ] && echo Cannot detect version, check changelog && exit 1"
       - /build.sh release-$V
       - mv netxms/netxms-$V.tar.gz netxms_$V.orig.tar.gz
@@ -41,7 +41,7 @@ steps:
       - name: m2-repo-bullseye
         path: /m2-repo
     commands:
-      - V=$(head -1 changelog | sed 's/.*(\(.*\)-.*/\1/')
+      - V=$(head -1 changelog | cut -d'(' -f2 | cut -d'-' -f1)
       - tar xzf netxms_$V.orig.tar.gz
       - cp -a netxms_$V.orig.tar.gz BUILD-bullseye/
       - cd BUILD-bullseye/netxms-$V
@@ -63,7 +63,7 @@ steps:
       - name: m2-repo-bookworm
         path: /m2-repo
     commands:
-      - V=$(head -1 changelog | sed 's/.*(\(.*\)-.*/\1/')
+      - V=$(head -1 changelog | cut -d'(' -f2 | cut -d'-' -f1)
       - tar xzf netxms_$V.orig.tar.gz
       - cp -a netxms_$V.orig.tar.gz BUILD-bookworm/
       - cd BUILD-bookworm/netxms-$V
@@ -85,7 +85,7 @@ steps:
       - name: m2-repo-trixie
         path: /m2-repo
     commands:
-      - V=$(head -1 changelog | sed 's/.*(\(.*\)-.*/\1/')
+      - V=$(head -1 changelog | cut -d'(' -f2 | cut -d'-' -f1)
       - tar xzf netxms_$V.orig.tar.gz
       - cp -a netxms_$V.orig.tar.gz BUILD-trixie/
       - cd BUILD-trixie/netxms-$V
@@ -107,7 +107,7 @@ steps:
       - name: m2-repo-focal
         path: /m2-repo
     commands:
-      - V=$(head -1 changelog | sed 's/.*(\(.*\)-.*/\1/')
+      - V=$(head -1 changelog | cut -d'(' -f2 | cut -d'-' -f1)
       - tar xzf netxms_$V.orig.tar.gz
       - cp -a netxms_$V.orig.tar.gz BUILD-focal/
       - cd BUILD-focal/netxms-$V
@@ -129,7 +129,7 @@ steps:
       - name: m2-repo-jammy
         path: /m2-repo
     commands:
-      - V=$(head -1 changelog | sed 's/.*(\(.*\)-.*/\1/')
+      - V=$(head -1 changelog | cut -d'(' -f2 | cut -d'-' -f1)
       - tar xzf netxms_$V.orig.tar.gz
       - cp -a netxms_$V.orig.tar.gz BUILD-jammy/
       - cd BUILD-jammy/netxms-$V
@@ -151,7 +151,7 @@ steps:
       - name: m2-repo-noble
         path: /m2-repo
     commands:
-      - V=$(head -1 changelog | sed 's/.*(\(.*\)-.*/\1/')
+      - V=$(head -1 changelog | cut -d'(' -f2 | cut -d'-' -f1)
       - tar xzf netxms_$V.orig.tar.gz
       - cp -a netxms_$V.orig.tar.gz BUILD-noble/
       - cd BUILD-noble/netxms-$V
@@ -224,7 +224,7 @@ steps:
   - name: make-dist
     image: ghcr.io/alkk/netxms-make-dist:latest
     commands:
-      - V=$(head -1 changelog | sed 's/.*(\(.*\)-.*/\1/')
+      - V=$(head -1 changelog | cut -d'(' -f2 | cut -d'-' -f1)
       - "[ -z $V ] && echo Cannot detect version, check changelog && exit 1"
       - /build.sh release-$V
       - mv netxms/netxms-$V.tar.gz netxms_$V.orig.tar.gz
@@ -235,7 +235,7 @@ steps:
       - name: m2-repo-bullseye
         path: /m2-repo
     commands:
-      - V=$(head -1 changelog | sed 's/.*(\(.*\)-.*/\1/')
+      - V=$(head -1 changelog | cut -d'(' -f2 | cut -d'-' -f1)
       - tar xzf netxms_$V.orig.tar.gz
       - cp -a netxms_$V.orig.tar.gz BUILD-bullseye/
       - cd BUILD-bullseye/netxms-$V
@@ -257,7 +257,7 @@ steps:
       - name: m2-repo-bookworm
         path: /m2-repo
     commands:
-      - V=$(head -1 changelog | sed 's/.*(\(.*\)-.*/\1/')
+      - V=$(head -1 changelog | cut -d'(' -f2 | cut -d'-' -f1)
       - tar xzf netxms_$V.orig.tar.gz
       - cp -a netxms_$V.orig.tar.gz BUILD-bookworm/
       - cd BUILD-bookworm/netxms-$V
@@ -279,7 +279,7 @@ steps:
       - name: m2-repo-trixie
         path: /m2-repo
     commands:
-      - V=$(head -1 changelog | sed 's/.*(\(.*\)-.*/\1/')
+      - V=$(head -1 changelog | cut -d'(' -f2 | cut -d'-' -f1)
       - tar xzf netxms_$V.orig.tar.gz
       - cp -a netxms_$V.orig.tar.gz BUILD-trixie/
       - cd BUILD-trixie/netxms-$V
@@ -301,7 +301,7 @@ steps:
       - name: m2-repo-focal
         path: /m2-repo
     commands:
-      - V=$(head -1 changelog | sed 's/.*(\(.*\)-.*/\1/')
+      - V=$(head -1 changelog | cut -d'(' -f2 | cut -d'-' -f1)
       - tar xzf netxms_$V.orig.tar.gz
       - cp -a netxms_$V.orig.tar.gz BUILD-focal/
       - cd BUILD-focal/netxms-$V
@@ -323,7 +323,7 @@ steps:
       - name: m2-repo-jammy
         path: /m2-repo
     commands:
-      - V=$(head -1 changelog | sed 's/.*(\(.*\)-.*/\1/')
+      - V=$(head -1 changelog | cut -d'(' -f2 | cut -d'-' -f1)
       - tar xzf netxms_$V.orig.tar.gz
       - cp -a netxms_$V.orig.tar.gz BUILD-jammy/
       - cd BUILD-jammy/netxms-$V
@@ -345,7 +345,7 @@ steps:
       - name: m2-repo-noble
         path: /m2-repo
     commands:
-      - V=$(head -1 changelog | sed 's/.*(\(.*\)-.*/\1/')
+      - V=$(head -1 changelog | cut -d'(' -f2 | cut -d'-' -f1)
       - tar xzf netxms_$V.orig.tar.gz
       - cp -a netxms_$V.orig.tar.gz BUILD-noble/
       - cd BUILD-noble/netxms-$V
@@ -408,3 +408,8 @@ trigger:
 depends_on:
   - build-amd64
   - build-arm64
+---
+kind: signature
+hmac: d22dc39c7f9aa0e3a5ed47673be97526e5501c3cc010e858b32563f6964840f8
+
+...

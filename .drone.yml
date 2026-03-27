@@ -42,7 +42,8 @@ steps:
         path: /m2-repo
     commands:
       - V=$(head -1 changelog | cut -d'(' -f2 | cut -d'-' -f1)
-      - tar xzf netxms_$V.orig.tar.gz
+      - mkdir -p BUILD-bullseye
+      - tar xzf netxms_$V.orig.tar.gz -C BUILD-bullseye
       - cp -a netxms_$V.orig.tar.gz BUILD-bullseye/
       - cd BUILD-bullseye/netxms-$V
       - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
@@ -64,7 +65,8 @@ steps:
         path: /m2-repo
     commands:
       - V=$(head -1 changelog | cut -d'(' -f2 | cut -d'-' -f1)
-      - tar xzf netxms_$V.orig.tar.gz
+      - mkdir -p BUILD-bookworm
+      - tar xzf netxms_$V.orig.tar.gz -C BUILD-bookworm
       - cp -a netxms_$V.orig.tar.gz BUILD-bookworm/
       - cd BUILD-bookworm/netxms-$V
       - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
@@ -86,7 +88,8 @@ steps:
         path: /m2-repo
     commands:
       - V=$(head -1 changelog | cut -d'(' -f2 | cut -d'-' -f1)
-      - tar xzf netxms_$V.orig.tar.gz
+      - mkdir -p BUILD-trixie
+      - tar xzf netxms_$V.orig.tar.gz -C BUILD-trixie
       - cp -a netxms_$V.orig.tar.gz BUILD-trixie/
       - cd BUILD-trixie/netxms-$V
       - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
@@ -108,7 +111,8 @@ steps:
         path: /m2-repo
     commands:
       - V=$(head -1 changelog | cut -d'(' -f2 | cut -d'-' -f1)
-      - tar xzf netxms_$V.orig.tar.gz
+      - mkdir -p BUILD-focal
+      - tar xzf netxms_$V.orig.tar.gz -C BUILD-focal
       - cp -a netxms_$V.orig.tar.gz BUILD-focal/
       - cd BUILD-focal/netxms-$V
       - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
@@ -130,7 +134,8 @@ steps:
         path: /m2-repo
     commands:
       - V=$(head -1 changelog | cut -d'(' -f2 | cut -d'-' -f1)
-      - tar xzf netxms_$V.orig.tar.gz
+      - mkdir -p BUILD-jammy
+      - tar xzf netxms_$V.orig.tar.gz -C BUILD-jammy
       - cp -a netxms_$V.orig.tar.gz BUILD-jammy/
       - cd BUILD-jammy/netxms-$V
       - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
@@ -152,7 +157,8 @@ steps:
         path: /m2-repo
     commands:
       - V=$(head -1 changelog | cut -d'(' -f2 | cut -d'-' -f1)
-      - tar xzf netxms_$V.orig.tar.gz
+      - mkdir -p BUILD-noble
+      - tar xzf netxms_$V.orig.tar.gz -C BUILD-noble
       - cp -a netxms_$V.orig.tar.gz BUILD-noble/
       - cd BUILD-noble/netxms-$V
       - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
@@ -236,7 +242,8 @@ steps:
         path: /m2-repo
     commands:
       - V=$(head -1 changelog | cut -d'(' -f2 | cut -d'-' -f1)
-      - tar xzf netxms_$V.orig.tar.gz
+      - mkdir -p BUILD-bullseye
+      - tar xzf netxms_$V.orig.tar.gz -C BUILD-bullseye
       - cp -a netxms_$V.orig.tar.gz BUILD-bullseye/
       - cd BUILD-bullseye/netxms-$V
       - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
@@ -258,7 +265,8 @@ steps:
         path: /m2-repo
     commands:
       - V=$(head -1 changelog | cut -d'(' -f2 | cut -d'-' -f1)
-      - tar xzf netxms_$V.orig.tar.gz
+      - mkdir -p BUILD-bookworm
+      - tar xzf netxms_$V.orig.tar.gz -C BUILD-bookworm
       - cp -a netxms_$V.orig.tar.gz BUILD-bookworm/
       - cd BUILD-bookworm/netxms-$V
       - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
@@ -280,7 +288,8 @@ steps:
         path: /m2-repo
     commands:
       - V=$(head -1 changelog | cut -d'(' -f2 | cut -d'-' -f1)
-      - tar xzf netxms_$V.orig.tar.gz
+      - mkdir -p BUILD-trixie
+      - tar xzf netxms_$V.orig.tar.gz -C BUILD-trixie
       - cp -a netxms_$V.orig.tar.gz BUILD-trixie/
       - cd BUILD-trixie/netxms-$V
       - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
@@ -302,7 +311,8 @@ steps:
         path: /m2-repo
     commands:
       - V=$(head -1 changelog | cut -d'(' -f2 | cut -d'-' -f1)
-      - tar xzf netxms_$V.orig.tar.gz
+      - mkdir -p BUILD-focal
+      - tar xzf netxms_$V.orig.tar.gz -C BUILD-focal
       - cp -a netxms_$V.orig.tar.gz BUILD-focal/
       - cd BUILD-focal/netxms-$V
       - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
@@ -324,7 +334,8 @@ steps:
         path: /m2-repo
     commands:
       - V=$(head -1 changelog | cut -d'(' -f2 | cut -d'-' -f1)
-      - tar xzf netxms_$V.orig.tar.gz
+      - mkdir -p BUILD-jammy
+      - tar xzf netxms_$V.orig.tar.gz -C BUILD-jammy
       - cp -a netxms_$V.orig.tar.gz BUILD-jammy/
       - cd BUILD-jammy/netxms-$V
       - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
@@ -346,7 +357,8 @@ steps:
         path: /m2-repo
     commands:
       - V=$(head -1 changelog | cut -d'(' -f2 | cut -d'-' -f1)
-      - tar xzf netxms_$V.orig.tar.gz
+      - mkdir -p BUILD-noble
+      - tar xzf netxms_$V.orig.tar.gz -C BUILD-noble
       - cp -a netxms_$V.orig.tar.gz BUILD-noble/
       - cd BUILD-noble/netxms-$V
       - cp -a ../../changelog ../../compat ../../copyright ../../docs ../../Makefile ../../control.m4 ../../rules.m4 ../../*.install ../../*.postinst ../../*.postrm ../../*.service ../../*.dirs ../../*.manpages debian/
@@ -410,6 +422,6 @@ depends_on:
   - build-arm64
 ---
 kind: signature
-hmac: d22dc39c7f9aa0e3a5ed47673be97526e5501c3cc010e858b32563f6964840f8
+hmac: ff8cd6f1aea9a2aaa17a03f13df3733e0009dc09f8b264188aaf9a4dfcc6ff47
 
 ...

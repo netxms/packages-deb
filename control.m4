@@ -31,7 +31,7 @@ Build-Depends:
  libmicrohttpd-dev,
  libstrophe-dev,
  libnxmodbus-dev (>= 3.1.10-4),
- libssh-dev PKG_LM_SENSORS PKG_JDK PKG_JEMALLOC PKG_JQ PKG_MARIADB PKG_MONGODB PKG_MOSQUITTO PKG_MYSQL PKG_OPENSSL PKG_SYSTEMD PKG_ZMQ PKG_ASTERISK PKG_XEN PKG_ISOTREE PKG_LIBSTROPHE
+ libssh-dev PKG_LM_SENSORS PKG_JDK PKG_JEMALLOC PKG_JQ PKG_MARIADB PKG_MONGODB PKG_MOSQUITTO PKG_MYSQL PKG_OPENSSL PKG_SYSTEMD PKG_ZMQ PKG_XEN PKG_ISOTREE PKG_LIBSTROPHE
 
 Package: netxms-dbg
 Architecture: any
@@ -98,14 +98,12 @@ Suggests: smartmontools
 Description: NetXMS agent
  <insert long description, indented with spaces>
 
-ifdef(`WITH_ASTERISK',
-`Package: netxms-agent-asterisk
+Package: netxms-agent-asterisk
 Architecture: any
 Multi-Arch: same
 Depends: netxms-agent (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: NetXMS subagent for monitoring Asterisk PBX
  <insert long description, indented with spaces>
-')dnl
 
 Package: netxms-java-base
 Architecture: any

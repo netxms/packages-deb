@@ -29,7 +29,6 @@ Note: commit message for official releases contains both version (e.g. "Version 
 
 * Custom jemalloc package should be built from [netxms/jemalloc-deb](https://github.com/netxms/jemalloc-deb) and installed into the system or added to pbuilder chroot.
 * NetXMS fork of libmodbus should be built from [netxms/libmodbus](https://github.com/netxms/libmodbus) and installed into the system or added to pbuilder chroot.
-* For Ubuntu 20+, libexosip2-dev deb should be built and installed into the system or added to pbuilder chroot.
 * Latest Oracle instant client should be unpacked to /opt/instantclient (both instantclient-basiclite-linux.x64-*.zip and instantclient-sdk-linux.x64-*.zip). Correct symlinks for libclntsh.so should be created there, if missing ([details in Oracle KB](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2519112_1.html)).
 
 ## Build

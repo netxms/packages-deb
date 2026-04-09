@@ -31,6 +31,7 @@ override_dh_auto_configure:
 		--with-jdk=/usr/lib/jvm/default-java \
 		--without-gui-client \
 		--enable-modbus \
+		--with-otel \
 		--with-vmgr CONFIGURE_JEMALLOC CONFIGURE_JQ CONFIGURE_MARIADB CONFIGURE_MONGODB CONFIGURE_MOSQUITTO CONFIGURE_MYSQL CONFIGURE_ZMQ CONFIGURE_ORACLE CONFIGURE_XEN CONFIGURE_LIBSTROPHE CONFIGURE_ADDITIONAL
 
 override_dh_auto_build:

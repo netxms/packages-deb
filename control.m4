@@ -15,6 +15,7 @@ Build-Depends:
  flex,
  bison,
  maven,
+ protobuf-compiler, libprotobuf-dev,
  zlib1g-dev,
  libexpat1-dev,
  libjansson-dev,

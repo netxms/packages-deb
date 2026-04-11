@@ -13,7 +13,6 @@ usr/bin/nxscript
 usr/bin/nxsnmp*
 usr/bin/nxupload
 usr/bin/nxwsget
-usr/lib/*/libethernetip.so.*
 usr/lib/*/libnxcore.so.*
 usr/lib/*/libnxdbmgr.so.*
 usr/lib/*/libnxsl.so.*

@@ -1,3 +1,25 @@
+netxms (6.1.1-1) stable; urgency=medium
+
+  * Notification channel driver for Matrix
+  * Improved status poll implementation when poll count for status change is greater than 1
+  * Fixed bug in context menu display in alarm view, data collection view, and other table views
+  * Fixed background colors in alarm view
+  * Fixed issues:
+  *   #2471 / NX-2264 (In rack view, tooltip is shown for chassis, not for its elements)
+  *   #2560 / NX-2354 (Agent file policy are not propagated to cluster member nodes)
+  *   #2978 / NX-2776 (Add additional parameters to events created from synchronized Windows Events)
+  *   #3018 / NX-2816 (L2 topology map is built with same interface used multiple times)
+  *   #3036 / NX-2834 (Do not display value in percent in bar chart legend)
+  *   #3126 / NX-2926 (Logwatch last read location is incorrectly saved for Windows agent)
+  *   #3166 (Escape special characters in Prometheus metric argument values)
+  *   #3173 (Set restrictive file permissions on auto-generated cert/key files)
+  *   #3175 (CTabFolder high CPU consumption in Infrastructure and Entire Network)
+  *   #3176 (Support for installed product list retrieval on apk-based distributions)
+  *   #3189 (Incorrect current value in chart legend)
+  *   #3190 (Multiple Asterisk subagent metrics fail on newer Asterisk versions)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Thu, 16 Apr 2026 21:09:19 +0300
+
 netxms (6.1.0-2) stable; urgency=medium
 
   * Fixed netxms-agent incorrectly depending on netxms-server

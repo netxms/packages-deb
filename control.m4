@@ -32,6 +32,9 @@ Build-Depends:
  libmicrohttpd-dev,
  libstrophe-dev,
  libnxmodbus-dev (>= 3.1.10-4),
+ libpng-dev,
+ libx11-dev,
+ libxext-dev,
  libssh-dev PKG_LM_SENSORS PKG_JDK PKG_JEMALLOC PKG_JQ PKG_MARIADB PKG_MONGODB PKG_MOSQUITTO PKG_MYSQL PKG_OPENSSL PKG_SYSTEMD PKG_ZMQ PKG_XEN PKG_ISOTREE PKG_LIBSTROPHE
 
 Package: netxms-dbg
@@ -162,6 +165,20 @@ Depends: netxms-base (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: NetXMS subagent for MQTT
  <insert long description, indented with spaces>
 ')dnl
+
+Package: netxms-agent-session
+Architecture: any
+Multi-Arch: same
+Depends: netxms-agent (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: NetXMS session agent
+ <insert long description, indented with spaces>
+
+Package: netxms-agent-fbdev
+Architecture: any
+Multi-Arch: same
+Depends: netxms-agent (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: NetXMS subagent for framebuffer screenshot capture
+ <insert long description, indented with spaces>
 
 Package: netxms-agent-vmgr
 Architecture: any

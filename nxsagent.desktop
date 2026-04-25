@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=NetXMS Session Agent
+Comment=NetXMS user-session agent
+Exec=/usr/bin/nxsagent
+NoDisplay=true
+Terminal=false
+X-GNOME-Autostart-enabled=true

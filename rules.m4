@@ -53,6 +53,8 @@ else
 	ifdef(`WITH_MYSQL', `dh_strip -pnetxms-dbdrv-mysql --dbg-package=netxms-dbg')
 	ifdef(`WITH_ORACLE', `dh_strip -pnetxms-dbdrv-oracle --dbg-package=netxms-dbg')
 	dh_strip -pnetxms-agent-pgsql --dbg-package=netxms-dbg
+	dh_strip -pnetxms-agent-session --dbg-package=netxms-dbg
+	dh_strip -pnetxms-agent-fbdev --dbg-package=netxms-dbg
 	dh_strip -pnetxms-agent-vmgr --dbg-package=netxms-dbg
 	dh_strip -pnetxms-agent-xen --dbg-package=netxms-dbg
 	dh_strip -pnetxms-base --dbg-package=netxms-dbg

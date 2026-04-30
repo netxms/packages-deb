@@ -17,6 +17,7 @@ Build-Depends:
  maven,
  protobuf-compiler, libprotobuf-dev,
  zlib1g-dev,
+ libargon2-dev,
  libexpat1-dev,
  libjansson-dev,
  libreadline-dev,

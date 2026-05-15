@@ -1,7 +1,6 @@
 include(`_local.m4')dnl
 include(`java.m4')dnl
 include(`jemalloc.m4')dnl
-include(`libisotree.m4')dnl
 include(`libjq.m4')dnl
 include(`libstrophe.m4')dnl
 include(`lm-sensors.m4')dnl

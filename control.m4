@@ -210,10 +210,10 @@ Architecture: any
 Multi-Arch: same
 Depends:
  netxms-base (= ${binary:Version}),
+ netxms-dbdrv-sqlite3 (= ${binary:Version}) |
 ifdef(`WITH_MARIADB', ` netxms-dbdrv-mariadb (= ${binary:Version}) |')dnl
 ifdef(`WITH_ORACLE', ` netxms-dbdrv-oracle (= ${binary:Version}) |')dnl
 ifdef(`WITH_MYSQL', ` netxms-dbdrv-mysql (= ${binary:Version}) |')dnl
- netxms-dbdrv-sqlite3 (= ${binary:Version}) |
  netxms-dbdrv-pgsql (= ${binary:Version}),
  ${shlibs:Depends}, ${misc:Depends}
 Suggests:

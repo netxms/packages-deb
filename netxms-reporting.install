@@ -1,6 +1,5 @@
 usr/bin/nxreportd
 usr/lib/*/netxms/java/activation-*.jar
-usr/lib/*/netxms/java/checker-qual-*.jar
 usr/lib/*/netxms/java/commons-beanutils-*.jar
 usr/lib/*/netxms/java/commons-collections-*.jar
 usr/lib/*/netxms/java/commons-daemon-*.jar

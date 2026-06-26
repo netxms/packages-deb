@@ -1,12 +1,10 @@
 usr/bin/nxaevent
 usr/bin/nxagentd
 usr/bin/nxagentd-generate-tunnel-config
-usr/bin/nxappget
 usr/bin/nxapush
 usr/bin/nxhwid
 usr/bin/nxlptest
 usr/bin/nxtftp
-usr/lib/*/libappagent.so.*
 usr/lib/*/libnxagent.so.*
 usr/lib/*/libnxlp.so.*
 usr/lib/*/libnxsde.so.*

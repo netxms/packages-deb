@@ -11,6 +11,7 @@ DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 override_dh_install:
 	dh_install
 	ifdef(`WITH_RPI', `install debian/tmp/usr/lib/*/netxms/rpi.nsm debian/netxms-agent/usr/lib/*/netxms/')
+	dh_missing --fail-missing
 
 override_dh_strip_nondeterminism:
 	dh_strip_nondeterminism -X .jar
@@ -47,6 +48,7 @@ ifneq (,$(filter nostrip,$(DEB_BUILD_OPTIONS)))
 else
 	dh_strip -pnetxms-agent --dbg-package=netxms-dbg
 	dh_strip -pnetxms-agent-asterisk --dbg-package=netxms-dbg
+	dh_strip -pnetxms-agent-mssql --dbg-package=netxms-dbg
 	dh_strip -pnetxms-agent-java --dbg-package=netxms-dbg
 	ifdef(`WITH_MONGODB', `dh_strip -pnetxms-agent-mongodb --dbg-package=netxms-dbg')
 	ifdef(`WITH_MOSQUITTO', `dh_strip -pnetxms-agent-mqtt --dbg-package=netxms-dbg')

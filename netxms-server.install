@@ -22,5 +22,11 @@ usr/lib/*/netxms/*.nxm
 usr/lib/*/netxms/ncdrv/*
 usr/lib/*/netxms/ndd/*
 usr/lib/*/netxms/pdsdrv/*
-usr/share/netxms/*
+usr/share/netxms/mibs/*
+usr/share/netxms/oui/*
+usr/share/netxms/prompts/*
+usr/share/netxms/radius.dict
+usr/share/netxms/skills/*
+usr/share/netxms/sql/*
+usr/share/netxms/templates/*
 var/lib/netxms/*

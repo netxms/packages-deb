@@ -1,0 +1,9 @@
+usr/bin/*-asan
+usr/bin/nddload
+usr/bin/nx-run-asan-binary
+usr/bin/nxdevcfg
+usr/include/netxms-build-tag.h
+usr/lib/*/*.la
+usr/lib/*/*.so
+usr/lib/*/netxms/rpi.nsm
+usr/share/netxms/lsan-suppressions.txt

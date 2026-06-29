@@ -125,6 +125,17 @@ Description: NetXMS subagent for monitoring Asterisk PBX
  counts, peer status, SIP/IAX registration state, call statistics and
  other Asterisk-specific parameters to the NetXMS server.
 
+Package: netxms-agent-mssql
+Architecture: any
+Multi-Arch: same
+Depends: netxms-agent (= ${binary:Version}), netxms-dbdrv-odbc (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: NetXMS subagent for monitoring Microsoft SQL Server
+ Subagent for the NetXMS agent that monitors Microsoft SQL Server
+ instances. The subagent loads its database driver at runtime and
+ connects to SQL Server through the unixODBC database driver, collecting
+ instance status, database state, performance counters and other metrics
+ exposed by the server.
+
 Package: netxms-java-base
 Architecture: any
 Multi-Arch: same

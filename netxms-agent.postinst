@@ -12,13 +12,78 @@ case "$1" in
             TARGET=${CONFIG}.dist
         fi
 
-        cat > $TARGET <<__END
-# Log File
-LogFile=/var/log/nxagentd
+        cat > $TARGET <<'__END'
+# vim: ts=3 sw=3 syntax=toml expandtab
+#
+# This file is key-value format and may contains sections ([SECTION_NAME])
+# Parameters before first section are automatically put into [CORE]
+# Section names as well as parameters are case-insensitive.
+#
+# Full list of configurable parameters (except subagents):
+#   http://netxms.org/link/agent-config
+#
+# To verify your configuration, run "nxagentd -C"
 
-# IP white list, can contain multiple records separated by comma.
-# CIDR notation supported for subnets.
+[CORE]
+# List of allowed server IPs. Connection with each server is verified agains
+# these access lists and corresponding permissions are granted.
+# If IP address of the incoming connection is not listed in any access
+# lists - connection is dropped.
+#
+# Each parameter contain multiple records separated by comma - either
+# single IP addresses or subnets in CIDR notation. Less restrictive list wins,
+# so if IP is in both Servers and MasterServers - MasterServers will be selected.
+
+# Servers in this list will have full access to the agent
+# (including remote configuration editing).
 MasterServers=127.0.0.0/8
+
+# Servers in this list will be able to query metrics and execute
+# preconfigured actions (e.g. System.Reboot or any custom).
+#ControlServers=127.0.0.1, 127.0.0.2
+
+# Servers in this list will be able to query metrics and nothing more - readonly mode.
+#Servers=127.0.0.1
+
+### Logging
+# log in systemd-specific format
+LogFile={systemd}
+
+# log to file
+#LogFile=/var/log/nxagentd
+
+# log to local syslog
+#LogFile={syslog}
+
+# log to stdout
+#LogFile={stdout}
+
+# debug level, from 0 (default) to 9.
+#DebugLevel=0
+
+### Some of the bundled subagents (there are more, like asterisk or JMX extension)
+#SubAgent=bind9 # ISC Bind9 DNS server monitoring
+#SubAgent=dbquery # Collect information via SQL queries either on request or on schedule
+SubAgent=filemgr # Remote file manager. Accessible folders should be defined in [filemgr]
+#SubAgent=gps # Collect data from NMEA-compatible GPS devices
+#SubAgent=java # Bridge to Java agent, which provide integration with JXM and OPCUA
+#SubAgent=lmsensors # Interface to lm_sensors data (temperature, voltage, etc.)
+#SubAgent=logwatch # Log monitoring subagent
+#SubAgent=netsvc # Send http/https/ftp/imap/etc. and match against regexp
+#SubAgent=ping # send ICMP pings to configurable targets from the agent
+#SubAgent=ssh # enable executing remote commands via SSH
+#SubAgent=ups # UPS monitoring
+
+[ENV]
+# This section allows admin to set environment variables in agent's config
+# instead of modifying startup scripts. Most common use - adjusting PATH,
+# setting JAVA_HOME, or ORACLE_HOME.
+
+#JAVA_HOME=/usr/lib/jvm/jre # might be required by java subagent to be loaded correctly
+
+[FILEMGR]
+#RootFolder = /tmp # read-write access to /tmp
+#RootFolder = /etc;ro # read-only access to /etc
 __END
     ;;
 

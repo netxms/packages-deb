@@ -6,4 +6,6 @@ usr/include/netxms-build-tag.h
 usr/lib/*/*.la
 usr/lib/*/*.so
 usr/lib/*/netxms/rpi.nsm
+usr/lib/*/netxms/oracle.nsm
+usr/lib/*/netxms/dbdrv/oracle.ddr
 usr/share/netxms/lsan-suppressions.txt

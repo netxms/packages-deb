@@ -1,4 +1,5 @@
 usr/lib/*/netxms/java.nsm
 usr/lib/*/netxms/java/jmx.jar
 usr/lib/*/netxms/java/netxms-agent-*.jar
+usr/lib/*/netxms/java/opcua.jar
 usr/lib/*/netxms/java/ubntlw.jar

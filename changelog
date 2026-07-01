@@ -1,3 +1,9 @@
+netxms (6.2.0-2) stable; urgency=medium
+
+  * Ship stock image library files to fix 6.1.x to 6.2.0 database upgrade
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Wed, 01 Jul 2026 11:51:10 +0300
+
 netxms (6.2.0-1) stable; urgency=medium
 
   * OpenTelemetry (OTLP) support: ingestion of logs, plus export of events and metrics to OTLP endpoints

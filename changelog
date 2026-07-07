@@ -1,3 +1,45 @@
+netxms (6.2.1-1) stable; urgency=medium
+
+  * Added NXSL method Node::setVNCPassword() to set VNC password
+  * Support for environment files in agent configuration; potentially sensitive environment variables are masked in configuration dump
+  * Added internal metrics for measuring traffic between server and agents
+  * Improved external subagent watchdog on Windows (reconciles orphaned and duplicate subagent processes)
+  * File delivery policy editor allows creating multiple nested folders at once
+  * Cisco performance template displays environmental component status as readable text
+  * Oracle and PostgreSQL monitoring templates no longer auto-unbind when the database is temporarily unreachable
+  * Fixed information disclosure (IDOR) in topology endpoints of web API
+  * Fixed privilege escalation via scheduled-task create/update in web API
+  * Fixed authenticated denial-of-service issues in web API (self password change) and NXCP (CMD\_RESOLVE\_DCI\_NAMES)
+  * Fixed issues:
+  *   #2918 / NX-2715 (Add internal metrics to measure traffic between server and agents)
+  *   #3206 (Tools perspective views missing in nxmc on Raspberry Pi)
+  *   #3256 (Spikes of uncorrelated interface down events when a zone has multiple proxies and one becomes unreachable)
+  *   #3282 (nxmc: local command object tools not executed on host under Flatpak)
+  *   #3296 (Custom attribute table not scaled to width of user properties window)
+  *   #3307 (Metric selector for agent metrics not working on sensor with gateway node set)
+  *   #3351 (Special way to store secrets in agent configuration file)
+  *   #3356 (DCI mapping table reference is lost when configuration is exported and imported on another server)
+  *   #3357 (Cisco performance template: display environmental component status as readable text)
+  *   #3358 (Oracle and PostgreSQL monitoring templates auto-unbind when the database is unreachable)
+  *   #3359 (Database upgrade to 62.13 fails: stock image files removed by package upgrade before migration)
+  *   #3360 (Database export does not include module-specific metadata entries)
+  *   #3361 (Server time displayed in UTC instead of server timezone for numeric timezone abbreviations)
+  *   #3366 (Query web services access right not set on upgrade for Admins group)
+  *   #3367 (Cannot invoke ImageDataFactory: session-bound image used for decorated user icons in web UI)
+  *   #3368 (External subagent watchdog restarts still-initializing subagents, spawning duplicate instances on Windows)
+  *   #3370 (External subagent watchdog: reconcile orphaned/duplicate subagent processes across master restart and config changes on Windows)
+  *   #3371 (WebAPI: scheduled-task create/update bypasses per-handler access rights)
+  *   #3372 (WebAPI: null-pointer dereference in self password change crashes netxmsd)
+  *   #3375 (WebAPI: topology endpoints leak metadata of objects the caller cannot read)
+  *   #3376 (Client session: unbounded allocation and missing NULL check in CMD\_RESOLVE\_DCI\_NAMES)
+  *   #3378 (Create NXSL method to set VNC password)
+  *   #3379 (Option to add multiple folders in file delivery policy at once separated by '/')
+  *   #3380 (Template import silently drops table DCIs due to JSON key case mismatch)
+  *   #3381 (Columns readjusted one by one on Windows so tables appear to flicker)
+  *   #3386 (Database initialization fails on Oracle with ORA-01704: stock image INSERT literals too long)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Tue, 07 Jul 2026 17:53:54 +0300
+
 netxms (6.2.0-2) stable; urgency=medium
 
   * Ship stock image library files to fix 6.1.x to 6.2.0 database upgrade

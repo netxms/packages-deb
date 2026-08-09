@@ -1,3 +1,88 @@
+netxms (6.2.3-1) stable; urgency=medium
+
+  * Single-use authentication tokens
+  * Self-service dialog for managing own authentication tokens
+  * Authentication token value is returned only in response to token creation request and is no longer exposed in token listings
+  * Microsoft Teams notification driver reworked to send notifications to Workflows (Power Automate) webhook URLs
+  * OTLP receiver accepts JSON-encoded OTLP/HTTP payloads
+  * Wake-on-LAN packets can be sent to managed nodes via web API and NXSL
+  * Option to disable credentials check for incoming SNMP traps
+  * Added NXSL methods for setting SNMP trap credentials
+  * Number of agent connection retries is now configurable
+  * Chart Y axis range and gauge value fields accept K, M, G, and T multiplier suffixes
+  * Incidents view can hide closed incidents
+  * "Go to object" action added to package deployment jobs, agent tunnels, scheduled tasks, and user support application notification views
+  * D-Link driver uses ifDescr as primary source for assigning interface physical location
+  * Fixed stack buffer overflows in LLDP topology processing and SNMP OID conversion that could crash the server
+  * Fixed access control bypass when reading closed incidents
+  * Fixed data collection configuration not being updated on agents working in cache mode
+  * Fixed template exclusion groups not being enforced on configuration poll auto-apply and in NXSL applyTemplate
+  * Fixed business service status calculation ignoring service's own checks
+  * Fixed failed package installation being reported as completed
+  * Fixed WMI subagent failing all queries after the first one in agent lifetime
+  * Fixed agent hang on shutdown when agent extension is configured
+  * Fixed critical events being dropped by wineventsync severity filter
+  * Fixed spikes in Windows System.IO.\* total metrics when physical disk drops out of collection
+  * Fixed user inactivity timeout logging out actively working users in web console
+  * Fixed excessive column repacking that slowed down grid views in Windows desktop client
+  * NXSL Unicode case folding is now locale-independent
+  * Fixed issues:
+  *   #1301 / NX-1091 (D-Link stack driver and ports)
+  *   #3224 (Update Microsoft Teams Notification Driver to Support Workflows/Power Automate)
+  *   #3252 (Y axis range in chart properties should support K, M, G, T suffixes)
+  *   #3347 (Agent's data collection elements for cache mode not getting updated)
+  *   #3389 (Newly created event template is not saved in log parser policy)
+  *   #3415 (ClassCastException when opening bar/pie chart from DCI editor)
+  *   #3418 (Grid views repack columns on every refresh, causing constant repaint and slowdown on Windows desktop client)
+  *   #3428 (Line chart ignores configured time period on first open, shows last hour until refresh)
+  *   #3432 (Unvalidated netmask from node creation request passed to pseudo-interface (np.cpp:293))
+  *   #3467 (Allow setting SNMP trap credentials in bulk (NXSL binding))
+  *   #3472 (Narrow string literals passed to StringBuffer::append() silently become "true" (breaks notification digest and alarm AI prompts))
+  *   #3474 (Failed package installation can be reported as completed (uninitialized variable in PackageDeploymentJob::execute))
+  *   #3475 (Node::getMetricFromSmclp() validates wrong variable, returns garbage when value is on last line)
+  *   #3476 (memset on non-trivially copyable WaitQueueWaiter in MsgWaitQueue)
+  *   #3482 (OTLP receiver rejects JSON-encoded OTLP/HTTP payloads)
+  *   #3483 (NXSL Unicode case folding silently degrades to ASCII when process environment has no locale)
+  *   #3485 (Server crash (SIGSEGV): stack buffer overflow in LLDP topology processing (BinToStr into fixed buffers))
+  *   #3489 (Option to disable incoming SNMP trap credentials check)
+  *   #3490 (Agent hangs on shutdown if agent extension is configured)
+  *   #3492 (Access check bypassed when reading closed incidents via NXCP)
+  *   #3493 (Single-use authentication tokens)
+  *   #3495 (Stack buffer overflow in SnmpConvertOIDToText: bufferSize is never enforced, crashes server during instance discovery)
+  *   #3496 (Self-service UI for managing own authentication tokens)
+  *   #3497 (Authentication token values exposed in token listings until server restart)
+  *   #3499 (WebAPI rejects all internal object tools, but none of them need a client)
+  *   #3500 (Table views lose declared sort direction on first open (restoreTableViewerSettings defaults to SWT.UP))
+  *   #3501 (WMI subagent: all WMI.Query metrics fail after first query in agent lifetime (CoInitializeSecurity called per query))
+  *   #3502 (Configurable number of agent connection retries)
+  *   #3503 (WinNT subagent: System.IO.\* total metrics spike when a physical disk drops out of the per-second aggregate)
+  *   #3504 (AI provider Temperature/TopP parsed as integers, fractional values truncate to 0)
+  *   #3505 (wineventsync: Critical events dropped by default severity mask (0xFF vs 0x100))
+  *   #3506 (Stale help texts: nxmibc default output file, nxtool encryption policy default, nxdbmgr reset-system-account)
+  *   #3507 (ping subagent: Don't Fragment option comparison inverted in target parsing)
+  *   #3508 (SIGSEGV in NXSL\_NetworkPathClass::getAttr during class attribute enumeration)
+  *   #3509 (Password complexity subsequence check misses last alphabet window (XYZ/xyz not rejected))
+  *   #3510 (Typo in MIB walk DCI creation action: "Create data collection tiem...")
+  *   #3511 (DB metadata drift: 2FA config vars missing from setup.in, IntruderLockoutTime units, stale SYS\_TABLE\_THRESHOLD\_DEACTIVATED description)
+  *   #3512 (oracle subagent: Oracle.ASM.DiskGroups list always empty (tag pattern references nonexistent STATUS column))
+  *   #3513 (java subagent: JVMOptions config parameter is parsed but never passed to the JVM)
+  *   #3514 (vmgr subagent: wrong values from several metrics (CPU.Time returns vCPU count, Memory.UsedPrec always 0/100, MaxCount semantics, "Unkonown" literals))
+  *   #3515 (libnxlp: <logName> in agent-side Windows event log parser rule dereferences null)
+  *   #3516 (ping subagent: Icmp.MinPingTime and Icmp.Cumulative{Min,Max}PingTime all return last-minute maximum RTT)
+  *   #3517 (SYS\_TEMPLATE\_AUTOREMOVE event parameters are swapped (template posted as node, node as template))
+  *   #3518 (Template exclusion groups not enforced on configuration-poll auto-apply path (or NXSL applyTemplate))
+  *   #3519 (Console scan command: zone and proxy keywords assign each other's values)
+  *   #3520 (webapi openapi.yaml: historicalDataType value mapping description is inverted)
+  *   #3521 (Add option to hide closed incidents in Incidents view)
+  *   #3523 (Business service parent state recomputed from children only, ignoring its own checks)
+  *   #3524 (Agent metric registration oddities: System.CPU.Usage5.Idle5(\*), Solaris MemoryDevice.MaxSpeed type)
+  *   #3526 (Web console: inactivity timeout logs out actively working users)
+  *   #3527 (Add "Go to object" context menu action to Package Deployment Jobs and other configuration views)
+  *   #3528 (nxdbmgr check cannot create missing object\_properties rows - INSERT references dropped is\_system column)
+  *   #3535 (Interface Traffic Agent 32-bit template: system tag says bytes, stored value is bits — utilization 8x too high)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Sun, 09 Aug 2026 21:47:56 +0300
+
 netxms (6.2.2-1) stable; urgency=medium
 
   * Added subagent for reading electricity grid data (including carbon intensity) from ENTSO-E Transparency Platform

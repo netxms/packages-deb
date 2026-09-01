@@ -20,9 +20,9 @@ usr/lib/*/netxms/linux.nsm
 usr/lib/*/netxms/lmsensors.nsm
 usr/lib/*/netxms/logwatch.nsm
 usr/lib/*/netxms/netsvc.nsm
-usr/lib/*/netxms/openmeteo.nsm
 usr/lib/*/netxms/ping.nsm
 usr/lib/*/netxms/sms.nsm
 usr/lib/*/netxms/ssh.nsm
 usr/lib/*/netxms/ups.nsm
+usr/lib/*/netxms/weather.nsm
 usr/share/netxms/extensions/*

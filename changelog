@@ -1,3 +1,86 @@
+netxms (6.2.4-1) stable; urgency=medium
+
+  * Server provides native MCP (Model Context Protocol) endpoint, replacing standalone Java MCP server
+  * Agent-side data collection using Nagios-compatible monitoring plugins via ExternalCheck configuration option
+  * Generic weather subagent with support for multiple providers (MET Norway and Open-Meteo)
+  * New network device drivers for Aruba CX switches and Cisco Catalyst 9800 wireless controllers
+  * MQTT subagent supports instance discovery, wildcard topics, and parameterized metrics in extractors
+  * MQTT topic payloads are no longer truncated at 255 bytes
+  * Option to synchronize node names with SNMP sysName on configuration poll
+  * Dashboards can be shared via anonymous public access links
+  * Network maps show link details on mouse-over
+  * Connection point search uses LLDP/CDP peer information in addition to FDB data
+  * Simplified adding multiple DCI-based or object-based checks to business services
+  * Multiple conditions can be added to log viewer filters at once
+  * Shift+click range selection of cells in DCI table value viewer
+  * Option to show total value and change font size in pie charts
+  * "Export all to CSV" action added to Interfaces view
+  * Script library scripts can be provided as context to AI assistant in script editor
+  * OpenTelemetry log record body exposed as event parameter
+  * ICMP statistics are no longer reported for nodes without valid primary IP address
+  * Fixed handling of 6-field cron expressions in recurrent scheduled tasks
+  * Fixed L2 topology building on Cisco switches that provide bridge port mappings in per-VLAN SNMP contexts
+  * Fixed SNMPv1 trap encoding that caused traps to be dropped by Net-SNMP receivers
+  * Fixed Linux agent crash when requesting Process.\* metric with "average" aggregation for non-existent process
+  * Fixed double-counting of shared memory in Process.MemoryUsage with "sum" aggregation causing false memory alarms
+  * Fixed memory leak in management client
+  * Fixed housekeeper and v5 data migration stall when throttle watermarks are set to 0
+  * Fixed inverted "disable 802.1x status poll" node polling property
+  * Fixed vendor detection and management interface reporting in generic Cisco driver
+  * Fixed issues:
+  *   #1279 (DCI table value viewer: Shift+click range selection of cells)
+  *   #3082 / NX-2880 (Add multiple conditions to log viewer filter at once)
+  *   #3257 (Do not report ICMP statistics for nodes without valid primary IP address)
+  *   #3262 (Topology.DefaultDiscoveryRadius ignored for network maps saved by pre-5.1 clients (radius stored as 65535))
+  *   #3413 (Huawei V-STP bridge ID equals master chassis' own base bridge address, contradicting getStpBridgeId() assumption)
+  *   #3422 (New network device driver: Aruba CX (AOS-CX) switches)
+  *   #3479 (Cisco L2 topology: FDB is read per-VLAN but bridge ports are read in the default SNMP context, so ifIndex resolves to 0)
+  *   #3525 (6-field cron expression on recurrent scheduled tasks almost never fires (seconds field always matched))
+  *   #3529 (Replace standalone Java MCP server with native MCP endpoint in server (mcp module))
+  *   #3531 (Web client: node stays attached to the cursor after dragging past the viewport edge)
+  *   #3532 (Web client: "Save map image to file" does nothing)
+  *   #3533 (WebAPI returns 415 for bodyless POST requests without Content-Type header)
+  *   #3536 (MAC Address web ui bugs)
+  *   #3538 (Housekeeper throttle watermarks of 0 permanently stall housekeeper and v5 data migration)
+  *   #3539 (ConfigWriteStr treats a failed existence query as "variable does not exist" and silently loses the write)
+  *   #3540 (nxdbmgr upgrade: stale TimescaleDB extension version reported as an unrelated SQL failure)
+  *   #3543 (NXSL: PostEventEx return value lost; origin argument rejects OPENTELEMETRY)
+  *   #3551 (Memory leak - nxmc jar client (tested on windows))
+  *   #3553 (pie chart - add total % and change font size)
+  *   #3558 (PostgreSQL process template raises false memory alarm — Process.MemoryUsage(...,sum) double-counts shared memory)
+  *   #3559 (MQTT subagent silently truncates topic payload at 255 bytes)
+  *   #3560 (MQTT extractors: wildcard topics with instance discovery)
+  *   #3561 (MQTT extractors: parameterized metrics ($1 placeholders) documented but not implemented)
+  *   #3563 (Network map: show link details on mouse-over)
+  *   #3564 (Agent-side data collection via Nagios-compatible monitoring plugins (ExternalCheck))
+  *   #3567 (OpenTelemetry log record body not exposed as event parameter)
+  *   #3569 (WebAPI object handlers ignore EDIT\_COMMENTS, EDIT\_RESP\_USERS and the template-parent READ exception)
+  *   #3570 (Generic weather subagent with multiple providers (MET Norway) and Open-Meteo commercial API support)
+  *   #3571 (Unbounded alloca over ACL size in AccessList::getUserRights and SaveGraph)
+  *   #3573 (WebAPI: path placeholder object IDs parsed with base 0 and no end-pointer check)
+  *   #3574 (FormatISO8601Timestamp() dereferences NULL for pre-1970 timestamps on builds without gmtime\_r)
+  *   #3576 (libnxsnmp: SNMPv1 traps encoded with INTEGER time-stamp and wrong enterprise OID, dropped by Net-SNMP receivers)
+  *   #3577 (Float DCI values between 0 and 1 displayed as raw six-decimal string)
+  *   #3578 (Linux agent crashes when requested Process.\* metric for non-existent process and 'average' aggregate)
+  *   #3579 (ReadWebsocketFrame corrupts payload of unmasked non-data frames (uninitialized mask))
+  *   #3580 (Connection point search ignores LLDP/CDP peer data in node overview and IP address search)
+  *   #3581 (Objects.Nodes.SyncNamesWithDNS has no effect unless Objects.Nodes.ResolveNames is disabled)
+  *   #3585 (snmp traps filter doesnt work)
+  *   #3589 (Object tool translations for region-qualified language codes (zh\_TW, pt\_BR) never resolve at runtime)
+  *   #3593 (nxmc on Windows: "unhandled exception (NoClassDefFoundError: org/netxms/bridge/Platform)" on exit)
+  *   #3595 (Vendor field is not populated for nodes with CISCO-GENERIC driver)
+  *   #3596 (Missing "Export all to CSV" action in Interfaces view)
+  *   #3597 (Simplify adding multiple DCI-based or object-based checks to business service check list)
+  *   #3598 (Management interface reported as front panel port on stackable Cisco switches (CISCO-GENERIC driver))
+  *   #3599 (Implement driver for Cisco C9800 wireless controllers)
+  *   #3600 (Sync node name with SNMP sysName on configuration poll)
+  *   #3601 (NXSL: FindAlarmById() and FindAlarmByKey() return alarm with empty relatedEvents)
+  *   #3603 (AI assistant sidebar: provide script library script as context in script editor)
+  *   #3605 (Node polling property "disable 802.1x status poll" is inverted)
+  *   #3606 (Add "Enable public access" (anonymous access link) for dashboards)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Wed, 02 Sep 2026 00:02:57 +0300
+
 netxms (6.2.3-1) stable; urgency=medium
 
   * Single-use authentication tokens

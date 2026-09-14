@@ -1,3 +1,46 @@
+netxms (6.2.5-1) stable; urgency=medium
+
+  * New network device drivers for Arista and Mellanox switches, and for Dell OS10 and Force10 (FTOS) switches
+  * New web API endpoints for pushing DCI values, getting the last value of table DCIs, and deleting objects; nodes' primary host name or IP address can be changed via web API
+  * Web API requests are handled by a thread pool (size is configurable, default 16) instead of a single thread
+  * Weather subagent: added Bright Sky provider (DWD open data for Germany)
+  * Unnecessary trailing zeros are removed from formatted fractional values
+  * Event processing policy editor opens large rule chains faster
+  * Data collection scripts are no longer restricted by Scripts.RestrictWriteAccess
+  * Windows installers bundle OpenSSL 3.5 LTS instead of 3.0.x, which has reached end of life
+  * Fixed issues:
+  *   #2854 / NX-2651 (Driver support for Arista and Mellanox switches - Port View is Blank)
+  *   #3423 (New network device driver: Dell Networking OS10 / Force10 (FTOS) switches)
+  *   #3542 (nxdbmgr upgrade to 62.25 overwrites customized interface event messages)
+  *   #3550 (Editing attributes of LDAP-synced users: silently overwritten on next sync)
+  *   #3575 (Object deletion: removeDCI option is mutable between request accept and worker execution)
+  *   #3609 (WebAPI: collected table DCI data is not reachable)
+  *   #3610 (Value cache placeholder (empty value, timestamp 1 ms) reported as collected value in current-values)
+  *   #3612 (AI assistant function ask-user-choice always fails: tool schema declares every parameter as string)
+  *   #3613 (Web API endpoints for delete objects and modify object primaryName/ipaddress)
+  *   #3615 (Critical BUG: system crash while create json obj in EEP->action->script)
+  *   #3616 (Web API for pushdci)
+  *   #3617 (NXSL JsonArray set()/insert() silently succeed on out-of-range index)
+  *   #3618 (Connection history generates MAC events for interfaces rejected by Hook::CreateInterface)
+  *   #3619 (Scripts.RestrictWriteAccess blocks agent command execution in script-origin DCIs with no per-DCI override)
+  *   #3620 (Denied call under Scripts.RestrictWriteAccess surfaces as an unrelated NXSL error, and the parameter description understates its scope)
+  *   #3622 (nxmc: create rule editor content lazily in the event processing policy editor)
+  *   #3623 (Rack images crash the web client)
+  *   #3630 (File manager subagent ignored read-only restriction for file permission change and move operations)
+  *   #3631 (Remove trailing zeros if more than 2)
+  *   #3634 (Physical container rebinding is not serialized; rapid placement changes can leave the object tree on a stale container)
+  *   #3635 (Weather subagent: Bright Sky provider (DWD open data for Germany))
+  *   #3636 (Null dereference from unvalidated client input: delegate object in getLastValuesByDciId, element index in DashboardBase)
+  *   #3637 (Server crash: MySQL/MariaDB drivers alloca the whole field length, overflowing the thread stack on large image library entries)
+  *   #3638 (AI assistant: questions asked from a delegated skill never reach the user and time out)
+  *   #3639 (Network discovery discards the SNMP credentials it found; every discovered node is created with community "public")
+  *   #3640 (Built-in SNMP agent reads SNMP.Agent.Community, but the configured parameter is SNMP.Agent.CommunityString)
+  *   #3641 (Management console: scrollable dashboards leak a ControlListener on every rebuild, UI thread ends up in a layout loop after hours)
+  *   #3642 (WebAPI: all REST requests are serialized on a single libmicrohttpd thread)
+  *   #3643 (Move bundled OpenSSL in Windows installers from 3.0.x (EOL) to 3.5 LTS)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Mon, 14 Sep 2026 11:53:29 +0300
+
 netxms (6.2.4-1) stable; urgency=medium
 
   * Server provides native MCP (Model Context Protocol) endpoint, replacing standalone Java MCP server

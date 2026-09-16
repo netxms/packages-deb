@@ -5,7 +5,7 @@ After=network.target
 [Service]
 Type=simple
 ExecStart=/usr/bin/nxreportd
-Restart=always
+Restart=on-failure
 UMask=0077
 
 [Install]

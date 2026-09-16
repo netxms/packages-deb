@@ -6,10 +6,9 @@ StartLimitIntervalSec=0
 [Service]
 Type=simple
 ExecStart=/usr/bin/netxmsd -S
-ExecStopPost=/usr/bin/nxdbmgr -q -f unlock
 LimitNOFILE=65535
 LimitCORE=infinity
-Restart=always
+Restart=on-failure
 RestartSec=30
 TimeoutSec=900
 UMask=0077

@@ -1,3 +1,93 @@
+netxms (6.2.6-1) stable; urgency=medium
+
+  * Box selection of elements on network maps
+  * Configurable size of port boxes in port view dashboard element
+  * Pie chart dashboard element can show actual values instead of percentages
+  * Status indicator dashboard element uses object or DCI name as label when custom label is not set
+  * Object context macros are expanded in dashboard web page element URLs; new macro form %~ URL-encodes expansion result
+  * New web API endpoints for posting events and for managing mapping tables, persistent storage, and SNMP traps
+  * New NXSL function FindDCIById; FindAllDCIs accepts null as node argument to search across all data collection targets
+  * Server console command to recommission decommissioned node; decommissioned nodes can no longer be returned to managed state via NXSL, web API, parent object, or network discovery
+  * Scheduled task operations and maintenance mode changes made from scheduled tasks are written to audit log
+  * NXSL scripts run from scheduled tasks and AI assistant tools execute with user security context
+  * LDAP diagnostic messages from libldap are logged on TLS and bind failures
+  * File delivery policy files are hidden by default in server file store views; "Show hidden files" option added
+  * Agent: user sessions on Linux are read from systemd-logind, utmp is kept as fallback
+  * Agent: processes started in user sessions get environment of session user; external subagent loader no longer deletes master agent policy files at startup
+  * Agent: new configuration parameter ExternalSubagentWatchdogExcludedUsers; watchdog skips sessions without logged on user
+  * Agent: authentication and encryption requirements enforced for all commands; AI file operation tools restricted to configured root folder and master server
+  * Windows server installer ships JSON templates; Windows client installer always runs Visual C++ runtime installer
+  * Fixed issues:
+  *   #805 / NX-594 (Box selection on network maps)
+  *   #2328 / NX-2120 (Configurable size of boxes in port view on dashboard)
+  *   #2680 / NX-2474 (Add option to show numeric value instead of % on bar chart)
+  *   #3649 (Autobind can re-link an object that is being deleted, leaving a dangling child reference in containers and templates)
+  *   #3651 (Interface Traffic SNMP template auto-applies together with agent template, duplicating traffic DCIs)
+  *   #3652 (Windows client installer runs vcredist only when the nxshell component is selected)
+  *   #3653 (DefaultDCIPollingInterval / DefaultDCIRetentionTime descriptions still say "for newly created DCI")
+  *   #3654 (Changing DataCollection.DefaultDCIPollingInterval does not resync agent cache mode DCIs)
+  *   #3655 (nxdbmgr -C on MS SQL creates user without rights to create tables)
+  *   #3656 (Windows agent: process enumeration skips last entry, Process.Count returns 0 for newest process)
+  *   #3662 (Unsynchronized read of DelegateObject object set (possible use-after-free))
+  *   #3665 (NXSL scripts run from scheduled tasks and AI assistant tools have no user security context)
+  *   #3666 (NXSL function SQLQuery leaks database connection on every call)
+  *   #3668 (missing label for dci in Status indicator)
+  *   #3669 (Feature Request: Expand Object Context Macros in Dashboard Web Page Elements)
+  *   #3670 (No size check on agent certificate mapping data, node save fails with 'value too long for type character varying(500)')
+  *   #3672 (Agent certificate mapping by public key overflows varchar(500) and breaks node persistence)
+  *   #3674 (Linux agent reports no user sessions on hosts without utmp (Debian 13, systemd 257))
+  *   #3675 (Agent: CMD_AI_EXECUTE_TOOL and CMD_AI_GET_TOOLS have no server class check and aifileops has no path restriction)
+  *   #3676 (Agent: RequireAuthentication / RequireEncryption not enforced for commands handled in receiver thread)
+  *   #3678 (Server crashes on login when group membership search path exceeds 256 entries)
+  *   #3680 (LDAP: log libldap diagnostic message on TLS/bind failures)
+  *   #3681 (Auto-link nodes on custom maps does nothing since 6.2.0)
+  *   #3682 (Threshold events generated on maintenance leave are correlated to the maintenance event and skipped by EPP)
+  *   #3683 (PostgreSQL driver: failed unbuffered SELECT leaves the connection busy, next unbuffered query fails with "PQsendQuery failed")
+  *   #3685 (v5migrate status: "Active workers" counts queued + running objects, "Pending objects" is a stale batch snapshot)
+  *   #3686 (V5 data migration worker holds a pooled DB connection for the whole object, including while paused or throttled)
+  *   #3687 (Config parameter Objects.Nodes.DefaultDecommissionExpirationTime is missing on fresh installs and is never readable by the client)
+  *   #3688 (NXSL NetObj::manage() bypasses the decommission guard, leaving a node that looks managed but is still scheduled for deletion)
+  *   #3689 (Add server console command to recommission a decommissioned node)
+  *   #3690 (SNMP GET: noSuchObject/noSuchInstance returned as empty value instead of unsupported (regression since 6.0.0))
+  *   #3691 (Zone deletion removes credential tables by object ID instead of zone UIN, leaves ssh_credentials)
+  *   #3692 (Object deletion leaves rows in dashboard_associations, object_ai_data, port_stop_list, cluster_resources, radios, dci_delete_list)
+  *   #3694 (DCTable deletion skips dct_threshold_instances; DCI deletion never cleans cond_dci_map)
+  *   #3695 (Discovery re-manages unmanaged node via Node::changeIPAddress() (sets status directly, bypassing setMgmtStatus))
+  *   #3696 (nxdbmgr upgrade 61.35->61.36 fails on PostgreSQL: GetDataCollectionTargets() selects from 7.0-only tables)
+  *   #3700 (Status poll re-manages individually unmanaged interfaces and network services on network path problem (resetStatus bypasses setMgmtStatus))
+  *   #3704 (MIB DISPLAY-HINT: multi-octet "d" fields are rendered one octet at a time, and separators are emitted before the field instead of after)
+  *   #3705 (Decommission with "Clear IP addresses" leaves node in address index: former IP reported as "already in use" until server restart)
+  *   #3706 (DCI deleted while busy (collection or instance discovery) is never deleted from database)
+  *   #3707 (Web client: downloads fail silently for file names outside Latin-1 (Content-Disposition not encoded))
+  *   #3708 (netxmsd crash: CMD_GET_DCI_VALUES on table DCI without last value dereferences null table)
+  *   #3711 (Scheduled tasks created from client (incl. scheduled maintenance) are not written to audit log)
+  *   #3712 (SYS_MAC_ADDR_CHANGED: interfaceName parameter missing for pseudo-interface)
+  *   #3714 (Show hidden files toggle for server file store; hide file delivery policy files by default)
+  *   #3715 (ProcessExecutor: no bounds check on argv[256] when building child argument list)
+  *   #3718 (Agent: external subagent loader deletes master agent policy files at startup)
+  *   #3719 (Agent: option to exclude user accounts from external subagent watchdog)
+  *   #3720 (Windows server installer does not ship JSON templates)
+  *   #3721 (MSSQL template has no auto-apply filter)
+  *   #3722 (null node in FindAllDCIs)
+  *   #3724 (Agent: external subagent watchdog stops at first session even if nobody is logged on to it)
+  *   #3725 (NXSL: sometimes 'while' loop compiled incorrectly)
+  *   #3733 (nxreportd ignores ReportingServer.ResultsRetentionTime (misspelled property name in housekeeper))
+  *   #3734 (Delayed incident creation from EPP drops description and truncates text at semicolons)
+  *   #3735 (Isolation forest anomaly detection looks back seconds instead of days (Timestamp unit mismatch in IsAnomalousValue))
+  *   #3736 (Formatted DCI value has a space between multiplier prefix and unit ("2.31 Gi B"))
+  *   #3737 (AI anomaly profiles are regenerated every second day: 24 h cooldown equals the daily task period)
+  *   #3738 (Asset management: unique attribute check rejects writing the asset's own current value)
+  *   #3739 (Asset management: date attribute validation accepts invalid dates (isValidDate logic inverted))
+  *   #3740 (Oxidized module: backup timestamps ignore the UTC offset reported by Oxidized)
+  *   #3741 (LLM provider type openai falls back to Ollama URL and model when URL/Model are omitted)
+  *   #3742 (AI tasks keep running after their owner's account is disabled)
+  *   #3743 (netsvc: TLS.Certificate.* option list starts at the StartTLS protocol argument)
+  *   #3746 (OTLP event forwarder: dropped events are not reflected in forwarder counters and status)
+  *   #3747 (AI: task prompt lacks opening <instructions> tag; show ai providers reports Mistral as Ollama)
+  *   #3748 (nxshell samples call removed method getAllChilds())
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Tue, 06 Oct 2026 21:36:58 +0300
+
 netxms (6.2.5-1) stable; urgency=medium
 
   * New network device drivers for Arista and Mellanox switches, and for Dell OS10 and Force10 (FTOS) switches

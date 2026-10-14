@@ -7,4 +7,5 @@ usr/lib/*/libethernetip.so.*
 usr/lib/*/libnetxms.so.*
 usr/lib/*/libnxclient.so.*
 usr/lib/*/libnxdb.so.*
+usr/lib/*/libnxnetconf.so.*
 usr/lib/*/libnxsnmp.so.*

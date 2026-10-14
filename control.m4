@@ -265,7 +265,7 @@ Description: NetXMS subagent for monitoring XEN
 Package: netxms-client
 Architecture: any
 Multi-Arch: same
-Depends: netxms-base (= ${binary:Version}), netxms-java-base (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: netxms-base (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: NetXMS command line client tools
  Command line utilities for interacting with NetXMS servers and
  agents. Includes nxshell (NXSL scripting shell against a NetXMS

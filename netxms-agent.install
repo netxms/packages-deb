@@ -19,6 +19,7 @@ usr/lib/*/netxms/gps.nsm
 usr/lib/*/netxms/linux.nsm
 usr/lib/*/netxms/lmsensors.nsm
 usr/lib/*/netxms/logwatch.nsm
+usr/lib/*/netxms/netconf.nsm
 usr/lib/*/netxms/netsvc.nsm
 usr/lib/*/netxms/ping.nsm
 usr/lib/*/netxms/sms.nsm

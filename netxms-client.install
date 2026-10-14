@@ -1,7 +1,6 @@
+usr/bin/nxai
 usr/bin/nxalarm
 usr/bin/nxevent
 usr/bin/nxnotify
 usr/bin/nxpush
 usr/bin/nxshell
-usr/lib/*/netxms/java/jython-standalone-*.jar
-usr/lib/*/netxms/java/nxshell-*.jar

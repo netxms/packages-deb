@@ -1,3 +1,120 @@
+netxms (7.0.0-1) stable; urgency=medium
+
+  * Hot standby mode for netxmsd: two server instances share one database, standby takes over automatically when active server fails; split-brain is prevented by database lease, no external cluster manager required
+  * Event processing policy rule chains: rules can be grouped into named chains invoked from other rules, with per-chain access control; rules referencing deleted objects are marked in the editor; source object selector shows only event source objects
+  * Syslog over TLS (RFC 5425) listener
+  * Multiple SNMP agents on one node: additional SNMP agents with their own port and credentials can be configured per node and selected in DCIs and MIB explorer
+  * NETCONF support: new libnxnetconf library, NETCONF-based telemetry data collection and configuration backup; network device driver API uses multi-protocol device context; new driver for Cisco Catalyst 9800 wireless controllers
+  * Device configuration restore: stored configuration backup can be pushed back to a device; separate access rights for reading and managing device configuration backups
+  * Server-initiated agent tunnel over TLS (reverse tunnel) as alternative to proprietary NXCP encryption for direct server to agent connections
+  * Embedded SSH terminal in management console, connecting through agent SSH channel relay or directly over TCP proxy
+  * Traffic observer framework for integration with external traffic analysis systems; ntopng is the first connector
+  * AI: AI Operators (perpetual adaptive monitoring loops with standing checks and instructions), unified AI memory store with environment, per-user and per-object memories, interactive chat bots over Telegram, Mattermost and XMPP, and new nxshell tool combining debug console, AI assistant, NXSL execution and object navigation
+  * Data center infrastructure model: new object classes Facility, PowerDomain, CoolingZone and Room with floor plan view; racks are data collection targets; per-sample quality attributes for DCI history and computed data origin for engine-owned DCIs
+  * Asset management: node components (stack members, transceivers, disks) can be represented as separate assets; "Create asset" action creates and links asset from object
+  * Access control: separate object access rights for reading data collection configuration and for ad-hoc script execution; access control lists for DCI summary tables; per-object ACL check on mobile device binding; effective rights calculation scales to thousands of nested groups
+  * Per-user regional settings and UI preferences (language, time zone, date/time formats) stored on server and shared between desktop and web clients
+  * Data collection: per-DCI "override template settings" flag protects local changes from template updates; last values show actual data collection error reason; {instance} macros are expanded in DCI tags; traffic monitoring template can be applied only to marked interfaces
+  * Time zone property on all objects with inheritance from parent containers; structured (JSON) values in custom attributes
+  * Recurring maintenance can be scheduled from object context menu and properties
+  * Network maps: link aggregation members are drawn as single link; link traffic can be shown as one centered label with direction indicators; web UI map labels match desktop client size and font
+  * Incidents view: server-side filtering and three-way state selector
+  * Alarm browser: option to show severity and state as icons only; context aware command palette; object sync runs in background instead of modal dialog; fuzzy token search in data collection filter; human-readable time inputs; object context menu fits on small screens
+  * Traditional Chinese (zh_TW) translation; hundreds of UI strings that bypassed translation are now translatable
+  * NXSL: all integer calculations are performed as signed 64-bit; HTTP client class; hash map initialization with { }; DCI class gets instanceValue attribute and method to set status; alarm category methods; alarm methods return boolean instead of internal result codes; changes made from scripts are written to audit log
+  * Audit log records for object modifications name the changed property
+  * Notifications: Markdown support in notification channels; Telegram channel can send geolocation and formats 2FA codes as monospace; notification channel drivers and helpdesk link plugins are now server modules
+  * Agent: events are acknowledged by server and redelivered after connection interruption; Python subagent support removed; external subagent loader exits when started under excluded user
+  * Windows server installer no longer bundles end-of-life OpenSSL 1.1.1 with libpq
+  * Fixed issues:
+  *   #1385 / NX-1175 (Feature for changing the used port in MIB-Explorer)
+  *   #1830 / NX-1620 (Syslog over TLS)
+  *   #1866 / NX-1656 ("Edit agent configuration" should show R/O cached version of the config if node is not connected)
+  *   #1931 / NX-1721 (Always perform calculations in NXSL as signed 64bit numbers)
+  *   #2148 / NX-1939 (Introduce access control for summary tables)
+  *   #2232 / NX-2023 (Display actual data collection error reason in last values)
+  *   #2269 / NX-2060 (Support for multiple SNMP agents on one node)
+  *   #2313 / NX-2105 (Use human readable values when time input is required (e.g. action execution delay))
+  *   #2350 / NX-2142 (Context aware "Command Palette")
+  *   #2467 / NX-2260 (Option to set recurring maintenance for object from context menu or properties)
+  *   #2478 / NX-2271 (Format 2FA code as monospace when sending via telegram notification channel)
+  *   #2486 (Telegram: support sending geolocation messages)
+  *   #2540 / NX-2334 (Rule chains in EPP)
+  *   #2923 / NX-2720 (add method to set dci status)
+  *   #3031 / NX-2829 (Show only appropriate object in EPP rule's source object selector)
+  *   #3150 (Idea: run object sync in separate thread, and instead of modal dialog show "Loading" in object browser)
+  *   #3187 (Add instanceValue attribute to DCI class)
+  *   #3188 (Events from agent to server get lost if network connection is interrupted)
+  *   #3244 (AI Operator: perpetual adaptive monitoring loops)
+  *   #3269 (Add fuzzy search to filter in "Data Collection" view)
+  *   #3315 (NXSL HTTP client class)
+  *   #3363 (Object "Create asset"  in addition to "Link to asset")
+  *   #3364 (Hot standby mode for netxmsd (active/standby HA))
+  *   #3369 (Remove Python subagent support)
+  *   #3373 (Mobile device session: missing per-object ACL on device binding allows forged data)
+  *   #3377 (Transform helpdesk link plugins into server modules)
+  *   #3382 (Notification channel drivers: move into server subtree and provide event context in driver API (v5))
+  *   #3383 (Interactive chat bots: bidirectional AI assistant access over messaging platforms (Telegram, Mattermost, XMPP))
+  *   #3384 (Changes made from NXSL scripts are not written to audit log)
+  *   #3385 (Object-modify audit records name only the object, not the changed property)
+  *   #3387 (Separate object level access right for ad-hoc script execution)
+  *   #3391 (Hide labels for severity and state in alarm browser, they are take quite a lot of space)
+  *   #3409 (Separate access rights for network device backups)
+  *   #3425 (Device configuration restore (push config to device))
+  *   #3429 (Traffic observer framework: integration with external traffic analysis systems (ntopng as first connector))
+  *   #3435 (NETCONF support)
+  *   #3447 (UB sweep following #3445: uninitialized reads, unaligned access, endianness, dead override)
+  *   #3464 (Decide which additional IPv6 address ranges should be excluded from automatic subnet creation)
+  *   #3480 (Per-user regional settings and UI preferences (design discussion))
+  *   #3481 (Markdown support in notification channels)
+  *   #3487 (Add marker on EPP rule if there are some errors)
+  *   #3488 (Server-initiated agent tunnel over TLS (reverse tunnel))
+  *   #3522 (Server-side incident filtering and three-way state selector in Incidents view)
+  *   #3530 (alarm categories - add\modify alarm categories using nxsl)
+  *   #3534 (Traffic values on map links overlap interface name labels)
+  *   #3537 (Update traffic monitoring template to have option to apply only on marked interfaces.)
+  *   #3541 (Separate access right for reading data collection configuration)
+  *   #3547 (Real-time line chart ignores DCI configuration (delta calculation, transformation script, units))
+  *   #3552 (Link aggregation members drawn as separate links on topology maps since 5.0)
+  *   #3562 (Network map: option to show link traffic as one centered label with direction indicators)
+  *   #3582 (Duplicate scalar config key across merged agent config sources resolves by unsorted directory order)
+  *   #3583 (Add Traditional Chinese (zh_TW) translation)
+  *   #3586 (Metadata key SingeTablePerfData is misspelled)
+  *   #3588 (Agent action killed by ExternalCommandTimeout reports success with truncated output)
+  *   #3592 (UI strings bypass i18n.tr() and cannot be translated; catalogs are 534 msgids behind the code)
+  *   #3594 (Representation of node components in asset management)
+  *   #3602 (Support structured (JSON) values in custom attributes)
+  *   #3625 (Convert Rack to a data collection target)
+  *   #3626 (POSIX timezone rule evaluation in libnetxms (TimeZoneRule))
+  *   #3627 (Per-sample attributes (quality, bounds, completeness, method) side table for DCI history)
+  *   #3628 (New object classes Facility, PowerDomain, CoolingZone)
+  *   #3629 (Data origin DS_COMPUTED for engine-owned DCIs)
+  *   #3644 (Server installer bundles EOL OpenSSL 1.1.1 via libpq 10)
+  *   #3645 (Allow hash map initialization in NXSL using { } instead of %{ })
+  *   #3646 (Per-DCI override flag: protect local changes on a template-derived DCI from being overwritten by the template)
+  *   #3648 (Add time zone property to all objects)
+  *   #3658 (NXSL: Alarm methods should not expose raw RCC codes as return values)
+  *   #3661 (Web UI: network map labels are much smaller than in desktop client and use serif font)
+  *   #3667 (Room object class and data center floor plan)
+  *   #3673 (Object context menu does not fit anymore, scroll is not available as well)
+  *   #3679 (Effective rights calculation walks group tree once per group, slow with thousands of nested groups)
+  *   #3699 (Decommissioned state is lost when node leaves maintenance mode (leaveMaintenanceMode restores pre-maintenance state flags wholesale))
+  *   #3709 (Table DCI last value view hides the cached table while the DCI has collection errors)
+  *   #3710 (TableValueViewer downloads the whole node DCI summary on every refresh to read one DCI status)
+  *   #3716 (ProcessExecutor: argument array form loses argument boundaries on Windows)
+  *   #3723 (Unified AI memory store: environment, per-user and per-object memories)
+  *   #3726 (nxshell: interactive shell for NetXMS server (debug console, AI assistant, NXSL, object navigation))
+  *   #3752 (SNMPv3 engine ID discovery on trap port is rejected by trap credential validation, INFORMs never received)
+  *   #3755 (Server crash on first start with fresh database: management node creation registers outbound tunnel before client thread pool exists)
+  *   #3758 (Configuration export truncates action data to 255 characters and omits is_disabled)
+  *   #3759 (Agent: external subagent loader should exit when started under user excluded from external subagent watchdog)
+  *   #3761 (Agent local database upgrade 17->18 fails on NULL content_hash in agent_policy, agent runs without local database)
+  *   #3762 (Expand {instance} macros in DCI tag for DCIs created by instance discovery)
+  *   #3764 (DataCollection.Scheduler.RequireConnectivity ignores DCSF_UNREACHABLE: DCIs fail instead of being skipped when node and agent reachability flags disagree)
+  *   #3765 (Embedded SSH terminal in nxmc (agent SSH channel relay and direct SSH over TCP proxy))
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Thu, 15 Oct 2026 19:39:00 +0300
+
 netxms (6.2.6-1) stable; urgency=medium
 
   * Box selection of elements on network maps

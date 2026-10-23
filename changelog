@@ -1,3 +1,51 @@
+netxms (7.0.1-1) stable; urgency=medium
+
+  * Export of tagged DCI history for external analysis: CSV files in ZIP archive, optional anonymization of object identifiers
+  * Beacon-based correlation covers SYS_NODE_UNREACHABLE for nodes reachable only through agent tunnel and works in hot standby mode
+  * Web service requests: unfollowed HTTP 3xx responses are reported with redirect URL instead of malformed response; NXSL WebService class exposes redirect URL
+  * SSH terminal: concurrent sessions through the same proxy agent are isolated; fixed crashes on session teardown and agent-side channel proxy leak; direct mode works in web console; terminal resize no longer blocks UI
+  * Agent on Windows: external subagents and user agents are started in console session when Terminal Services is unavailable
+  * Deleting user or group removes all references in access lists, responsible users, trusted devices and saved AI prompts
+  * NXSL: fixed argument count and type checks in several functions and methods; NetObj::bind and bindTo return boolean result; Resource.state returns resource state; DCI value retrieval works on TimescaleDB with single-table raw data
+  * Windows client installer and nxmc launcher fixes; web UI shows English strings when English is selected on JVM with non-English default locale
+  * nxdbmgr returns non-zero exit code on failed upgrade
+  * Bundled pugixml updated to version 1.16
+  * Fixed issues:
+  *   #3693 (User/group deletion leaves rows in responsible_users, graph_acl, object_tools_acl, alarm_category_acl, dci_summary_table_acl, policy_chain_acl, trusted_devices, ai_saved_prompts)
+  *   #3729 (Agent: external subagents and user agents are not started on Windows when Terminal Services service is stopped)
+  *   #3753 (Beacon-based correlation does not cover SYS_NODE_UNREACHABLE (tunnel-only nodes) or recovery events)
+  *   #3754 (HA: beacon correlation never engages because SYS_NETWORK_CONN_LOST is posted on the cluster object)
+  *   #3766 (SSH terminal: concurrent sessions through the same proxy agent share a channel ID, keystrokes reach another user's shell)
+  *   #3767 (SSH terminal: use-after-free in ClientSession teardown and early channel close, agent channel proxy leaked on shell exit)
+  *   #3768 (SSH terminal (web): direct mode fails on Registry.getStateDir(), private key path resolved on web server host)
+  *   #3769 (SSH terminal (console): resize blocks SWT UI thread, disconnect during setup is ignored)
+  *   #3771 (Export of tagged DCI history for external analysis (CSV in ZIP, optional anonymization))
+  *   #3772 (Server cannot read ARP cache from Cisco Firepower devices)
+  *   #3773 (Unfollowed HTTP 3xx response reported as malformed response by agent web service request; NXSL WebService.get() cannot distinguish redirect from connection failure)
+  *   #3774 (Object access report (HBTF variant): unreadable Groups sheet, missing null checks)
+  *   #3776 (Agent: session token fallback can pick non-desktop INTERACTIVE token (follow-up to #3729))
+  *   #3777 (Web UI: English selection shows JVM default locale translation (no English bundle, ResourceBundle falls back to Locale.getDefault))
+  *   #3778 (Windows client 7.0.0: nxmc.exe fails on startup with "Java application class not found")
+  *   #3779 (NXSL: Resource.state returns NetObj state instead of resource state)
+  *   #3780 (NXSL: DataCollectionTarget.deleteDCI() reads argv[0] without argc check)
+  *   #3781 (NXSL: Alarm.addComment() rejects boolean syncWithHelpdesk argument)
+  *   #3782 (NXSL: getValues*/GetDCIValues* broken on TimescaleDB single-table raw data)
+  *   #3783 (NXSL: Table.findRowIndexByInstance() registered with fixed argc 1, rejects composite instance)
+  *   #3784 (NXSL: Net::ResolveAddress() reads argv[0] without argc check)
+  *   #3785 (NXSL: NetObj.createUserAgentNotification() skips UA notification access check)
+  *   #3786 (NXSL: HttpRequest/HttpSession attributes missing from class attribute list)
+  *   #3787 (NXSL: assert(expression, message) fails with "not a string" for non-string expression)
+  *   #3788 (NXSL: GetServerNode() access-denied debug message reads argv[1])
+  *   #3789 (Config variables read by server but not registered: ThreadPool.MobileDevices.*, DeviceConfigBackup.*)
+  *   #3791 (NXSL: NetObj::bind()/bindTo() ignore linkObjects() result and return null on success)
+  *   #3792 (WebAPI: Grafana summary table and object query lists require manage rights)
+  *   #3794 (nxdbmgr: upgrade exits 0 on failure)
+  *   #3795 (Scripted gauge dashboard element loses its script on XML import (createFromXML has no SCRIPTED_GAUGE case))
+  *   #3796 (NXSL ToolBox::SNMPGetOrWalk() fails with "Unknown object's attribute")
+  *   #3798 (Server deadlock between LDAP group sync, client notifications and new client sessions (user DB lock vs session list lock))
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Fri, 23 Oct 2026 17:21:34 +0300
+
 netxms (7.0.0-1) stable; urgency=medium
 
   * Hot standby mode for netxmsd: two server instances share one database, standby takes over automatically when active server fails; split-brain is prevented by database lease, no external cluster manager required

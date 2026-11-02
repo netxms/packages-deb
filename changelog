@@ -1,3 +1,86 @@
+netxms (7.0.2-1) stable; urgency=medium
+
+  * Built-in SNMP agent supports SNMPv3 (USM, authNoPriv and authPriv) and honors SNMP.Agent.AllowedVersions; community, allowed versions and SNMPv3 user are reloaded on configuration change
+  * SNMP: FLOAT, DOUBLE, INTEGER64 and UINTEGER64 values are encoded as Opaque-wrapped varbinds and accepted by nxsnmpset and NXSL SNMPSet(); fixed decoding of Opaque-wrapped DOUBLE values
+  * Agent tunnels with externally provisioned certificates can be bound from tunnel manager, management console, NXSL and WebAPI
+  * Agent ListenAddress accepts comma-separated list of addresses
+  * Automatic network map layouts fit map size or visible area and use deterministic Spring, Radial and tree layouts; Grid layout removed; management console no longer hangs on network maps with many objects
+  * Chart data sources can be toggled on and off by clicking legend entries or via "Data sources" submenu
+  * Agent file manager: path bar to open folder by typed path, optionally as tree root
+  * User groups: "close other sessions after login" option
+  * AI assistant: context window usage indicator in chats with auto-detection of model context size; new "object-management" skill for setting interface expected state and object management status
+  * Configuration export reports agent policy files that cannot be exported; file delivery policy files are restored on configuration import and validated before being written
+  * WebAPI: bulk DCI current values endpoint, endpoints for radio interfaces and wireless stations; DCI origin, data type, status and threshold severity are reported by symbolic names ("sourceType" replaced by "origin"); login and status responses include user details
+  * Device configuration backup module (devbackup) moved to open source core
+  * Fixed memory leaks in management console table and tree viewers and dashboards; fixed UI deadlock in alarm list when blinking of outstanding alarms is enabled
+  * Agent tunnel sessions from servers not listed in server access lists get minimal access
+  * MS SQL and ODBC drivers: re-executing prepared SELECT no longer fails with "Invalid cursor state"
+  * Hardware inventory: storage device serial numbers are reported; fixed possible agent crash in Hardware.StorageDevices on Linux
+  * Windows Store package inventory no longer changes USER/NAME between polls
+  * Solaris: Process.PrivateRSS and Process.PrivateMemoryUsage no longer count shared anonymous memory
+  * Weather subagent updates current values between forecast downloads; MQTT subagent decodes obfuscated broker passwords
+  * Multiple NXSL fixes (range(), compound assignment operators, mapList(), Interface utilization attributes and others)
+  * Workarounds for memory leaks in libcurl before 8.5 and OpenSSL before 3.0
+  * Fixed issues:
+  *   #1775 (File Manager: Ability to type path to open)
+  *   #2751 (Display errors if they occur during configuration export)
+  *   #3621 (Store package USER/NAME changes between polls while software inventory snapshot is reported complete)
+  *   #3671 (Bind of tunnel with externally provisioned certificate fails with RCC 5, no way to set mapping from tunnel manager)
+  *   #3793 (Object query: hidden/order columns resolved from first result row only)
+  *   #3800 (NXSL: Circuit.interfaces iterates the child list with the parent list size as bound)
+  *   #3801 (NXSL: WirelessStation class inherits NetObj methods that cast its data to shared_ptr<NetObj>)
+  *   #3802 (NXSL: mapList() returns the table name instead of the list when the mapping table does not exist)
+  *   #3803 (Server: DetectAnomalies() dereferences a null DCI for an invalid or deleted DCI ID)
+  *   #3804 (NXSL: Net::ResolveHostname() registered with one argument, address family option unreachable)
+  *   #3805 (NXSL: `\=` and `%=` missing for array elements, `\=` missing for storage items)
+  *   #3806 (NXSL: Interface.inboundUtilization/outboundUtilization return "429496729.5" instead of null when unknown)
+  *   #3808 (NXSL: FILE.eof calls feof() on a closed FILE*)
+  *   #3809 (nxnotify: three positional arguments accepted, message read past argv)
+  *   #3810 (NXSL: range() always yields start and uses the sign of end instead of step direction)
+  *   #3811 (NXSL: NetworkMap.backgroundLongitude returns the background latitude)
+  *   #3812 (Server: beacon poller reads legacy IcmpPingSize variable, ICMP.PingSize ignored)
+  *   #3813 (Server: sql/setup.in out of sync with upgrade procedures (Jira.VerifyPeer, Client.TileServerURL, XMPP.Port))
+  *   #3814 (NXSL: NetworkMapLink.updateDataSource() never changes the format of an existing data source)
+  *   #3818 (Web UI: SSH terminal and VNC viewer build the WebSocket URL from the servlet context path)
+  *   #3819 (Installer: Windows WebUI readme.txt describes Jetty 10 and wrong file names)
+  *   #3820 (Agent: wrong data types in metric registration for PhysicalDisk.SmartStatus and Agent.ThreadPool.LoadAverage*)
+  *   #3821 (Agent: Net.Wireguard.Interfaces/Peers declare instance column INDEX that does not exist)
+  *   #3822 (Agent: File.LineCount returns 1 for an empty file)
+  *   #3823 (Log parser: capture group slots left uninitialized for non-participating groups)
+  *   #3824 (Server: AIOperator.Instructions.MaxSize described as characters but enforced in bytes)
+  *   #3825 (nxsnmpset accepts type names that cannot be converted from string, sends NULL)
+  *   #3826 (Built-in SNMP agent ignores SNMP.Agent.AllowedVersions and SNMP.Agent.V3.*)
+  *   #3827 (Agent: MQTT subagent does not decode nxencpasswd-obfuscated broker passwords)
+  *   #3830 (Cron % step in seconds field matches when time is not divisible by step)
+  *   #3831 (Server: configuration variables read at runtime but not registered in setup.in)
+  *   #3834 (SNMP: Opaque-wrapped DOUBLE value decoded without byte swap)
+  *   #3837 (SNMP: implement SNMPv3 and SNMP.Agent.AllowedVersions in built-in SNMP agent)
+  *   #3841 (SNMP: encode FLOAT/DOUBLE/INTEGER64/UINTEGER64 varbinds as Opaque-wrapped values and accept them in setValueFromString())
+  *   #3843 (User support notification housekeeping deletes recent notifications and keeps old ones)
+  *   #3844 (Solaris: Process.PrivateRSS counts shared anonymous memory)
+  *   #3845 (Weather subagent: current values not updated between forecast downloads)
+  *   #3846 (Web UI: Embedded Dashboard rotation leaks AlarmList / dashboard elements, heap exhausted after ~2 hours)
+  *   #3847 (Dashboard is not rendered at all if one element fails to create)
+  *   #3848 (MSSQL/ODBC drivers: re-executing a prepared SELECT fails with "Invalid cursor state")
+  *   #3849 (Syslog: resolver cache is keyed by hostname only and ignores zone; expired entries are only evicted on re-lookup)
+  *   #3850 (File delivery policy files are not restored on configuration import, and import does not validate file data)
+  *   #3851 (AI assistant: context window usage indicator in chats and auto-detection of model context size)
+  *   #3852 (AI tools: get-metrics returns DCI origin as numeric code only)
+  *   #3853 (Ability to disable / enable chart data sources directly on the chart)
+  *   #3855 (Agent connection stays busy after agent rejects file download request)
+  *   #3857 (Management console hangs on network maps with many objects)
+  *   #3858 (Automatic network map layouts: Radial stacks root nodes, Spring is random and crosses links)
+  *   #3859 (User agent 7.0.x fails to start on Windows: "NetXMS User Agent initialization failed")
+  *   #3860 (Agent routing table parser stores metric into route type and ignores protocol)
+  *   #3861 (Enforce "close other sessions after login" through groups)
+  *   #3862 (Agent: support listening on multiple specific addresses)
+  *   #3863 (Management console: permanent UI hang (deadlock) in AlarmList with "Blinking outstanding alarms" enabled)
+  *   #3864 (Hardware inventory: storage device serial number is always empty)
+  *   #3865 (nxdbmgr init and upgrade fail on Oracle before 12.2: index name too long)
+  *   #3867 (Linux agent: possible crash and garbage bus type in Hardware.StorageDevices)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Tue, 03 Nov 2026 01:16:43 +0200
+
 netxms (7.0.1-1) stable; urgency=medium
 
   * Export of tagged DCI history for external analysis: CSV files in ZIP archive, optional anonymization of object identifiers

@@ -1,3 +1,53 @@
+netxms (7.0.3-1) stable; urgency=medium
+
+  * New server configuration variable Agent.TLS.ReverseTunnels (disabled/allowed/preferred) for controlling use of TLS tunels to agents
+  * Modbus: unit ID from DCI metric and from Modbus sensor is honored; DCIs on sensors are collected with sensor's unit ID
+  * File transfer over encrypted connection is aborted on encryption or send failure instead of being reported as successful with missing data
+  * New agent and server configuration parameter CurlSSLBackend
+  * libcurl uses Windows certificate store when no CA bundle is configured
+  * Docker connector no longer disables TLS verification on Windows
+  * New AI assistant tool get-node-health (one-call OS health snapshot of a node with pre-evaluated findings)
+  * AI security fixes
+  * DCI data export includes delta method, transformation flag, time zone and SHA-256 digests
+  * Network map link color calculation script can access link via global variable $link
+  * FDB entries with status other(1) (e.g. MAC addresses authorized by port security or 802.1X) are no longer discarded
+  * JUNIPER driver recognizes CLI prompt on devices without configured host name
+  * SYS_NODE_UNREACHABLE events caused by agent tunnel being down are correlated to SYS_NETWORK_CONN_LOST
+  * Hardware inventory: storage device and network adapter index changes no longer cause spurious component added/removed events
+  * Windows: mysql.ddr is treated as alias for mariadb.ddr (MySQL driver removed from Windows build)
+  * Agent web service requests: fixed bearer authentication; improved workarounds for memory leaks in old libcurl versions
+  * Added Chinese (Simplified) translation of management console
+  * Fixed issues:
+  *   #3868 (Hardware inventory: storage device index changes cause spurious component added/removed events)
+  *   #3869 (Bundled libcurl on Windows has no trusted CA roots, https verification fails with curl error 60)
+  *   #3871 (Docker connector disables TLS verification on Windows and depends on OpenSSL-only curl callback)
+  *   #3872 (Empty user variable values cannot be stored on Oracle (ORA-01400 on user_profiles.var_value))
+  *   #3873 (Decommission with "Clear IP addresses" leaves interfaces in zone address index: former IP "already in use" until server restart when zoning is enabled)
+  *   #3874 (Windows server installer: upgrade from <7.0 with `DBDriver = mysql.ddr` leaves server unable to start)
+  *   #3875 (Create public SSH key from private automatically)
+  *   #3876 (SSH terminal via agent proxy disconnects after login (libssh 0.11+))
+  *   #3877 (Modbus data collection ignores unit ID from DCI metric and from Modbus sensors)
+  *   #3879 (Web console: inactivity timeout never fires while node Overview is open)
+  *   #3881 (HPE Comware FDB entries with status other(1) are discarded — configurable acceptance policy requested)
+  *   #3883 (AI tool get-node-health: one-call OS health snapshot of a node with pre-evaluated findings)
+  *   #3885 (MinGW subagent build: embedded resource (parser XML) is not rebuilt when the embedded file changes)
+  *   #3892 (MCP endpoint must work standalone without AI provider: core tools, NXSL ai_tool scripts and disabled-items list are skipped when InitAIAssistant() bails out on missing provider)
+  *   #3893 (Device driver data is not reset when node's network device driver changes)
+  *   #3895 (Data export download fails in web console)
+  *   #3897 (aifileops log_tail/log_grep only see the first 10000 lines of a file)
+  *   #3898 (AI log/incident search tools: no row limit on Oracle, negative limit accepted, hard-coded LIMIT breaks MSSQL/Oracle/DB2)
+  *   #3899 (execute-agent-tool discards agent error details and returns only numeric error code)
+  *   #3900 (Add server configuration variable Agent.TLS.ReverseTunnels (disabled/allowed/preferred) to control server-initiated (reverse) agent TLS tunnels globally)
+  *   #3901 (Node::connectToAgent() establishes reverse TLS tunnel while reusing alive legacy NXCP connection, leaving tunnel unused)
+  *   #3903 (Allow map link color scripts to distinguish parallel links)
+  *   #3904 (JUNIPER driver: CLI prompt without host name not recognized, {master:0} line left in configuration read via interactive SSH)
+  *   #3905 (File transfer over encrypted connection reported success with missing data)
+  *   #3906 (AI operator owner can be set to any user, allowing privilege escalation via MANAGE_AI_OPERATORS)
+  *   #3907 (Race condition in server object index reader/writer handshake)
+  *   #3908 (NetXMS 7.0.2: recurring agent tunnel timeouts, proxy polling failures and unexpected agent process termination)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Wed, 11 Nov 2026 21:41:12 +0200
+
 netxms (7.0.2-1) stable; urgency=medium
 
   * Built-in SNMP agent supports SNMPv3 (USM, authNoPriv and authPriv) and honors SNMP.Agent.AllowedVersions; community, allowed versions and SNMPv3 user are reloaded on configuration change

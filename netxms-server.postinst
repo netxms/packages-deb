@@ -79,7 +79,7 @@ __END
         fi
 
         # compile MIBs
-        /usr/bin/nxmibc -o /var/lib/netxms/netxms.cmib -d /usr/share/netxms/mibs -d /var/lib/netxms/mibs -z || true
+        /usr/bin/nxmibc -a -o /var/lib/netxms/netxms.cmib -d /var/lib/netxms/mibs -d /usr/share/netxms/mibs -z || true
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

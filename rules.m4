@@ -32,6 +32,7 @@ override_dh_shlibdeps:
 override_dh_auto_configure:
 	dh_auto_configure -- \
 		--enable-release-build \
+		--disable-mib-compilation \
 		--with-server \
 		--with-agent \
 		--with-client \

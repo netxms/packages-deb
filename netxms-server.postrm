@@ -5,6 +5,7 @@ set -e
 case "$1" in
     purge)
         rm -f /etc/netxmsd.conf /etc/netxmsd.conf.dist
+        rm -f /var/lib/netxms/netxms.cmib
     ;;
 
     remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)

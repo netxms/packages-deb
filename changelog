@@ -1,3 +1,111 @@
+netxms (7.0.5-1) stable; urgency=medium
+
+  * nxdbmgr check: new referential integrity and logical consistency checks; duplicate subnets can be merged; "All" and "Skip" answers apply only to prompts of the same kind; per-object data tables are created outside of check transaction
+  * Security fixes: table tools require READ access on target node and disabled table tools are rejected; 2FA trusted device tokens are not honored when trusted devices are disabled; NXSL DeleteObject() and NetObj.delete() require DELETE access; OTLP ingestion requires push data access on matched node; EPP save requests are fully validated; fixed value quoting and access filtering in AI log search tools; SSH key import, update and generation are recorded in audit log
+  * CAS (SSO) ticket validation rewritten: timeouts, IPv6, SNI and host name verification; system trust store is used when CAS.TrustedCACert is empty; tickets are no longer logged
+  * SSH and NETCONF subagents fall back to password authentication when public key login fails and re-validate cached SSH keys with server every 5 minutes, so key rotation and deletion on server take effect
+  * New agent action Agent.ResetLocalDatabase (resets local databases of agent and connected external subagent loaders on restart)
+  * External subagent loaders reliably reconnect to master agent after agent restart on UNIX and are restarted only after successful launch of replacement agent instance
+  * Agent extensions receive shutdown notification with configurable ShutdownTimeout before SIGTERM and are respawned or reconnected after ping timeout instead of being stopped permanently
+  * Log parser with auto encoding detects encoding for each opened file (after rotation, truncation or file name change); byte order mark is skipped; BOM-less UTF-16 is detected
+  * Windows agent action System.UninstallProduct removes Windows Installer (MSI) products and reports uninstaller failures
+  * Server shutdown no longer waits for completion of SNMP walks (routing table, switch forwarding database, ARP cache)
+  * TLS handshake uses single deadline for the whole handshake (server tunnel setup, netsvc TLS checks); corrected TLS handshake error reporting
+  * Database: failed commit rolls back native transaction; PostgreSQL driver reports commit of aborted transaction as failure
+  * Node name resolution: node is no longer marked as modified on every configuration poll when names are synchronized with DNS; name is validated on every resolution path; nodes in non-default zones are resolved through zone proxy
+  * Interfaces deleted because node returned empty interface list generate SYS_IF_DELETED event; manually created interfaces are kept
+  * Manually set node location is no longer overwritten by agent GPS position or device driver
+  * Event message value formatting no longer applies multipliers to dBm and rpm
+  * OTLP: fixed handling of array, key-value list and bytes attribute values, host.ip matching, metric value precision and exact metric name lookup; log record attributes take precedence over resource attributes
+  * TimescaleDB on-the-fly aggregation works for wide buckets on PostgreSQL 14 and older
+  * nxreportd: fixed deadlock on server reconnect; reports are rendered in background thread pool with size configurable via nxreportd.maxThreads
+  * Web console: SSH terminal and VNC sessions no longer close after 30 seconds of inactivity; browsers do not run cached script library from a different build; pop-out windows no longer share display-bound resources with main window; welcome page no longer hangs when changelog host is unreachable
+  * Take screenshot action is available for Linux nodes
+  * BIND 9 subagent: 64-bit counters, zero counters omitted by BIND are reported as 0
+  * Tuxedo subagent: multiple fixes in client, server, queue and service group metrics; fixed possible agent crash in Tuxedo.IsMasterMachine
+  * Prometheus subagent: correct handling of non-ASCII label values on non-UTF-8 locales; metric names with colons can be mapped
+  * GPS subagent recognizes NMEA sentences from any talker ID (multi-GNSS receivers)
+  * Fixed malformed SMS PDUs for long messages and international phone numbers
+  * ntopng connector probes capability set instead of using fixed one; empty interface list is treated as successful discovery
+  * Chat bots: Telegram sends literal text as written; fixed Mattermost reconnect delay; chat bot cannot be created or renamed over existing notification channel
+  * nxlptest: implemented option -i (read records from standard input)
+  * Bundled Fortinet MIBs updated to FortiOS 7.4.8 versions
+  * Removed debug console command "raise"
+  * Fixed issues:
+  *   #3698 (nxdbmgr check: creating many per-object data tables in one transaction exhausts PostgreSQL lock table; failure not propagated)
+  *   #3949 (Web console SSH terminal and VNC sessions close after 30 seconds of inactivity)
+  *   #3950 (SSH and NETCONF subagents treat successful public key probe as completed login)
+  *   #3951 (SSH and NETCONF subagents never invalidate cached SSH keys, key rotation on server is ignored)
+  *   #3952 (SSH key import, update and generate via NXCP write no audit record on success)
+  *   #3953 (Group member update sends wrong user database notifications and leaves clients with wrong membership)
+  *   #3954 (nxdbmgr check: "All" answer applies across different prompt kinds within a stage and can delete nodes without asking)
+  *   #3955 (Failed database commit can leave native transaction open while libnxdb treats it as closed)
+  *   #3959 (Authentication token dialogs: Missing expiration label and clipped "Issue New..." button)
+  *   #3962 (Agent extensions: shutdown notification is never delivered, SIGTERM sent without grace period)
+  *   #3963 (Agent extensions: ping timeout or shutdown_notice stops the extension for good instead of respawning or reconnecting)
+  *   #3964 (AI message panel prints every displayed message to stdout (Jetty log in web console))
+  *   #3967 (SyncNamesWithDNS marks the node modified on every configuration poll even if the name is unchanged)
+  *   #3968 (Node name resolution applies FQDN truncation and the systemd record filter to the primary-IP lookup only)
+  *   #3969 (Node name resolution falls back to the server's own resolver for nodes in non-default zones)
+  *   #3970 (Empty interface list deletes all interfaces without SYS_IF_DELETED, alarms stay open)
+  *   #3971 (Event message value formatting applies multipliers to dBm and rpm)
+  *   #3972 (OTLP: array attribute values become empty strings, default host.ip matching rule never matches compliant senders)
+  *   #3973 (OTLP: exact metric name lookup matches instance discovery prototypes, no instances are created)
+  *   #3974 (HFCL bridge: domain-wide wireless station list parses the device list instead of the client list)
+  *   #3977 (Property dialog scroller not resized when a page shows or hides a section)
+  *   #3981 (TCP port forwarder: cancelled proxy setup posts its error into a later session)
+  *   #3986 (chat bots: bot named like an existing notification channel gets no channel, and rename renames the standalone one)
+  *   #3987 (chat bots: Telegram applies ParseMode to literal chat bot text)
+  *   #3988 (chat bots: Mattermost reconnect delay grows to 320 s, past MAX_RECONNECT_DELAY)
+  *   #3990 (Web console can run a cached nxmc-library.js from a previous build after an upgrade)
+  *   #3995 (nxreportd: permanent deadlock in CommunicationManager when netxmsd reconnects while receiver is busy)
+  *   #3996 (ntopng connector reports a fixed capability set: host alias sync shown as available with a read-only token)
+  *   #3997 (ntopng: empty interface list treated as failed discovery, removal policy never runs)
+  *   #4001 (BIND 9 subagent registers counters as 32-bit unsigned)
+  *   #4002 (BIND 9 subagent: port 65535 rejected, wrong ConfigTime description and error message)
+  *   #4003 (BIND 9 metrics for counters that are still zero return "not supported")
+  *   #4005 (GPS subagent ignores GN (multi-GNSS) NMEA sentences)
+  *   #4007 (nxcsum crashes when the file argument is missing)
+  *   #4008 (nxlptest match message has four format placeholders but three arguments)
+  *   #4009 (nxlptest -i (read standard input) is accepted but does nothing)
+  *   #4010 (OpenAPI describes take-screenshot 403 as missing read access)
+  *   #4011 (Prometheus subagent filters and mappings mishandle non-ASCII label values on non-UTF-8 locales)
+  *   #4013 (Prometheus subagent: colon in mapped metric names, empty filter argument, logger underflow, SampleCount description)
+  *   #4014 (SMS PDU mode builds malformed PDUs for long messages and international numbers)
+  *   #4015 (Tuxedo.Client.Machine and EnduroX.Client.Machine return the client name)
+  *   #4016 (Tuxedo.IsMasterMachine can crash the agent when the machine list is not loaded)
+  *   #4017 (Tuxedo QueryLocalData bit 8 (service groups) has no effect)
+  *   #4018 (Tuxedo.Server.ProcessedRequests and ProcessedWorkloads do not return totals)
+  *   #4019 (Five Tuxedo.ServiceGroup metrics always return "not supported" in the Tuxedo build)
+  *   #4020 (Tuxedo subagent: queue count types, instance lookup errors, ACTIVE state and host name matching)
+  *   #4022 (Remove debug console command "raise")
+  *   #4024 (Agent GPS position overwrites a node location set to Manual)
+  *   #4025 (Take screenshot is offered only for Windows nodes although Linux session agents support it)
+  *   #4027 (Westerstrand driver location stops updating after #4024 because it reports GL_MANUAL)
+  *   #4031 (Web pop-out windows share the main display's ObjectIcons images)
+  *   #4033 (MapDataSource last-value requests put table column/instance in the wrong fields)
+  *   #4034 (Timestamp::fromTime overflows on extreme client-supplied times)
+  *   #4035 (TSDB on-the-fly aggregation may fail for buckets wider than INT32_MAX ms)
+  *   #4036 (Table tool execution does not check access rights on the target node)
+  *   #4037 (EPP save request validation and upload state handling)
+  *   #4038 (EPP rule records are not matched to the save request that started the upload)
+  *   #4040 (2FA trusted device tokens are honored when trusted devices are disabled)
+  *   #4041 (SSO ticket handling: ticket logged, not wiped, inserted into CAS request unchecked)
+  *   #4043 (OTLP: log record attributes are discarded when a resource attribute has the same key)
+  *   #4044 (Agent list object tool: regex capture offsets buffer sized by column count, not capture count)
+  *   #4045 (Agent.LocalDatabase.Status never reports 2 (schema upgrade failure))
+  *   #4046 (Log parser with auto encoding keeps the encoding detected from the first file)
+  *   #4047 (NXCP execTableTool runs disabled table tools)
+  *   #4049 (TLS handshake retries restart the full timeout on every partial read/write (server tunnel setup, netsvc TLS checks))
+  *   #4050 (netsvc: TLS certificate check leaks socket when StartTLS negotiation fails)
+  *   #4051 (Agent restarts external subagent loaders before restart helper launch succeeds)
+  *   #4052 (Windows agent: System.UninstallProduct does not remove MSI products and reports success)
+  *   #4054 (Server shutdown waits for SNMP snapshot walks to finish, so slow routers push `systemctl stop` into SIGKILL)
+  *   #4055 (nxmc web UI: welcome page hangs on blank page when changelog host is unreachable)
+  *   #4056 (External subagent loader stays disconnected from master agent after agent restart on UNIX)
+
+ -- Alex Kirhenshtein <alk@netxms.org>  Wed, 25 Nov 2026 12:03:23 +0200
+
 netxms (7.0.4-1) stable; urgency=medium
 
   * Server UDP receivers (syslog, SNMP trap receiver, built-in SNMP agent) bind every address from ListenAddress list instead of falling back to loopback
